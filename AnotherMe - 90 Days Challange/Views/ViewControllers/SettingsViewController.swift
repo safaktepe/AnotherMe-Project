@@ -14,6 +14,7 @@ class SettingsViewController: UIViewController {
     
     let settingsRowsNames = ["Account", "Notifications", "Photo library", "Support & Feedback", "Delete Account"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
+    let segueNames = ["mert", "merttwo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,4 +46,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = settingsTableView.cellForRow(at: indexPath)
+        settingsTableView.deselectRow(at: indexPath, animated: true)
+
+        performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
+
+    }
+    
 }
