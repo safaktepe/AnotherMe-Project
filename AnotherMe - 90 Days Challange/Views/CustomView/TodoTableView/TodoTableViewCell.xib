@@ -31,6 +31,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             </preferredSymbolConfiguration>
                         </state>
+                        <connections>
+                            <action selector="checkMarkButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lAJ-7v-qH3"/>
+                        </connections>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ryt-Za-eOB">
                         <rect key="frame" x="81.666666666666671" y="22" width="130.33333333333331" height="41"/>
@@ -67,6 +70,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="checkMarkButton" destination="ix1-Be-pGq" id="Rce-07-xs6"/>
+                <outlet property="titleLabel" destination="Bk9-Dn-4f2" id="bQN-hF-0MR"/>
+            </connections>
             <point key="canvasLocation" x="86.25954198473282" y="-3.8732394366197185"/>
         </tableViewCell>
     </objects>

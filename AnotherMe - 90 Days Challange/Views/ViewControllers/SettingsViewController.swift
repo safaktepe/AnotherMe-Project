@@ -19,8 +19,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingsTableView.delegate   = self
-        settingsTableView.backgroundColor = .black
         settingsTableView.dataSource = self
+        settingsTableView.backgroundColor = .black
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 }
