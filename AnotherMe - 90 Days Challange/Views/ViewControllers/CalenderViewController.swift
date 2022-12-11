@@ -12,4 +12,8 @@ class CalenderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    @IBAction func faqButtonClicked(_ sender: Any) {
+        performSegue(withIdentifier: "help", sender: nil)
+
+    }
 }
