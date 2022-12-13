@@ -754,14 +754,86 @@
                     <view key="view" contentMode="scaleToFill" id="DuO-8S-hMF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6X-sH-AVD">
+                                <rect key="frame" x="24" y="145" width="345" height="122"/>
+                                <string key="text">Did anything went wrong? Are you having some trouble? Please leave a message describing your problem. As a small team, we care about your opinion so please feel free to leave any kind of feedback. We will try our best to respond support tickets in 24 hours! </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.76813061130000004" green="0.79792692549999999" blue="0.79344376559999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support &amp; Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szm-Lz-vkA">
+                                <rect key="frame" x="24" y="83" width="345" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" systemColor="systemMintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Leave a message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eSW-bg-7nd">
+                                <rect key="frame" x="24" y="338" width="345" height="122"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXF-dU-Uc8">
+                                <rect key="frame" x="24" y="291" width="345" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" systemColor="systemMintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="E-Mail Adress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K47-mS-Dj2">
+                                <rect key="frame" x="24" y="523" width="345" height="38"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Mail:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEd-vy-xdd">
+                                <rect key="frame" x="24" y="476" width="345" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" systemColor="systemMintColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HuB-6l-f8l">
+                                <rect key="frame" x="124" y="617" width="145" height="35"/>
+                                <color key="tintColor" systemColor="linkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yud-tm-eFi"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K47-mS-Dj2" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="24" id="2uy-hH-bRI"/>
+                            <constraint firstItem="f6X-sH-AVD" firstAttribute="top" secondItem="Szm-Lz-vkA" secondAttribute="bottom" constant="32" id="3fa-ka-kxF"/>
+                            <constraint firstItem="K47-mS-Dj2" firstAttribute="height" secondItem="DuO-8S-hMF" secondAttribute="height" multiplier="0.0485313" id="5yq-ba-o4V"/>
+                            <constraint firstItem="eSW-bg-7nd" firstAttribute="height" secondItem="DuO-8S-hMF" secondAttribute="height" multiplier="0.155811" id="8P4-KT-2zH"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="EEd-vy-xdd" secondAttribute="trailing" constant="24" id="EJX-yk-ngJ"/>
+                            <constraint firstItem="Szm-Lz-vkA" firstAttribute="top" secondItem="yud-tm-eFi" secondAttribute="top" constant="24" id="Enr-c7-ceo"/>
+                            <constraint firstItem="eSW-bg-7nd" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="24" id="FZV-6q-RRF"/>
+                            <constraint firstItem="HuB-6l-f8l" firstAttribute="top" secondItem="K47-mS-Dj2" secondAttribute="bottom" constant="56" id="Kfw-x9-oOB"/>
+                            <constraint firstItem="eSW-bg-7nd" firstAttribute="top" secondItem="aXF-dU-Uc8" secondAttribute="bottom" constant="24" id="Ohv-eR-VJw"/>
+                            <constraint firstItem="EEd-vy-xdd" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="24" id="UzC-SO-yMX"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="Szm-Lz-vkA" secondAttribute="trailing" constant="24" id="X63-dd-9CV"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="f6X-sH-AVD" secondAttribute="trailing" constant="24" id="bHg-FW-5Xj"/>
+                            <constraint firstItem="HuB-6l-f8l" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="124" id="cHf-h9-XTS"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="eSW-bg-7nd" secondAttribute="trailing" constant="24" id="cVV-4E-d1M"/>
+                            <constraint firstItem="Szm-Lz-vkA" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="24" id="gPi-VQ-3z5"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="HuB-6l-f8l" secondAttribute="trailing" constant="124" id="gk4-D6-ipd"/>
+                            <constraint firstItem="aXF-dU-Uc8" firstAttribute="top" secondItem="f6X-sH-AVD" secondAttribute="bottom" constant="24" id="kMs-6i-E9L"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="aXF-dU-Uc8" secondAttribute="trailing" constant="24" id="njw-dy-DO2"/>
+                            <constraint firstItem="yud-tm-eFi" firstAttribute="trailing" secondItem="K47-mS-Dj2" secondAttribute="trailing" constant="24" id="sM9-yu-drr"/>
+                            <constraint firstItem="K47-mS-Dj2" firstAttribute="top" secondItem="EEd-vy-xdd" secondAttribute="bottom" constant="24" id="sPR-or-8xz"/>
+                            <constraint firstItem="aXF-dU-Uc8" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="24" id="ugn-hV-rSd"/>
+                            <constraint firstItem="f6X-sH-AVD" firstAttribute="leading" secondItem="yud-tm-eFi" secondAttribute="leading" constant="24" id="wIx-nz-dTl"/>
+                            <constraint firstItem="EEd-vy-xdd" firstAttribute="top" secondItem="eSW-bg-7nd" secondAttribute="bottom" constant="16" id="y9u-SQ-NzT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jgl-Vt-Knp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25v-bS-iKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="610"/>
+            <point key="canvasLocation" x="846.56488549618314" y="609.85915492957747"/>
         </scene>
         <!--To do-->
         <scene sceneID="YCq-a7-Wvu">
@@ -864,10 +936,10 @@
             </objects>
             <point key="canvasLocation" x="1684.7328244274809" y="-51.408450704225352"/>
         </scene>
-        <!--Feed Back View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="eGi-hQ-4Zv">
             <objects>
-                <viewController id="krB-ow-3nv" customClass="FeedBackViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="krB-ow-3nv" customClass="AccountViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tPp-ua-cDN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -926,14 +998,20 @@
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="questionmark" catalog="system" width="94" height="128"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

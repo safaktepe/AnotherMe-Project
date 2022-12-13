@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let settingsRowsNames = ["Account", "Notifications", "Photo library", "Support & Feedback", "Delete Account"]
+    let settingsRowsNames = ["Account", "Support & Feedback", "Photo library", "Notifications", "Delete Account"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
     
@@ -54,5 +54,4 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
 
     }
-    
 }
