@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let settingsRowsNames = ["Account", "Support & Feedback", "Photo library", "Notifications", "Delete Account"]
+    let settingsRowsNames = ["Account", "Support & Feedback", "Photo library", "Notifications", "Logout"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
     
