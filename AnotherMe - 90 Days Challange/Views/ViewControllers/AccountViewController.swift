@@ -11,13 +11,14 @@ class AccountViewController: UIViewController {
     
     let myImageViewCornerRadius: CGFloat = 75.0
     
-    let myImageView         = UIImageView()
-    let myEditButton        = UIButton()
+    let imageView           = UIImageView()
+    let editButton          = UIButton()
     let firstNameLabel      = UILabel()
     let lastNameLabel       = UILabel()
     let firstNameTextField  = UITextField()
     let lastNameTextField   = UITextField()
     let deleteAccountButton = UIButton(type: .system)
+    let saveButton          = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +30,18 @@ class AccountViewController: UIViewController {
         
         
         //ImageView
-        myImageView.backgroundColor = .blue
-        myImageView.layer.cornerRadius = myImageViewCornerRadius
-        view.addSubview(myImageView)
+        imageView.backgroundColor = .blue
+        imageView.layer.cornerRadius = myImageViewCornerRadius
+        view.addSubview(imageView)
         
         //ImageView's edit button.
-        myEditButton.backgroundColor = .red
-        myEditButton.layer.cornerRadius = 20.0
-        view.addSubview(myEditButton)
+        editButton.setImage(UIImage(systemName: "camera.fill"), for: .normal)
+        editButton.tintColor = .red
+        editButton.layer.cornerRadius = 35.0
+        editButton.contentVerticalAlignment = .fill
+        editButton.contentHorizontalAlignment = .fill
+        editButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 5)
+        view.addSubview(editButton)
         
         //Name Label
         firstNameLabel.textColor = .black
@@ -69,6 +74,16 @@ class AccountViewController: UIViewController {
         lastNameTextField.clearButtonMode = UITextField.ViewMode.whileEditing
         lastNameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         view.addSubview(lastNameTextField)
+        
+        //Save button
+        
+        saveButton.backgroundColor = .systemGreen
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.layer.cornerRadius = 10
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.titleLabel?.font = .systemFont(ofSize: 19)
+        saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
+        view.addSubview(saveButton)
 
         //Delete account button.
         deleteAccountButton.backgroundColor = .red
@@ -78,7 +93,9 @@ class AccountViewController: UIViewController {
         deleteAccountButton.titleLabel?.font = .systemFont(ofSize: 19)
         deleteAccountButton.addTarget(self, action: #selector(deleteAccountButtonClicked), for: .touchUpInside)
         view.addSubview(deleteAccountButton)
-
+     
+        
+       
         setConstraints()
     }
     
@@ -86,49 +103,62 @@ class AccountViewController: UIViewController {
      print("account deleted")
  }
     
+    @objc func saveButtonClicked() {
+        print("changed saved")
+    }
+    
     func setConstraints() {
-        myImageView.translatesAutoresizingMaskIntoConstraints            = false
-        myEditButton.translatesAutoresizingMaskIntoConstraints           = false
+        imageView.translatesAutoresizingMaskIntoConstraints              = false
+        editButton.translatesAutoresizingMaskIntoConstraints             = false
         firstNameLabel.translatesAutoresizingMaskIntoConstraints         = false
         lastNameLabel.translatesAutoresizingMaskIntoConstraints          = false
         firstNameTextField.translatesAutoresizingMaskIntoConstraints     = false
         lastNameTextField.translatesAutoresizingMaskIntoConstraints      = false
         deleteAccountButton.translatesAutoresizingMaskIntoConstraints    = false
-        
+        saveButton.translatesAutoresizingMaskIntoConstraints             = false
         
         NSLayoutConstraint.activate([
-                    myImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    myImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-                    myImageView.widthAnchor.constraint(equalToConstant: 150.0),
-                    myImageView.heightAnchor.constraint(equalToConstant: 150.0),
+                    imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+                    imageView.widthAnchor.constraint(equalToConstant: 150.0),
+                    imageView.heightAnchor.constraint(equalToConstant: 150.0),
                     
-                    myEditButton.centerYAnchor.constraint(equalTo: myImageView.bottomAnchor,
+                    editButton.centerYAnchor.constraint(equalTo: imageView.bottomAnchor,
                                                           constant: -myImageViewCornerRadius / 4.0),
                     
-                    myEditButton.centerXAnchor.constraint(equalTo: myImageView.trailingAnchor,
+                    editButton.centerXAnchor.constraint(equalTo: imageView.trailingAnchor,
                                                          constant: -myImageViewCornerRadius / 4.0),
                     
-                    myEditButton.widthAnchor.constraint(equalToConstant: 40.0),
-                    myEditButton.heightAnchor.constraint(equalToConstant: 40.0),
+                    editButton.widthAnchor.constraint(equalToConstant: 50),
+                    editButton.heightAnchor.constraint(equalToConstant: 40.0),
                     
                     firstNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-                    firstNameLabel.topAnchor.constraint(equalTo: myImageView.bottomAnchor, constant: 20),
+                    firstNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
                     
                     firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 24),
-                    firstNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                    firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+
                     firstNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
                     
                     lastNameLabel.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 20.0),
                     lastNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24.0),
                     
                     lastNameTextField.topAnchor.constraint(equalTo: lastNameLabel.bottomAnchor, constant: 24),
-                    lastNameTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                    lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
                     lastNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
                     
+                    saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    saveButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 64),
+                    saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                    saveButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
+                    
                     deleteAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    deleteAccountButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 32),
-                    deleteAccountButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
-                    deleteAccountButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07)
+                    deleteAccountButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 24),
+                    deleteAccountButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+                    deleteAccountButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
+
      ])
                 self.view = view
     }
