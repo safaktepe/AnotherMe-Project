@@ -8,7 +8,7 @@
 import UIKit
 
 class AccountViewController: UIViewController {
-    
+   
     let myImageViewCornerRadius: CGFloat = 75.0
     
     let imageView           = UIImageView()
@@ -27,8 +27,6 @@ class AccountViewController: UIViewController {
     
     
     func setView() {
-        
-        
         //ImageView
         imageView.backgroundColor = .blue
         imageView.layer.cornerRadius = myImageViewCornerRadius
@@ -93,8 +91,7 @@ class AccountViewController: UIViewController {
         deleteAccountButton.titleLabel?.font = .systemFont(ofSize: 19)
         deleteAccountButton.addTarget(self, action: #selector(deleteAccountButtonClicked), for: .touchUpInside)
         view.addSubview(deleteAccountButton)
-     
-        
+             
        
         setConstraints()
     }
@@ -125,7 +122,6 @@ class AccountViewController: UIViewController {
                     
                     editButton.centerYAnchor.constraint(equalTo: imageView.bottomAnchor,
                                                           constant: -myImageViewCornerRadius / 4.0),
-                    
                     editButton.centerXAnchor.constraint(equalTo: imageView.trailingAnchor,
                                                          constant: -myImageViewCornerRadius / 4.0),
                     
@@ -135,7 +131,7 @@ class AccountViewController: UIViewController {
                     firstNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                     firstNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
                     
-                    firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 24),
+                    firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 8),
                     firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                     firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
 
@@ -144,13 +140,13 @@ class AccountViewController: UIViewController {
                     lastNameLabel.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 20.0),
                     lastNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24.0),
                     
-                    lastNameTextField.topAnchor.constraint(equalTo: lastNameLabel.bottomAnchor, constant: 24),
+                    lastNameTextField.topAnchor.constraint(equalTo: lastNameLabel.bottomAnchor, constant: 8),
                     lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                     lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
                     lastNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
                     
                     saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    saveButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 64),
+                    saveButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 16),
                     saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
                     saveButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
                     
@@ -158,7 +154,7 @@ class AccountViewController: UIViewController {
                     deleteAccountButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 24),
                     deleteAccountButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
                     deleteAccountButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
-
+                    
      ])
                 self.view = view
     }
