@@ -265,6 +265,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Support &amp; Feedback" id="jgl-Vt-Knp"/>
+                    <connections>
+                        <segue destination="KbO-rr-5AF" kind="presentation" identifier="removeThis" modalPresentationStyle="fullScreen" id="ckY-IB-Xnj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="25v-bS-iKl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

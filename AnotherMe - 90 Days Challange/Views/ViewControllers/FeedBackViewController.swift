@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedBackViewController: UIViewController {
 
@@ -26,4 +27,12 @@ class FeedBackViewController: UIViewController {
         //nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange] // swift 4.2
     }
     
+    @IBAction func submitButtonClicked(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "removeThis", sender: nil)
+        } catch {
+            print("Error")
+        }
+    }
 }
