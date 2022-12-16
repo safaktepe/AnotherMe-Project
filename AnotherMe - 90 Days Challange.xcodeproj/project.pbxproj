@@ -24,7 +24,6 @@
 		6274A49329464A2B001B8C1D /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6274A49129464A2B001B8C1D /* FAQTableViewCell.swift */; };
 		6274A49429464A2B001B8C1D /* FAQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6274A49229464A2B001B8C1D /* FAQTableViewCell.xib */; };
 		6287E78E2949CCFC0050A328 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6287E78D2949CCFC0050A328 /* CalendarCollectionViewCell.swift */; };
-		628BE445294BA6E600E2DE65 /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 628BE444294BA6E600E2DE65 /* GoogleService-Info-3.plist */; };
 		628BE448294BAB9600E2DE65 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 628BE447294BAB9600E2DE65 /* FirebaseAnalytics */; };
 		628BE44A294BAB9600E2DE65 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 628BE449294BAB9600E2DE65 /* FirebaseAuth */; };
 		628BE44C294BAB9600E2DE65 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 628BE44B294BAB9600E2DE65 /* FirebaseFirestore */; };
@@ -32,6 +31,7 @@
 		62E516602942459900567166 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E5165E2942459900567166 /* SettingsTableViewCell.swift */; };
 		62E516612942459900567166 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E5165F2942459900567166 /* SettingsTableViewCell.xib */; };
 		62FE4881294C68B200E61018 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 62FE4880294C68B200E61018 /* GoogleSignIn */; };
+		62FE4883294C6F7500E61018 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62FE4882294C6F7500E61018 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +54,10 @@
 		6274A49129464A2B001B8C1D /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		6274A49229464A2B001B8C1D /* FAQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTableViewCell.xib; sourceTree = "<group>"; };
 		6287E78D2949CCFC0050A328 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		628BE444294BA6E600E2DE65 /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-3.plist"; sourceTree = "<group>"; };
 		629D24DB294B9D9600295308 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		62E5165E2942459900567166 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		62E5165F2942459900567166 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		62FE4882294C6F7500E61018 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 				623222062940E4F30071506A /* Core */,
 				623222052940E4EB0071506A /* Views */,
 				621558A4293F6323005F7F68 /* Info.plist */,
-				628BE444294BA6E600E2DE65 /* GoogleService-Info-3.plist */,
+				62FE4882294C6F7500E61018 /* GoogleService-Info.plist */,
 			);
 			path = "AnotherMe - 90 Days Challange";
 			sourceTree = "<group>";
@@ -245,12 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				621558A3293F6323005F7F68 /* LaunchScreen.storyboard in Resources */,
-				628BE445294BA6E600E2DE65 /* GoogleService-Info-3.plist in Resources */,
 				621558A0293F6323005F7F68 /* Assets.xcassets in Resources */,
 				6215589E293F6322005F7F68 /* Main.storyboard in Resources */,
 				62E516612942459900567166 /* SettingsTableViewCell.xib in Resources */,
 				6274A49429464A2B001B8C1D /* FAQTableViewCell.xib in Resources */,
 				62322211294114260071506A /* TodoTableViewCell.xib in Resources */,
+				62FE4883294C6F7500E61018 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

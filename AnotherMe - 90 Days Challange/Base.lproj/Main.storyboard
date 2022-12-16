@@ -367,6 +367,22 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6l-E1-qUo">
+                                <rect key="frame" x="291" y="445" width="70" height="34.333333333333314"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="KbO-rr-5AF" eventType="touchUpInside" id="67M-V2-5g6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1g-yH-OEU">
+                                <rect key="frame" x="277" y="192" width="84" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButtonClicked:" destination="KbO-rr-5AF" eventType="touchUpInside" id="YjK-hN-obV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s2A-T2-Sgb"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -383,17 +399,23 @@
                             <constraint firstItem="EWV-ao-EVL" firstAttribute="top" secondItem="Ams-I7-NPI" secondAttribute="bottom" constant="23" id="Ncn-Ob-oi7"/>
                             <constraint firstItem="nSP-SG-0jI" firstAttribute="leading" secondItem="s2A-T2-Sgb" secondAttribute="leading" constant="32" id="OE5-6A-Snh"/>
                             <constraint firstItem="tXp-t1-B62" firstAttribute="top" secondItem="8Wg-rE-FoB" secondAttribute="bottom" constant="8" id="Pjr-l3-ky9"/>
+                            <constraint firstItem="W6l-E1-qUo" firstAttribute="top" secondItem="WG7-id-swE" secondAttribute="bottom" constant="76.670000000000002" id="QKX-7t-ngl"/>
                             <constraint firstItem="8Wg-rE-FoB" firstAttribute="top" secondItem="MKQ-o4-TXL" secondAttribute="bottom" constant="19.670000000000002" id="Qm1-Xc-QAX"/>
                             <constraint firstItem="EWV-ao-EVL" firstAttribute="leading" secondItem="s2A-T2-Sgb" secondAttribute="leading" constant="32" id="Quv-hK-NOf"/>
                             <constraint firstItem="s2A-T2-Sgb" firstAttribute="trailing" secondItem="EWV-ao-EVL" secondAttribute="trailing" constant="32" id="Tag-FW-7ic"/>
                             <constraint firstItem="s2A-T2-Sgb" firstAttribute="trailing" secondItem="tXp-t1-B62" secondAttribute="trailing" constant="32" id="b8Z-sN-wuh"/>
+                            <constraint firstItem="s2A-T2-Sgb" firstAttribute="trailing" secondItem="E1g-yH-OEU" secondAttribute="trailing" constant="32" id="eF6-HO-G6O"/>
                             <constraint firstItem="s2A-T2-Sgb" firstAttribute="trailing" secondItem="WG7-id-swE" secondAttribute="trailing" constant="32" id="fCP-ab-NYZ"/>
+                            <constraint firstItem="s2A-T2-Sgb" firstAttribute="trailing" secondItem="W6l-E1-qUo" secondAttribute="trailing" constant="32" id="jR6-aO-sNc"/>
                             <constraint firstItem="tXp-t1-B62" firstAttribute="leading" secondItem="s2A-T2-Sgb" secondAttribute="leading" constant="32" id="kaF-Zw-Yxh"/>
                             <constraint firstItem="WG7-id-swE" firstAttribute="top" secondItem="nSP-SG-0jI" secondAttribute="bottom" constant="8" id="lqe-JY-jN5"/>
                             <constraint firstItem="nSP-SG-0jI" firstAttribute="top" secondItem="EWV-ao-EVL" secondAttribute="bottom" constant="8" id="qc0-u0-RaW"/>
+                            <constraint firstItem="E1g-yH-OEU" firstAttribute="top" secondItem="s2A-T2-Sgb" secondAttribute="top" constant="133" id="vQp-mn-AQC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailSignUpText" destination="EWV-ao-EVL" id="hyp-9q-pgj"/>
+                        <outlet property="passwordSignUpText" destination="nSP-SG-0jI" id="Aay-hF-Ia3"/>
                         <segue destination="ovI-hC-hQj" kind="presentation" identifier="toApp" modalPresentationStyle="fullScreen" id="L73-2k-sqF"/>
                     </connections>
                 </viewController>
