@@ -307,10 +307,10 @@
             </objects>
             <point key="canvasLocation" x="-60.305343511450381" y="-691.54929577464793"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="vaU-mJ-vtu">
             <objects>
-                <viewController id="KbO-rr-5AF" sceneMemberID="viewController">
+                <viewController id="KbO-rr-5AF" customClass="SignUpViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pWY-0F-KCD">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,7 +394,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="ovI-hC-hQj" kind="presentation" modalPresentationStyle="fullScreen" id="L73-2k-sqF"/>
+                        <segue destination="ovI-hC-hQj" kind="presentation" identifier="toApp" modalPresentationStyle="fullScreen" id="L73-2k-sqF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="741-Tm-XlY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
