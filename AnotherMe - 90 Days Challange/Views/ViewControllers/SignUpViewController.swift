@@ -24,7 +24,19 @@ class SignUpViewController: UIViewController {
 
     }
     @IBAction func loginButtonClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toApp", sender: nil)
+        if emailSignUpText.text != "" && passwordSignUpText.text != "" {
+            Auth.auth().signIn(withEmail: emailSignUpText.text!, password: passwordSignUpText.text!) { (authdata , error) in
+                if error != nil {
+                    self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
+                } else {
+                    self.performSegue(withIdentifier: "toApp", sender: nil)
+                }
+            }
+        } else {
+            makeAlert(titleInput: "Error", messageInput: "Username or Password is empty!")
+        }
+
+
     }
     
     

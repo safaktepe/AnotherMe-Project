@@ -231,6 +231,9 @@
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="TVc-mP-KQP" eventType="touchUpInside" id="ZQC-OL-ELf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yud-tm-eFi"/>
@@ -426,7 +429,7 @@
         <!--Base Tab View Controller-->
         <scene sceneID="G1Y-hI-5Vo">
             <objects>
-                <tabBarController id="ovI-hC-hQj" customClass="BaseTabViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBar" id="ovI-hC-hQj" customClass="BaseTabViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pRW-Bj-EWn">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
