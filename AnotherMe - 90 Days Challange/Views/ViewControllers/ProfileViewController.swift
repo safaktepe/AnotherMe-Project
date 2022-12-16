@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
     let myImageViewCornerRadius: CGFloat = 75.0
     
@@ -39,6 +39,7 @@ class AccountViewController: UIViewController {
         editButton.contentVerticalAlignment = .fill
         editButton.contentHorizontalAlignment = .fill
         editButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 5)
+        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
         view.addSubview(editButton)
         
         //Name Label
@@ -104,15 +105,29 @@ class AccountViewController: UIViewController {
         print("changed saved")
     }
     
+    @objc func editButtonClicked() {
+        let imagePickerController           = UIImagePickerController()
+        imagePickerController.delegate      = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let editedImage   = info[.editedImage]   as? UIImage
+        let originalImage = info[.originalImage] as? UIImage
+        print(originalImage?.size)
+        dismiss(animated: true, completion: nil)
+    }
+    
     func setConstraints() {
-        imageView.translatesAutoresizingMaskIntoConstraints              = false
-        editButton.translatesAutoresizingMaskIntoConstraints             = false
-        firstNameLabel.translatesAutoresizingMaskIntoConstraints         = false
-        lastNameLabel.translatesAutoresizingMaskIntoConstraints          = false
-        firstNameTextField.translatesAutoresizingMaskIntoConstraints     = false
-        lastNameTextField.translatesAutoresizingMaskIntoConstraints      = false
-        deleteAccountButton.translatesAutoresizingMaskIntoConstraints    = false
-        saveButton.translatesAutoresizingMaskIntoConstraints             = false
+        imageView            .translatesAutoresizingMaskIntoConstraints   = false
+        editButton           .translatesAutoresizingMaskIntoConstraints   = false
+        firstNameLabel       .translatesAutoresizingMaskIntoConstraints   = false
+        lastNameLabel        .translatesAutoresizingMaskIntoConstraints   = false
+        firstNameTextField   .translatesAutoresizingMaskIntoConstraints   = false
+        lastNameTextField    .translatesAutoresizingMaskIntoConstraints   = false
+        deleteAccountButton  .translatesAutoresizingMaskIntoConstraints   = false
+        saveButton           .translatesAutoresizingMaskIntoConstraints   = false
         
         NSLayoutConstraint.activate([
                     imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -120,25 +135,28 @@ class AccountViewController: UIViewController {
                     imageView.widthAnchor.constraint(equalToConstant: 150.0),
                     imageView.heightAnchor.constraint(equalToConstant: 150.0),
                     
+                    
                     editButton.centerYAnchor.constraint(equalTo: imageView.bottomAnchor,
                                                           constant: -myImageViewCornerRadius / 4.0),
                     editButton.centerXAnchor.constraint(equalTo: imageView.trailingAnchor,
                                                          constant: -myImageViewCornerRadius / 4.0),
-                    
                     editButton.widthAnchor.constraint(equalToConstant: 50),
                     editButton.heightAnchor.constraint(equalToConstant: 40.0),
+                    
                     
                     firstNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                     firstNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
                     
+                    
                     firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 8),
                     firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
                     firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-
                     firstNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+                    
                     
                     lastNameLabel.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 20.0),
                     lastNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24.0),
+                    
                     
                     lastNameTextField.topAnchor.constraint(equalTo: lastNameLabel.bottomAnchor, constant: 8),
                     lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
