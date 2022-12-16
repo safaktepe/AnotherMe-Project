@@ -11,7 +11,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
    
     let myImageViewCornerRadius: CGFloat = 75.0
     
-    let imageView           = UIImageView()
+    let imageButton         = UIButton()
     let editButton          = UIButton()
     let firstNameLabel      = UILabel()
     let lastNameLabel       = UILabel()
@@ -27,10 +27,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     func setView() {
-        //ImageView
-        imageView.backgroundColor = .blue
-        imageView.layer.cornerRadius = myImageViewCornerRadius
-        view.addSubview(imageView)
+        
+        //Profile image button.
+        imageButton.backgroundColor = .systemGreen
+        imageButton.layer.cornerRadius  = myImageViewCornerRadius
+        imageButton.layer.masksToBounds = true
+        imageButton.layer.borderColor   = UIColor.black.cgColor
+        imageButton.layer.borderWidth   = 3
+        imageButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+        view.addSubview(imageButton)
+
         
         //ImageView's edit button.
         editButton.setImage(UIImage(systemName: "camera.fill"), for: .normal)
@@ -39,7 +45,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         editButton.contentVerticalAlignment = .fill
         editButton.contentHorizontalAlignment = .fill
         editButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 5)
-        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
         view.addSubview(editButton)
         
         //Name Label
@@ -113,14 +118,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let editedImage   = info[.editedImage]   as? UIImage
-        let originalImage = info[.originalImage] as? UIImage
-        print(originalImage?.size)
+        if let editedImage   = info[.editedImage]   as? UIImage {
+            imageButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            imageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
         dismiss(animated: true, completion: nil)
     }
     
     func setConstraints() {
-        imageView            .translatesAutoresizingMaskIntoConstraints   = false
+        imageButton            .translatesAutoresizingMaskIntoConstraints   = false
         editButton           .translatesAutoresizingMaskIntoConstraints   = false
         firstNameLabel       .translatesAutoresizingMaskIntoConstraints   = false
         lastNameLabel        .translatesAutoresizingMaskIntoConstraints   = false
@@ -130,22 +137,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         saveButton           .translatesAutoresizingMaskIntoConstraints   = false
         
         NSLayoutConstraint.activate([
-                    imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-                    imageView.widthAnchor.constraint(equalToConstant: 150.0),
-                    imageView.heightAnchor.constraint(equalToConstant: 150.0),
+                    imageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    imageButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+                    imageButton.widthAnchor.constraint(equalToConstant: 150.0),
+                    imageButton.heightAnchor.constraint(equalToConstant: 150.0),
                     
                     
-                    editButton.centerYAnchor.constraint(equalTo: imageView.bottomAnchor,
+                    editButton.centerYAnchor.constraint(equalTo: imageButton.bottomAnchor,
                                                           constant: -myImageViewCornerRadius / 4.0),
-                    editButton.centerXAnchor.constraint(equalTo: imageView.trailingAnchor,
+                    editButton.centerXAnchor.constraint(equalTo: imageButton.trailingAnchor,
                                                          constant: -myImageViewCornerRadius / 4.0),
                     editButton.widthAnchor.constraint(equalToConstant: 50),
                     editButton.heightAnchor.constraint(equalToConstant: 40.0),
                     
                     
                     firstNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-                    firstNameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+                    firstNameLabel.topAnchor.constraint(equalTo: imageButton.bottomAnchor, constant: 20),
                     
                     
                     firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 8),
