@@ -13,7 +13,8 @@ class FeedBackViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        
+        var user = Auth.auth().currentUser?.uid
+        print(user)
         
     }
     

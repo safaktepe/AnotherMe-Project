@@ -21,7 +21,7 @@ class CalenderViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
+
     }
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)

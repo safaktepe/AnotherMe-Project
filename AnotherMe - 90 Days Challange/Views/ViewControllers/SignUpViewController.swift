@@ -10,8 +10,8 @@ import Firebase
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var passwordSignUpText: UITextField!
-    @IBOutlet weak var emailSignUpText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
     
     
     override func viewDidLoad() {
@@ -19,13 +19,18 @@ class SignUpViewController: UIViewController {
 
 
 
-
-
-
     }
+    
+    
+    
     @IBAction func loginButtonClicked(_ sender: Any) {
-        if emailSignUpText.text != "" && passwordSignUpText.text != "" {
-            Auth.auth().signIn(withEmail: emailSignUpText.text!, password: passwordSignUpText.text!) { (authdata , error) in
+        
+        guard let email    = emailText.text,    !email.isEmpty    else { return }
+        guard let password = passwordText.text, !password.isEmpty else { return }
+        
+        
+        if emailText.text != "" && passwordText.text != "" {
+            Auth.auth().signIn(withEmail: email, password: password) { (authdata , error) in
                 if error != nil {
                     self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
                 } else {
@@ -35,15 +40,16 @@ class SignUpViewController: UIViewController {
         } else {
             makeAlert(titleInput: "Error", messageInput: "Username or Password is empty!")
         }
-
-
     }
     
     
     @IBAction func signUpButtonClicked(_ sender: Any) {
         
-        if emailSignUpText.text != "" && passwordSignUpText.text != "" {
-            Auth.auth().createUser(withEmail: emailSignUpText.text!, password: passwordSignUpText.text!) { (authdata, error) in
+        guard let email    = emailText.text,     !email.isEmpty      else { return }
+        guard let password = passwordText.text,  !password.isEmpty   else { return }
+
+        if emailText.text != "" && passwordText.text != "" {
+            Auth.auth().createUser(withEmail: email, password: password) { (authdata, error) in
                 if error != nil {
                     self.makeAlert(titleInput: "Error", messageInput: error?.localizedDescription ?? "Error")
 
