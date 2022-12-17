@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
@@ -19,7 +21,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     let lastNameTextField   = UITextField()
     let deleteAccountButton = UIButton(type: .system)
     let saveButton          = UIButton(type: .system)
-
+    var downloadImage       : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -29,9 +31,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func setView() {
         
         //Profile image button.
-        imageButton.backgroundColor = .systemGreen
         imageButton.layer.cornerRadius  = myImageViewCornerRadius
         imageButton.layer.masksToBounds = true
+        imageButton.contentVerticalAlignment = .fill
+        imageButton.contentHorizontalAlignment = .fill
+        imageButton.setImage(UIImage(systemName: "plus"), for: .normal)
         imageButton.layer.borderColor   = UIColor.black.cgColor
         imageButton.layer.borderWidth   = 3
         imageButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
@@ -107,7 +111,31 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
  }
     
     @objc func saveButtonClicked() {
-        print("changed saved")
+        guard let image        = self.imageButton.imageView?.image       else { return }
+        guard let uploadData   = image.jpegData(compressionQuality: 0.3) else { return }
+        let fileName           = NSUUID().uuidString
+        let storageRef         = Storage.storage().reference().child("profile_photos")
+        let imageRef           = storageRef.child("\(fileName).jpg")
+        
+        imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+            if  error != nil {
+                print(error?.localizedDescription ?? "Error!")
+            } else {
+                imageRef.downloadURL { url, error in
+                    if error == nil {
+                        guard let imageUrl = url?.absoluteString else { return }
+                        print(imageUrl)
+                        self.downloadImage = imageUrl
+                    } else {
+                        print(error?.localizedDescription ?? "Error!")
+                    }
+                }
+            }
+        }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        let usernamePhotos = ["id" : uid, "image_url" : downloadImage]
+        
+        
     }
     
     @objc func editButtonClicked() {
