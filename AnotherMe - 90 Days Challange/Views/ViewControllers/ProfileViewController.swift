@@ -178,6 +178,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             guard let url  = URL(string: profileImageUrl) else { return }
             URLSession.shared.dataTask(with: url) { data, response, error in
+                if error != nil {
+                    print("Failed to get your profile photo!")
+                    return
+                }
             guard let data = data else { return }
             let image = UIImage(data: data)
                 
