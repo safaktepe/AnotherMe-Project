@@ -26,6 +26,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setupProfilePhoto()
     }
     
     
@@ -107,9 +108,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         setConstraints()
     }
     
+    //MARK: - Functions
     @objc func deleteAccountButtonClicked(sender: UIButton!) {
      print("account deleted")
- }
+    }
     
     @objc func saveButtonClicked() {
         guard let image        = self.imageButton.imageView?.image       else { return }
@@ -117,7 +119,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let fileName           = NSUUID().uuidString
         let storageRef         = Storage.storage().reference().child("profile_photos")
         let imageRef           = storageRef.child("\(fileName).jpg")
-        
         
         //MARK: - Storage
         
@@ -130,7 +131,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                         guard let imageUrl = url?.absoluteString else { return }
                         print(imageUrl)
                         
-                        //DATABASE
+                        //MARK: - Database
                         guard let uid = Auth.auth().currentUser?.uid else { return }
                         let usernamePhotos = ["image_url" : imageUrl]
                         let values = [uid : usernamePhotos]
@@ -149,13 +150,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
         }
-        
-        //MARK: - Database
-       
-
-        
-        
-    }
+}
     
     @objc func editButtonClicked() {
         let imagePickerController           = UIImagePickerController()
@@ -173,8 +168,31 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
     
+    fileprivate func setupProfilePhoto() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
+            print(snapshot.value ?? "")
+            
+            guard let dictionary = snapshot.value as? [String:Any] else { return }
+            guard let profileImageUrl = dictionary["image_url"] as? String else { return }
+            
+            guard let url  = URL(string: profileImageUrl) else { return }
+            URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            let image = UIImage(data: data)
+                
+            DispatchQueue.main.sync {
+            self.imageButton.setImage(image, for: .normal)
+            }
+                
+                
+            }.resume()
+            
+        }
+}
+
     func setConstraints() {
-        imageButton            .translatesAutoresizingMaskIntoConstraints   = false
+        imageButton          .translatesAutoresizingMaskIntoConstraints   = false
         editButton           .translatesAutoresizingMaskIntoConstraints   = false
         firstNameLabel       .translatesAutoresizingMaskIntoConstraints   = false
         lastNameLabel        .translatesAutoresizingMaskIntoConstraints   = false
