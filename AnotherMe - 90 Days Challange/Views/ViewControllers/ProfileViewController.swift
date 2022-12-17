@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import FirebaseDatabase
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
@@ -117,6 +118,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let storageRef         = Storage.storage().reference().child("profile_photos")
         let imageRef           = storageRef.child("\(fileName).jpg")
         
+        
+        //MARK: - Storage
+        
         imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
             if  error != nil {
                 print(error?.localizedDescription ?? "Error!")
@@ -125,15 +129,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if error == nil {
                         guard let imageUrl = url?.absoluteString else { return }
                         print(imageUrl)
-                        self.downloadImage = imageUrl
+                        
+                        //DATABASE
+                        guard let uid = Auth.auth().currentUser?.uid else { return }
+                        let usernamePhotos = ["image_url" : imageUrl]
+                        let values = [uid : usernamePhotos]
+                        Database.database().reference().child("users").updateChildValues(values) { err, ref in
+                            if let err = err {
+                                print(err.localizedDescription)
+                                return
+                            }
+                            else {
+                                print("Saved succesfully!")
+                            }
+                        }
                     } else {
                         print(error?.localizedDescription ?? "Error!")
                     }
                 }
             }
         }
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let usernamePhotos = ["id" : uid, "image_url" : downloadImage]
+        
+        //MARK: - Database
+       
+
         
         
     }
