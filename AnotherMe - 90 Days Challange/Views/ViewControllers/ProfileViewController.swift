@@ -23,6 +23,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     let deleteAccountButton = UIButton(type: .system)
     let saveButton          = UIButton(type: .system)
     var downloadImage       : String = ""
+    var mainViewModel       : MainViewModel = MainViewModel()
+    var photoData           : Data?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -114,42 +117,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @objc func saveButtonClicked() {
+        
         guard let image        = self.imageButton.imageView?.image       else { return }
         guard let uploadData   = image.jpegData(compressionQuality: 0.3) else { return }
-        let fileName           = NSUUID().uuidString
-        let storageRef         = Storage.storage().reference().child("profile_photos")
-        let imageRef           = storageRef.child("\(fileName).jpg")
         
-        //MARK: - Storage
-        
-        imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
-            if  error != nil {
-                print(error?.localizedDescription ?? "Error!")
-            } else {
-                imageRef.downloadURL { url, error in
-                    if error == nil {
-                        guard let imageUrl = url?.absoluteString else { return }
-                        print(imageUrl)
-                        
-                        //MARK: - Database
-                        guard let uid = Auth.auth().currentUser?.uid else { return }
-                        let usernamePhotos = ["image_url" : imageUrl]
-                        let values = [uid : usernamePhotos]
-                        Database.database().reference().child("users").updateChildValues(values) { err, ref in
-                            if let err = err {
-                                print(err.localizedDescription)
-                                return
-                            }
-                            else {
-                                print("Saved succesfully!")
-                            }
-                        }
-                    } else {
-                        print(error?.localizedDescription ?? "Error!")
-                    }
-                }
-            }
-        }
+        mainViewModel.setData(uploadData: uploadData)
+        mainViewModel.uploadImage()
+
 }
     
     @objc func editButtonClicked() {
@@ -167,34 +141,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         dismiss(animated: true, completion: nil)
     }
-    
+
+
     fileprivate func setupProfilePhoto() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot in
-            print(snapshot.value ?? "")
-            
-            guard let dictionary = snapshot.value as? [String:Any] else { return }
-            guard let profileImageUrl = dictionary["image_url"] as? String else { return }
-            
-            guard let url  = URL(string: profileImageUrl) else { return }
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if error != nil {
-                    print("Failed to get your profile photo!")
-                    return
-                }
-            guard let data = data else { return }
-            let image = UIImage(data: data)
-                
-            DispatchQueue.main.sync {
-            self.imageButton.setImage(image, for: .normal)
+        
+        mainViewModel.getProfileImage(uid: uid) { imageData, err in
+            if let err = err {
+                print("err")
+                return
             }
-                
-                
-            }.resume()
-            
+        guard let imageData = imageData else { return }
+        let imageOfButton  = UIImage(data: imageData)
+            self.imageButton.setImage(imageOfButton, for: .normal)
         }
-}
-
+    }
+    
     func setConstraints() {
         imageButton          .translatesAutoresizingMaskIntoConstraints   = false
         editButton           .translatesAutoresizingMaskIntoConstraints   = false
