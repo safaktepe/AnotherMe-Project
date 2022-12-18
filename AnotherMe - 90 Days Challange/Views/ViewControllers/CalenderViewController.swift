@@ -6,14 +6,19 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 
 class CalenderViewController: UIViewController {
-    var totalSquaeres = [String]()
+    var totalSquaeres   = [String]()
+    let mainViewModel   = MainViewModel()
 
+    @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViews()
+        setProfilePicture()
         
         for i in 1...75 {
             totalSquaeres.append("\(i)")
@@ -27,6 +32,28 @@ class CalenderViewController: UIViewController {
         performSegue(withIdentifier: "help", sender: nil)
 
     }
+    
+    fileprivate func setViews() {
+        profilePhoto.layer.cornerRadius  = profilePhoto.frame.size.width / 2
+        profilePhoto.layer.masksToBounds = false
+        profilePhoto.layer.borderColor   = UIColor.white.cgColor
+        profilePhoto.layer.borderWidth   = 3
+        profilePhoto.clipsToBounds = true
+    }
+    fileprivate func setProfilePicture() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        mainViewModel.getProfileImage(uid: uid) { imageData, err in
+            if err != nil {
+                print("err")
+                return
+            }
+        guard let imageData = imageData else { return }
+        let image  = UIImage(data: imageData)
+        self.profilePhoto.image = image
+        }
+    }
+    
 }
 
 

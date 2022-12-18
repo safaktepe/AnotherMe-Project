@@ -6,22 +6,49 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var settingsTableView: UITableView!
     
+    let mainViewModel = MainViewModel()
     let settingsRowsNames = ["Account", "Support & Feedback", "Photo library", "Notifications", "Logout"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setViews()
+        setProfilePicture()
+        
         settingsTableView.delegate   = self
         settingsTableView.dataSource = self
         settingsTableView.backgroundColor = .black
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    }
+    fileprivate func setViews() {
+        profilePhoto.contentMode = .scaleAspectFill
+        profilePhoto.layer.cornerRadius  = profilePhoto.frame.height / 2
+        profilePhoto.layer.masksToBounds = false
+        profilePhoto.layer.borderColor   = UIColor.white.cgColor
+        profilePhoto.layer.borderWidth   = 3
+        profilePhoto.clipsToBounds = true
+    }
+    fileprivate func setProfilePicture() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        mainViewModel.getProfileImage(uid: uid) { imageData, err in
+            if err != nil {
+                print("err")
+                return
+            }
+        guard let imageData = imageData else { return }
+        let image  = UIImage(data: imageData)
+        self.profilePhoto.image = image
+        }
     }
 }
 
