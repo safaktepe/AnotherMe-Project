@@ -20,9 +20,7 @@ class SignUpViewController: UIViewController {
 
 
     }
-    
-    
-    
+        
     @IBAction func loginButtonClicked(_ sender: Any) {
         
         guard let email    = emailText.text,    !email.isEmpty    else { return }

@@ -25,7 +25,6 @@ class FeedBackViewController: UIViewController {
         nav?.barStyle            = UIBarStyle.black
         nav?.tintColor           = UIColor.white
         nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        //nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange] // swift 4.2
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {
