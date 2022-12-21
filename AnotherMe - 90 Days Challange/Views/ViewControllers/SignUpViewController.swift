@@ -10,8 +10,8 @@ import Firebase
 
 class SignUpViewController: UIViewController {
 
-    @IBOutlet weak var passwordText: UITextField!
-    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText  : UITextField!
+    @IBOutlet weak var emailText     : UITextField!
     
     
     override func viewDidLoad() {
@@ -66,8 +66,8 @@ class SignUpViewController: UIViewController {
     }
     
     func makeAlert(titleInput: String, messageInput: String) {
-        let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
-        let button = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        let alert   = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
+        let button  = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         alert.addAction(button)
         self.present(alert, animated: true, completion: nil)
     }

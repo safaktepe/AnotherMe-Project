@@ -23,21 +23,11 @@ class MainViewModel {
         self.uploadData = uploadData
     }
     
+   
     
-    func createFileName() -> String {
-        let fileName   = NSUUID().uuidString
-        return fileName
-    }
-    
-    func createImageReferance() -> StorageReference {
-        let fileName = createFileName()
-        let ref  = Storage.storage().reference().child("profile_photos").child("\(fileName).jpg")
-        return ref
-    }
-    
-    func uploadImage() {
+    func uploadImage(userId : String) {
+        let imageRef      = Storage.storage().reference().child("profile_photos").child("\(userId).jpg")
         //Storage
-        let imageRef = createImageReferance()
         guard let uploadData = uploadData else { return }
         imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
             if  error != nil {
@@ -72,8 +62,6 @@ class MainViewModel {
     func getProfileImage(uid: String, completion: @escaping (Data? , Error?) -> (Void)) {
         
             Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot  in
-            print("snapshot value = \(snapshot.value)")
-            
             guard let dictionary = snapshot.value as? [String:Any] else { return }
             guard let profileImageUrl = dictionary["image_url"] as? String else { return }
             guard let url  = URL(string: profileImageUrl) else { return }
@@ -88,29 +76,4 @@ class MainViewModel {
                 }.resume()
         }
     }
-    }
-
-
-/*
- Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot  in
-   //  print(snapshot.value ?? "")
-     print("snapshot value = \(snapshot.value)")
-     guard let dictionary = snapshot.value as? [String:Any] else { return }
-     guard let profileImageUrl = dictionary["image_url"] as? String else { return }
-     guard let url  = URL(string: profileImageUrl) else { return }
-     
-     URLSession.shared.dataTask(with: url) { data, response, error in
-         if error != nil {
-             print("Failed to get your profile photo!")
-             return
-         }
-         guard let data = data else { return }
-         self.dataURL = data
-         }.resume()
-         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
-         print("")
-     }
- }
- return dataURL
 }
- */

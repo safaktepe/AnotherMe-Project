@@ -49,42 +49,42 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         //ImageView's edit button.
         editButton.setImage(UIImage(systemName: "camera.fill"), for: .normal)
-        editButton.tintColor = .red
+        editButton.tintColor          = .red
         editButton.layer.cornerRadius = 35.0
-        editButton.contentVerticalAlignment = .fill
+        editButton.contentVerticalAlignment   = .fill
         editButton.contentHorizontalAlignment = .fill
-        editButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 5)
+        editButton.imageEdgeInsets            = UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 5)
         view.addSubview(editButton)
         
         //Name Label
-        firstNameLabel.textColor = .black
+        firstNameLabel.textColor     = .black
         firstNameLabel.textAlignment = .center
-        firstNameLabel.text = "First Name"
+        firstNameLabel.text          = "First Name"
         view.addSubview(firstNameLabel)
         
         //Last Name Label
-        lastNameLabel.textColor = .black
+        lastNameLabel.textColor     = .black
         lastNameLabel.textAlignment = .center
-        lastNameLabel.text = "Last Name"
+        lastNameLabel.text          = "Last Name"
         view.addSubview(lastNameLabel)
 
         //First name textfield.
-        firstNameTextField.placeholder = "First Name"
-        firstNameTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        firstNameTextField.placeholder        = "First Name"
+        firstNameTextField.borderStyle        = UITextField.BorderStyle.roundedRect
         firstNameTextField.autocorrectionType = UITextAutocorrectionType.no
-        firstNameTextField.keyboardType = UIKeyboardType.default
-        firstNameTextField.returnKeyType = UIReturnKeyType.done
-        firstNameTextField.clearButtonMode = UITextField.ViewMode.whileEditing
+        firstNameTextField.keyboardType       = UIKeyboardType.default
+        firstNameTextField.returnKeyType      = UIReturnKeyType.done
+        firstNameTextField.clearButtonMode    = UITextField.ViewMode.whileEditing
         firstNameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         view.addSubview(firstNameTextField)
 
         //Last name textfield.
-        lastNameTextField.placeholder = "Last Name"
-        lastNameTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        lastNameTextField.placeholder        = "Last Name"
+        lastNameTextField.borderStyle        = UITextField.BorderStyle.roundedRect
         lastNameTextField.autocorrectionType = UITextAutocorrectionType.no
-        lastNameTextField.keyboardType = UIKeyboardType.default
-        lastNameTextField.returnKeyType = UIReturnKeyType.done
-        lastNameTextField.clearButtonMode = UITextField.ViewMode.whileEditing
+        lastNameTextField.keyboardType       = UIKeyboardType.default
+        lastNameTextField.returnKeyType      = UIReturnKeyType.done
+        lastNameTextField.clearButtonMode    = UITextField.ViewMode.whileEditing
         lastNameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         view.addSubview(lastNameTextField)
         
@@ -113,16 +113,41 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: - Functions
     @objc func deleteAccountButtonClicked(sender: UIButton!) {
-     print("account deleted")
+        let user   = Auth.auth().currentUser
+        let userID = user?.uid
+        guard let userID = userID else { return }
+        print("user id: \(userID)")
+        
+        let databaseRef = Database.database().reference().child("users").child(userID)
+        let storageRef  = Storage.storage().reference().child("profile_photos").child("\(userID).jpg")
+        storageRef.delete { err in
+            if err != nil {
+                print(err?.localizedDescription)
+            } else {
+                print("photo deleted succesfully from storage!")
+            }
+        }
+        databaseRef.removeValue()
+        
+        user?.delete(completion: { error in
+            if error != nil {
+                print("bu user silme hatası \(error?.localizedDescription)")
+            } else {
+                print("user deleted")
+            }
+        })
+        self.performSegue(withIdentifier: "deleteThisTwo", sender: nil)
+
     }
     
     @objc func saveButtonClicked() {
         
+        guard let uid          = Auth.auth().currentUser?.uid            else { return }
         guard let image        = self.imageButton.imageView?.image       else { return }
         guard let uploadData   = image.jpegData(compressionQuality: 0.3) else { return }
         
         mainViewModel.setData(uploadData: uploadData)
-        mainViewModel.uploadImage()
+        mainViewModel.uploadImage(userId: uid)
 
 }
     
@@ -152,7 +177,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 return
             }
         guard let imageData = imageData else { return }
-        let imageOfButton  = UIImage(data: imageData)
+        let imageOfButton   = UIImage(data: imageData)
             self.imageButton.setImage(imageOfButton, for: .normal)
         }
     }
