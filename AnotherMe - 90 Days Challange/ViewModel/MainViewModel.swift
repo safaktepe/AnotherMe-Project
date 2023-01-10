@@ -26,7 +26,7 @@ class MainViewModel {
    
     
     func uploadImage(userId : String) {
-        let imageRef      = Storage.storage().reference().child("profile_photos").child("\(userId).jpg")
+        let imageRef = Storage.storage().reference().child("profile_photos").child("\(userId).jpg")
         //Storage
         guard let uploadData = uploadData else { return }
         imageRef.putData(uploadData, metadata: nil) { (metadata, error) in
@@ -54,21 +54,26 @@ class MainViewModel {
                     } else {
                         print(error?.localizedDescription ?? "Error!")
                     }
-                }
+                }   
             }
         }
     }
     
     func getProfileImage(uid: String, completion: @escaping (Data? , Error?) -> (Void)) {
+            print("now inside get profile func")
         
             Database.database().reference().child("users").child(uid).observeSingleEvent(of: .value) { snapshot  in
             guard let dictionary = snapshot.value as? [String:Any] else { return }
             guard let profileImageUrl = dictionary["image_url"] as? String else { return }
             guard let url  = URL(string: profileImageUrl) else { return }
-            
+            print("url returned, about to get in urlsession.")
+                
             URLSession.shared.dataTask(with: url) { data, response, error in
                 completion(nil, error)
                 guard let data = data else { return }
+                
+            print("url session end, now dispatchque completion.")
+                
                 DispatchQueue.main.async {
                 completion(data, nil)
                 }
