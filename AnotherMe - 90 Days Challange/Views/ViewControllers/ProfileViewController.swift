@@ -170,17 +170,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     fileprivate func setupProfilePhoto() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-        mainViewModel.getProfileImage(uid: uid) { imageData, err in
-            if let err = err {
-                print("err")
-                return
-            }
-        guard let imageData = imageData else { return }
-        let imageOfButton   = UIImage(data: imageData)
-            self.imageButton.setImage(imageOfButton, for: .normal)
-        }
+        let islandRef = Storage.storage().reference().child("profile_photos/\(uid).jpg")
+        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+          if let error = error {
+              print(error.localizedDescription)
+          } else {
+              guard let data = data else { return }
+              guard let imageOfButton = UIImage(data: data) else { return }
+              self.imageButton.setImage(imageOfButton, for: .normal)
+          }
     }
+}
     
     func setConstraints() {
         imageButton          .translatesAutoresizingMaskIntoConstraints   = false
