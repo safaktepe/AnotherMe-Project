@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return settingsRowsNames.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -82,6 +82,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = settingsTableView.cellForRow(at: indexPath)
         settingsTableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
-
+        
     }
 }

@@ -12,14 +12,13 @@ class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    let dailyGoals = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundColor = .lightGray
         tableView.delegate   = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-
     }
 }
 
@@ -28,11 +27,13 @@ class ToDoListViewController: UIViewController {
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return dailyGoals.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TodoTableViewCell
+        
+        cell.titleLabel.text = dailyGoals[indexPath.row]
         return cell
     }
 }
