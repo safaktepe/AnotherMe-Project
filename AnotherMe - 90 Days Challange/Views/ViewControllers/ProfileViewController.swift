@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseStorage
 import FirebaseDatabase
+import CoreData
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
@@ -142,14 +143,31 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @objc func saveButtonClicked() {
         
+        //BUG HERE !!! DONT LET USER CLICK BUTTON IF THERE IS NO IMAGE CHOOSEN BY USER!!!!!!
+
         guard let uid          = Auth.auth().currentUser?.uid            else { return }
         guard let image        = self.imageButton.imageView?.image       else { return }
         guard let uploadData   = image.jpegData(compressionQuality: 0.3) else { return }
         
         mainViewModel.setData(uploadData: uploadData)
         mainViewModel.uploadImage(userId: uid)
+        
+        //Save also in coredata
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context     = appDelegate.persistentContainer.viewContext
+        
+        let newImage    = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
+        newImage.setValue(uploadData, forKey: "image")
+        
+        do {
+            try context.save()
+            print("saved")
+        } catch {
+            print("error")
+        }
 
-}
+}   
     
     @objc func editButtonClicked() {
         let imagePickerController           = UIImagePickerController()
@@ -180,6 +198,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
               self.imageButton.setImage(imageOfButton, for: .normal)
           }
     }
+        
+       
+        
+        
 }
     
     func setConstraints() {

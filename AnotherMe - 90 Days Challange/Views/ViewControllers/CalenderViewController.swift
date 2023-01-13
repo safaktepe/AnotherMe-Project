@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import CoreData
 
 class CalenderViewController: UIViewController {
     var totalSquaeres   = [String]()
@@ -19,6 +20,8 @@ class CalenderViewController: UIViewController {
         super.viewDidLoad()
         setViews()
         setProfilePicture()
+        setProfilePhotoFromCD()
+        
         
         for i in 1...75 {
             totalSquaeres.append("\(i)")
@@ -43,7 +46,7 @@ class CalenderViewController: UIViewController {
     fileprivate func setProfilePicture() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
-        mainViewModel.getProfileImage(uid: uid) { imageData, err in
+      /*  mainViewModel.getProfileImage(uid: uid) { imageData, err in
             if err != nil {
                 print("err")
                 return
@@ -51,7 +54,31 @@ class CalenderViewController: UIViewController {
         guard let imageData = imageData else { return }
         let image  = UIImage(data: imageData)
         self.profilePhoto.image = image
+        }*/
+    }
+    
+    fileprivate func setProfilePhotoFromCD() {
+        
+        
+        
+        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+        let context      = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+           let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject] {
+                if let imageData = result.value(forKey: "image") as? Data {
+                    let image = UIImage(data: imageData)
+                    profilePhoto.image = image
+                }
+            }
+        } catch {
+            print("error")
         }
+        
+        
     }
     
 }
