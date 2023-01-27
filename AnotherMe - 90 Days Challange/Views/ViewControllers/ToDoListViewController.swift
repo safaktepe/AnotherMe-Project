@@ -6,20 +6,46 @@
 //
 
 import UIKit
-
+import CoreData
 
 class ToDoListViewController: UIViewController {
     
+    @IBOutlet weak var dayTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
-    let dailyGoals = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
+    let dailyGoals  = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
+    let context     = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    var times : [Time]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate   = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        dayTitleLabel.text = "DAY \(calculateDif() + 1)"
+
     }
+    
+    fileprivate  func calculateDif() -> Int {
+        fetchTime()
+        let savedDateCB : Date = (times?[0].startDate)!
+        let newDate     = Date()
+        let diffSeconds = Int(newDate.timeIntervalSince1970 - (savedDateCB.timeIntervalSince1970 ))
+        let minutes     = diffSeconds / 60
+        return minutes
+    }
+    
+    fileprivate func fetchTime() {
+        do {
+            let request = Time.fetchRequest() as NSFetchRequest<Time>
+            self.times = try context.fetch(request)
+        } catch {
+            print("time fetch error!")
+        }
+    }
+    
 }
 
 

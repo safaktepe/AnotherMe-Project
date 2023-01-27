@@ -18,25 +18,21 @@
 		6232220C2940E5370071506A /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232220B2940E5370071506A /* CalenderViewController.swift */; };
 		62322210294114260071506A /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232220E294114260071506A /* TodoTableViewCell.swift */; };
 		62322211294114260071506A /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6232220F294114260071506A /* TodoTableViewCell.xib */; };
-		623BF51A294E422C00E55850 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623BF519294E422C00E55850 /* MainViewModel.swift */; };
-		623BF51E294E425800E55850 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623BF51D294E425800E55850 /* UserData.swift */; };
-		623BF521294E42E500E55850 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623BF520294E42E500E55850 /* NetworkService.swift */; };
 		6248597F294DDDEA0023E89E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6248597E294DDDEA0023E89E /* FirebaseAnalytics */; };
-		62485981294DDDEA0023E89E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 62485980294DDDEA0023E89E /* FirebaseAuth */; };
-		62485983294DDDEA0023E89E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 62485982294DDDEA0023E89E /* FirebaseDatabase */; };
-		62485985294DDDEA0023E89E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 62485984294DDDEA0023E89E /* FirebaseFirestore */; };
-		62485987294DDDEA0023E89E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 62485986294DDDEA0023E89E /* FirebaseStorage */; };
 		626E5E8C294355D500AC09BE /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E5E8B294355D500AC09BE /* FeedBackViewController.swift */; };
 		626E5E8F294357EF00AC09BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626E5E8E294357EF00AC09BE /* ProfileViewController.swift */; };
+		6270FBFB2983B1880049FAF2 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270FBFA2983B1880049FAF2 /* StartViewController.swift */; };
+		6270FC022983B1FA0049FAF2 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270FBFE2983B1FA0049FAF2 /* Goal+CoreDataClass.swift */; };
+		6270FC032983B1FA0049FAF2 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270FBFF2983B1FA0049FAF2 /* Goal+CoreDataProperties.swift */; };
+		6270FC072983B5770049FAF2 /* Time+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270FC052983B5770049FAF2 /* Time+CoreDataClass.swift */; };
+		6270FC082983B5770049FAF2 /* Time+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270FC062983B5770049FAF2 /* Time+CoreDataProperties.swift */; };
 		6274A48F2944CEF6001B8C1D /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6274A48E2944CEF6001B8C1D /* FAQViewController.swift */; };
 		6274A49329464A2B001B8C1D /* FAQTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6274A49129464A2B001B8C1D /* FAQTableViewCell.swift */; };
 		6274A49429464A2B001B8C1D /* FAQTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6274A49229464A2B001B8C1D /* FAQTableViewCell.xib */; };
 		6287E78E2949CCFC0050A328 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6287E78D2949CCFC0050A328 /* CalendarCollectionViewCell.swift */; };
-		629D24DC294B9D9600295308 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629D24DB294B9D9600295308 /* SignUpViewController.swift */; };
 		629E88962970024200BBE1CA /* Anotherme.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 629E88942970024200BBE1CA /* Anotherme.xcdatamodeld */; };
 		62E516602942459900567166 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E5165E2942459900567166 /* SettingsTableViewCell.swift */; };
 		62E516612942459900567166 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E5165F2942459900567166 /* SettingsTableViewCell.xib */; };
-		62FE4881294C68B200E61018 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 62FE4880294C68B200E61018 /* GoogleSignIn */; };
 		62FE4883294C6F7500E61018 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62FE4882294C6F7500E61018 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -54,16 +50,17 @@
 		6232220B2940E5370071506A /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		6232220E294114260071506A /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		6232220F294114260071506A /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
-		623BF519294E422C00E55850 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		623BF51D294E425800E55850 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		623BF520294E42E500E55850 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		626E5E8B294355D500AC09BE /* FeedBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		626E5E8E294357EF00AC09BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6270FBFA2983B1880049FAF2 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		6270FBFE2983B1FA0049FAF2 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6270FBFF2983B1FA0049FAF2 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6270FC052983B5770049FAF2 /* Time+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Time+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6270FC062983B5770049FAF2 /* Time+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Time+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6274A48E2944CEF6001B8C1D /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		6274A49129464A2B001B8C1D /* FAQTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewCell.swift; sourceTree = "<group>"; };
 		6274A49229464A2B001B8C1D /* FAQTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FAQTableViewCell.xib; sourceTree = "<group>"; };
 		6287E78D2949CCFC0050A328 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		629D24DB294B9D9600295308 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		629E88952970024200BBE1CA /* Anotherme.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Anotherme.xcdatamodel; sourceTree = "<group>"; };
 		62E5165E2942459900567166 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		62E5165F2942459900567166 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
@@ -76,11 +73,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6248597F294DDDEA0023E89E /* FirebaseAnalytics in Frameworks */,
-				62485981294DDDEA0023E89E /* FirebaseAuth in Frameworks */,
-				62485983294DDDEA0023E89E /* FirebaseDatabase in Frameworks */,
-				62485985294DDDEA0023E89E /* FirebaseFirestore in Frameworks */,
-				62FE4881294C68B200E61018 /* GoogleSignIn in Frameworks */,
-				62485987294DDDEA0023E89E /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,10 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				6215589C293F6322005F7F68 /* Main.storyboard */,
-				623BF51F294E426500E55850 /* Service */,
-				623BF51C294E424D00E55850 /* Model */,
-				623BF51B294E423200E55850 /* ViewModel */,
 				623222062940E4F30071506A /* Core */,
+				6270FC042983B2070049FAF2 /* CoreData */,
 				623222052940E4EB0071506A /* Views */,
 				621558A4293F6323005F7F68 /* Info.plist */,
 				62FE4882294C6F7500E61018 /* GoogleService-Info.plist */,
@@ -134,7 +124,6 @@
 				62155898293F6322005F7F68 /* SceneDelegate.swift */,
 				621558A1293F6323005F7F68 /* LaunchScreen.storyboard */,
 				6215589F293F6323005F7F68 /* Assets.xcassets */,
-				629E88942970024200BBE1CA /* Anotherme.xcdatamodeld */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -150,30 +139,6 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		623BF51B294E423200E55850 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				623BF519294E422C00E55850 /* MainViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		623BF51C294E424D00E55850 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				623BF51D294E425800E55850 /* UserData.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		623BF51F294E426500E55850 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				623BF520294E42E500E55850 /* NetworkService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		626E5E8D294357C600AC09BE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,9 +149,21 @@
 				626E5E8B294355D500AC09BE /* FeedBackViewController.swift */,
 				626E5E8E294357EF00AC09BE /* ProfileViewController.swift */,
 				6274A48E2944CEF6001B8C1D /* FAQViewController.swift */,
-				629D24DB294B9D9600295308 /* SignUpViewController.swift */,
+				6270FBFA2983B1880049FAF2 /* StartViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6270FC042983B2070049FAF2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6270FC052983B5770049FAF2 /* Time+CoreDataClass.swift */,
+				6270FC062983B5770049FAF2 /* Time+CoreDataProperties.swift */,
+				6270FBFE2983B1FA0049FAF2 /* Goal+CoreDataClass.swift */,
+				6270FBFF2983B1FA0049FAF2 /* Goal+CoreDataProperties.swift */,
+				629E88942970024200BBE1CA /* Anotherme.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		6274A49029464A12001B8C1D /* FAQTableView */ = {
@@ -233,12 +210,7 @@
 			);
 			name = "AnotherMe - 90 Days Challange";
 			packageProductDependencies = (
-				62FE4880294C68B200E61018 /* GoogleSignIn */,
 				6248597E294DDDEA0023E89E /* FirebaseAnalytics */,
-				62485980294DDDEA0023E89E /* FirebaseAuth */,
-				62485982294DDDEA0023E89E /* FirebaseDatabase */,
-				62485984294DDDEA0023E89E /* FirebaseFirestore */,
-				62485986294DDDEA0023E89E /* FirebaseStorage */,
 			);
 			productName = "AnotherMe - 90 Days Challange";
 			productReference = 62155893293F6322005F7F68 /* AnotherMe - 90 Days Challange.app */;
@@ -269,7 +241,6 @@
 			);
 			mainGroup = 6215588A293F6322005F7F68;
 			packageReferences = (
-				62FE487F294C68B200E61018 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 62155894293F6322005F7F68 /* Products */;
@@ -305,19 +276,20 @@
 			files = (
 				62322210294114260071506A /* TodoTableViewCell.swift in Sources */,
 				626E5E8C294355D500AC09BE /* FeedBackViewController.swift in Sources */,
-				623BF51E294E425800E55850 /* UserData.swift in Sources */,
 				6287E78E2949CCFC0050A328 /* CalendarCollectionViewCell.swift in Sources */,
+				6270FC032983B1FA0049FAF2 /* Goal+CoreDataProperties.swift in Sources */,
 				6232220C2940E5370071506A /* CalenderViewController.swift in Sources */,
-				623BF521294E42E500E55850 /* NetworkService.swift in Sources */,
+				6270FC082983B5770049FAF2 /* Time+CoreDataProperties.swift in Sources */,
 				62E516602942459900567166 /* SettingsTableViewCell.swift in Sources */,
-				623BF51A294E422C00E55850 /* MainViewModel.swift in Sources */,
 				6274A48F2944CEF6001B8C1D /* FAQViewController.swift in Sources */,
+				6270FC072983B5770049FAF2 /* Time+CoreDataClass.swift in Sources */,
 				6215589B293F6322005F7F68 /* BaseTabViewController.swift in Sources */,
 				62155897293F6322005F7F68 /* AppDelegate.swift in Sources */,
 				629E88962970024200BBE1CA /* Anotherme.xcdatamodeld in Sources */,
-				629D24DC294B9D9600295308 /* SignUpViewController.swift in Sources */,
 				626E5E8F294357EF00AC09BE /* ProfileViewController.swift in Sources */,
+				6270FBFB2983B1880049FAF2 /* StartViewController.swift in Sources */,
 				6274A49329464A2B001B8C1D /* FAQTableViewCell.swift in Sources */,
+				6270FC022983B1FA0049FAF2 /* Goal+CoreDataClass.swift in Sources */,
 				623222082940E51F0071506A /* SettingsViewController.swift in Sources */,
 				6232220A2940E52C0071506A /* ToDoListViewController.swift in Sources */,
 				62155899293F6322005F7F68 /* SceneDelegate.swift in Sources */,
@@ -556,14 +528,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		62FE487F294C68B200E61018 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -571,31 +535,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
-		};
-		62485980294DDDEA0023E89E /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		62485982294DDDEA0023E89E /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		62485984294DDDEA0023E89E /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		62485986294DDDEA0023E89E /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-		62FE4880294C68B200E61018 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 62FE487F294C68B200E61018 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 

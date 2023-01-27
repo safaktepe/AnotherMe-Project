@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import FirebaseAuth
 import CoreData
 
 class CalenderViewController: UIViewController {
     var totalSquaeres   = [String]()
-    let mainViewModel   = MainViewModel()
+    let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var times           : [Time]?
 
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,9 +19,8 @@ class CalenderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-        setProfilePicture()
         setProfilePhotoFromCD()
-        
+        print("calender view: dif is : \(calculateDif())")
         
         for i in 1...75 {
             totalSquaeres.append("\(i)")
@@ -43,24 +42,27 @@ class CalenderViewController: UIViewController {
         profilePhoto.layer.borderWidth   = 3
         profilePhoto.clipsToBounds = true
     }
-    fileprivate func setProfilePicture() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        
-      /*  mainViewModel.getProfileImage(uid: uid) { imageData, err in
-            if err != nil {
-                print("err")
-                return
-            }
-        guard let imageData = imageData else { return }
-        let image  = UIImage(data: imageData)
-        self.profilePhoto.image = image
-        }*/
+   
+    fileprivate func fetchTime() {
+        do {
+            let request = Time.fetchRequest() as NSFetchRequest<Time>
+            self.times = try context.fetch(request)
+        } catch {
+            print("time fetch error!")
+        }
     }
     
+    fileprivate  func calculateDif() -> Int {
+        fetchTime()
+        let savedDateCB : Date = (times?[0].startDate)!
+        let newDate     = Date()
+        let diffSeconds = Int(newDate.timeIntervalSince1970 - (savedDateCB.timeIntervalSince1970 ))
+        let minutes     = diffSeconds / 60
+        return minutes
+    }
+    
+    
     fileprivate func setProfilePhotoFromCD() {
-        
-        
-        
         let appDelegate  = UIApplication.shared.delegate as! AppDelegate
         let context      = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
@@ -88,11 +90,14 @@ extension CalenderViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         totalSquaeres.count
     }
-    
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCollectionViewCell
         cell.daysLabel.text = totalSquaeres[indexPath.row]
+        
+        if indexPath.row <= calculateDif() {
+            cell.daysLabel.textColor = .red
+        }
         return cell
     }
 }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,15 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
-        let currentUser =  Auth.auth().currentUser
-        
-        if currentUser != nil {
-            let board                  = UIStoryboard(name: "Main", bundle: nil)
-            let tabBar                 = board.instantiateViewController(withIdentifier: "mainTabBar") as! UITabBarController
-            window?.rootViewController = tabBar
-        }
-        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
