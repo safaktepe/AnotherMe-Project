@@ -13,47 +13,54 @@ class CalenderViewController: UIViewController {
     let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var times           : [Time]?
 
-    @IBOutlet weak var collectionTopCons: NSLayoutConstraint!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var cons: NSLayoutConstraint!
+    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var labelsStackView: UIStackView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var faqButton: UIButton!
-    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViews()
-        setProfilePhotoFromCD()
-        print("calender view: dif is : \(calculateDif())")
         
+        setProfilePhoto()
+        setProfilePhotoFromCD()
+
         for i in 1...75 {
             totalSquaeres.append("\(i)")
         }
         
         collectionView.dataSource = self
-        collectionView.delegate = self
+        collectionView.delegate   = self
 
     }
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
-
     }
+    
     
     
     @IBAction func shareButtonClicked(_ sender: Any) {
-        profilePhoto.isHidden = true
-        faqButton.isHidden    = true
-        welcomeLabel.isHidden = true
-        nameLabel.isHidden    = true
+        profilePhoto.isHidden = !profilePhoto.isHidden
+        labelsStackView.isHidden = !labelsStackView.isHidden
+        faqButton.isHidden = !faqButton.isHidden
+        titleLabel.isHidden = !titleLabel.isHidden
+        let scaleImage  = profilePhoto.frame.size
+        let imageWidth  = Int(scaleImage.width)
+        let imageHeight = scaleImage.height
+        let holdCons : NSLayoutConstraint = cons
+        cons.constant = (imageHeight + holdCons.constant) * (-1)
+        
     }
     
-    fileprivate func setViews() {
+    fileprivate func setProfilePhoto() {
         profilePhoto.layer.cornerRadius  = profilePhoto.frame.size.width / 2
         profilePhoto.layer.masksToBounds = false
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
         profilePhoto.layer.borderWidth   = 3
         profilePhoto.clipsToBounds = true
-    }
+            }
    
     fileprivate func fetchTime() {
         do {
@@ -91,9 +98,8 @@ class CalenderViewController: UIViewController {
         } catch {
             print("error")
         }
-        
-        
     }
+    
     
 }
 
