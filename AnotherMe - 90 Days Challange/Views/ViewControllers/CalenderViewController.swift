@@ -13,6 +13,10 @@ class CalenderViewController: UIViewController {
     let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var times           : [Time]?
 
+    @IBOutlet weak var collectionTopCons: NSLayoutConstraint!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var faqButton: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -33,6 +37,14 @@ class CalenderViewController: UIViewController {
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
 
+    }
+    
+    
+    @IBAction func shareButtonClicked(_ sender: Any) {
+        profilePhoto.isHidden = true
+        faqButton.isHidden    = true
+        welcomeLabel.isHidden = true
+        nameLabel.isHidden    = true
     }
     
     fileprivate func setViews() {
