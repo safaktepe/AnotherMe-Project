@@ -12,7 +12,8 @@ class CalenderViewController: UIViewController {
     var totalSquaeres   = [String]()
     let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var times           : [Time]?
-
+    var isShared       : Bool = false
+    
     @IBOutlet weak var cons: NSLayoutConstraint!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var labelsStackView: UIStackView!
@@ -39,9 +40,7 @@ class CalenderViewController: UIViewController {
         performSegue(withIdentifier: "help", sender: nil)
     }
     
-    
-    
-    @IBAction func shareButtonClicked(_ sender: Any) {
+    func setShareButtonViewChanges () {
         profilePhoto.isHidden = !profilePhoto.isHidden
         labelsStackView.isHidden = !labelsStackView.isHidden
         faqButton.isHidden = !faqButton.isHidden
@@ -51,6 +50,19 @@ class CalenderViewController: UIViewController {
         let imageHeight = scaleImage.height
         let holdCons : NSLayoutConstraint = cons
         cons.constant = (imageHeight + holdCons.constant) * (-1)
+    }
+    
+    @IBAction func shareButtonClicked(_ sender: Any) {
+        if isShared == false {
+            isShared = true
+            setShareButtonViewChanges()
+            guard let thisImage  = getScreenshot() else { return }
+            UIImageWriteToSavedPhotosAlbum(thisImage, nil, nil, nil)
+        } else {
+            isShared = false
+            setShareButtonViewChanges()
+        }
+        
         
     }
     
@@ -80,6 +92,21 @@ class CalenderViewController: UIViewController {
         return minutes
     }
     
+    fileprivate func getScreenshot() -> UIImage? {
+        //creates new image context with same size as view
+        // UIGraphicsBeginImageContextWithOptions (scale=0.0) for high res capture
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, true, 0.0)
+
+        // renders the view's layer into the current graphics context
+        if let context = UIGraphicsGetCurrentContext() { view.layer.render(in: context) }
+
+        // creates UIImage from what was drawn into graphics context
+        let screenshot: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+
+        // clean up newly created context and return screenshot
+        UIGraphicsEndImageContext()
+        return screenshot
+    }
     
     fileprivate func setProfilePhotoFromCD() {
         let appDelegate  = UIApplication.shared.delegate as! AppDelegate
