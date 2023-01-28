@@ -6,17 +6,13 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
-import FirebaseStorage
 
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let mainViewModel = MainViewModel()
-    let settingsRowsNames = ["Account", "Support & Feedback", "Photo library", "Notifications", "Logout"]
+    let settingsRowsNames = ["Account", "Support & Feedback", "Notifications"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
     
@@ -40,18 +36,7 @@ class SettingsViewController: UIViewController {
     }
     
     fileprivate func setProfilePicture() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let islandRef = Storage.storage().reference().child("profile_photos/\(uid).jpg")
-
-        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-          if let error = error {
-              print(error.localizedDescription)
-          } else {
-            // Data for "images/island.jpg" is returned
-              self.profilePhoto.image = UIImage(data: data!)
-          }
-        }
+      
  }
 }
 

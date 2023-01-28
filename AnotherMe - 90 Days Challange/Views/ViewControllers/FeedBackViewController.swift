@@ -6,19 +6,14 @@
 //
 
 import UIKit
-import Firebase
 
 class FeedBackViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        var user = Auth.auth().currentUser?.uid
-        print(user)
         
     }
-    
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         var nav                  = self.navigationController?.navigationBar
@@ -28,11 +23,6 @@ class FeedBackViewController: UIViewController {
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {
-        do {
-            try Auth.auth().signOut()
-            self.performSegue(withIdentifier: "removeThis", sender: nil)
-        } catch {
-            print("Error")
-        }
+      
     }
 }

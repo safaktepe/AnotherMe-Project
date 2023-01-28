@@ -6,9 +6,7 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseStorage
-import FirebaseDatabase
+import CoreData
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
    
@@ -23,7 +21,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     let deleteAccountButton = UIButton(type: .system)
     let saveButton          = UIButton(type: .system)
     var downloadImage       : String = ""
-    var mainViewModel       : MainViewModel = MainViewModel()
     var photoData           : Data?
     
     override func viewDidLoad() {
@@ -113,43 +110,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: - Functions
     @objc func deleteAccountButtonClicked(sender: UIButton!) {
-        let user   = Auth.auth().currentUser
-        let userID = user?.uid
-        guard let userID = userID else { return }
-        print("user id: \(userID)")
-        
-        let databaseRef = Database.database().reference().child("users").child(userID)
-        let storageRef  = Storage.storage().reference().child("profile_photos").child("\(userID).jpg")
-        storageRef.delete { err in
-            if err != nil {
-                print(err?.localizedDescription)
-            } else {
-                print("photo deleted succesfully from storage!")
-            }
-        }
-        databaseRef.removeValue()
-        
-        user?.delete(completion: { error in
-            if error != nil {
-                print("bu user silme hatası \(error?.localizedDescription)")
-            } else {
-                print("user deleted")
-            }
-        })
-        self.performSegue(withIdentifier: "deleteThisTwo", sender: nil)
+       
 
     }
     
     @objc func saveButtonClicked() {
         
-        guard let uid          = Auth.auth().currentUser?.uid            else { return }
-        guard let image        = self.imageButton.imageView?.image       else { return }
-        guard let uploadData   = image.jpegData(compressionQuality: 0.3) else { return }
+        //BUG HERE !!! DONT LET USER CLICK BUTTON IF THERE IS NO IMAGE CHOOSEN BY USER!!!!!!
+        //Save also in coredata
         
-        mainViewModel.setData(uploadData: uploadData)
-        mainViewModel.uploadImage(userId: uid)
+       
 
-}
+}   
     
     @objc func editButtonClicked() {
         let imagePickerController           = UIImagePickerController()
@@ -169,17 +141,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
 
     fileprivate func setupProfilePhoto() {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        let islandRef = Storage.storage().reference().child("profile_photos/\(uid).jpg")
-        islandRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-          if let error = error {
-              print(error.localizedDescription)
-          } else {
-              guard let data = data else { return }
-              guard let imageOfButton = UIImage(data: data) else { return }
-              self.imageButton.setImage(imageOfButton, for: .normal)
-          }
-    }
+        
 }
     
     func setConstraints() {
