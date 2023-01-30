@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController {
         setViews()
         setProfilePicture()
         
+        
         settingsTableView.delegate   = self
         settingsTableView.dataSource = self
         settingsTableView.backgroundColor = .black
