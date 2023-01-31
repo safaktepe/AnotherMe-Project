@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArticleCollectionViewCell" id="gTV-IL-0wX" customClass="ArticleCollectionViewCell" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="559" height="224"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="559" height="224"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOR-7O-Iy3">
+                        <rect key="frame" x="0.0" y="0.0" width="559" height="224"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Explore the importance of visulazation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D4m-EH-yfZ">
+                                <rect key="frame" x="16" y="8" width="527" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ko1-cC-hPJ">
+                                <rect key="frame" x="16" y="48" width="527" height="160"/>
+                                <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <color key="textColor" red="0.55686274509803924" green="0.5607843137254902" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ko1-cC-hPJ" firstAttribute="top" secondItem="D4m-EH-yfZ" secondAttribute="bottom" constant="16" id="Jsc-aH-bJc"/>
+                            <constraint firstAttribute="bottom" secondItem="Ko1-cC-hPJ" secondAttribute="bottom" constant="16" id="JvT-HR-ro5"/>
+                            <constraint firstItem="D4m-EH-yfZ" firstAttribute="top" secondItem="LOR-7O-Iy3" secondAttribute="top" constant="8" id="RJc-Db-7l1"/>
+                            <constraint firstItem="D4m-EH-yfZ" firstAttribute="leading" secondItem="LOR-7O-Iy3" secondAttribute="leading" constant="16" id="ls7-pl-4iG"/>
+                            <constraint firstItem="Ko1-cC-hPJ" firstAttribute="leading" secondItem="LOR-7O-Iy3" secondAttribute="leading" constant="16" id="tdO-hj-Xoe"/>
+                            <constraint firstAttribute="trailing" secondItem="Ko1-cC-hPJ" secondAttribute="trailing" constant="16" id="wk2-mW-b55"/>
+                            <constraint firstAttribute="trailing" secondItem="D4m-EH-yfZ" secondAttribute="trailing" constant="16" id="yDR-AB-lsf"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="LOR-7O-Iy3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Kaz-ZO-Nep"/>
+                <constraint firstItem="LOR-7O-Iy3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="g3B-nd-Byi"/>
+                <constraint firstAttribute="bottom" secondItem="LOR-7O-Iy3" secondAttribute="bottom" id="hOr-f9-X9w"/>
+                <constraint firstAttribute="trailing" secondItem="LOR-7O-Iy3" secondAttribute="trailing" id="wRI-CD-pc2"/>
+            </constraints>
+            <size key="customSize" width="559" height="224"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="Ko1-cC-hPJ" id="7o5-r9-rUi"/>
+                <outlet property="titleLabel" destination="D4m-EH-yfZ" id="LOz-Fw-pkn"/>
+            </connections>
+            <point key="canvasLocation" x="332.06106870229007" y="4.9295774647887329"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -16,7 +16,6 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
     }
- 
 
     @IBAction func skipButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "toMainApp", sender: nil)

@@ -17,6 +17,8 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         super.viewDidLoad()
         setupCollectionViewLayout()
         setupCollectionView()
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     
@@ -25,21 +27,34 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .black
         collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(UINib(nibName: "ArticleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
         collectionView.register(HeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
     }
     fileprivate func setupCollectionViewLayout() {
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.sectionInset  = .init(top: padding, left: padding, bottom: padding, right: padding)
+        if let layout = collectionViewLayout as? StretchyHeaderLayout {
+            layout.sectionInset  = .init(top: padding + 24, left: padding, bottom: padding, right: padding)
         }
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        if contentOffsetY > 0 {
+            headerView?.animator.fractionComplete = 0
+            return
+        }
+        
+        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
+
+    }
+    
     // MARK: - CollectinoView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 8
     }
     
     var headerView: HeaderCollectionView?
@@ -48,20 +63,24 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? HeaderCollectionView
         return headerView!
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 32
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        HeaderView().cal = view.frame.height / 3
         return .init(width: view.frame.width, height: view.frame.height / 3 )
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .white
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as! ArticleCollectionViewCell
+        cell.titleLabel.text       = "Explore the importance of visulazation"
+        cell.descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        cell.layoutIfNeeded()
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - (2 * padding), height: 50)
+        return .init(width: view.frame.width - (2 * padding), height: 240)
     }
 
 }

@@ -1,8 +1,9 @@
 //
-//  HeaderCollectionView.swift
-//  AnotherMe - 90 Days Challange
+//  HeaderView.swift
+//  StretchyHeaderLBTA
 //
-//  Created by Mert Şafaktepe on 31.01.2023.
+//  Created by Brian Voong on 12/22/18.
+//  Copyright © 2018 Brian Voong. All rights reserved.
 //
 
 import UIKit
@@ -11,13 +12,17 @@ class HeaderCollectionView: UICollectionReusableView {
     
     fileprivate let padding : CGFloat = 16
     
+    //var cal : CGFloat?
+    
+    
     let imageView: UIImageView = {
+//        let iv = UIImageView(image: #imageLiteral(resourceName: "stretchy_header"))
         let iv = UIImageView(image: UIImage(named: "article"))
         iv.contentMode = .redraw
         return iv
     }()
     
-    let blurredView: UIView = {
+    let babaView: UIView = {
         let myView = UIView()
         myView.backgroundColor = .white
         return myView
@@ -26,8 +31,8 @@ class HeaderCollectionView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         // custom code for layout
-        addSubview(blurredView)
-        blurredView.fillSuperview()
+        addSubview(babaView)
+        babaView.fillSuperview()
         
 
         setupGradientLayer()
@@ -49,7 +54,7 @@ class HeaderCollectionView: UICollectionReusableView {
         gradientLayer.locations = [0.0, 1.0]
         
         let gradientContainerView = UIView()
-        blurredView.addSubview(gradientContainerView)
+        babaView.addSubview(gradientContainerView)
         
         gradientContainerView.addSubview(imageView)
 
@@ -86,13 +91,13 @@ class HeaderCollectionView: UICollectionReusableView {
     
    
     fileprivate func setupVisualEffectBlur() {
-        blurredView.addSubview(visualEffectView)
+        babaView.addSubview(visualEffectView)
         visualEffectView.fillSuperview()
         
         animator = UIViewPropertyAnimator(duration: 1.0, curve: .linear, animations: {
             self.visualEffectView.effect = nil
         })
-        blurredView.addSubview(visualEffectView)
+        babaView.addSubview(visualEffectView)
         animator.isReversed = true
         animator.fractionComplete = 0
     }
