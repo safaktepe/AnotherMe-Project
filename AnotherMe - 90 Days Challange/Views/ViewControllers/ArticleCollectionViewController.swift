@@ -23,17 +23,16 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     
     // MARK: - Func.
     fileprivate func setupCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .black
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView.register(HeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
     }
     fileprivate func setupCollectionViewLayout() {
         if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
             layout.sectionInset  = .init(top: padding, left: padding, bottom: padding, right: padding)
         }
     }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -43,18 +42,21 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         return 18
     }
     
+    var headerView: HeaderCollectionView?
+
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-        return header
+        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? HeaderCollectionView
+        return headerView!
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height: 340)
+//        HeaderView().cal = view.frame.height / 3
+        return .init(width: view.frame.width, height: view.frame.height / 3 )
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .black
+        cell.backgroundColor = .white
         return cell
     }
     
@@ -63,44 +65,3 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        blurView.frame = CGRect(x: 0, y: imageView.frame.size.height*(2/3), width: imageView.frame.size.width, height: imageView.frame.size.height/3)
-        blurView.alpha = 0.2
-
-        imageView.addSubview(blurView)
-
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.black.withAlphaComponent(0.0).cgColor, UIColor.black.withAlphaComponent(0.88).cgColor]
-        gradientLayer.locations = [0.0, 0.33]
-        gradientLayer.frame = CGRect(x: 0, y: imageView.frame.size.height*(2/3), width: imageView.frame.size.width, height: imageView.frame.size.height/3)
-
-
-
-        imageView.layer.addSublayer(gradientLayer)
-
-*/

@@ -16,17 +16,25 @@ class StretchyHeaderLayout: UICollectionViewFlowLayout {
         layoutAttributes?.forEach({ (attributes) in
             
             if attributes.representedElementKind == UICollectionView.elementKindSectionHeader {
-                
                 guard let collectionView = collectionView else { return }
-                let width = collectionView.frame.width
-                
-                attributes.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                let contentOffsetY = collectionView.contentOffset.y
+                if contentOffsetY > 0 {
+                    return
+                }
+                let width  = collectionView.frame.width
+                let height = attributes.frame.height - contentOffsetY
+                // Header
+                attributes.frame = CGRect(x: 0, y: contentOffsetY, width: width, height: height)
             }
             
         })
         
         
         return layoutAttributes
+    }
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
     }
     
 }
