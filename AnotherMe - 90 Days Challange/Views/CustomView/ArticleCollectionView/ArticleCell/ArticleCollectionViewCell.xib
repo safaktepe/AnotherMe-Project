@@ -56,6 +56,7 @@
             </constraints>
             <size key="customSize" width="559" height="224"/>
             <connections>
+                <outlet property="containerView" destination="LOR-7O-Iy3" id="zkb-ix-e9f"/>
                 <outlet property="descriptionLabel" destination="Ko1-cC-hPJ" id="7o5-r9-rUi"/>
                 <outlet property="titleLabel" destination="D4m-EH-yfZ" id="LOz-Fw-pkn"/>
             </connections>

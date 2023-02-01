@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62101D07298AA17200C7DA4D /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62101D06298AA17200C7DA4D /* ArticleDetailViewController.swift */; };
 		6214392A2988E4130098EBFF /* HeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621439282988E4130098EBFF /* HeaderCollectionView.swift */; };
 		62155897293F6322005F7F68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62155896293F6322005F7F68 /* AppDelegate.swift */; };
 		62155899293F6322005F7F68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62155898293F6322005F7F68 /* SceneDelegate.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62101D06298AA17200C7DA4D /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		621439282988E4130098EBFF /* HeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionView.swift; sourceTree = "<group>"; };
 		62155893293F6322005F7F68 /* AnotherMe - 90 Days Challange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnotherMe - 90 Days Challange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62155896293F6322005F7F68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				6274A48E2944CEF6001B8C1D /* FAQViewController.swift */,
 				6270FBFA2983B1880049FAF2 /* StartViewController.swift */,
 				62DCAF982987F4DE0018A394 /* ArticleCollectionViewController.swift */,
+				62101D06298AA17200C7DA4D /* ArticleDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				6232220C2940E5370071506A /* CalenderViewController.swift in Sources */,
 				62DCAF992987F4DE0018A394 /* ArticleCollectionViewController.swift in Sources */,
 				6270FC082983B5770049FAF2 /* Time+CoreDataProperties.swift in Sources */,
+				62101D07298AA17200C7DA4D /* ArticleDetailViewController.swift in Sources */,
 				62E516602942459900567166 /* SettingsTableViewCell.swift in Sources */,
 				6274A48F2944CEF6001B8C1D /* FAQViewController.swift in Sources */,
 				6270FC072983B5770049FAF2 /* Time+CoreDataClass.swift in Sources */,

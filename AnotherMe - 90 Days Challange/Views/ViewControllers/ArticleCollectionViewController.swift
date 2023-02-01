@@ -20,7 +20,10 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        headerView?.visualEffectView.effect = UIBlurEffect(style: .regular)
+        headerView?.layoutIfNeeded()
+}
     
     
     // MARK: - Func.
@@ -44,12 +47,9 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffsetY = scrollView.contentOffset.y
         if contentOffsetY > 0 {
-            headerView?.animator.fractionComplete = 0
             return
         }
-        
-        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
-
+//        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
     }
     
     // MARK: - CollectinoView
@@ -68,7 +68,7 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height: view.frame.height / 3 )
+        return .init(width: view.frame.width, height: view.frame.height / 2.4 )
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,7 +80,7 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - (2 * padding), height: 240)
+        return .init(width: view.frame.width - (2 * padding), height: 200)
     }
 
 }
