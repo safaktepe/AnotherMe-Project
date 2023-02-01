@@ -18,10 +18,10 @@ class ArticleDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setGradientLayer()
+}
         
-        
+    override func viewDidAppear(_ animated: Bool) {
     }
-    
     fileprivate func setGradientLayer() {
         // Transparent to black gradient for imageView's bottom.
         let gradientLayer = CAGradientLayer()
@@ -32,4 +32,5 @@ class ArticleDetailViewController: UIViewController {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
         gradientContainerView.layer.addSublayer(gradientLayer)
     }
+    
 }

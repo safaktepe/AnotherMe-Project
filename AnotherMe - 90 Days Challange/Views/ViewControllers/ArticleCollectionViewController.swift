@@ -25,20 +25,25 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         headerView?.layoutIfNeeded()
 }
     
-    
     // MARK: - Func.
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .black
         collectionView.contentInsetAdjustmentBehavior = .never
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(UINib(nibName: "ArticleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
         collectionView.register(HeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        // Calculating tabbar height cuz it was covering some part of last cell.
+        if let tabBarController = self.tabBarController {
+            let tabBar = tabBarController.tabBar
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: tabBar.frame.height, right: 0)
+        }
+
     }
     fileprivate func setupCollectionViewLayout() {
         if let layout = collectionViewLayout as? StretchyHeaderLayout {
             layout.sectionInset  = .init(top: padding + 24, left: padding, bottom: padding, right: padding)
         }
     }
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -77,6 +82,12 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         cell.descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
         cell.layoutIfNeeded()
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "ArticleDetailViewController") as? ArticleDetailViewController
+        self.navigationController?.pushViewController(detailVC!, animated: true)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
