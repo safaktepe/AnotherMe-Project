@@ -9,6 +9,8 @@ import UIKit
 
 class OnboardingCollectionViewCell: UICollectionViewCell {
     
+    static let identifer = String(describing: OnboardingCollectionViewCell.self)
+    
     @IBOutlet weak var imageView        : UIImageView!
     @IBOutlet weak var descriptionLabel : UILabel!
     @IBOutlet weak var titleLabel       : UILabel!
