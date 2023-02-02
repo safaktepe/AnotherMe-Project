@@ -36,7 +36,7 @@
                         </connections>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ryt-Za-eOB">
-                        <rect key="frame" x="81.666666666666671" y="22" width="130.33333333333331" height="41"/>
+                        <rect key="frame" x="81.666666666666671" y="33.666666666666664" width="130.33333333333331" height="18"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink 3L Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-Dn-4f2">
                                 <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="18"/>
@@ -47,8 +47,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-Ju-K2k">
-                                <rect key="frame" x="0.0" y="27" width="82" height="14"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-Ju-K2k">
+                                <rect key="frame" x="0.0" y="18" width="82" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="UKE-nX-n8M"/>
                                 </constraints>
@@ -58,13 +58,21 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-BE-eDr">
+                        <rect key="frame" x="56" y="82" width="259" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="8kh-BE-eDr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.698113" id="BIi-PB-7ZA"/>
+                    <constraint firstItem="8kh-BE-eDr" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.0117647" id="BbK-FC-PEU"/>
                     <constraint firstItem="ryt-Za-eOB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PSS-6H-vsA"/>
                     <constraint firstItem="ix1-Be-pGq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="RhR-T1-pVp"/>
+                    <constraint firstItem="8kh-BE-eDr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="U4Q-r9-q7n"/>
                     <constraint firstItem="ix1-Be-pGq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Wtb-Lg-swo"/>
                     <constraint firstItem="ryt-Za-eOB" firstAttribute="leading" secondItem="ix1-Be-pGq" secondAttribute="trailing" constant="16" id="jhS-wO-SSb"/>
+                    <constraint firstAttribute="bottom" secondItem="8kh-BE-eDr" secondAttribute="bottom" constant="2" id="kmL-nb-7Lc"/>
                     <constraint firstAttribute="bottom" secondItem="ix1-Be-pGq" secondAttribute="bottom" constant="16" id="z6J-rW-pMx"/>
                 </constraints>
             </tableViewCellContentView>

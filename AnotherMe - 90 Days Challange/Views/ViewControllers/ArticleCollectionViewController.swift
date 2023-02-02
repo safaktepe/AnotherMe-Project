@@ -17,90 +17,81 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         super.viewDidLoad()
         setupCollectionViewLayout()
         setupCollectionView()
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
-    
-    
+    override func viewDidAppear(_ animated: Bool) {
+        headerView?.visualEffectView.effect = UIBlurEffect(style: .regular)
+        headerView?.layoutIfNeeded()
+}
     
     // MARK: - Func.
     fileprivate func setupCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .black
         collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView.register(UINib(nibName: "ArticleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
+        collectionView.register(HeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        // Calculating tabbar height cuz it was covering some part of last cell.
+        if let tabBarController = self.tabBarController {
+            let tabBar = tabBarController.tabBar
+            collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: tabBar.frame.height, right: 0)
+        }
+
     }
     fileprivate func setupCollectionViewLayout() {
-        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.sectionInset  = .init(top: padding, left: padding, bottom: padding, right: padding)
+        if let layout = collectionViewLayout as? StretchyHeaderLayout {
+            layout.sectionInset  = .init(top: padding + 24, left: padding, bottom: padding, right: padding)
         }
     }
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
     
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetY = scrollView.contentOffset.y
+        if contentOffsetY > 0 {
+            return
+        }
+//        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
+    }
+    
     // MARK: - CollectinoView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 8
     }
     
+    var headerView: HeaderCollectionView?
+
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header =  collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath)
-        return header
+        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as? HeaderCollectionView
+        return headerView!
     }
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 32
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return .init(width: view.frame.width, height: 340)
+        return .init(width: view.frame.width, height: view.frame.height / 2.4 )
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        cell.backgroundColor = .black
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as! ArticleCollectionViewCell
+        cell.titleLabel.text       = "Explore the importance of visulazation"
+        cell.descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        cell.layoutIfNeeded()
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "ArticleDetailViewController") as? ArticleDetailViewController
+        self.navigationController?.pushViewController(detailVC!, animated: true)
+
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - (2 * padding), height: 50)
+        return .init(width: view.frame.width - (2 * padding), height: 200)
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        blurView.frame = CGRect(x: 0, y: imageView.frame.size.height*(2/3), width: imageView.frame.size.width, height: imageView.frame.size.height/3)
-        blurView.alpha = 0.2
-
-        imageView.addSubview(blurView)
-
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [UIColor.black.withAlphaComponent(0.0).cgColor, UIColor.black.withAlphaComponent(0.88).cgColor]
-        gradientLayer.locations = [0.0, 0.33]
-        gradientLayer.frame = CGRect(x: 0, y: imageView.frame.size.height*(2/3), width: imageView.frame.size.width, height: imageView.frame.size.height/3)
-
-
-
-        imageView.layer.addSublayer(gradientLayer)
-
-*/

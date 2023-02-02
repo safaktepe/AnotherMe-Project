@@ -47,7 +47,6 @@ class CalenderViewController: UIViewController {
         faqButton.isHidden = !faqButton.isHidden
         titleLabel.isHidden = !titleLabel.isHidden
         let scaleImage  = profilePhoto.frame.size
-        let imageWidth  = Int(scaleImage.width)
         let imageHeight = scaleImage.height
         let holdCons : NSLayoutConstraint = cons
         cons.constant = (imageHeight + holdCons.constant) * (-1)
@@ -63,8 +62,6 @@ class CalenderViewController: UIViewController {
             isShared = false
             setShareButtonViewChanges()
         }
-        
-        
     }
     
     fileprivate func setProfilePhoto() {
