@@ -46,8 +46,6 @@ class OnboardingCollectionViewController: UIViewController {
             let indexPath = IndexPath(item: currentPage, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
-        
-        
     }
     
     fileprivate func setSlideArray() {
