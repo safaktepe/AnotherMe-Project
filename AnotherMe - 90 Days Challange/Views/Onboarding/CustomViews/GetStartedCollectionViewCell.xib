@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="HPV-nb-7lb" firstAttribute="centerX" secondItem="u3u-Lv-GCZ" secondAttribute="centerX" id="Beu-US-VVj"/>
                             <constraint firstItem="HPV-nb-7lb" firstAttribute="centerY" secondItem="u3u-Lv-GCZ" secondAttribute="centerY" id="tqT-P1-AU0"/>
@@ -52,8 +52,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

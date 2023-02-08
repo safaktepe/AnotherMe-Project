@@ -18,18 +18,18 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-    @IBOutlet weak var backgroundView: UIView!
-    @IBOutlet weak var nextBtn: UIButton!
-    let label              = UILabel()
+    @IBOutlet weak var backgroundView  : UIView!
+    @IBOutlet weak var nextButton      : UIButton!
+    let titleLabel         = UILabel()
     let textField          = UITextField()
     let imageView          = UIImageView()
     let descriptionLabel   = UILabel()
     var currentPage        = 1
     let textLabel          = UILabel()
-    var selectedIndexPath: IndexPath?
-    var pageControl : Int = 0
+    var selectedIndexPath  : IndexPath?
+    var pageControl        : Int = 0
     
-    let pages = [
+    let isThisViewHidden = [
        ["textField": true,
         "label": true,
         "collectionView": false,
@@ -62,16 +62,15 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         setupFirstLoadUI()
         textField.delegate = self
         self.hideKeyboardWhenTappedAround()
-
     }
     
     
     //MARK: - Functions
     fileprivate func setupAllViewsAndConstraints() {
-        nextBtn.layer.cornerRadius = 20
+        nextButton.layer.cornerRadius        = 20
         backgroundView.layer.cornerRadius = 20
         
-        // MARK: - First View /////////////////////////////////////////
+        // : - First View //
         
         // Label
         let label = UILabel()
@@ -111,8 +110,8 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             textField.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.08)
         ])
         
-        // MARK: - Second view /////////////////////////////////////////
-        
+        // : - Second View //
+
         
         // Description Label
         descriptionLabel.numberOfLines = 0
@@ -121,45 +120,40 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         descriptionLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         
         // ImageView
-        imageView.image = UIImage(named: "article")
+        imageView.image       = UIImage(named: "article")
         imageView.contentMode = .scaleToFill
         
         backgroundView.addSubview(descriptionLabel)
         backgroundView.addSubview(imageView)
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.translatesAutoresizingMaskIntoConstraints        = false
         
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
             label.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
             label.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            
             descriptionLabel.topAnchor.constraint(equalTo: label.topAnchor, constant: 64),
             descriptionLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: -16),
-            imageView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 40),
+            
+            imageView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
             imageView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
             imageView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
             imageView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6),
             imageView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ])
         
-        // MARK: - Third view /////////////////////////////////////////
+        // : - Third View //
 
         // Collection View
-
-    
         backgroundView.addSubview(collectionView)
-        
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        
-        label.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints          = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-                
         collectionView.register(UINib(nibName: GetStartedCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: GetStartedCollectionViewCell.identifier)
-
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
             label.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
@@ -173,12 +167,12 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     }
     
     fileprivate func setupFirstLoadUI() {
-        let currentPageInfo = pages[currentPage - 1]
-        setButtonUI(myButton: nextBtn, isEnable: !currentPageInfo["nextBtn"]!)
-        textField.isHidden = !currentPageInfo["textField"]!
-        label.isHidden = !currentPageInfo["label"]!
-        collectionView.isHidden = !currentPageInfo["collectionView"]!
-        imageView.isHidden = !currentPageInfo["imageView"]!
+        let currentPageInfo       = isThisViewHidden[currentPage - 1]
+        setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
+        textField.isHidden        = !currentPageInfo["textField"]!
+        titleLabel.isHidden       = !currentPageInfo["label"]!
+        collectionView.isHidden   = !currentPageInfo["collectionView"]!
+        imageView.isHidden        = !currentPageInfo["imageView"]!
         descriptionLabel.isHidden = !currentPageInfo["descriptionLabel"]!
     }
     
@@ -201,24 +195,24 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     
     fileprivate func setButtonUI(myButton: UIButton, isEnable: Bool) {
         if isEnable == true {
-                 nextBtn.isUserInteractionEnabled = false
-                 nextBtn.backgroundColor = .yellow
+                 nextButton.isUserInteractionEnabled = false
+                 nextButton.backgroundColor = .yellow
         } else {
-              nextBtn.isUserInteractionEnabled = true
-              nextBtn.backgroundColor = .systemBlue
+              nextButton.isUserInteractionEnabled = true
+              nextButton.backgroundColor = .systemBlue
         }
     }
     
     @IBAction func nextButtonClicked(_ sender: Any) {
-        let currentPageInfo = pages[currentPage]
+        let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField, hidden: !currentPageInfo["textField"]!)
-        hideOrShowAnimation(myView: label, hidden: !currentPageInfo["label"]!)
+        hideOrShowAnimation(myView: titleLabel, hidden: !currentPageInfo["label"]!)
         hideOrShowAnimation(myView: collectionView, hidden: !currentPageInfo["collectionView"]!)
         hideOrShowAnimation(myView: imageView, hidden: !currentPageInfo["imageView"]!)
         hideOrShowAnimation(myView: descriptionLabel, hidden: !currentPageInfo["descriptionLabel"]!)
-        setButtonUI(myButton: nextBtn, isEnable: !currentPageInfo["nextBtn"]!)
+        setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
         currentPage += 1
-        if currentPage == pages.count {
+        if currentPage == isThisViewHidden.count {
             currentPage = 0
         }
     }
@@ -238,7 +232,7 @@ extension GetStartedViewController : UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width  = collectionView.frame.width
-        var height = ((collectionView.frame.height)  - 50) / 6
+        let height = ((collectionView.frame.height)  - 50) / 6
         return CGSize(width: width, height: height)
     }
     
@@ -246,16 +240,18 @@ extension GetStartedViewController : UICollectionViewDelegate, UICollectionViewD
         if let selectedIndexPath = selectedIndexPath {
                    let prevSelectedCell = collectionView.cellForItem(at: selectedIndexPath) as! GetStartedCollectionViewCell
                 prevSelectedCell.cellBackgroundView.backgroundColor = .systemGray6
+                prevSelectedCell.cellAgeLabel.textColor = .black
                }
                selectedIndexPath = indexPath
                let selectedCell = collectionView.cellForItem(at: indexPath) as! GetStartedCollectionViewCell
         
         UIView.transition(with: selectedCell.cellBackgroundView, duration: 0.5, options: .curveEaseInOut, animations: {
             selectedCell.cellBackgroundView.backgroundColor = .blue
+            selectedCell.cellAgeLabel.textColor             = .white
             })
         
-        UIView.transition(with: nextBtn, duration: 0.7, options: .curveEaseInOut, animations: {
-            self.nextBtn.backgroundColor = .systemBlue
+        UIView.transition(with: nextButton, duration: 0.7, options: .curveEaseInOut, animations: {
+            self.nextButton.backgroundColor = .systemBlue
             
         })
         
@@ -284,14 +280,14 @@ extension GetStartedViewController : UITextViewDelegate {
             let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
 
             if !text.isEmpty{
-                nextBtn.isUserInteractionEnabled = true
+                nextButton.isUserInteractionEnabled = true
                 print(text)
-                UIView.transition(with: nextBtn, duration: 0.7, options: .curveEaseInOut, animations: {
-                  self.nextBtn.backgroundColor = .systemBlue
+                UIView.transition(with: nextButton, duration: 0.7, options: .curveEaseInOut, animations: {
+                  self.nextButton.backgroundColor = .systemBlue
                 })
             } else {
-                nextBtn.isUserInteractionEnabled = false
-                nextBtn.alpha = 0.5
+                nextButton.isUserInteractionEnabled = false
+                nextButton.alpha = 0.5
             }
             return true
         }
