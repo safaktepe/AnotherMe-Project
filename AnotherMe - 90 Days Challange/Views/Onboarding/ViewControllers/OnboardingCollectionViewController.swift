@@ -40,6 +40,11 @@ class OnboardingCollectionViewController: UIViewController {
         
         if currentPage == slides.count - 1 {
             // Go to next page.
+            if let controller = storyboard?.instantiateViewController(withIdentifier: "toGetStarted") as? UIViewController {
+                controller.modalPresentationStyle = .fullScreen
+                controller.modalTransitionStyle = .flipHorizontal
+                present(controller, animated: true)
+            }
         } else {
             currentPage += 1
             pageController.currentPage = currentPage

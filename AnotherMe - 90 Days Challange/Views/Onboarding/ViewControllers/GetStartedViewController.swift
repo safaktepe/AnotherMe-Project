@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 class GetStartedViewController: UIViewController, UITextFieldDelegate {
 
@@ -22,18 +23,18 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nextButton      : UIButton!
     let titleLabel         = UILabel()
     let textField          = UITextField()
-    let imageView          = UIImageView()
     let descriptionLabel   = UILabel()
     var currentPage        = 1
     let textLabel          = UILabel()
     var selectedIndexPath  : IndexPath?
     var pageControl        : Int = 0
+    var animationView      : LottieAnimationView!
     
     let isThisViewHidden = [
        ["textField": true,
         "label": true,
         "collectionView": false,
-        "imageView": false,
+        "animationView": false,
         "descriptionLabel": false,
         "nextBtn": false
        ],
@@ -41,7 +42,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
        ["textField": false,
         "label": true,
         "collectionView": false,
-        "imageView": true,
+        "animationView": true,
         "descriptionLabel": true,
         "nextBtn": true
        ],
@@ -49,7 +50,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
        ["textField": false,
         "label": true,
         "collectionView": true,
-        "imageView": false,
+        "animationView": false,
         "descriptionLabel": false,
         "nextBtn": false
        ]
@@ -60,16 +61,15 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupAllViewsAndConstraints()
         setupFirstLoadUI()
-        textField.delegate = self
-        self.hideKeyboardWhenTappedAround()
     }
     
     
     //MARK: - Functions
     fileprivate func setupAllViewsAndConstraints() {
-        nextButton.layer.cornerRadius        = 20
+        nextButton.layer.cornerRadius = 20
         backgroundView.layer.cornerRadius = 20
-        
+        hideKeyboardWhenTappedAround()
+
         // : - First View //
         
         // Label
@@ -86,6 +86,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         let placeholder = NSMutableAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         let placeholderBounds = placeholder.boundingRect(with: CGSize(width: textField.frame.width, height: textField.frame.height), options: .usesLineFragmentOrigin, context: nil)
+        textField.delegate = self
 
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding.left, height: placeholderBounds.height))
         textField.leftView = paddingView
@@ -114,21 +115,25 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
 
         
         // Description Label
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = "We will work together to make you the best version of yourself?"
-        descriptionLabel.textAlignment = .center
-        descriptionLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        descriptionLabel.numberOfLines  = 0
+        descriptionLabel.text           = "We will work together to make you the best version of yourself?"
+        descriptionLabel.textAlignment  = .center
+        descriptionLabel.font           = UIFont.systemFont(ofSize: 20, weight: .semibold)
         
-        // ImageView
-        imageView.image       = UIImage(named: "article")
-        imageView.contentMode = .scaleToFill
+        //Animation View
+        animationView                = .init(name: "77000-man-graph")
+        animationView.frame          = backgroundView.frame
+        animationView.contentMode    = .scaleToFill
+        animationView.loopMode       = .loop
+        animationView.animationSpeed = 1.0
+        animationView.play()
         
         backgroundView.addSubview(descriptionLabel)
-        backgroundView.addSubview(imageView)
-        
+        backgroundView.addSubview(animationView)
+
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        imageView.translatesAutoresizingMaskIntoConstraints        = false
-        
+        animationView.translatesAutoresizingMaskIntoConstraints    = false
+
         NSLayoutConstraint.activate([
             label.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
             label.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
@@ -138,11 +143,12 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             descriptionLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: -16),
             
-            imageView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
-            imageView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            imageView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
-            imageView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6),
-            imageView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
+            animationView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
+            animationView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            animationView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -16),
+            animationView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            animationView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6),
+            animationView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor)
         ])
         
         // : - Third View //
@@ -172,7 +178,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         textField.isHidden        = !currentPageInfo["textField"]!
         titleLabel.isHidden       = !currentPageInfo["label"]!
         collectionView.isHidden   = !currentPageInfo["collectionView"]!
-        imageView.isHidden        = !currentPageInfo["imageView"]!
+        animationView.isHidden        = !currentPageInfo["animationView"]!
         descriptionLabel.isHidden = !currentPageInfo["descriptionLabel"]!
     }
     
@@ -208,7 +214,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         hideOrShowAnimation(myView: textField, hidden: !currentPageInfo["textField"]!)
         hideOrShowAnimation(myView: titleLabel, hidden: !currentPageInfo["label"]!)
         hideOrShowAnimation(myView: collectionView, hidden: !currentPageInfo["collectionView"]!)
-        hideOrShowAnimation(myView: imageView, hidden: !currentPageInfo["imageView"]!)
+        hideOrShowAnimation(myView: animationView, hidden: !currentPageInfo["animationView"]!)
         hideOrShowAnimation(myView: descriptionLabel, hidden: !currentPageInfo["descriptionLabel"]!)
         setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
         currentPage += 1
