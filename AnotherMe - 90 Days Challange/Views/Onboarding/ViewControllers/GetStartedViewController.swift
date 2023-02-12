@@ -41,7 +41,8 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var dayCounter         = 1
     let dayLabelStackView  = UIStackView()
     let pickerView         = UIPickerView()
-    
+    var titleTexts         : [String] = [""]
+
     let goalsText          = ["Read 10 min everyday" , "Visualize of future you!", "Drink 3 L water everyday", "Go for running 30 min", "Take photo of your body", "Share this on İnstangram to put pressure on yourself"]
 
     
@@ -144,7 +145,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         // : - First View //
         
         // Label
-        titleLabel.numberOfLines = 1
+        titleLabel.numberOfLines = 0
         titleLabel.text = "What is your name?"
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
@@ -369,6 +370,10 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func nextButtonClicked(_ sender: Any) {
+        let textFieldInputName : String = textField.text ?? ""
+
+        titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the 6 rules that you must follow!", "From which day do you want to start?"]
+
         let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField, hidden: !currentPageInfo["textField"]!)
         hideOrShowAnimation(myView: titleLabel, hidden: !currentPageInfo["titleLabel"]!)
@@ -380,6 +385,11 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         hideOrShowAnimation(myView: pickerView, hidden: !currentPageInfo["pickerView"]!)
         setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
         
+        UIView.transition(with: titleLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {
+            self.titleLabel.text = self.titleTexts[self.currentPage]
+            self.titleLabel.alpha = 1
+        }, completion: nil)
+
         currentPage += 1
         if currentPage == isThisViewHidden.count {
             currentPage = 0
@@ -411,13 +421,15 @@ extension GetStartedViewController : UICollectionViewDelegate, UICollectionViewD
                    let prevSelectedCell = collectionView.cellForItem(at: selectedIndexPath) as! GetStartedCollectionViewCell
                 prevSelectedCell.cellBackgroundView.backgroundColor = .systemGray6
                 prevSelectedCell.cellAgeLabel.textColor = .black
+                prevSelectedCell.cellBackgroundView.layer.borderWidth = 0
                }
                selectedIndexPath = indexPath
                let selectedCell = collectionView.cellForItem(at: indexPath) as! GetStartedCollectionViewCell
         
-            UIView.transition(with: selectedCell.cellBackgroundView, duration: 0.5, options: .curveEaseInOut, animations: {
-            selectedCell.cellBackgroundView.backgroundColor = .blue
-            selectedCell.cellAgeLabel.textColor             = .white
+        UIView.transition(with: selectedCell.cellBackgroundView, duration: 0.5, options: .curveEaseInOut, animations: {
+            selectedCell.cellBackgroundView.backgroundColor = UIColor(named: "selectedBlue")
+            selectedCell.cellBackgroundView.layer.borderColor = UIColor(named: "blueBorder")?.cgColor
+            selectedCell.cellBackgroundView.layer.borderWidth = 2.5
             })
          fadeOutBackgroundColor(fadeOut: false)
          nextButton.isUserInteractionEnabled = true

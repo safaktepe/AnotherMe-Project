@@ -10,6 +10,7 @@ import UIKit
 class GetStartedCollectionViewCell: UICollectionViewCell {
     
     static let identifier = String(describing: GetStartedCollectionViewCell.self)
+    
     @IBOutlet weak var cellAgeLabel: UILabel!
     @IBOutlet weak var cellBackgroundView: UIView!
     override func awakeFromNib() {
