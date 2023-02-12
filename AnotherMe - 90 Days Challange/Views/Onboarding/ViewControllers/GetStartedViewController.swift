@@ -36,6 +36,11 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var pageControl        : Int = 0
     var animationView      : LottieAnimationView!
     let stackView          = UIStackView()
+    let dayNumberLabel     = UILabel()
+    let dayLabel           = UILabel()
+    var dayCounter         = 1
+    let dayLabelStackView  = UIStackView()
+    let pickerView         = UIPickerView()
     
     let goalsText          = ["Read 10 min everyday" , "Visualize of future you!", "Drink 3 L water everyday", "Go for running 30 min", "Take photo of your body", "Share this on İnstangram to put pressure on yourself"]
 
@@ -47,7 +52,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "animationView": false,
         "descriptionLabel": false,
         "nextBtn": false,
-        "stackView": false
+        "stackView": false,
+        "pickerView": false,
+        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -56,7 +63,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "animationView": true,
         "descriptionLabel": true,
         "nextBtn": true,
-        "stackView": false
+        "stackView": false,
+        "pickerView": false,
+        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -65,7 +74,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "animationView": false,
         "descriptionLabel": false,
         "nextBtn": false,
-        "stackView": false
+        "stackView": false,
+        "pickerView": false,
+        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -74,7 +85,20 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "animationView": false,
         "descriptionLabel": false,
         "nextBtn": true,
-        "stackView": true
+        "stackView": true,
+        "pickerView": false,
+        "dayLabelStackView": false,
+       ],
+       
+       ["textField": false,
+        "titleLabel": true,
+        "collectionView": false,
+        "animationView": false,
+        "descriptionLabel": false,
+        "nextBtn": true,
+        "stackView": false,
+        "pickerView": true,
+        "dayLabelStackView": true,
        ]
    ]
     
@@ -241,17 +265,59 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
             stackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6)
         ])
+        
+        // : - Fifth View //
+            
+        dayNumberLabel.text = "1"
+        dayNumberLabel.textColor = .black
+        dayNumberLabel.font    = UIFont.systemFont(ofSize: 40, weight: .semibold)
+        dayLabelStackView.addArrangedSubview(dayNumberLabel)
+    
+        dayLabel.text = "day"
+        dayLabel.textColor = .black
+        dayLabel.font.withSize(20)
+        dayLabelStackView.addArrangedSubview(dayLabel)
+            
+        dayLabelStackView.axis = .horizontal
+        dayLabelStackView.alignment = .firstBaseline
+        dayLabelStackView.distribution = .equalSpacing
+        dayLabelStackView.spacing = 6
+        
+        backgroundView.addSubview(dayLabelStackView)
+        backgroundView.addSubview(pickerView)
+    
+        pickerView.delegate   = self
+        pickerView.dataSource = self
+
+        dayLabelStackView.translatesAutoresizingMaskIntoConstraints = false
+        pickerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            dayLabelStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            dayLabelStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
+            pickerView.topAnchor.constraint(equalTo: dayLabelStackView.bottomAnchor, constant: 16),
+            pickerView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            pickerView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            pickerView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -32)
+        ])
+            
+            
+        
     }
     
+    
+    
     fileprivate func setupFirstLoadUI() {
-        let currentPageInfo       = isThisViewHidden[currentPage - 1]
+        let currentPageInfo        = isThisViewHidden[currentPage - 1]
         setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
-        textField.isHidden        = !currentPageInfo["textField"]!
-        titleLabel.isHidden       = !currentPageInfo["titleLabel"]!
-        collectionView.isHidden   = !currentPageInfo["collectionView"]!
-        animationView.isHidden    = !currentPageInfo["animationView"]!
-        descriptionLabel.isHidden = !currentPageInfo["descriptionLabel"]!
-        stackView.isHidden        = !currentPageInfo["stackView"]!
+        textField.isHidden         = !currentPageInfo["textField"]!
+        titleLabel.isHidden        = !currentPageInfo["titleLabel"]!
+        collectionView.isHidden    = !currentPageInfo["collectionView"]!
+        animationView.isHidden     = !currentPageInfo["animationView"]!
+        descriptionLabel.isHidden  = !currentPageInfo["descriptionLabel"]!
+        stackView.isHidden         = !currentPageInfo["stackView"]!
+        dayLabelStackView.isHidden = !currentPageInfo["dayLabelStackView"]!
+        pickerView.isHidden        = !currentPageInfo["pickerView"]!
     }
     
     fileprivate func hideOrShowAnimation(myView: UIView, hidden: Bool) {
@@ -310,6 +376,8 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         hideOrShowAnimation(myView: animationView, hidden: !currentPageInfo["animationView"]!)
         hideOrShowAnimation(myView: descriptionLabel, hidden: !currentPageInfo["descriptionLabel"]!)
         hideOrShowAnimation(myView: stackView, hidden: !currentPageInfo["stackView"]!)
+        hideOrShowAnimation(myView: dayLabelStackView, hidden: !currentPageInfo["dayLabelStackView"]!)
+        hideOrShowAnimation(myView: pickerView, hidden: !currentPageInfo["pickerView"]!)
         setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
         
         currentPage += 1
@@ -388,3 +456,23 @@ extension GetStartedViewController : UITextViewDelegate {
         }
 }
 
+    extension GetStartedViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+        func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            return 74
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            return "\(row + 1)"
+        }
+
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            dayCounter = row + 1
+            dayNumberLabel.text = "\(dayCounter)"
+            dayLabel.text = dayCounter == 1 ? "day" : "days"
+        }
+        
+    }
