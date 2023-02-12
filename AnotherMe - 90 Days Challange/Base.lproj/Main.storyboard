@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ba-pT-0ox">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kiN-lY-2Uk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -441,49 +441,9 @@
                     <view key="view" contentMode="scaleToFill" id="pL7-u5-tFN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwI-fw-ZaT" userLabel="Background View">
-                                <rect key="frame" x="35.666666666666657" y="107" width="322" height="551"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QG-ft-Q5z">
-                                <rect key="frame" x="35.666666666666657" y="706" width="322" height="54"/>
-                                <color key="backgroundColor" red="0.0" green="0.45882352939999999" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="nextButtonClicked:" destination="kiN-lY-2Uk" eventType="touchUpInside" id="GJl-eP-7kb"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XB0-0W-TVo"/>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="6QG-ft-Q5z" firstAttribute="height" secondItem="pL7-u5-tFN" secondAttribute="height" multiplier="0.0633803" id="3Qh-Fh-nBk"/>
-                            <constraint firstItem="ZwI-fw-ZaT" firstAttribute="width" secondItem="pL7-u5-tFN" secondAttribute="width" multiplier="0.819338" id="Cre-yr-bZF"/>
-                            <constraint firstItem="ZwI-fw-ZaT" firstAttribute="top" secondItem="XB0-0W-TVo" secondAttribute="top" constant="48" id="K84-h1-uhY"/>
-                            <constraint firstItem="ZwI-fw-ZaT" firstAttribute="height" secondItem="pL7-u5-tFN" secondAttribute="height" multiplier="0.646714" id="SoC-ef-CSY"/>
-                            <constraint firstItem="ZwI-fw-ZaT" firstAttribute="centerX" secondItem="XB0-0W-TVo" secondAttribute="centerX" id="XAI-N8-jLA"/>
-                            <constraint firstItem="6QG-ft-Q5z" firstAttribute="width" secondItem="pL7-u5-tFN" secondAttribute="width" multiplier="0.819338" id="cEZ-p8-Bgi"/>
-                            <constraint firstItem="6QG-ft-Q5z" firstAttribute="top" secondItem="ZwI-fw-ZaT" secondAttribute="bottom" constant="48" id="lhR-ME-AGL"/>
-                            <constraint firstItem="6QG-ft-Q5z" firstAttribute="centerX" secondItem="XB0-0W-TVo" secondAttribute="centerX" id="rtx-81-AI2"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="backgroundView" destination="ZwI-fw-ZaT" id="OS7-CG-OFK"/>
-                        <outlet property="nextButton" destination="6QG-ft-Q5z" id="cub-gb-Gw0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsP-oK-OC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

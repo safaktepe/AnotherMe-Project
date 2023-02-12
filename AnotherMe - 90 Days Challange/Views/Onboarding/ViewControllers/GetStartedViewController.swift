@@ -9,6 +9,10 @@ import UIKit
 import Lottie
 
 class GetStartedViewController: UIViewController, UITextFieldDelegate {
+    
+    /* This viewController is actually used as many different viewController. Instead of creating
+     custom viewController for every page on onboarding, i added all views together, and hide or showed the ones
+     i need for each page.*/
 
     //MARK: - All Views & Variables
     let collectionView: UICollectionView = {
@@ -19,8 +23,10 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
-    @IBOutlet weak var backgroundView  : UIView!
-    @IBOutlet weak var nextButton      : UIButton!
+    
+    
+    let nextButton         = UIButton()
+    let backgroundView     = UIView()
     let titleLabel         = UILabel()
     let textField          = UITextField()
     let descriptionLabel   = UILabel()
@@ -29,30 +35,46 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var selectedIndexPath  : IndexPath?
     var pageControl        : Int = 0
     var animationView      : LottieAnimationView!
+    let stackView          = UIStackView()
+    
+    let goalsText          = ["Read 10 min everyday" , "Visualize of future you!", "Drink 3 L water everyday", "Go for running 30 min", "Take photo of your body", "Share this on İnstangram to put pressure on yourself"]
+
     
     let isThisViewHidden = [
        ["textField": true,
-        "label": true,
+        "titleLabel": true,
         "collectionView": false,
         "animationView": false,
         "descriptionLabel": false,
-        "nextBtn": false
+        "nextBtn": false,
+        "stackView": false
        ],
        
        ["textField": false,
-        "label": true,
+        "titleLabel": true,
         "collectionView": false,
         "animationView": true,
         "descriptionLabel": true,
-        "nextBtn": true
+        "nextBtn": true,
+        "stackView": false
        ],
        
        ["textField": false,
-        "label": true,
+        "titleLabel": true,
         "collectionView": true,
         "animationView": false,
         "descriptionLabel": false,
-        "nextBtn": false
+        "nextBtn": false,
+        "stackView": false
+       ],
+       
+       ["textField": false,
+        "titleLabel": true,
+        "collectionView": false,
+        "animationView": false,
+        "descriptionLabel": false,
+        "nextBtn": true,
+        "stackView": true
        ]
    ]
     
@@ -69,15 +91,39 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         nextButton.layer.cornerRadius = 20
         backgroundView.layer.cornerRadius = 20
         hideKeyboardWhenTappedAround()
-
+        // Permenant Views //
+        
+        view.addSubview(backgroundView)
+        view.addSubview(nextButton)
+        
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        nextButton.translatesAutoresizingMaskIntoConstraints     = false
+        
+        backgroundView.backgroundColor = .white
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.backgroundColor = .blue
+        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
+            
+            nextButton.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 40),
+            nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            nextButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05)
+        ])
+        
+        
         // : - First View //
         
         // Label
-        let label = UILabel()
-        label.numberOfLines = 1
-        label.text = "What is your name?"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        titleLabel.numberOfLines = 1
+        titleLabel.text = "What is your name?"
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         
         // Textfield
         textField.placeholder = "Name"
@@ -94,18 +140,18 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         textField.attributedPlaceholder = placeholder
         textField.autocorrectionType = .no
         
-        backgroundView.addSubview(label)
+        backgroundView.addSubview(titleLabel)
         backgroundView.addSubview(textField)
         
         textField.translatesAutoresizingMaskIntoConstraints = false
-        label.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
-            label.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
-            textField.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 120),
+            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
+            titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 120),
             textField.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             textField.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 0.83),
             textField.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.08)
@@ -135,13 +181,13 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         animationView.translatesAutoresizingMaskIntoConstraints    = false
 
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
-            label.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
+            titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
             
-            descriptionLabel.topAnchor.constraint(equalTo: label.topAnchor, constant: 64),
-            descriptionLabel.leadingAnchor.constraint(equalTo: label.leadingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: label.trailingAnchor, constant: -16),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 64),
+            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: 16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: -16),
             
             animationView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 32),
             animationView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
@@ -157,18 +203,43 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         backgroundView.addSubview(collectionView)
         collectionView.delegate = self
         collectionView.dataSource = self
-        label.translatesAutoresizingMaskIntoConstraints          = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints          = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(UINib(nibName: GetStartedCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: GetStartedCollectionViewCell.identifier)
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
-            label.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            label.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
+            titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
         
-            collectionView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 24),
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
             collectionView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
             collectionView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -16)
+        ])
+        
+        
+        // : - Fourth View //
+
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+
+        for index in 1...6 {
+          let label = UILabel()
+          label.text = "\(index) - \(goalsText[index - 1])"
+          label.numberOfLines = 0
+          label.backgroundColor = .white
+          stackView.addArrangedSubview(label)
+        }
+            backgroundView.addSubview(stackView)
+            stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+            NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo:  titleLabel.bottomAnchor, constant: 32),
+            stackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            stackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6)
         ])
     }
     
@@ -176,13 +247,17 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         let currentPageInfo       = isThisViewHidden[currentPage - 1]
         setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
         textField.isHidden        = !currentPageInfo["textField"]!
-        titleLabel.isHidden       = !currentPageInfo["label"]!
+        titleLabel.isHidden       = !currentPageInfo["titleLabel"]!
         collectionView.isHidden   = !currentPageInfo["collectionView"]!
-        animationView.isHidden        = !currentPageInfo["animationView"]!
+        animationView.isHidden    = !currentPageInfo["animationView"]!
         descriptionLabel.isHidden = !currentPageInfo["descriptionLabel"]!
+        stackView.isHidden        = !currentPageInfo["stackView"]!
     }
     
     fileprivate func hideOrShowAnimation(myView: UIView, hidden: Bool) {
+        /* All views added top of each other. With the help of this functions,
+        / we can set which one should be visible each time to create a single viewcontroller,
+        that looks like multiple viewcontroller.  */
         if hidden == true {
             UIView.animate(withDuration: 1, animations: {
                 myView.alpha = 0
@@ -196,31 +271,52 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
                 myView.alpha = 1
             }
         }
-        
     }
+    
+    fileprivate func fadeOutBackgroundColor(fadeOut: Bool) {
+        /* Makes next button's background fade out by decrasing alpha value depanding on if its
+         clickable or not. */
+        if fadeOut == true {
+            UIView.transition(with: nextButton, duration: 0.5, options: .curveEaseInOut, animations: {
+                self.nextButton.backgroundColor = .systemBlue
+                self.nextButton.alpha = 0.5
+            })
+        } else {
+            UIView.transition(with: nextButton, duration: 0.5, options: .curveEaseInOut, animations: {
+                self.nextButton.backgroundColor = .systemBlue
+                self.nextButton.alpha = 1
+            })
+        }
+    }
+    
     
     fileprivate func setButtonUI(myButton: UIButton, isEnable: Bool) {
         if isEnable == true {
                  nextButton.isUserInteractionEnabled = false
-                 nextButton.backgroundColor = .yellow
+                 fadeOutBackgroundColor(fadeOut: true)
         } else {
               nextButton.isUserInteractionEnabled = true
-              nextButton.backgroundColor = .systemBlue
+            fadeOutBackgroundColor(fadeOut: false)
         }
     }
     
-    @IBAction func nextButtonClicked(_ sender: Any) {
+    
+    
+    @objc func nextButtonClicked(_ sender: Any) {
         let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField, hidden: !currentPageInfo["textField"]!)
-        hideOrShowAnimation(myView: titleLabel, hidden: !currentPageInfo["label"]!)
+        hideOrShowAnimation(myView: titleLabel, hidden: !currentPageInfo["titleLabel"]!)
         hideOrShowAnimation(myView: collectionView, hidden: !currentPageInfo["collectionView"]!)
         hideOrShowAnimation(myView: animationView, hidden: !currentPageInfo["animationView"]!)
         hideOrShowAnimation(myView: descriptionLabel, hidden: !currentPageInfo["descriptionLabel"]!)
+        hideOrShowAnimation(myView: stackView, hidden: !currentPageInfo["stackView"]!)
         setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
+        
         currentPage += 1
         if currentPage == isThisViewHidden.count {
             currentPage = 0
         }
+        print(currentPage)
     }
     
   }
@@ -251,18 +347,13 @@ extension GetStartedViewController : UICollectionViewDelegate, UICollectionViewD
                selectedIndexPath = indexPath
                let selectedCell = collectionView.cellForItem(at: indexPath) as! GetStartedCollectionViewCell
         
-        UIView.transition(with: selectedCell.cellBackgroundView, duration: 0.5, options: .curveEaseInOut, animations: {
+            UIView.transition(with: selectedCell.cellBackgroundView, duration: 0.5, options: .curveEaseInOut, animations: {
             selectedCell.cellBackgroundView.backgroundColor = .blue
             selectedCell.cellAgeLabel.textColor             = .white
             })
-        
-        UIView.transition(with: nextButton, duration: 0.7, options: .curveEaseInOut, animations: {
-            self.nextButton.backgroundColor = .systemBlue
-            
-        })
-        
-            }
-    
+         fadeOutBackgroundColor(fadeOut: false)
+         nextButton.isUserInteractionEnabled = true
+    }
 }
 
 // MARK:  - Other Extensions
@@ -288,12 +379,10 @@ extension GetStartedViewController : UITextViewDelegate {
             if !text.isEmpty{
                 nextButton.isUserInteractionEnabled = true
                 print(text)
-                UIView.transition(with: nextButton, duration: 0.7, options: .curveEaseInOut, animations: {
-                  self.nextButton.backgroundColor = .systemBlue
-                })
+                fadeOutBackgroundColor(fadeOut: false)
             } else {
                 nextButton.isUserInteractionEnabled = false
-                nextButton.alpha = 0.5
+                fadeOutBackgroundColor(fadeOut: true)
             }
             return true
         }
