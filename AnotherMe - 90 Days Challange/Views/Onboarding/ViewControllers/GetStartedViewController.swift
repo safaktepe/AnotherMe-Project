@@ -16,10 +16,10 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: - All Views & Variables
     let collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
+        let layout         = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
-        layout.estimatedItemSize = .zero
+        layout.estimatedItemSize       = .zero
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
@@ -135,7 +135,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
         
         bgViewTopConstraint     = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
-        bgViewStretchConstraint = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.28)
+        bgViewStretchConstraint = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35)
 
         bgViewTopConstraint?.isActive = true
         
@@ -158,6 +158,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         titleLabel.text = "What is your name?"
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
+
         
         // Textfield
         textField.placeholder = "Name"
@@ -185,9 +188,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
-            titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.04),
+            titleLabel.heightAnchor.constraint(equalTo: nextButton.heightAnchor, multiplier: 2),
             
-            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 120),
+            textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 96),
             textField.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             textField.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 0.83),
             textField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05)
@@ -201,6 +204,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         descriptionLabel.text           = "We will work together to make you the best version of yourself?"
         descriptionLabel.textAlignment  = .center
         descriptionLabel.font           = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        descriptionLabel.adjustsFontSizeToFitWidth = true
+        descriptionLabel.minimumScaleFactor = 0.5
+
         
         //Animation View
         animationView                = .init(name: "77000-man-graph")
@@ -266,6 +272,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
           label.text = "\(index) - \(goalsText[index - 1])"
           label.numberOfLines = 0
           label.backgroundColor = .white
+          label.adjustsFontSizeToFitWidth = true
+          label.minimumScaleFactor = 0.5
+ 
           stackView.addArrangedSubview(label)
         }
             backgroundView.addSubview(stackView)
