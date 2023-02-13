@@ -15,11 +15,9 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionViewLayout()
         setupCollectionView()
-        collectionView.delegate = self
-        collectionView.dataSource = self
     }
+
     override func viewDidAppear(_ animated: Bool) {
         headerView?.visualEffectView.effect = UIBlurEffect(style: .regular)
         headerView?.layoutIfNeeded()
@@ -27,6 +25,8 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     
     // MARK: - Func.
     fileprivate func setupCollectionView() {
+        collectionView.delegate   = self
+        collectionView.dataSource = self
         collectionView.backgroundColor = .black
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.register(UINib(nibName: "ArticleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ArticleCollectionViewCell")
@@ -36,7 +36,8 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
             let tabBar = tabBarController.tabBar
             collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: tabBar.frame.height, right: 0)
         }
-
+        setupCollectionViewLayout()
+        
     }
     fileprivate func setupCollectionViewLayout() {
         if let layout = collectionViewLayout as? StretchyHeaderLayout {
