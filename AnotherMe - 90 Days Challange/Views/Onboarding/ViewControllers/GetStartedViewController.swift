@@ -24,24 +24,27 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         return collectionView
     }()
     
+    let backgroundView          = UIView()
+    let descriptionLabel        = UILabel()
+    let textLabel               = UILabel()
+    let titleLabel              = UILabel()
+    let dayNumberLabel          = UILabel()
+    let dayLabel                = UILabel()
+    let nextButton              = UIButton()
+    let dayLabelStackView       = UIStackView()
+    let stackView               = UIStackView()
+    let textField               = UITextField()
+    let pickerView              = UIPickerView()
+    var bgViewTopConstraint     : NSLayoutConstraint?
+    var bgViewStretchConstraint : NSLayoutConstraint?
+    var selectedIndexPath       : IndexPath?
+    var titleTexts              : [String] = [""]
+    var ages                    : [String] = [""]
+    var dayCounter              = 1
+    var currentPage             = 1
+    var pageControl             = 0
+    var animationView           : LottieAnimationView!
     
-    let nextButton         = UIButton()
-    let backgroundView     = UIView()
-    let titleLabel         = UILabel()
-    let textField          = UITextField()
-    let descriptionLabel   = UILabel()
-    var currentPage        = 1
-    let textLabel          = UILabel()
-    var selectedIndexPath  : IndexPath?
-    var pageControl        : Int = 0
-    var animationView      : LottieAnimationView!
-    let stackView          = UIStackView()
-    let dayNumberLabel     = UILabel()
-    let dayLabel           = UILabel()
-    var dayCounter         = 1
-    let dayLabelStackView  = UIStackView()
-    let pickerView         = UIPickerView()
-    var titleTexts         : [String] = [""]
 
     let goalsText          = ["Read 10 min everyday" , "Visualize of future you!", "Drink 3 L water everyday", "Go for running 30 min", "Take photo of your body", "Share this on İnstangram to put pressure on yourself"]
 
@@ -106,8 +109,10 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        setVariable()
         setupAllViewsAndConstraints()
         setupFirstLoadUI()
+        observeKeyboard()
     }
     
     
@@ -129,11 +134,15 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         nextButton.backgroundColor = .blue
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
         
+        bgViewTopConstraint     = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
+        bgViewStretchConstraint = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.28)
+
+        bgViewTopConstraint?.isActive = true
+        
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7),
             
             nextButton.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 40),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
@@ -168,18 +177,20 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         backgroundView.addSubview(titleLabel)
         backgroundView.addSubview(textField)
         
-        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.translatesAutoresizingMaskIntoConstraints  = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
+            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            titleLabel.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.04),
+            
             textField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 120),
             textField.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
             textField.widthAnchor.constraint(equalTo: backgroundView.widthAnchor, multiplier: 0.83),
-            textField.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.08)
+            textField.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05)
         ])
         
         // : - Second View //
@@ -356,6 +367,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    fileprivate func setVariable() {
+        ages = ["15-24", "25-34" , "35-44", "45-54", "55+", "Prefer not to say"]
+    }
     
     fileprivate func setButtonUI(myButton: UIButton, isEnable: Bool) {
         if isEnable == true {
@@ -367,6 +381,29 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    private func observeKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        bgViewTopConstraint?.isActive = false
+        bgViewStretchConstraint?.isActive = true
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        bgViewStretchConstraint?.isActive = false
+        bgViewTopConstraint?.isActive = true
+        UIView.animate(withDuration: 0.25) {
+            self.view.layoutIfNeeded()
+            }
+    }
+
+    
+    
     
     
     @objc func nextButtonClicked(_ sender: Any) {
@@ -375,15 +412,16 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the 6 rules that you must follow!", "From which day do you want to start?"]
 
         let currentPageInfo = isThisViewHidden[currentPage]
-        hideOrShowAnimation(myView: textField, hidden: !currentPageInfo["textField"]!)
-        hideOrShowAnimation(myView: titleLabel, hidden: !currentPageInfo["titleLabel"]!)
-        hideOrShowAnimation(myView: collectionView, hidden: !currentPageInfo["collectionView"]!)
-        hideOrShowAnimation(myView: animationView, hidden: !currentPageInfo["animationView"]!)
-        hideOrShowAnimation(myView: descriptionLabel, hidden: !currentPageInfo["descriptionLabel"]!)
-        hideOrShowAnimation(myView: stackView, hidden: !currentPageInfo["stackView"]!)
+        hideOrShowAnimation(myView: textField,         hidden: !currentPageInfo["textField"]!)
+        hideOrShowAnimation(myView: titleLabel,        hidden: !currentPageInfo["titleLabel"]!)
+        hideOrShowAnimation(myView: collectionView,    hidden: !currentPageInfo["collectionView"]!)
+        hideOrShowAnimation(myView: animationView,     hidden: !currentPageInfo["animationView"]!)
+        hideOrShowAnimation(myView: descriptionLabel,  hidden: !currentPageInfo["descriptionLabel"]!)
+        hideOrShowAnimation(myView: stackView,         hidden: !currentPageInfo["stackView"]!)
         hideOrShowAnimation(myView: dayLabelStackView, hidden: !currentPageInfo["dayLabelStackView"]!)
-        hideOrShowAnimation(myView: pickerView, hidden: !currentPageInfo["pickerView"]!)
-        setButtonUI(myButton: nextButton, isEnable: !currentPageInfo["nextBtn"]!)
+        hideOrShowAnimation(myView: pickerView,        hidden: !currentPageInfo["pickerView"]!)
+        
+        setButtonUI(myButton: nextButton,            isEnable: !currentPageInfo["nextBtn"]!)
         
         UIView.transition(with: titleLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {
             self.titleLabel.text = self.titleTexts[self.currentPage]
@@ -407,6 +445,7 @@ extension GetStartedViewController : UICollectionViewDelegate, UICollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GetStartedCollectionViewCell.identifier, for: indexPath) as! GetStartedCollectionViewCell
+        cell.cellAgeLabel.text = ages[indexPath.row]
         return cell
     }
     
