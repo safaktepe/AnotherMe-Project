@@ -6,27 +6,31 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingsViewController: UIViewController {
+    
+    let context    = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var times : [Time]?
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let settingsRowsNames = ["Account", "Support & Feedback", "Notifications"]
+    let settingsRowsNames = ["Account", "Support & Feedback", "Notifications", "Restart Challange"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
-        setProfilePicture()
-        
-        
         settingsTableView.delegate   = self
         settingsTableView.dataSource = self
         settingsTableView.backgroundColor = .black
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
+    
+    
+    
     fileprivate func setViews() {
         profilePhoto.contentMode = .scaleAspectFill
         profilePhoto.layer.cornerRadius  = profilePhoto.frame.height / 2
@@ -36,9 +40,131 @@ class SettingsViewController: UIViewController {
         profilePhoto.clipsToBounds = true
     }
     
-    fileprivate func setProfilePicture() {
-      
+    fileprivate  func calculateDif() -> Int {
+        fetchTime()
+        let savedDateCB : Date = (times?[0].startDate)!
+        let newDate     = Date()
+        let diffSeconds = Int(newDate.timeIntervalSince1970 - (savedDateCB.timeIntervalSince1970 ))
+        let minutes     = diffSeconds / 60
+        return minutes
+    }
+    
+    fileprivate func fetchTime() {
+        do {
+            let request = Time.fetchRequest() as NSFetchRequest<Time>
+            self.times = try context.fetch(request)
+        } catch {
+            print("time fetch error!")
+        }
+    }
+    
+    fileprivate func restartChallange() {
+        setGoals()
+        let currentDate = Date()
+        
+        // MARK: -  If there are already data, delete them.
+        let deleteFetch     = NSFetchRequest<NSFetchRequestResult>(entityName: "Time")
+        let deleteRequest   = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+
+        // MARK: - Save it.
+        let saveMin       = Time(context: self.context)
+        saveMin.startDate = currentDate
+        do {
+            try self.context.save()
+        } catch {
+            print("error! time couldnt be saved!")
+        }
+        
+        
  }
+    
+        
+    fileprivate func showAlert() {
+        let alert = UIAlertController(title: "WARNING!", message: "If you restart challenge, your progress will be permanently deleted and it cannot be recovered!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dissmiss", style: .cancel, handler: { action in
+            print("Cancel")
+        }))
+        alert.addAction(UIAlertAction(title: "Restart", style: .destructive, handler: { action in
+            print("Restart")
+            
+            self.restartChallange()
+            self.tabBarController?.selectedIndex = 0
+
+
+        }))
+        present(alert, animated: true)
+    }
+    
+    fileprivate func setGoals() {
+        //MARK: - Delete
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+
+        //MARK: - Objects
+        let newHedef = Goal(context: self.context)
+        newHedef.title = "Goal number one"
+        newHedef.id = 0
+        newHedef.isCompleted = false
+        
+        let secHedef = Goal(context: self.context)
+        secHedef.title = "Goal number two"
+        secHedef.id = 1
+        secHedef.isCompleted = false
+
+        
+        let thirdHedef = Goal(context: self.context)
+        thirdHedef.title = "Goal number three"
+        thirdHedef.id = 2
+        thirdHedef.isCompleted = false
+        
+        
+        let fourthHedef = Goal(context: self.context)
+        fourthHedef.title = "Goal number four"
+        fourthHedef.id = 3
+        fourthHedef.isCompleted = false
+        
+        let fifthHedef = Goal(context: self.context)
+        fifthHedef.title = "Goal number five"
+        fifthHedef.id = 4
+        fifthHedef.isCompleted = false
+        
+        let sixthHedef = Goal(context: self.context)
+        sixthHedef.title = "Goal number six"
+        sixthHedef.id = 5
+        sixthHedef.isCompleted = false
+        
+        let seventhHedef = Goal(context: self.context)
+        seventhHedef.title = "Goal number seven"
+        seventhHedef.id = 6
+        seventhHedef.isCompleted = false
+        
+        //MARK: - Save new objects.
+        do {
+            try self.context.save()
+        }
+        catch {
+            print("error! data couldnt be saved!")
+        }
+    }
+    
 }
 
 
@@ -57,6 +183,9 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 
         let cell = settingsTableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsTableViewCell
         cell.settingsLabel.text = settingsRowsNames[indexPath.row]
+        if indexPath.row == 3 {
+            cell.settingsLabel.textColor = .red
+        }
         return cell
     }
     
@@ -67,7 +196,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = settingsTableView.cellForRow(at: indexPath)
         settingsTableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
+        if indexPath.row == 3 {
+            showAlert()
+        }
+//        performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
+        
         
     }
 }

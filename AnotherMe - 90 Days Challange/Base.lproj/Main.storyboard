@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ba-pT-0ox">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ovI-hC-hQj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -129,6 +129,7 @@
                         <outlet property="cons" destination="iTG-kI-A7a" id="7LA-Dr-sTM"/>
                         <outlet property="faqButton" destination="nEU-DK-3Ro" id="GYq-LX-Z6e"/>
                         <outlet property="labelsStackView" destination="HPa-fq-wYm" id="eLa-pM-puF"/>
+                        <outlet property="nameLabel" destination="ilV-Iq-70e" id="Exd-D4-vBh"/>
                         <outlet property="profilePhoto" destination="Vrf-ST-uc2" id="15P-LF-gag"/>
                         <outlet property="titleLabel" destination="BMU-PK-TE8" id="9QN-lC-w3o"/>
                         <segue destination="6Ti-Kh-qoF" kind="showDetail" identifier="help" id="v6x-PV-x8D"/>

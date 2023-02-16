@@ -7,6 +7,8 @@
 
 import UIKit
 import Lottie
+import CoreData
+
 
 class GetStartedViewController: UIViewController, UITextFieldDelegate {
     
@@ -14,6 +16,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
      custom viewController for every page on onboarding, i added all views together, and hide or showed the ones
      i need for each page.*/
 
+    let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    
     //MARK: - All Views & Variables
     let collectionView: UICollectionView = {
         let layout         = UICollectionViewFlowLayout()
@@ -44,7 +49,8 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var currentPage             = 1
     var pageControl             = 0
     var animationView           : LottieAnimationView!
-    
+    var userName                : String = ""
+    var userAge                 : String = ""
 
     let goalsText          = ["Read 10 min everyday" , "Visualize of future you!", "Drink 3 L water everyday", "Go for running 30 min", "Take photo of your body", "Share this on İnstangram to put pressure on yourself"]
 
@@ -390,11 +396,23 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    fileprivate func saveUserValues(userName: String, userAge: String) {
+        let saveUser  = User(context: self.context)
+        saveUser.name = userName
+        saveUser.age  = userAge
+        do {
+            try self.context.save()
+        } catch {
+            print("error! user couldnt be saved!")
+        }
+    }
+    
     private func observeKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+
     @objc private func keyboardWillShow(_ notification: Notification) {
         bgViewTopConstraint?.isActive = false
         bgViewStretchConstraint?.isActive = true
@@ -440,6 +458,8 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         currentPage += 1
         if currentPage == isThisViewHidden.count {
             currentPage = 0
+            print("username is : \(userName)")
+            saveUserValues(userName: userName, userAge: userAge)
         }
         print(currentPage)
     }
@@ -478,6 +498,7 @@ extension GetStartedViewController : UICollectionViewDelegate, UICollectionViewD
             selectedCell.cellBackgroundView.backgroundColor = UIColor(named: "selectedBlue")
             selectedCell.cellBackgroundView.layer.borderColor = UIColor(named: "blueBorder")?.cgColor
             selectedCell.cellBackgroundView.layer.borderWidth = 2.5
+            self.userAge = selectedCell.cellAgeLabel.text ?? ""
             })
          fadeOutBackgroundColor(fadeOut: false)
          nextButton.isUserInteractionEnabled = true
@@ -507,6 +528,7 @@ extension GetStartedViewController : UITextViewDelegate {
             if !text.isEmpty{
                 nextButton.isUserInteractionEnabled = true
                 print(text)
+                userName = text
                 fadeOutBackgroundColor(fadeOut: false)
             } else {
                 nextButton.isUserInteractionEnabled = false

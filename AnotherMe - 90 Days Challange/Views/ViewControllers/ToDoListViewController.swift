@@ -19,16 +19,33 @@ class ToDoListViewController: UIViewController {
     let context     = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var items : [Goal]?
     var times : [Time]?
-    
+    var timeDifference : Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
+        setViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+        if calculateDif() > 75 {
+            dayTitleLabel.text = "DAY 75"
+        } else {
+            dayTitleLabel.text = "DAY \(calculateDif() + 1)"
+        }
+    }
+    
+    fileprivate func setViews() {
         tableView.delegate   = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        dayTitleLabel.text = "DAY \(calculateDif() + 1)"
-
+        if calculateDif() > 75 {
+            dayTitleLabel.text = "DAY 75"
+        } else {
+            dayTitleLabel.text = "DAY \(calculateDif() + 1)"
+        }
     }
     
     fileprivate  func calculateDif() -> Int {

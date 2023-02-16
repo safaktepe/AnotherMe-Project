@@ -12,22 +12,25 @@ class CalenderViewController: UIViewController {
     var totalSquaeres   = [String]()
     let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var times           : [Time]?
-    var isShared       : Bool = false
+    var isShared        : Bool = false
+    var names           : [User]?
+    var timeDifference  : Int = 0
     
-    @IBOutlet weak var cons: NSLayoutConstraint!
-    @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var labelsStackView: UIStackView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var faqButton: UIButton!
-    @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var cons             : NSLayoutConstraint!
+    @IBOutlet weak var shareButton      : UIButton!
+    @IBOutlet weak var labelsStackView  : UIStackView!
+    @IBOutlet weak var titleLabel       : UILabel!
+    @IBOutlet weak var faqButton        : UIButton!
+    @IBOutlet weak var profilePhoto     : UIImageView!
+    @IBOutlet weak var collectionView   : UICollectionView!
+    @IBOutlet weak var nameLabel        : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        setProfilePhoto()
+        timeDifference = calculateDif()
+        setUI()
         setProfilePhotoFromCD()
+        fetchUserName()
 
         for i in 1...75 {
             totalSquaeres.append("\(i)")
@@ -35,8 +38,13 @@ class CalenderViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate   = self
-
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        timeDifference = calculateDif()
+        collectionView.reloadData()
+    }
+
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
     }
@@ -52,6 +60,8 @@ class CalenderViewController: UIViewController {
         cons.constant = (imageHeight + holdCons.constant) * (-1)
     }
     
+    
+    
     @IBAction func shareButtonClicked(_ sender: Any) {
         if isShared == false {
             isShared = true
@@ -64,13 +74,26 @@ class CalenderViewController: UIViewController {
         }
     }
     
-    fileprivate func setProfilePhoto() {
+    fileprivate func  fetchUserName() {
+        do {
+            let request = User.fetchRequest() as NSFetchRequest<User>
+            self.names = try context.fetch(request)
+            nameLabel.text = names?[0].name
+        } catch {
+            print("user fetch error!")
+        }
+    }
+    
+    
+    
+    
+    fileprivate func setUI() {
         profilePhoto.layer.cornerRadius  = profilePhoto.frame.size.width / 2
         profilePhoto.layer.masksToBounds = false
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
         profilePhoto.layer.borderWidth   = 3
         profilePhoto.clipsToBounds = true
-            }
+  }
    
     fileprivate func fetchTime() {
         do {
@@ -89,6 +112,8 @@ class CalenderViewController: UIViewController {
         let minutes     = diffSeconds / 60
         return minutes
     }
+    
+    
     
     fileprivate func getScreenshot() -> UIImage? {
         //creates new image context with same size as view
@@ -138,8 +163,10 @@ extension CalenderViewController: UICollectionViewDelegate, UICollectionViewData
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCollectionViewCell
         cell.daysLabel.text = totalSquaeres[indexPath.row]
         
-        if indexPath.row <= calculateDif() {
+        if indexPath.row <= timeDifference {
             cell.daysLabel.textColor = .red
+        } else {
+            cell.daysLabel.textColor = .white
         }
         return cell
     }
