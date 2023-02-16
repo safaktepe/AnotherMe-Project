@@ -8,10 +8,11 @@
 import UIKit
 import CoreData
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
    
     let myImageViewCornerRadius: CGFloat = 75.0
-    
+    let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     let imageButton         = UIButton()
     let editButton          = UIButton()
     let firstNameLabel      = UILabel()
@@ -26,7 +27,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        setupProfilePhoto()
+        saveProfilePhoto()
+        
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
     }
     
     
@@ -92,6 +96,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         saveButton.layer.cornerRadius = 10
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = .systemFont(ofSize: 19)
+        saveButton.alpha = 0.5
+        saveButton.isUserInteractionEnabled = false
         saveButton.addTarget(self, action: #selector(saveButtonClicked), for: .touchUpInside)
         view.addSubview(saveButton)
 
@@ -110,18 +116,60 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     //MARK: - Functions
     @objc func deleteAccountButtonClicked(sender: UIButton!) {
-       
+        
+        lazy var persistentContainer: NSPersistentContainer = {
+            let container = NSPersistentContainer(name: "Anotherme")
+            container.loadPersistentStores { description, error in
+                if let error = error {
+                    fatalError("Failed to load Core Data stack: \(error)")
+                }
+            }
+            return container
+        }()
 
+        
+        let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "User")
+        fetchRequest.resultType = .dictionaryResultType
+        fetchRequest.propertiesToFetch = ["image"]
+        
+       
+        do {
+            let results = try persistentContainer.viewContext.fetch(fetchRequest) as! [[String:Any]]
+            for result in results {
+                if let image = result["image"] as? Data {
+                    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+                    fetchRequest.predicate = NSPredicate(format: "image == %@", image as CVarArg)
+                    do {
+                        let users = try persistentContainer.viewContext.fetch(fetchRequest) as! [User]
+                        for user in users {
+                            user.image = nil
+                        }
+                        try persistentContainer.viewContext.save()
+                    } catch {
+                        print("Error deleting image data: \(error)")
+                    }
+                }
+            }
+        } catch {
+            print("Error fetching image data: \(error)")
+        }
     }
+    
     
     @objc func saveButtonClicked() {
         
         //BUG HERE !!! DONT LET USER CLICK BUTTON IF THERE IS NO IMAGE CHOOSEN BY USER!!!!!!
         //Save also in coredata
         
-       
+        let saveImage  = User(context: self.context)
+        saveImage.image = imageButton.imageView?.image?.jpegData(compressionQuality: 0.5)
 
-}   
+        do {
+            try self.context.save()
+        } catch {
+            print("error! image couldnt be saved!")
+        }
+}
     
     @objc func editButtonClicked() {
         let imagePickerController           = UIImagePickerController()
@@ -137,12 +185,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             imageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
         }
         dismiss(animated: true, completion: nil)
+        saveButton.alpha = 1
+        saveButton.isUserInteractionEnabled = true
     }
 
 
-    fileprivate func setupProfilePhoto() {
+    fileprivate func saveProfilePhoto() {
         
-}
+        
+    }
     
     func setConstraints() {
         imageButton          .translatesAutoresizingMaskIntoConstraints   = false
@@ -205,3 +256,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 }
 
 
+
+extension ProfileViewController : UITextViewDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+            let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+            if !text.isEmpty{
+                saveButton.isUserInteractionEnabled = true
+                saveButton.alpha = 1
+            } else {
+                saveButton.isUserInteractionEnabled = true
+                saveButton.alpha = 0.5
+            }
+            return true
+        }
+}

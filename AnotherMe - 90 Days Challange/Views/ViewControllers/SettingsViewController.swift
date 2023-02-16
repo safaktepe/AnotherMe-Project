@@ -12,17 +12,19 @@ class SettingsViewController: UIViewController {
     
     let context    = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var times : [Time]?
+    var users : [User] = []
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let settingsRowsNames = ["Account", "Support & Feedback", "Notifications", "Restart Challange"]
+    let settingsRowsNames = ["Account", "Support & Feedback", "Restart Challange"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
+        fetchImage()
         settingsTableView.delegate   = self
         settingsTableView.dataSource = self
         settingsTableView.backgroundColor = .black
@@ -56,6 +58,20 @@ class SettingsViewController: UIViewController {
         } catch {
             print("time fetch error!")
         }
+    }
+    
+    fileprivate func fetchImage() {
+        do {
+            let request = User.fetchRequest() as NSFetchRequest<User>
+            self.users = try context.fetch(request)
+        } catch {
+            print("image fetch error!")
+        }
+        
+        if let imageData = users.last?.image as? Data {
+            profilePhoto.image = UIImage(data: imageData)
+        }
+        // REFACTOR HERE: PLACEHOLDER IMAGE
     }
     
     fileprivate func restartChallange() {
@@ -196,10 +212,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = settingsTableView.cellForRow(at: indexPath)
         settingsTableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row == 3 {
+        if indexPath.row < 2 {
+         performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
+        }
+        if indexPath.row == 2 {
             showAlert()
         }
-//        performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
         
         
     }

@@ -135,7 +135,6 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ToDoListViewController:  MyCellDelegate {
     func onClickCell(index: Int) {
-        
         print("\(index + 1 ) clicked")
         let hedef = self.items![index]
         if hedef.isCompleted == true {

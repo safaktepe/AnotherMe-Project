@@ -93,7 +93,19 @@ class CalenderViewController: UIViewController {
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
         profilePhoto.layer.borderWidth   = 3
         profilePhoto.clipsToBounds = true
-  }
+        profilePhoto.isUserInteractionEnabled = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profilePhotoTapped(tapGestureRecognizer:)))
+        profilePhoto.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    
+    @objc func profilePhotoTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        self.tabBarController?.selectedIndex = 3
+        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "profileViewController") as! ProfileViewController
+        self.present(profileViewController, animated: true, completion: nil)
+    }
    
     fileprivate func fetchTime() {
         do {
