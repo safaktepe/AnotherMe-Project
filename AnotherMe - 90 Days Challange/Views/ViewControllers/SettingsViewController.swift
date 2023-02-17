@@ -11,30 +11,21 @@ import CoreData
 class SettingsViewController: UIViewController {
     
     let context    = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var times : [Time]?
-    var users : [User] = []
-    var profileViewController : ProfileViewController?
+    var times      : [Time]?
+    var users      : [User] = []
     
-    @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var settingsTableView: UITableView!
-    
+    @IBOutlet weak var profilePhoto       : UIImageView!
+    @IBOutlet weak var settingsTableView  : UITableView!
+    var profileViewController             : ProfileViewController?
+
     let settingsRowsNames = ["Account", "Support & Feedback", "Restart Challange"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
     let segueNames = ["mert", "merttwo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        profileViewController = ProfileViewController()
-        profileViewController?.delegate = self
-
-        
         setViews()
         fetchImage()
-        settingsTableView.delegate   = self
-        settingsTableView.dataSource = self
-        settingsTableView.backgroundColor = .black
-        settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,12 +35,23 @@ class SettingsViewController: UIViewController {
       }
 
     fileprivate func setViews() {
-        profilePhoto.contentMode = .scaleAspectFill
+        // To use on deleate-protocol.
+        profileViewController = ProfileViewController()
+        profileViewController?.delegate = self
+        
+        // Table View.
+        settingsTableView.delegate   = self
+        settingsTableView.dataSource = self
+        settingsTableView.backgroundColor = .black
+        settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        // Rounded imageView.
+        profilePhoto.contentMode         = .scaleAspectFill
         profilePhoto.layer.cornerRadius  = profilePhoto.frame.height / 2
         profilePhoto.layer.masksToBounds = false
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
         profilePhoto.layer.borderWidth   = 3
-        profilePhoto.clipsToBounds = true
+        profilePhoto.clipsToBounds       = true
     }
     
     fileprivate  func calculateDif() -> Int {
@@ -81,7 +83,6 @@ class SettingsViewController: UIViewController {
         if let imageData = users.last?.image as? Data {
             profilePhoto.image = UIImage(data: imageData)
         }
-        // REFACTOR HERE: PLACEHOLDER IMAGE
     }
     
     fileprivate func restartChallange() {
@@ -236,5 +237,3 @@ extension SettingsViewController: ProfileViewControllerDelegate {
         profilePhoto.image = UIImage(data: imageData)
     }
 }
-
-
