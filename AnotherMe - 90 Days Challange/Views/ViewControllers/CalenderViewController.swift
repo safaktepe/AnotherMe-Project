@@ -9,8 +9,11 @@ import UIKit
 import CoreData
 
 class CalenderViewController: UIViewController {
+
+    
     var totalSquaeres   = [String]()
     let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let name            = Notification.Name(rawValue: userInfoUpdateNotificationKey)
     var times           : [Time]?
     var isShared        : Bool = false
     var names           : [User]?
@@ -25,42 +28,39 @@ class CalenderViewController: UIViewController {
     @IBOutlet weak var collectionView   : UICollectionView!
     @IBOutlet weak var nameLabel        : UILabel!
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        timeDifference = calculateDif()
+        createNotificationObserver()
         setUI()
-        setProfilePhotoFromCD()
-        fetchUserName()
-
-        for i in 1...75 {
-            totalSquaeres.append("\(i)")
-        }
-        
-        collectionView.dataSource = self
-        collectionView.delegate   = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         timeDifference = calculateDif()
         collectionView.reloadData()
     }
-
+    
+    
+   
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
     }
     
     func setShareButtonViewChanges () {
-        profilePhoto.isHidden = !profilePhoto.isHidden
-        labelsStackView.isHidden = !labelsStackView.isHidden
-        faqButton.isHidden = !faqButton.isHidden
-        titleLabel.isHidden = !titleLabel.isHidden
+        profilePhoto.isHidden     = !profilePhoto.isHidden
+        labelsStackView.isHidden  = !labelsStackView.isHidden
+        faqButton.isHidden        = !faqButton.isHidden
+        titleLabel.isHidden       = !titleLabel.isHidden
         let scaleImage  = profilePhoto.frame.size
         let imageHeight = scaleImage.height
         let holdCons : NSLayoutConstraint = cons
         cons.constant = (imageHeight + holdCons.constant) * (-1)
     }
     
-    
+   
     
     @IBAction func shareButtonClicked(_ sender: Any) {
         if isShared == false {
@@ -74,7 +74,7 @@ class CalenderViewController: UIViewController {
         }
     }
     
-    fileprivate func  fetchUserName() {
+    fileprivate func fetchUserName() {
         do {
             let request = User.fetchRequest() as NSFetchRequest<User>
             self.names = try context.fetch(request)
@@ -84,10 +84,26 @@ class CalenderViewController: UIViewController {
         }
     }
     
+    fileprivate func createNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: name, object: nil)
+    }
     
-    
+    @objc func updateProfileImage(_ notification: Notification) {
+        setProfilePhotoFromCD()
+    }
     
     fileprivate func setUI() {
+        timeDifference = calculateDif()
+        setProfilePhotoFromCD()
+        fetchUserName()
+
+        for i in 1...75 {
+            totalSquaeres.append("\(i)")
+        }
+        
+        collectionView.dataSource = self
+        collectionView.delegate   = self
+        
         profilePhoto.layer.cornerRadius  = profilePhoto.frame.size.width / 2
         profilePhoto.layer.masksToBounds = false
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
@@ -194,3 +210,5 @@ extension CalenderViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: (screenWidth - (11 * 2.0)) / 10, height: (screenHeight - (12 * 1.0)) / 11)
     }
 }
+
+

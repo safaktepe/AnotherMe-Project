@@ -8,6 +8,13 @@
 import UIKit
 import CoreData
 
+let userInfoUpdateNotificationKey = "userDataUpdated"
+
+protocol ProfileViewControllerDelegate: AnyObject {
+    func didUserTappedUpdate(imageData: Data)
+}
+
+
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
    
     let myImageViewCornerRadius: CGFloat = 75.0
@@ -23,12 +30,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     let saveButton          = UIButton(type: .system)
     var downloadImage       : String = ""
     var photoData           : Data?
+    weak var delegate       : ProfileViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        saveProfilePhoto()
-        
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
     }
@@ -113,10 +119,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
        
         setConstraints()
     }
-    
-    //MARK: - Functions
-    @objc func deleteAccountButtonClicked(sender: UIButton!) {
-        
+    fileprivate func deleteAllImagesCoreData() {
         lazy var persistentContainer: NSPersistentContainer = {
             let container = NSPersistentContainer(name: "Anotherme")
             container.loadPersistentStores { description, error in
@@ -155,20 +158,32 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
+    //MARK: - Functions
+    @objc func deleteAccountButtonClicked(sender: UIButton!) {
+        deleteAllImagesCoreData()
+    }
+    
     
     @objc func saveButtonClicked() {
-        
-        //BUG HERE !!! DONT LET USER CLICK BUTTON IF THERE IS NO IMAGE CHOOSEN BY USER!!!!!!
-        //Save also in coredata
-        
+        deleteAllImagesCoreData()
         let saveImage  = User(context: self.context)
         saveImage.image = imageButton.imageView?.image?.jpegData(compressionQuality: 0.5)
-
         do {
             try self.context.save()
         } catch {
             print("error! image couldnt be saved!")
         }
+        guard let data = imageButton.imageView?.image?.jpegData(compressionQuality: 0.5) as? Data  else {return}
+
+        if let delegate = delegate{
+            delegate.didUserTappedUpdate(imageData: data)
+        }else{
+           print("The delegate is nil")
+         }
+        let name = Notification.Name(rawValue: userInfoUpdateNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil)
+
+        showAlert()
 }
     
     @objc func editButtonClicked() {
@@ -190,10 +205,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
 
-    fileprivate func saveProfilePhoto() {
-        
-        
-    }
+    
     
     func setConstraints() {
         imageButton          .translatesAutoresizingMaskIntoConstraints   = false
@@ -225,9 +237,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     
                     
                     firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 8),
-                    firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-                    firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-                    firstNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+                    firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                    firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
                     
                     
                     lastNameLabel.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 20.0),
@@ -235,9 +246,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     
                     
                     lastNameTextField.topAnchor.constraint(equalTo: lastNameLabel.bottomAnchor, constant: 8),
-                    lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-                    lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-                    lastNameTextField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.9),
+                    lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                    lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
                     
                     saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                     saveButton.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 16),
@@ -272,4 +282,18 @@ extension ProfileViewController : UITextViewDelegate {
             }
             return true
         }
+}
+
+extension ProfileViewController {
+
+     func showAlert() {
+         let alert = UIAlertController(title: "Saved!", message: "All changes are saved.", preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            print("OK")
+             self.saveButton.isUserInteractionEnabled = false
+             self.saveButton.alpha = 0.5
+        }))
+        present(alert, animated: true)
+    }
+    
 }

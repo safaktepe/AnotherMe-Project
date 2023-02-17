@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     let context    = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var times : [Time]?
     var users : [User] = []
+    var profileViewController : ProfileViewController?
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var settingsTableView: UITableView!
@@ -23,6 +24,11 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        profileViewController = ProfileViewController()
+        profileViewController?.delegate = self
+
+        
         setViews()
         fetchImage()
         settingsTableView.delegate   = self
@@ -31,8 +37,12 @@ class SettingsViewController: UIViewController {
         settingsTableView.register(UINib(nibName: "SettingsTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if let profileViewController = segue.destination as? ProfileViewController{
+              profileViewController.delegate = self
+          }
+      }
+
     fileprivate func setViews() {
         profilePhoto.contentMode = .scaleAspectFill
         profilePhoto.layer.cornerRadius  = profilePhoto.frame.height / 2
@@ -218,7 +228,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 2 {
             showAlert()
         }
-        
-        
     }
 }
+
+extension SettingsViewController: ProfileViewControllerDelegate {
+    func didUserTappedUpdate(imageData: Data) {
+        profilePhoto.image = UIImage(data: imageData)
+    }
+}
+
+
