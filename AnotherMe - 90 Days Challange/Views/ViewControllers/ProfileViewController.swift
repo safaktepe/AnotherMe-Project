@@ -19,7 +19,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
    
     let myImageViewCornerRadius: CGFloat = 75.0
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
+    var hasPickedNewImage   = false
     let imageButton         = UIButton()
     let editButton          = UIButton()
     let firstNameLabel      = UILabel()
@@ -34,7 +35,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         setView()
         firstNameTextField.delegate = self
-
     }
     
  
@@ -84,26 +84,48 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @objc func saveButtonClicked() {
-        deleteAllImagesCoreData()
-        let saveImage  = User(context: self.context)
-        saveImage.image = imageButton.imageView?.image?.jpegData(compressionQuality: 0.5)
-        do {
-            try self.context.save()
-        } catch {
-            print("error! image couldnt be saved!")
-        }
-        guard let data = imageButton.imageView?.image?.jpegData(compressionQuality: 0.5) as? Data  else {return}
-
-        if let delegate = delegate{
-            delegate.didUserTappedUpdate(imageData: data)
-        }else{
-           print("The delegate is nil")
-         }
-        let name = Notification.Name(rawValue: userInfoUpdateNotificationKey)
-        NotificationCenter.default.post(name: name, object: nil)
-        
+        let newName = firstNameTextField.text
+        let newImage = imageButton.imageView?.image
+        updateUserSettings(name: newName, image: newImage)
+        let updatedUser  = Notification.Name(rawValue: userInfoUpdateNotificationKey)
+        NotificationCenter.default.post(name: updatedUser, object: nil)
         showAlert()
 }
+    
+    
+    fileprivate func updateUserSettings(name: String?, image: UIImage?) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        do {
+            let results = try context.fetch(fetchRequest) as! [NSManagedObject]
+            if let user = results.first as? User {
+                if let newName = name, !newName.isEmpty {
+                    user.name = newName
+                }
+                if hasPickedNewImage, let newImage = image, let imageData = newImage.pngData() {
+                    user.image = imageData
+                    hasPickedNewImage = false
+                    delegate?.didUserTappedUpdate(imageData: imageData)
+                }
+                try context.save()
+            } else {
+                let user = User(context: context)
+                if let newName = name, !newName.isEmpty {
+                    user.name = newName
+                }
+                if hasPickedNewImage, let newImage = image, let imageData = newImage.pngData() {
+                    user.image = imageData
+                    hasPickedNewImage = false
+                }
+                try context.save()
+            }
+        } catch {
+            print("Error updating user settings: \(error)")
+        }
+        
+    }
     
     @objc func editButtonClicked() {
         let imagePickerController           = UIImagePickerController()
@@ -115,8 +137,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage   = info[.editedImage]   as? UIImage {
             imageButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            hasPickedNewImage = true
         } else if let originalImage = info[.originalImage] as? UIImage {
             imageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            hasPickedNewImage = true
         }
         dismiss(animated: true, completion: nil)
         saveButton.alpha = 1

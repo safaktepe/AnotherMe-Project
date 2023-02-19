@@ -80,7 +80,7 @@ class SettingsViewController: UIViewController {
             print("image fetch error!")
         }
         
-        if let imageData = users.last?.image as? Data {
+        if let imageData = users.first?.image as? Data {
             profilePhoto.image = UIImage(data: imageData)
         }
     }

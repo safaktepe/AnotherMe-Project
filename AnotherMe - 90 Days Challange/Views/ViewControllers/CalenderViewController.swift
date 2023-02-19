@@ -42,8 +42,6 @@ class CalenderViewController: UIViewController {
         timeDifference = calculateDif()
         collectionView.reloadData()
     }
-    
-    
    
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
@@ -73,29 +71,16 @@ class CalenderViewController: UIViewController {
             setShareButtonViewChanges()
         }
     }
-    
-    fileprivate func fetchUserName() {
-        do {
-            let request = User.fetchRequest() as NSFetchRequest<User>
-            self.names = try context.fetch(request)
-            nameLabel.text = names?[0].name
-        } catch {
-            print("user fetch error!")
-        }
-    }
+   
     
     fileprivate func createNotificationObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(updateProfileImage), name: name, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userValuesCoreData), name: name, object: nil)
     }
     
-    @objc func updateProfileImage(_ notification: Notification) {
-        setProfilePhotoFromCD()
-    }
     
     fileprivate func setUI() {
         timeDifference = calculateDif()
-        setProfilePhotoFromCD()
-        fetchUserName()
+        userValuesCoreData()
 
         for i in 1...75 {
             totalSquaeres.append("\(i)")
@@ -140,9 +125,7 @@ class CalenderViewController: UIViewController {
         let minutes     = diffSeconds / 60
         return minutes
     }
-    
-    
-    
+        
     fileprivate func getScreenshot() -> UIImage? {
         //creates new image context with same size as view
         // UIGraphicsBeginImageContextWithOptions (scale=0.0) for high res capture
@@ -159,25 +142,27 @@ class CalenderViewController: UIViewController {
         return screenshot
     }
     
-    fileprivate func setProfilePhotoFromCD() {
-        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-        let context      = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.returnsObjectsAsFaults = false
-        
-        do {
-           let results = try context.fetch(fetchRequest)
-            for result in results as! [NSManagedObject] {
-                if let imageData = result.value(forKey: "image") as? Data {
-                    let image = UIImage(data: imageData)
-                    profilePhoto.image = image
-                }
-            }
-        } catch {
-            print("error")
-        }
+    @objc func userValuesCoreData() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+          do {
+              let results = try context.fetch(fetchRequest) as! [NSManagedObject]
+              if let user = results.first as? User {
+                  let name = user.name
+                  if let imageData = user.image, let image = UIImage(data: imageData) {
+                      nameLabel.text = name
+                      profilePhoto.image = image
+                  } else {
+                      nameLabel.text = name
+                      profilePhoto.image = nil
+                  }
+              }
+          } catch {
+              print("Error fetching user settings: \(error)")
+          }
     }
-    
     
 }
 
