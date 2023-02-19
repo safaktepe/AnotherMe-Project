@@ -434,7 +434,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func nextButtonClicked(_ sender: Any) {
-        let textFieldInputName : String = textField.text ?? ""
+        let textFieldInputName : String = "\(String(describing: textField.text))."
 
         titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the 6 rules that you must follow!", "From which day do you want to start?"]
 

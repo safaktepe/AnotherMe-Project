@@ -17,24 +17,25 @@ protocol ProfileViewControllerDelegate: AnyObject {
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
    
-    let myImageViewCornerRadius: CGFloat = 75.0
+    let myImageViewCornerRadius : CGFloat = 75.0
+    weak var delegate           : ProfileViewControllerDelegate?
     let context  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var hasPickedNewImage   = false
-    let imageButton         = UIButton()
-    let editButton          = UIButton()
-    let firstNameLabel      = UILabel()
-    let firstNameTextField  = UITextField()
-    let deleteAccountButton = UIButton(type: .system)
-    let saveButton          = UIButton(type: .system)
-    var downloadImage       : String = ""
-    var photoData           : Data?
-    weak var delegate       : ProfileViewControllerDelegate?
+
+    var hasUserPickedNewImage = false
+    let pickImageButton       = UIButton()
+    let editButton            = UIButton()
+    let nameLabel             = UILabel()
+    let nameTextField         = UITextField()
+    let deleteAccountButton   = UIButton(type: .system)
+    let saveButton            = UIButton(type: .system)
+    var downloadImage         : String = ""
+    var photoData             : Data?
+    var newName               : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        firstNameTextField.delegate = self
+        nameTextField.delegate = self
     }
     
  
@@ -78,19 +79,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("Error fetching image data: \(error)")
         }
     }
+    
     @objc func deleteAccountButtonClicked(sender: UIButton!) {
         deleteAllImagesCoreData()
     }
     
     
     @objc func saveButtonClicked() {
-        let newName = firstNameTextField.text
-        let newImage = imageButton.imageView?.image
+        let inputName = nameTextField.text
+        if let inputName = inputName {
+            newName = "\(inputName)."
+        }
+        let newImage = pickImageButton.imageView?.image
         updateUserSettings(name: newName, image: newImage)
         let updatedUser  = Notification.Name(rawValue: userInfoUpdateNotificationKey)
         NotificationCenter.default.post(name: updatedUser, object: nil)
         showAlert()
-}
+    }
     
     
     fileprivate func updateUserSettings(name: String?, image: UIImage?) {
@@ -104,9 +109,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 if let newName = name, !newName.isEmpty {
                     user.name = newName
                 }
-                if hasPickedNewImage, let newImage = image, let imageData = newImage.pngData() {
+                if hasUserPickedNewImage, let newImage = image, let imageData = newImage.pngData() {
                     user.image = imageData
-                    hasPickedNewImage = false
+                    hasUserPickedNewImage = false
                     delegate?.didUserTappedUpdate(imageData: imageData)
                 }
                 try context.save()
@@ -115,16 +120,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 if let newName = name, !newName.isEmpty {
                     user.name = newName
                 }
-                if hasPickedNewImage, let newImage = image, let imageData = newImage.pngData() {
+                if hasUserPickedNewImage, let newImage = image, let imageData = newImage.pngData() {
                     user.image = imageData
-                    hasPickedNewImage = false
+                    hasUserPickedNewImage = false
                 }
                 try context.save()
             }
         } catch {
             print("Error updating user settings: \(error)")
         }
-        
     }
     
     @objc func editButtonClicked() {
@@ -136,11 +140,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editedImage   = info[.editedImage]   as? UIImage {
-            imageButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
-            hasPickedNewImage = true
+            pickImageButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            hasUserPickedNewImage = true
         } else if let originalImage = info[.originalImage] as? UIImage {
-            imageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
-            hasPickedNewImage = true
+            pickImageButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+            hasUserPickedNewImage = true
         }
         dismiss(animated: true, completion: nil)
         saveButton.alpha = 1
@@ -149,16 +153,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     //MARK: - UI
     func setView() {
+        // Navbar.
+        let nav                  = self.navigationController?.navigationBar
+        nav?.barStyle            = UIBarStyle.default
+        nav?.tintColor           = UIColor.black
+        nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        title = "Edit Profile"
+        
         //Profile image button.
-        imageButton.layer.cornerRadius  = myImageViewCornerRadius
-        imageButton.layer.masksToBounds = true
-        imageButton.contentVerticalAlignment = .fill
-        imageButton.contentHorizontalAlignment = .fill
-        imageButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        imageButton.layer.borderColor   = UIColor.black.cgColor
-        imageButton.layer.borderWidth   = 3
-        imageButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
-        view.addSubview(imageButton)
+        pickImageButton.layer.cornerRadius  = myImageViewCornerRadius
+        pickImageButton.layer.masksToBounds = true
+        pickImageButton.contentVerticalAlignment   = .fill
+        pickImageButton.contentHorizontalAlignment = .fill
+        pickImageButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        pickImageButton.layer.borderColor   = UIColor.black.cgColor
+        pickImageButton.layer.borderWidth   = 3
+        pickImageButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+        view.addSubview(pickImageButton)
         
         //ImageView's edit button.
         editButton.setImage(UIImage(systemName: "camera.fill"), for: .normal)
@@ -170,20 +181,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         view.addSubview(editButton)
         
         //Name Label
-        firstNameLabel.textColor     = .black
-        firstNameLabel.textAlignment = .center
-        firstNameLabel.text          = "First Name"
-        view.addSubview(firstNameLabel)
+        nameLabel.textColor     = .black
+        nameLabel.textAlignment = .center
+        nameLabel.text          = "First Name"
+        view.addSubview(nameLabel)
         
         //First name textfield.
-        firstNameTextField.placeholder        = "First Name"
-        firstNameTextField.borderStyle        = UITextField.BorderStyle.roundedRect
-        firstNameTextField.autocorrectionType = UITextAutocorrectionType.no
-        firstNameTextField.keyboardType       = UIKeyboardType.default
-        firstNameTextField.returnKeyType      = UIReturnKeyType.done
-        firstNameTextField.clearButtonMode    = UITextField.ViewMode.whileEditing
-        firstNameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        view.addSubview(firstNameTextField)
+        nameTextField.placeholder        = "First Name"
+        nameTextField.borderStyle        = UITextField.BorderStyle.roundedRect
+        nameTextField.autocorrectionType = UITextAutocorrectionType.no
+        nameTextField.keyboardType       = UIKeyboardType.default
+        nameTextField.returnKeyType      = UIReturnKeyType.done
+        nameTextField.clearButtonMode    = UITextField.ViewMode.whileEditing
+        nameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        view.addSubview(nameTextField)
 
         //Save button
         saveButton.backgroundColor = .systemGreen
@@ -208,35 +219,35 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     func setConstraints() {
-        imageButton          .translatesAutoresizingMaskIntoConstraints   = false
+        pickImageButton      .translatesAutoresizingMaskIntoConstraints   = false
         editButton           .translatesAutoresizingMaskIntoConstraints   = false
-        firstNameLabel       .translatesAutoresizingMaskIntoConstraints   = false
-        firstNameTextField   .translatesAutoresizingMaskIntoConstraints   = false
+        nameLabel            .translatesAutoresizingMaskIntoConstraints   = false
+        nameTextField        .translatesAutoresizingMaskIntoConstraints   = false
         deleteAccountButton  .translatesAutoresizingMaskIntoConstraints   = false
         saveButton           .translatesAutoresizingMaskIntoConstraints   = false
         
         NSLayoutConstraint.activate([
-                    imageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    imageButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-                    imageButton.widthAnchor.constraint(equalToConstant: 150.0),
-                    imageButton.heightAnchor.constraint(equalToConstant: 150.0),
+                    pickImageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                    pickImageButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+                    pickImageButton.widthAnchor.constraint(equalToConstant: 150.0),
+                    pickImageButton.heightAnchor.constraint(equalToConstant: 150.0),
                     
-                    editButton.centerYAnchor.constraint(equalTo: imageButton.bottomAnchor,
+                    editButton.centerYAnchor.constraint(equalTo: pickImageButton.bottomAnchor,
                                                           constant: -myImageViewCornerRadius / 4.0),
-                    editButton.centerXAnchor.constraint(equalTo: imageButton.trailingAnchor,
+                    editButton.centerXAnchor.constraint(equalTo: pickImageButton.trailingAnchor,
                                                          constant: -myImageViewCornerRadius / 4.0),
                     editButton.widthAnchor.constraint(equalToConstant: 50),
                     editButton.heightAnchor.constraint(equalToConstant: 40.0),
                     
-                    firstNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
-                    firstNameLabel.topAnchor.constraint(equalTo: imageButton.bottomAnchor, constant: 20),
+                    nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+                    nameLabel.topAnchor.constraint(equalTo: pickImageButton.bottomAnchor, constant: 20),
                                         
-                    firstNameTextField.topAnchor.constraint(equalTo: firstNameLabel.bottomAnchor, constant: 8),
-                    firstNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                    firstNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+                    nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+                    nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                    nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
                     
                     saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    saveButton.topAnchor.constraint(equalTo: firstNameTextField.bottomAnchor, constant: 16),
+                    saveButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 16),
                     saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
                     saveButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
                     
