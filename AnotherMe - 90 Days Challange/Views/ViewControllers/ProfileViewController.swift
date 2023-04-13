@@ -36,6 +36,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         setView()
         nameTextField.delegate = self
+        hideKeyboardWhenTappedAround()
     }
     
  
@@ -93,6 +94,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                saveButton.alpha = 0.5
            }
        }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
    
   
     @objc func saveButtonClicked() {

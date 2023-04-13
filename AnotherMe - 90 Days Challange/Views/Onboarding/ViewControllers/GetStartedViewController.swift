@@ -535,25 +535,6 @@ extension GetStartedViewController {
        }
 }
 
-
-
-/*
- func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-         let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-
-         if !text.isEmpty{
-             nextButton.isUserInteractionEnabled = true
-             print(text)
-             userName = text
-             fadeOutBackgroundColor(fadeOut: false)
-         } else {
-             nextButton.isUserInteractionEnabled = false
-             fadeOutBackgroundColor(fadeOut: true)
-         }
-         return true
-     }
- */
     extension GetStartedViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1

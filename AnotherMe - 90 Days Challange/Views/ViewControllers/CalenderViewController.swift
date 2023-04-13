@@ -89,8 +89,8 @@ class CalenderViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate   = self
         
-        profilePhoto.layer.cornerRadius  = profilePhoto.frame.size.width / 2
-        profilePhoto.layer.masksToBounds = false
+        profilePhoto.layer.cornerRadius  = 40
+        profilePhoto.layer.masksToBounds = true
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
         profilePhoto.layer.borderWidth   = 3
         profilePhoto.clipsToBounds = true
