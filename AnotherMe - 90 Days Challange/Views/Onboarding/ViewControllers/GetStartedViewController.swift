@@ -175,6 +175,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         let placeholder = NSMutableAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         let placeholderBounds = placeholder.boundingRect(with: CGSize(width: textField.frame.width, height: textField.frame.height), options: .usesLineFragmentOrigin, context: nil)
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.delegate = self
 
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: padding.left, height: placeholderBounds.height))
@@ -327,10 +328,14 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             pickerView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
             pickerView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -32)
         ])
-            
-            
-        
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            let maxLength = 10
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
     
     
     
@@ -516,28 +521,39 @@ extension GetStartedViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-}
-
-
-extension GetStartedViewController : UITextViewDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-            let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-
-            if !text.isEmpty{
-                nextButton.isUserInteractionEnabled = true
-                print(text)
-                userName = text
-                fadeOutBackgroundColor(fadeOut: false)
-            } else {
-                nextButton.isUserInteractionEnabled = false
-                fadeOutBackgroundColor(fadeOut: true)
-            }
-            return true
-        }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+           if let text = textField.text, !text.isEmpty {
+               nextButton.isUserInteractionEnabled = true
+               print(text)
+               userName = text
+               fadeOutBackgroundColor(fadeOut: false)
+           } else {
+               nextButton.isUserInteractionEnabled = false
+               fadeOutBackgroundColor(fadeOut: true)
+           }
+       }
 }
 
+
+
+/*
+ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+
+         let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+
+         if !text.isEmpty{
+             nextButton.isUserInteractionEnabled = true
+             print(text)
+             userName = text
+             fadeOutBackgroundColor(fadeOut: false)
+         } else {
+             nextButton.isUserInteractionEnabled = false
+             fadeOutBackgroundColor(fadeOut: true)
+         }
+         return true
+     }
+ */
     extension GetStartedViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1

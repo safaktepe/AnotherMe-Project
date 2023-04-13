@@ -84,7 +84,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         deleteAllImagesCoreData()
     }
     
-    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+           if let text = textField.text, !text.isEmpty {
+               saveButton.isUserInteractionEnabled = true
+               saveButton.alpha = 1
+           } else {
+               saveButton.isUserInteractionEnabled = false
+               saveButton.alpha = 0.5
+           }
+       }
+   
+  
     @objc func saveButtonClicked() {
         let inputName = nameTextField.text
         if let inputName = inputName {
@@ -183,17 +193,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         //Name Label
         nameLabel.textColor     = .black
         nameLabel.textAlignment = .center
-        nameLabel.text          = "First Name"
+        nameLabel.text          = "Name"
         view.addSubview(nameLabel)
         
         //First name textfield.
-        nameTextField.placeholder        = "First Name"
+        nameTextField.placeholder        = "Enter Your Name"
         nameTextField.borderStyle        = UITextField.BorderStyle.roundedRect
         nameTextField.autocorrectionType = UITextAutocorrectionType.no
         nameTextField.keyboardType       = UIKeyboardType.default
         nameTextField.returnKeyType      = UIReturnKeyType.done
         nameTextField.clearButtonMode    = UITextField.ViewMode.whileEditing
         nameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         view.addSubview(nameTextField)
 
         //Save button
@@ -214,7 +225,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         deleteAccountButton.setTitleColor(.white, for: .normal)
         deleteAccountButton.titleLabel?.font = .systemFont(ofSize: 19)
         deleteAccountButton.addTarget(self, action: #selector(deleteAccountButtonClicked), for: .touchUpInside)
-        view.addSubview(deleteAccountButton)
+//        view.addSubview(deleteAccountButton)
         setConstraints()
     }
     
@@ -223,7 +234,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         editButton           .translatesAutoresizingMaskIntoConstraints   = false
         nameLabel            .translatesAutoresizingMaskIntoConstraints   = false
         nameTextField        .translatesAutoresizingMaskIntoConstraints   = false
-        deleteAccountButton  .translatesAutoresizingMaskIntoConstraints   = false
+//        deleteAccountButton  .translatesAutoresizingMaskIntoConstraints   = false
         saveButton           .translatesAutoresizingMaskIntoConstraints   = false
         
         NSLayoutConstraint.activate([
@@ -247,14 +258,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                     nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
                     
                     saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    saveButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 16),
+                    saveButton.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 32),
                     saveButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
                     saveButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
                     
-                    deleteAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                    deleteAccountButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 24),
-                    deleteAccountButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
-                    deleteAccountButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
+//                    deleteAccountButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//                    deleteAccountButton.topAnchor.constraint(equalTo: saveButton.bottomAnchor, constant: 24),
+//                    deleteAccountButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+//                    deleteAccountButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.05),
      ])
                 self.view = view
     }
@@ -263,21 +274,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 // MARK: - Extensions.
 
 extension ProfileViewController : UITextViewDelegate {
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-            let text = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-
-            if !text.isEmpty{
-                saveButton.isUserInteractionEnabled = true
-                saveButton.alpha = 1
-            } else {
-                saveButton.isUserInteractionEnabled = true
-                saveButton.alpha = 0.5
-            }
-            return true
+            let maxLength = 10
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
         }
 }
+  
 
 extension ProfileViewController {
 

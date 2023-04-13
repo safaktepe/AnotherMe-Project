@@ -18,9 +18,9 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView  : UITableView!
     var profileViewController             : ProfileViewController?
 
-    let settingsRowsNames = ["Account", "Support & Feedback", "Restart Challange"]
+    let settingsRowsNames = ["Account", "Restart Challange"]
     //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
-    let segueNames = ["mert", "merttwo"]
+    let segueNames = ["toAccountPage", "toFeedBack"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -223,10 +223,10 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = settingsTableView.cellForRow(at: indexPath)
         settingsTableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row < 2 {
-         performSegue(withIdentifier: segueNames[indexPath.row], sender: cell)
+        if indexPath.row == 0 {
+         performSegue(withIdentifier: "toAccountPage", sender: cell)
         }
-        if indexPath.row == 2 {
+        if indexPath.row == 1 {
             showAlert()
         }
     }
