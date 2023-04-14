@@ -8,7 +8,9 @@
     <entity name="Time" representedClassName="Time" syncable="YES">
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
 </model>

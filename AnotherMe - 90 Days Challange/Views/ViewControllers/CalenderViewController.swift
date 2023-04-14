@@ -9,48 +9,56 @@ import UIKit
 import CoreData
 
 class CalenderViewController: UIViewController {
+
+    
     var totalSquaeres   = [String]()
     let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let name            = Notification.Name(rawValue: userInfoUpdateNotificationKey)
     var times           : [Time]?
-    var isShared       : Bool = false
+    var isShared        : Bool = false
+    var names           : [User]?
+    var timeDifference  : Int = 0
     
-    @IBOutlet weak var cons: NSLayoutConstraint!
-    @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var labelsStackView: UIStackView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var faqButton: UIButton!
-    @IBOutlet weak var profilePhoto: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var cons             : NSLayoutConstraint!
+    @IBOutlet weak var shareButton      : UIButton!
+    @IBOutlet weak var labelsStackView  : UIStackView!
+    @IBOutlet weak var titleLabel       : UILabel!
+    @IBOutlet weak var faqButton        : UIButton!
+    @IBOutlet weak var profilePhoto     : UIImageView!
+    @IBOutlet weak var collectionView   : UICollectionView!
+    @IBOutlet weak var nameLabel        : UILabel!
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        setProfilePhoto()
-        setProfilePhotoFromCD()
-
-        for i in 1...75 {
-            totalSquaeres.append("\(i)")
-        }
-        
-        collectionView.dataSource = self
-        collectionView.delegate   = self
-
+        createNotificationObserver()
+        setUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        timeDifference = calculateDif()
+        collectionView.reloadData()
+    }
+   
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
     }
     
     func setShareButtonViewChanges () {
-        profilePhoto.isHidden = !profilePhoto.isHidden
-        labelsStackView.isHidden = !labelsStackView.isHidden
-        faqButton.isHidden = !faqButton.isHidden
-        titleLabel.isHidden = !titleLabel.isHidden
+        profilePhoto.isHidden     = !profilePhoto.isHidden
+        labelsStackView.isHidden  = !labelsStackView.isHidden
+        faqButton.isHidden        = !faqButton.isHidden
+        titleLabel.isHidden       = !titleLabel.isHidden
         let scaleImage  = profilePhoto.frame.size
         let imageHeight = scaleImage.height
         let holdCons : NSLayoutConstraint = cons
         cons.constant = (imageHeight + holdCons.constant) * (-1)
     }
+    
+   
     
     @IBAction func shareButtonClicked(_ sender: Any) {
         if isShared == false {
@@ -63,14 +71,42 @@ class CalenderViewController: UIViewController {
             setShareButtonViewChanges()
         }
     }
+   
     
-    fileprivate func setProfilePhoto() {
-        profilePhoto.layer.cornerRadius  = profilePhoto.frame.size.width / 2
-        profilePhoto.layer.masksToBounds = false
+    fileprivate func createNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(userValuesCoreData), name: name, object: nil)
+    }
+    
+    
+    fileprivate func setUI() {
+        timeDifference = calculateDif()
+        userValuesCoreData()
+
+        for i in 1...75 {
+            totalSquaeres.append("\(i)")
+        }
+        
+        collectionView.dataSource = self
+        collectionView.delegate   = self
+        
+        profilePhoto.layer.cornerRadius  = 40
+        profilePhoto.layer.masksToBounds = true
         profilePhoto.layer.borderColor   = UIColor.white.cgColor
         profilePhoto.layer.borderWidth   = 3
         profilePhoto.clipsToBounds = true
-            }
+        profilePhoto.isUserInteractionEnabled = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profilePhotoTapped(tapGestureRecognizer:)))
+        profilePhoto.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    
+    @objc func profilePhotoTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        self.tabBarController?.selectedIndex = 3
+        let profileViewController = self.storyboard?.instantiateViewController(withIdentifier: "profileViewController") as! ProfileViewController
+        self.present(profileViewController, animated: true, completion: nil)
+    }
    
     fileprivate func fetchTime() {
         do {
@@ -89,7 +125,7 @@ class CalenderViewController: UIViewController {
         let minutes     = diffSeconds / 60
         return minutes
     }
-    
+        
     fileprivate func getScreenshot() -> UIImage? {
         //creates new image context with same size as view
         // UIGraphicsBeginImageContextWithOptions (scale=0.0) for high res capture
@@ -106,25 +142,32 @@ class CalenderViewController: UIViewController {
         return screenshot
     }
     
-    fileprivate func setProfilePhotoFromCD() {
-        let appDelegate  = UIApplication.shared.delegate as! AppDelegate
-        let context      = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        fetchRequest.returnsObjectsAsFaults = false
-        
-        do {
-           let results = try context.fetch(fetchRequest)
-            for result in results as! [NSManagedObject] {
-                if let imageData = result.value(forKey: "image") as? Data {
-                    let image = UIImage(data: imageData)
+    @objc func userValuesCoreData() {
+        var userNameCD = ""
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          let context = appDelegate.persistentContainer.viewContext
+          
+          let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+          do {
+              let results = try context.fetch(fetchRequest) as! [NSManagedObject]
+              if let user = results.first as? User {
+                  if let userName = user.name {
+                      userNameCD = userName
+                  } else {
+                      userNameCD = "again."
+                  }
+              if let imageData = user.image, let image = UIImage(data: imageData) {
+                    nameLabel.text = "\(userNameCD)."
                     profilePhoto.image = image
-                }
-            }
-        } catch {
-            print("error")
-        }
+                  } else {
+                    nameLabel.text = userNameCD
+                    profilePhoto.image = nil
+                  }
+              }
+          } catch {
+              print("Error fetching user settings: \(error)")
+          }
     }
-    
     
 }
 
@@ -138,8 +181,10 @@ extension CalenderViewController: UICollectionViewDelegate, UICollectionViewData
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCollectionViewCell
         cell.daysLabel.text = totalSquaeres[indexPath.row]
         
-        if indexPath.row <= calculateDif() {
+        if indexPath.row <= timeDifference {
             cell.daysLabel.textColor = .red
+        } else {
+            cell.daysLabel.textColor = .white
         }
         return cell
     }
@@ -155,3 +200,5 @@ extension CalenderViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: (screenWidth - (11 * 2.0)) / 10, height: (screenHeight - (12 * 1.0)) / 11)
     }
 }
+
+

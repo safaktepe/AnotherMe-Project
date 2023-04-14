@@ -13,8 +13,9 @@ class FAQViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         faqTableView.dataSource = self
-        faqTableView.delegate = self
-                faqTableView.register(UINib(nibName: "FAQTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        faqTableView.delegate   = self
+        faqTableView.backgroundColor = .white
+        faqTableView.register(UINib(nibName: "FAQTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
 }
 

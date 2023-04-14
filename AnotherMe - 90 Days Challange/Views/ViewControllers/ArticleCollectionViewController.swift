@@ -55,7 +55,6 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
         if contentOffsetY > 0 {
             return
         }
-//        headerView?.animator.fractionComplete = abs(contentOffsetY) / 100
     }
     
     // MARK: - CollectinoView
