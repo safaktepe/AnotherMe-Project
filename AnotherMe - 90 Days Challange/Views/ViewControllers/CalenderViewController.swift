@@ -143,6 +143,7 @@ class CalenderViewController: UIViewController {
     }
     
     @objc func userValuesCoreData() {
+        var userNameCD = ""
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
           let context = appDelegate.persistentContainer.viewContext
           
@@ -150,13 +151,17 @@ class CalenderViewController: UIViewController {
           do {
               let results = try context.fetch(fetchRequest) as! [NSManagedObject]
               if let user = results.first as? User {
-                  let name = user.name
-                  if let imageData = user.image, let image = UIImage(data: imageData) {
-                      nameLabel.text = name
-                      profilePhoto.image = image
+                  if let userName = user.name {
+                      userNameCD = userName
                   } else {
-                      nameLabel.text = name
-                      profilePhoto.image = nil
+                      userNameCD = "again."
+                  }
+              if let imageData = user.image, let image = UIImage(data: imageData) {
+                    nameLabel.text = "\(userNameCD)."
+                    profilePhoto.image = image
+                  } else {
+                    nameLabel.text = userNameCD
+                    profilePhoto.image = nil
                   }
               }
           } catch {

@@ -108,8 +108,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
   
     @objc func saveButtonClicked() {
         let inputName = nameTextField.text
+        
         if let inputName = inputName {
-            newName = "\(inputName)."
+            newName = "\(inputName)"
         }
         let newImage = pickImageButton.imageView?.image
         updateUserSettings(name: newName, image: newImage)
@@ -127,7 +128,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         do {
             let results = try context.fetch(fetchRequest) as! [NSManagedObject]
             if let user = results.first as? User {
-                if let newName = name, !newName.isEmpty {
+                if let newName = name, !newName.isEmpty, newName != "" {
                     user.name = newName
                 }
                 if hasUserPickedNewImage, let newImage = image, let imageData = newImage.pngData() {

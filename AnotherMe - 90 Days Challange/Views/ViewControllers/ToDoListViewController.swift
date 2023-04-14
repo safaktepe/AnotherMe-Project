@@ -17,8 +17,8 @@ class ToDoListViewController: UIViewController {
 
     let dailyGoals  = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
     let context     = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var items : [Goal]?
-    var times : [Time]?
+    var items       : [Goal]?
+    var times       : [Time]?
     var timeDifference : Int = 0
 
     
@@ -41,6 +41,7 @@ class ToDoListViewController: UIViewController {
         tableView.delegate   = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
         if calculateDif() > 75 {
             dayTitleLabel.text = "DAY 75"
         } else {

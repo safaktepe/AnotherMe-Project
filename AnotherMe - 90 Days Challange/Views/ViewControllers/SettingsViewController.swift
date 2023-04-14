@@ -11,6 +11,7 @@ import CoreData
 class SettingsViewController: UIViewController {
     
     let context    = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let name       = Notification.Name(rawValue: userInfoUpdateNotificationKey)
     var times      : [Time]?
     var users      : [User] = []
     
@@ -19,14 +20,21 @@ class SettingsViewController: UIViewController {
     var profileViewController             : ProfileViewController?
 
     let settingsRowsNames = ["Account", "Restart Challange"]
-    //MARK:  - Buraya Hashmap ile image-label ikilisi olustur
-    let segueNames = ["toAccountPage", "toFeedBack"]
+    let segueNames        = ["toAccountPage", "toFeedBack"]
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
         fetchImage()
+        createNotificationObserver()
+
     }
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if let profileViewController = segue.destination as? ProfileViewController{
@@ -72,7 +80,7 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    fileprivate func fetchImage() {
+    @objc fileprivate func fetchImage() {
         do {
             let request = User.fetchRequest() as NSFetchRequest<User>
             self.users = try context.fetch(request)
@@ -113,7 +121,9 @@ class SettingsViewController: UIViewController {
         
         
  }
-    
+    fileprivate func createNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(fetchImage), name: name, object: nil)
+    }
         
     fileprivate func showAlert() {
         let alert = UIAlertController(title: "WARNING!", message: "If you restart challenge, your progress will be permanently deleted and it cannot be recovered!", preferredStyle: .alert)
