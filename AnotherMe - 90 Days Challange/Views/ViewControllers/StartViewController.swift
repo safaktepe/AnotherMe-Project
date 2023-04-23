@@ -10,7 +10,7 @@ import CoreData
 
 class StartViewController: UIViewController {
 
-    let context          = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,6 +105,7 @@ class StartViewController: UIViewController {
         // MARK: - Save it.
         let saveMin       = Time(context: self.context)
         saveMin.startDate = currentDate
+        saveMin.lastDate  = currentDate
         do {
             try self.context.save()
         } catch {

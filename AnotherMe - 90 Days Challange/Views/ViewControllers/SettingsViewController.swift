@@ -113,6 +113,7 @@ class SettingsViewController: UIViewController {
         // MARK: - Save it.
         let saveMin       = Time(context: self.context)
         saveMin.startDate = currentDate
+        saveMin.lastDate  = currentDate
         do {
             try self.context.save()
         } catch {

@@ -2,7 +2,7 @@
 //  Time+CoreDataProperties.swift
 //  AnotherMe - 90 Days Challange
 //
-//  Created by Mert Şafaktepe on 27.01.2023.
+//  Created by Mert Şafaktepe on 15.04.2023.
 //
 //
 
@@ -17,6 +17,7 @@ extension Time {
     }
 
     @NSManaged public var startDate: Date?
+    @NSManaged public var lastDate: Date?
 
 }
 

@@ -20,7 +20,6 @@ class ToDoListViewController: UIViewController {
     var items       : [Goal]?
     var times       : [Time]?
     var timeDifference : Int = 0
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,11 @@ class ToDoListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
+        checkLastSavedDate()
+    }
+    
+    
+    fileprivate func updateTimeLabel() {
         if calculateDif() > 75 {
             dayTitleLabel.text = "DAY 75"
         } else {
@@ -51,16 +55,42 @@ class ToDoListViewController: UIViewController {
     
     fileprivate  func calculateDif() -> Int {
         fetchTime()
-        let savedDateCB : Date = (times?[0].startDate)!
-        let newDate     = Date()
-        let diffSeconds = Int(newDate.timeIntervalSince1970 - (savedDateCB.timeIntervalSince1970 ))
-        let minutes     = diffSeconds / 60
-        return minutes
+        var startDate       : Date = (times?[0].startDate)!
+        var currentDate     = Date()
+        
+        let daysBetween = Date.daysBetween(start: startDate, end: currentDate) // 365
+        return daysBetween
+
     }
     
+    
+    fileprivate func checkLastSavedDate() {
+        fetchTime()
+        var lastSavedDate : Date = (times?[0].lastDate)!
+        
+        let calendar     = Calendar.current
+        var currentDate   = Date()
+        
+        var sameMinute    = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .minute)
+
+        if sameMinute {
+         //   print("The two dates are in the same minute.")
+            print("TODO calculate dif: \(calculateDif() + 1)")
+        } else {
+          //  print("The two dates are not in the same minute.")
+            for goal in items ?? [] {
+            goal.isCompleted = false
+            }
+            lastSavedDate = currentDate
+            times?[0].lastDate = lastSavedDate
+            try? context.save()
+            self.tableView.reloadData()
+            updateTimeLabel()
+        }
+    }
+   
+    
     fileprivate func strikeThrough(isStruck: Bool, title: String) -> NSAttributedString {
-        
-        
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: title)
         if isStruck {
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
@@ -73,7 +103,6 @@ class ToDoListViewController: UIViewController {
     
     fileprivate func fetchData() {
         do {
-            
             let request = Goal.fetchRequest() as NSFetchRequest<Goal>
             let sort = NSSortDescriptor(key: "id", ascending: true)
             request.sortDescriptors = [sort]
@@ -87,6 +116,8 @@ class ToDoListViewController: UIViewController {
         }
     }
     
+   
+    
     fileprivate func fetchTime() {
         do {
             let request = Time.fetchRequest() as NSFetchRequest<Time>
@@ -95,10 +126,7 @@ class ToDoListViewController: UIViewController {
             print("time fetch error!")
         }
     }
-    
 }
-
-
 
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -110,23 +138,23 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TodoTableViewCell
         
-        let myhedef = self.items![indexPath.row]
+        let myGoal = self.items![indexPath.row]
         cell.delegate = self
         cell.index = indexPath
-        let titleLabel = myhedef.title
+        let titleLabel = myGoal.title
         
-        if myhedef.isCompleted == false {
+        if myGoal.isCompleted == false {
             cell.checkMarkButton.tintColor = .white
             cell.checkMarkButton.setImage(checkMarkEmpty, for: .normal)
             cell.titleLabel.textColor = .white
             cell.titleLabel.attributedText = strikeThrough(isStruck: false, title: titleLabel ?? "")
 }
         
-         if myhedef.isCompleted == true{
+         if myGoal.isCompleted == true{
             cell.checkMarkButton.tintColor = .red
             cell.checkMarkButton.setImage(checkMarkRed, for: .normal)
-             cell.titleLabel.textColor = .red
-             cell.titleLabel.attributedText = strikeThrough(isStruck: true, title: titleLabel ?? "")
+            cell.titleLabel.textColor = .red
+            cell.titleLabel.attributedText = strikeThrough(isStruck: true, title: titleLabel ?? "")
         }
         return cell
     }
@@ -150,5 +178,26 @@ extension ToDoListViewController:  MyCellDelegate {
             print("update error")
         }
         self.tableView.reloadData()
+    }
+}
+
+
+extension Date {
+    
+    //Calculates to days between 2 given dates.
+    
+    func daysBetween(date: Date) -> Int {
+        return Date.daysBetween(start: self, end: date)
+    }
+    
+    static func daysBetween(start: Date, end: Date) -> Int {
+        let calendar = Calendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: start)
+        let date2 = calendar.startOfDay(for: end)
+        
+        let a = calendar.dateComponents([.day], from: date1, to: date2)
+        return a.value(for: .day)!
     }
 }
