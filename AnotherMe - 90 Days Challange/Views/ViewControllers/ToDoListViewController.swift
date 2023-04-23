@@ -17,7 +17,7 @@ class ToDoListViewController: UIViewController {
 
     let dailyGoals  = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
     let context     = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var items       : [Goal]?
+    var goals       : [Goal]?
     var times       : [Time]?
     var timeDifference : Int = 0
     
@@ -55,8 +55,8 @@ class ToDoListViewController: UIViewController {
     
     fileprivate  func calculateDif() -> Int {
         fetchTime()
-        var startDate       : Date = (times?[0].startDate)!
-        var currentDate     = Date()
+        let startDate       : Date = (times?[0].startDate)!
+        let currentDate     = Date()
         
         let daysBetween = Date.daysBetween(start: startDate, end: currentDate) // 365
         return daysBetween
@@ -69,16 +69,16 @@ class ToDoListViewController: UIViewController {
         var lastSavedDate : Date = (times?[0].lastDate)!
         
         let calendar     = Calendar.current
-        var currentDate   = Date()
+        let currentDate   = Date()
         
-        var sameMinute    = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .minute)
+        let isGivenDatesSameDay = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .day)
 
-        if sameMinute {
-         //   print("The two dates are in the same minute.")
+        if isGivenDatesSameDay {
+         // The two dates are in the same exact day.
             print("TODO calculate dif: \(calculateDif() + 1)")
         } else {
-          //  print("The two dates are not in the same minute.")
-            for goal in items ?? [] {
+        //  The two dates are not in the  same day.
+            for goal in goals ?? [] {
             goal.isCompleted = false
             }
             lastSavedDate = currentDate
@@ -106,7 +106,7 @@ class ToDoListViewController: UIViewController {
             let request = Goal.fetchRequest() as NSFetchRequest<Goal>
             let sort = NSSortDescriptor(key: "id", ascending: true)
             request.sortDescriptors = [sort]
-            self.items =  try context.fetch(request)
+            self.goals =  try context.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -131,14 +131,14 @@ class ToDoListViewController: UIViewController {
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items?.count ?? 0
+        return goals?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TodoTableViewCell
         
-        let myGoal = self.items![indexPath.row]
+        let myGoal = self.goals![indexPath.row]
         cell.delegate = self
         cell.index = indexPath
         let titleLabel = myGoal.title
@@ -165,7 +165,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
 extension ToDoListViewController:  MyCellDelegate {
     func onClickCell(index: Int) {
         print("\(index + 1 ) clicked")
-        let hedef = self.items![index]
+        let hedef = self.goals![index]
         if hedef.isCompleted == true {
          hedef.isCompleted = false
         }else {

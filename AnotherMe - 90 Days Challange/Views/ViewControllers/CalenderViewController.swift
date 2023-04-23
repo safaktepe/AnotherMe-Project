@@ -65,9 +65,9 @@ class CalenderViewController: UIViewController {
         var lastSavedDate : Date = (times?[0].lastDate)!
 
         let calendar     = Calendar.current
-        var currentDate   = Date()
+        let currentDate   = Date()
         
-        var sameMinute    = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .minute)
+        let sameMinute    = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .minute)
 
         if sameMinute {
          //   print("The two dates are in the same minute.")
@@ -146,8 +146,8 @@ class CalenderViewController: UIViewController {
     
     fileprivate  func calculateDif() -> Int {
         fetchTime()
-        var startDate       : Date = (times?[0].startDate)!
-        var currentDate     = Date()
+        let startDate       : Date = (times?[0].startDate)!
+        let currentDate     = Date()
         
         let daysBetween = Date.daysBetween(start: startDate, end: currentDate) // 365
         return daysBetween
