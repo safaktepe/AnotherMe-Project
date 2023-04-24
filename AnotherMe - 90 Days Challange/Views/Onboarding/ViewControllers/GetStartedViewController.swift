@@ -230,10 +230,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         animationView.translatesAutoresizingMaskIntoConstraints    = false
 
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
-            titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
-            
+
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 64),
             descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor, constant: 16),
             descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: -16),
@@ -256,10 +253,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(UINib(nibName: GetStartedCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: GetStartedCollectionViewCell.identifier)
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 24),
-            titleLabel.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
-        
+
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 24),
             collectionView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
             collectionView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
@@ -331,11 +325,31 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-            let maxLength = 10
-            let currentString: NSString = textField.text! as NSString
-            let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
-            return newString.length <= maxLength
+        let maxLength = 10
+        
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString = currentString.replacingCharacters(in: range, with: string) as NSString
+        
+        // Check if newString is within maxLength limit
+        guard newString.length <= maxLength else {
+            return false
         }
+        
+        // Check if newString matches regex pattern
+        do {
+            let regex = try NSRegularExpression(pattern: ".*[^A-Za-z ].*", options: [])
+            if regex.firstMatch(in: string, options: [], range: NSMakeRange(0, string.count)) != nil {
+                return false
+            }
+        }
+        catch {
+            print("ERROR")
+        }
+        
+        return true
+    }
+
+
     
     
     
@@ -439,8 +453,9 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     
     
     @objc func nextButtonClicked(_ sender: Any) {
-        let textFieldInputName : String = "\(String(describing: textField.text))."
-
+        var       textFieldInputName = textField.text
+        guard let textFieldInputName = textFieldInputName else { return }
+        
         titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the 6 rules that you must follow!", "From which day do you want to start?"]
 
         let currentPageInfo = isThisViewHidden[currentPage]

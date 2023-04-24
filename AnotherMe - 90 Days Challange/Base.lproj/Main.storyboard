@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ly3-Bl-xdc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kiN-lY-2Uk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -128,6 +128,7 @@
                     <navigationItem key="navigationItem" id="uw7-6H-RDP"/>
                     <connections>
                         <outlet property="collectionView" destination="vaP-PE-xZJ" id="cUR-Tr-Vaj"/>
+                        <outlet property="cons" destination="zi0-W2-eZi" id="sgD-j2-fRy"/>
                         <outlet property="faqButton" destination="nEU-DK-3Ro" id="GYq-LX-Z6e"/>
                         <outlet property="labelsStackView" destination="HPa-fq-wYm" id="eLa-pM-puF"/>
                         <outlet property="nameLabel" destination="ilV-Iq-70e" id="Exd-D4-vBh"/>

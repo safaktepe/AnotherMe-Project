@@ -48,16 +48,6 @@ class CalenderViewController: UIViewController {
         performSegue(withIdentifier: "help", sender: nil)
     }
     
-    func setShareButtonViewChanges () {
-        profilePhoto.isHidden     = !profilePhoto.isHidden
-        labelsStackView.isHidden  = !labelsStackView.isHidden
-        faqButton.isHidden        = !faqButton.isHidden
-        titleLabel.isHidden       = !titleLabel.isHidden
-        let scaleImage  = profilePhoto.frame.size
-        let imageHeight = scaleImage.height
-        let holdCons : NSLayoutConstraint = cons
-        cons.constant = (imageHeight + holdCons.constant) * (-1)
-    }
     
 
     fileprivate func checkLastSavedDate() {
@@ -97,6 +87,18 @@ class CalenderViewController: UIViewController {
             setShareButtonViewChanges()
         }
     }
+    
+    func setShareButtonViewChanges () {
+        profilePhoto.isHidden     = !profilePhoto.isHidden
+        labelsStackView.isHidden  = !labelsStackView.isHidden
+        faqButton.isHidden        = !faqButton.isHidden
+        titleLabel.isHidden       = !titleLabel.isHidden
+        let scaleImage  = profilePhoto.frame.size
+        let imageHeight = scaleImage.height
+        let holdCons : NSLayoutConstraint = cons
+        cons.constant = (imageHeight + holdCons.constant) * (-1)
+    }
+    
    
     
     fileprivate func createNotificationObserver() {
