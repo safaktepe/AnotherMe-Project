@@ -36,10 +36,8 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     let dayNumberLabel          = UILabel()
     let dayLabel                = UILabel()
     let nextButton              = UIButton()
-    let dayLabelStackView       = UIStackView()
     let stackView               = UIStackView()
     let textField               = UITextField()
-    let pickerView              = UIPickerView()
     var bgViewTopConstraint     : NSLayoutConstraint?
     var bgViewStretchConstraint : NSLayoutConstraint?
     var selectedIndexPath       : IndexPath?
@@ -63,8 +61,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "descriptionLabel": false,
         "nextBtn": false,
         "stackView": false,
-        "pickerView": false,
-        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -74,8 +70,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "descriptionLabel": true,
         "nextBtn": true,
         "stackView": false,
-        "pickerView": false,
-        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -85,8 +79,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "descriptionLabel": false,
         "nextBtn": false,
         "stackView": false,
-        "pickerView": false,
-        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -96,8 +88,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "descriptionLabel": false,
         "nextBtn": true,
         "stackView": true,
-        "pickerView": false,
-        "dayLabelStackView": false,
        ],
        
        ["textField": false,
@@ -107,8 +97,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         "descriptionLabel": false,
         "nextBtn": true,
         "stackView": false,
-        "pickerView": true,
-        "dayLabelStackView": true,
        ]
    ]
     
@@ -288,40 +276,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             stackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6)
         ])
         
-        // : - Fifth View //
-            
-        dayNumberLabel.text = "1"
-        dayNumberLabel.textColor = .black
-        dayNumberLabel.font    = UIFont.systemFont(ofSize: 40, weight: .semibold)
-        dayLabelStackView.addArrangedSubview(dayNumberLabel)
-    
-        dayLabel.text = "day"
-        dayLabel.textColor = .black
-        dayLabel.font.withSize(20)
-        dayLabelStackView.addArrangedSubview(dayLabel)
-            
-        dayLabelStackView.axis = .horizontal
-        dayLabelStackView.alignment = .firstBaseline
-        dayLabelStackView.distribution = .equalSpacing
-        dayLabelStackView.spacing = 6
-        
-        backgroundView.addSubview(dayLabelStackView)
-        backgroundView.addSubview(pickerView)
-    
-        pickerView.delegate   = self
-        pickerView.dataSource = self
-
-        dayLabelStackView.translatesAutoresizingMaskIntoConstraints = false
-        pickerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            dayLabelStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            dayLabelStackView.centerXAnchor.constraint(equalTo: backgroundView.centerXAnchor),
-            pickerView.topAnchor.constraint(equalTo: dayLabelStackView.bottomAnchor, constant: 16),
-            pickerView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
-            pickerView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
-            pickerView.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -32)
-        ])
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -362,8 +316,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         animationView.isHidden     = !currentPageInfo["animationView"]!
         descriptionLabel.isHidden  = !currentPageInfo["descriptionLabel"]!
         stackView.isHidden         = !currentPageInfo["stackView"]!
-        dayLabelStackView.isHidden = !currentPageInfo["dayLabelStackView"]!
-        pickerView.isHidden        = !currentPageInfo["pickerView"]!
     }
     
     fileprivate func hideOrShowAnimation(myView: UIView, hidden: Bool) {
@@ -465,8 +417,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         hideOrShowAnimation(myView: animationView,     hidden: !currentPageInfo["animationView"]!)
         hideOrShowAnimation(myView: descriptionLabel,  hidden: !currentPageInfo["descriptionLabel"]!)
         hideOrShowAnimation(myView: stackView,         hidden: !currentPageInfo["stackView"]!)
-        hideOrShowAnimation(myView: dayLabelStackView, hidden: !currentPageInfo["dayLabelStackView"]!)
-        hideOrShowAnimation(myView: pickerView,        hidden: !currentPageInfo["pickerView"]!)
         
         setButtonUI(myButton: nextButton,            isEnable: !currentPageInfo["nextBtn"]!)
         
@@ -478,10 +428,14 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         currentPage += 1
         if currentPage == isThisViewHidden.count {
             currentPage = 0
+            print("bitti mi?")
             print("username is : \(userName)")
             saveUserValues(userName: userName, userAge: userAge)
+            print("this is next button baby : \(dayCounter)")
         }
         print(currentPage)
+        print("this is next button baby : \(dayCounter)")
+
     }
     
   }
@@ -549,24 +503,3 @@ extension GetStartedViewController {
            }
        }
 }
-
-    extension GetStartedViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-        func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 1
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return 74
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return "\(row + 1)"
-        }
-
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            dayCounter = row + 1
-            dayNumberLabel.text = "\(dayCounter)"
-            dayLabel.text = dayCounter == 1 ? "day" : "days"
-        }
-        
-    }

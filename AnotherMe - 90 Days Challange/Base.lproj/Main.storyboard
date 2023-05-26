@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vaP-PE-xZJ">
-                                <rect key="frame" x="0.0" y="180" width="393" height="414"/>
+                                <rect key="frame" x="0.0" y="196" width="393" height="414"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="mxR-oq-qTD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -76,10 +76,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwh-5J-iiy">
-                                <rect key="frame" x="108.33333333333333" y="618" width="176.66666666666669" height="34.333333333333371"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwh-5J-iiy">
+                                <rect key="frame" x="108.33333333333333" y="634" width="176.66666666666669" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Share on Intsagram!"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Share on Instagram!"/>
                                 <connections>
                                     <action selector="shareButtonClicked:" destination="Qr5-s4-gST" eventType="touchUpInside" id="wPE-xp-paO"/>
                                 </connections>
@@ -122,7 +122,7 @@
                             <constraint firstItem="Vrf-ST-uc2" firstAttribute="top" secondItem="Z4q-lw-N5T" secondAttribute="top" constant="40" id="eeY-wa-H1I"/>
                             <constraint firstItem="vaP-PE-xZJ" firstAttribute="height" secondItem="B7C-1F-dyL" secondAttribute="height" multiplier="0.485915" id="wOo-6l-Uvn"/>
                             <constraint firstItem="ilV-Iq-70e" firstAttribute="height" secondItem="B7C-1F-dyL" secondAttribute="height" multiplier="0.0226917" id="xN5-sT-JQa"/>
-                            <constraint firstItem="vaP-PE-xZJ" firstAttribute="top" secondItem="Vrf-ST-uc2" secondAttribute="bottom" constant="16" id="zi0-W2-eZi"/>
+                            <constraint firstItem="vaP-PE-xZJ" firstAttribute="top" secondItem="Vrf-ST-uc2" secondAttribute="bottom" constant="32" id="zi0-W2-eZi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uw7-6H-RDP"/>
@@ -724,6 +724,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARv-r4-52s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-263" y="-51"/>
+        </scene>
+        <!--Day Selecting View Controller-->
+        <scene sceneID="ISb-um-Rfy">
+            <objects>
+                <viewController id="4DV-r4-n3R" customClass="DaySelectingViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o26-aR-lRB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="VJu-7n-S0b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ab3-LL-SG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3740" y="494"/>
         </scene>
         <!--Read-->
         <scene sceneID="IQi-Dx-ZfB">
