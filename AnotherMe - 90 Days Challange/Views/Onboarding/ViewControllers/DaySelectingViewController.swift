@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class DaySelectingViewController: UIViewController {
+
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     let dayLabel                = UILabel()
     let titleLabel              = UILabel()
@@ -22,6 +26,71 @@ class DaySelectingViewController: UIViewController {
         super.viewDidLoad()
         setViews()
     }
+    
+    fileprivate func setGoals() {
+        //MARK: - Delete
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+
+        //MARK: - Objects
+        let goalNumber1 = Goal(context: self.context)
+        goalNumber1.title = "Goal number one"
+        goalNumber1.id = 0
+        goalNumber1.isCompleted = false
+        
+        let goalNumber2 = Goal(context: self.context)
+        goalNumber2.title = "Goal number two"
+        goalNumber2.id = 1
+        goalNumber2.isCompleted = false
+
+        
+        let goalNumber3 = Goal(context: self.context)
+        goalNumber3.title = "Goal number three"
+        goalNumber3.id = 2
+        goalNumber3.isCompleted = false
+        
+        
+        let goalNumber4 = Goal(context: self.context)
+        goalNumber4.title = "Goal number four"
+        goalNumber4.id = 3
+        goalNumber4.isCompleted = false
+        
+        let goalNumber5 = Goal(context: self.context)
+        goalNumber5.title = "Goal number five"
+        goalNumber5.id = 4
+        goalNumber5.isCompleted = false
+        
+        let goalNumber6 = Goal(context: self.context)
+        goalNumber6.title = "Goal number six"
+        goalNumber6.id = 5
+        goalNumber6.isCompleted = false
+        
+        let goalNumber7 = Goal(context: self.context)
+        goalNumber7.title = "Goal number seven"
+        goalNumber7.id = 6
+        goalNumber7.isCompleted = false
+        
+        //MARK: - Save new objects.
+        do {
+            try self.context.save()
+        }
+        catch {
+            print("error! data couldnt be saved!")
+        }
+    }
+
+    
+    
+    
     
     fileprivate func setViews() {
         //Default view.
@@ -107,11 +176,40 @@ class DaySelectingViewController: UIViewController {
     
     
     @objc func startButtonClicked(_ sender: Any) {
-        print("clicked")
+        //Refactor below code.
+        setGoals()
+        
+        // MARK: - Take current time
+        let currentDate = Date()
+        let startDate = Calendar.current.date(byAdding: .day, value: ((dayCounter) * (-1) + 1), to: currentDate)
+        
+        // MARK: -  If there are already data, delete them.
+        let deleteFetch     = NSFetchRequest<NSFetchRequestResult>(entityName: "Time")
+        let deleteRequest   = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+        
+        // MARK: - Save it.
+        let saveMin       = Time(context: self.context)
+        saveMin.startDate = startDate
+        saveMin.lastDate  = startDate
+        do {
+            try self.context.save()
+           } catch {
+            print("error! time couldnt be saved!")
+         }
+        performSegue(withIdentifier: "toMainApp", sender: nil)
+        }
+        
     }
-    
-    
-}
+
 
 
 extension DaySelectingViewController: UIPickerViewDelegate, UIPickerViewDataSource {
