@@ -428,13 +428,10 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         currentPage += 1
         if currentPage == isThisViewHidden.count {
             currentPage = 0
-            print("bitti mi?")
-            print("username is : \(userName)")
             saveUserValues(userName: userName, userAge: userAge)
-            print("this is next button baby : \(dayCounter)")
+            performSegue(withIdentifier: "toDaySelectingPage", sender: nil)
         }
         print(currentPage)
-        print("this is next button baby : \(dayCounter)")
 
     }
     

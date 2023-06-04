@@ -10,8 +10,8 @@ import CoreData
 
 class SettingsViewController: UIViewController {
     
-    let context    = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let name       = Notification.Name(rawValue: userInfoUpdateNotificationKey)
+    let context             = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let name                = Notification.Name(rawValue: userInfoUpdateNotificationKey)
     var times      : [Time]?
     var users      : [User] = []
     
@@ -31,9 +31,7 @@ class SettingsViewController: UIViewController {
         setViews()
         fetchImage()
         createNotificationObserver()
-
     }
-    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -135,9 +133,7 @@ class SettingsViewController: UIViewController {
             print("Restart")
             
             self.restartChallange()
-            self.tabBarController?.selectedIndex = 0
-
-
+            self.performSegue(withIdentifier: "toRestartChallange", sender: nil)
         }))
         present(alert, animated: true)
     }
@@ -157,42 +153,42 @@ class SettingsViewController: UIViewController {
         }
 
         //MARK: - Objects
-        let newHedef = Goal(context: self.context)
-        newHedef.title = "Goal number one"
-        newHedef.id = 0
-        newHedef.isCompleted = false
+        let goalNumber1 = Goal(context: self.context)
+        goalNumber1.title = "Goal number one"
+        goalNumber1.id = 0
+        goalNumber1.isCompleted = false
         
-        let secHedef = Goal(context: self.context)
-        secHedef.title = "Goal number two"
-        secHedef.id = 1
-        secHedef.isCompleted = false
+        let goalNumber2 = Goal(context: self.context)
+        goalNumber2.title = "Goal number two"
+        goalNumber2.id = 1
+        goalNumber2.isCompleted = false
 
         
-        let thirdHedef = Goal(context: self.context)
-        thirdHedef.title = "Goal number three"
-        thirdHedef.id = 2
-        thirdHedef.isCompleted = false
+        let goalNumber3 = Goal(context: self.context)
+        goalNumber3.title = "Goal number three"
+        goalNumber3.id = 2
+        goalNumber3.isCompleted = false
         
         
-        let fourthHedef = Goal(context: self.context)
-        fourthHedef.title = "Goal number four"
-        fourthHedef.id = 3
-        fourthHedef.isCompleted = false
+        let goalNumber4 = Goal(context: self.context)
+        goalNumber4.title = "Goal number four"
+        goalNumber4.id = 3
+        goalNumber4.isCompleted = false
         
-        let fifthHedef = Goal(context: self.context)
-        fifthHedef.title = "Goal number five"
-        fifthHedef.id = 4
-        fifthHedef.isCompleted = false
+        let goalNumber5 = Goal(context: self.context)
+        goalNumber5.title = "Goal number five"
+        goalNumber5.id = 4
+        goalNumber5.isCompleted = false
         
-        let sixthHedef = Goal(context: self.context)
-        sixthHedef.title = "Goal number six"
-        sixthHedef.id = 5
-        sixthHedef.isCompleted = false
+        let goalNumber6 = Goal(context: self.context)
+        goalNumber6.title = "Goal number six"
+        goalNumber6.id = 5
+        goalNumber6.isCompleted = false
         
-        let seventhHedef = Goal(context: self.context)
-        seventhHedef.title = "Goal number seven"
-        seventhHedef.id = 6
-        seventhHedef.isCompleted = false
+        let goalNumber7 = Goal(context: self.context)
+        goalNumber7.title = "Goal number seven"
+        goalNumber7.id = 6
+        goalNumber7.isCompleted = false
         
         //MARK: - Save new objects.
         do {

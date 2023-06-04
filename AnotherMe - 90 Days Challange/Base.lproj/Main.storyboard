@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4DV-r4-n3R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Ba-pT-0ox">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -180,6 +180,7 @@
                         <outlet property="settingsTableView" destination="Qqk-M5-Zsj" id="0SB-jW-Xus"/>
                         <segue destination="krB-ow-3nv" kind="show" identifier="toAccountPage" id="qBT-z3-lvq"/>
                         <segue destination="TVc-mP-KQP" kind="show" identifier="toFeedBack" id="fle-EX-AZA"/>
+                        <segue destination="4DV-r4-n3R" kind="presentation" identifier="toRestartChallange" modalPresentationStyle="fullScreen" id="cCl-QM-EiY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6w1-9I-y8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -441,6 +442,9 @@
                         <viewLayoutGuide key="safeArea" id="XB0-0W-TVo"/>
                         <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="4DV-r4-n3R" kind="presentation" identifier="toDaySelectingPage" modalPresentationStyle="fullScreen" id="odP-tB-tdc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsP-oK-OC8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -699,7 +703,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ab3-LL-SG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2873" y="-354"/>
+            <point key="canvasLocation" x="-2851" y="-354"/>
         </scene>
         <!--Read-->
         <scene sceneID="IQi-Dx-ZfB">
@@ -721,6 +725,9 @@
             <point key="canvasLocation" x="-2303" y="686"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="odP-tB-tdc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="article" width="3250" height="2500"/>
         <image name="book.fill" catalog="system" width="128" height="95"/>
