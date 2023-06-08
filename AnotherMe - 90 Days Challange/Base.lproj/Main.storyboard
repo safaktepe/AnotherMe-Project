@@ -323,7 +323,7 @@
         <!--Onboarding Collection View Controller-->
         <scene sceneID="1QV-Fw-uoE">
             <objects>
-                <viewController id="1Ba-pT-0ox" customClass="OnboardingCollectionViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingCollectionViewController" id="1Ba-pT-0ox" customClass="OnboardingCollectionViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eYe-pl-XOs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

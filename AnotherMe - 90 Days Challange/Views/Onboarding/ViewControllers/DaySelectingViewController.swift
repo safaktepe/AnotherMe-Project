@@ -205,6 +205,7 @@ class DaySelectingViewController: UIViewController {
            } catch {
             print("error! time couldnt be saved!")
          }
+        UserDefaults.standard.hasOnboarded = true
         performSegue(withIdentifier: "toMainApp", sender: nil)
         }
         
