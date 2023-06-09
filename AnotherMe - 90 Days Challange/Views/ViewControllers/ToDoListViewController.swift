@@ -25,13 +25,26 @@ class ToDoListViewController: UIViewController {
         super.viewDidLoad()
         fetchData()
         setViews()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
         checkLastSavedDate()
+
     }
     
+    override func viewDidLayoutSubviews() {
+        didUserFinishedChallange()
+    }
+    
+    fileprivate func didUserFinishedChallange() {
+        timeDifference = calculateDif() + 1
+        
+        if timeDifference > 3 {
+            performSegue(withIdentifier: "toChallangeDone", sender: nil)
+        }
+    }
     
     fileprivate func updateTimeLabel() {
         if calculateDif() > 75 {

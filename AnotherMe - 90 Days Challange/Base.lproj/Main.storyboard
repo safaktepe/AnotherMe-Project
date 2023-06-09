@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zlh-sl-Kkt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4DV-r4-n3R">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ss-7Z-8U6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="726" y="-51"/>
+            <point key="canvasLocation" x="926" y="-51"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="aCb-Q6-X2l">
@@ -154,7 +154,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-bv-fMd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-bv-fMd">
                                 <rect key="frame" x="121.66666666666669" y="46" width="150" height="146.66666666666669"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -222,7 +222,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="E-Mail Adress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K47-mS-Dj2">
-                                <rect key="frame" x="24" y="452.33333333333331" width="345" height="41.333333333333314"/>
+                                <rect key="frame" x="24" y="452.33333333333331" width="345" height="41.333333333333371"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -314,6 +314,7 @@
                     <connections>
                         <outlet property="dayTitleLabel" destination="7I6-8E-d6J" id="keB-Jc-Qgx"/>
                         <outlet property="tableView" destination="gPP-qJ-uKy" id="Gox-ro-F5k"/>
+                        <segue destination="zlh-sl-Kkt" kind="show" identifier="toChallangeDone" id="FXM-bA-VzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwO-nd-Y1L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -631,22 +632,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZF-5d-wru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684.7328244274809" y="-51.408450704225352"/>
+            <point key="canvasLocation" x="1836" y="-51"/>
         </scene>
         <!--Challange Done View Controller-->
         <scene sceneID="m22-h2-0Rx">
             <objects>
                 <viewController storyboardIdentifier="ChallangeDoneViewController" id="zlh-sl-Kkt" customClass="ChallangeDoneViewController" customModule="AnotherMe___90_Days_Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E2A-7V-B3Z">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="iJ1-ZS-TCD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rHr-vz-XWV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsG-v7-xgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="-51"/>
+            <point key="canvasLocation" x="926" y="-701"/>
         </scene>
         <!--Profile-->
         <scene sceneID="eGi-hQ-4Zv">
@@ -741,7 +743,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="odP-tB-tdc"/>
+        <segue reference="cCl-QM-EiY"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="article" width="3250" height="2500"/>

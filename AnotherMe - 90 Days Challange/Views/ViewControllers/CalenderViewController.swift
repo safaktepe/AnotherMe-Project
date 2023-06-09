@@ -39,23 +39,19 @@ class CalenderViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        timeDifference = calculateDif()
-//        collectionView.reloadData()
-           checkLastSavedDate()
+         checkLastSavedDate()
     }
-   
+    
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
     }
     
-    
-
     fileprivate func checkLastSavedDate() {
         fetchTime()
         var lastSavedDate : Date = (times?[0].lastDate)!
 
         let calendar     = Calendar.current
-        let currentDate   = Date()
+        let currentDate  = Date()
         
         let sameMinute    = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .minute)
 
@@ -109,6 +105,8 @@ class CalenderViewController: UIViewController {
     fileprivate func setUI() {
         timeDifference = calculateDif() + 1
         
+       
+        
         userValuesCoreData()
 
         for i in 1...75 {
@@ -144,6 +142,7 @@ class CalenderViewController: UIViewController {
         } catch {
             print("time fetch error!")
         }
+        
     }
     
     fileprivate  func calculateDif() -> Int {
