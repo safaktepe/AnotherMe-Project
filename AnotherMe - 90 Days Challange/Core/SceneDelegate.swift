@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if UserDefaults.standard.hasOnboarded {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let tabBarController =  storyboard.instantiateViewController(withIdentifier: "mainTabBar") as! UITabBarController
+            let tabBarController =  storyboard.instantiateViewController(withIdentifier: "ChallangeDoneViewController") as! UIViewController
             window?.rootViewController = tabBarController
             window?.makeKeyAndVisible()
             } else {
