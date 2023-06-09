@@ -368,6 +368,24 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     }
     
     fileprivate func saveUserValues(userName: String, userAge: String) {
+        //MARK: - Delete
+        /* Incease if user put his name and save it but close the app before finishing
+         the onboarding process, delete the name that save the new one because user might
+          enter another name in second or latest onboarding process.
+           */
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+        do
+        {
+            try context.execute(deleteRequest)
+            try context.save()
+        }
+        catch
+        {
+            print ("There was an error")
+        }
+        
+        //Save
         let saveUser  = User(context: self.context)
         saveUser.name = userName
         saveUser.age  = userAge

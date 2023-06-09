@@ -190,8 +190,8 @@ class CalenderViewController: UIViewController {
                     nameLabel.text = "\(userNameCD)."
                     profilePhoto.image = image
                   } else {
-                    nameLabel.text = userNameCD
-                    profilePhoto.image = nil
+                    nameLabel.text = "\(userNameCD)."
+                    profilePhoto.image = UIImage(systemName: "person.circle")
                   }
               }
           } catch {

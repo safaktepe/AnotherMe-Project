@@ -208,7 +208,6 @@ class DaySelectingViewController: UIViewController {
         UserDefaults.standard.hasOnboarded = true
         performSegue(withIdentifier: "toMainApp", sender: nil)
         }
-        
     }
 
 
