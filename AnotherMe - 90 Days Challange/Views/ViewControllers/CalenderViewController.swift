@@ -39,12 +39,49 @@ class CalenderViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        timeDifference = calculateDif()
-        collectionView.reloadData()
+         checkLastSavedDate()
     }
-   
+    
     @IBAction func faqButtonClicked(_ sender: Any) {
         performSegue(withIdentifier: "help", sender: nil)
+    }
+    
+    fileprivate func checkLastSavedDate() {
+        fetchTime()
+        var lastSavedDate : Date = (times?[0].lastDate)!
+
+        let calendar     = Calendar.current
+        let currentDate  = Date()
+        
+        let sameMinute    = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .minute)
+
+        if sameMinute {
+         //   print("The two dates are in the same minute.")
+            print("Calendar calculate dif: \(calculateDif() + 1)")
+        } else {
+          //  print("The two dates are NOOT in the same minute.")
+
+            lastSavedDate = currentDate
+            times?[0].lastDate = lastSavedDate
+            try? context.save()
+            timeDifference = calculateDif() + 1
+
+            self.collectionView.reloadData()
+        }
+    }
+   
+   
+    
+    @IBAction func shareButtonClicked(_ sender: Any) {
+        if isShared == false {
+            isShared = true
+            setShareButtonViewChanges()
+            guard let thisImage  = getScreenshot() else { return }
+            UIImageWriteToSavedPhotosAlbum(thisImage, nil, nil, nil)
+        } else {
+            isShared = false
+            setShareButtonViewChanges()
+        }
     }
     
     func setShareButtonViewChanges () {
@@ -60,26 +97,16 @@ class CalenderViewController: UIViewController {
     
    
     
-    @IBAction func shareButtonClicked(_ sender: Any) {
-        if isShared == false {
-            isShared = true
-            setShareButtonViewChanges()
-            guard let thisImage  = getScreenshot() else { return }
-            UIImageWriteToSavedPhotosAlbum(thisImage, nil, nil, nil)
-        } else {
-            isShared = false
-            setShareButtonViewChanges()
-        }
-    }
-   
-    
     fileprivate func createNotificationObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(userValuesCoreData), name: name, object: nil)
     }
     
     
     fileprivate func setUI() {
-        timeDifference = calculateDif()
+        timeDifference = calculateDif() + 1
+        
+       
+        
         userValuesCoreData()
 
         for i in 1...75 {
@@ -115,16 +142,18 @@ class CalenderViewController: UIViewController {
         } catch {
             print("time fetch error!")
         }
+        
     }
     
     fileprivate  func calculateDif() -> Int {
         fetchTime()
-        let savedDateCB : Date = (times?[0].startDate)!
-        let newDate     = Date()
-        let diffSeconds = Int(newDate.timeIntervalSince1970 - (savedDateCB.timeIntervalSince1970 ))
-        let minutes     = diffSeconds / 60
-        return minutes
-    }
+        let startDate       : Date = (times?[0].startDate)!
+        let currentDate     = Date()
+        
+        let daysBetween = Date.daysBetween(start: startDate, end: currentDate) // 365
+        return daysBetween
+}
+    
         
     fileprivate func getScreenshot() -> UIImage? {
         //creates new image context with same size as view
@@ -160,8 +189,8 @@ class CalenderViewController: UIViewController {
                     nameLabel.text = "\(userNameCD)."
                     profilePhoto.image = image
                   } else {
-                    nameLabel.text = userNameCD
-                    profilePhoto.image = nil
+                    nameLabel.text = "\(userNameCD)."
+                    profilePhoto.image = UIImage(systemName: "person.circle")
                   }
               }
           } catch {
@@ -181,7 +210,7 @@ extension CalenderViewController: UICollectionViewDelegate, UICollectionViewData
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCollectionViewCell
         cell.daysLabel.text = totalSquaeres[indexPath.row]
         
-        if indexPath.row <= timeDifference {
+        if indexPath.row <= timeDifference - 1 {
             cell.daysLabel.textColor = .red
         } else {
             cell.daysLabel.textColor = .white

@@ -14,6 +14,7 @@ class OnboardingCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView   : UICollectionView!
     
     var slides : [OnboardingSlide] = []
+    
     var currentPage = 0 {
         didSet {
             if currentPage == slides.count - 1 {

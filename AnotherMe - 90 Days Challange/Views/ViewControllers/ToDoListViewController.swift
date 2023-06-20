@@ -17,19 +17,36 @@ class ToDoListViewController: UIViewController {
 
     let dailyGoals  = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
     let context     = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var items       : [Goal]?
+    var goals       : [Goal]?
     var times       : [Time]?
     var timeDifference : Int = 0
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
         setViews()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         fetchData()
+        checkLastSavedDate()
+
+    }
+    
+    override func viewDidLayoutSubviews() {
+        didUserFinishedChallange()
+    }
+    
+    fileprivate func didUserFinishedChallange() {
+        timeDifference = calculateDif() + 1
+        
+        if timeDifference > 3 {
+            performSegue(withIdentifier: "toChallangeDone", sender: nil)
+        }
+    }
+    
+    fileprivate func updateTimeLabel() {
         if calculateDif() > 75 {
             dayTitleLabel.text = "DAY 75"
         } else {
@@ -51,16 +68,42 @@ class ToDoListViewController: UIViewController {
     
     fileprivate  func calculateDif() -> Int {
         fetchTime()
-        let savedDateCB : Date = (times?[0].startDate)!
-        let newDate     = Date()
-        let diffSeconds = Int(newDate.timeIntervalSince1970 - (savedDateCB.timeIntervalSince1970 ))
-        let minutes     = diffSeconds / 60
-        return minutes
+        let startDate       : Date = (times?[0].startDate)!
+        let currentDate     = Date()
+        
+        let daysBetween = Date.daysBetween(start: startDate, end: currentDate) // 365
+        return daysBetween
+
     }
     
+    
+    fileprivate func checkLastSavedDate() {
+        fetchTime()
+        var lastSavedDate : Date = (times?[0].lastDate)!
+        
+        let calendar     = Calendar.current
+        let currentDate   = Date()
+        
+        let isGivenDatesSameDay = calendar.isDate(lastSavedDate, equalTo: currentDate, toGranularity: .day)
+
+        if isGivenDatesSameDay {
+         // The two dates are in the same exact day.
+            print("TODO calculate dif: \(calculateDif() + 1)")
+        } else {
+        //  The two dates are not in the  same day.
+            for goal in goals ?? [] {
+            goal.isCompleted = false
+            }
+            lastSavedDate = currentDate
+            times?[0].lastDate = lastSavedDate
+            try? context.save()
+            self.tableView.reloadData()
+            updateTimeLabel()
+        }
+    }
+   
+    
     fileprivate func strikeThrough(isStruck: Bool, title: String) -> NSAttributedString {
-        
-        
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: title)
         if isStruck {
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 1, range: NSMakeRange(0, attributeString.length))
@@ -73,11 +116,10 @@ class ToDoListViewController: UIViewController {
     
     fileprivate func fetchData() {
         do {
-            
             let request = Goal.fetchRequest() as NSFetchRequest<Goal>
             let sort = NSSortDescriptor(key: "id", ascending: true)
             request.sortDescriptors = [sort]
-            self.items =  try context.fetch(request)
+            self.goals =  try context.fetch(request)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -87,6 +129,8 @@ class ToDoListViewController: UIViewController {
         }
     }
     
+   
+    
     fileprivate func fetchTime() {
         do {
             let request = Time.fetchRequest() as NSFetchRequest<Time>
@@ -95,38 +139,35 @@ class ToDoListViewController: UIViewController {
             print("time fetch error!")
         }
     }
-    
 }
-
-
 
 extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items?.count ?? 0
+        return goals?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! TodoTableViewCell
         
-        let myhedef = self.items![indexPath.row]
+        let myGoal = self.goals![indexPath.row]
         cell.delegate = self
         cell.index = indexPath
-        let titleLabel = myhedef.title
+        let titleLabel = myGoal.title
         
-        if myhedef.isCompleted == false {
+        if myGoal.isCompleted == false {
             cell.checkMarkButton.tintColor = .white
             cell.checkMarkButton.setImage(checkMarkEmpty, for: .normal)
             cell.titleLabel.textColor = .white
             cell.titleLabel.attributedText = strikeThrough(isStruck: false, title: titleLabel ?? "")
 }
         
-         if myhedef.isCompleted == true{
+         if myGoal.isCompleted == true{
             cell.checkMarkButton.tintColor = .red
             cell.checkMarkButton.setImage(checkMarkRed, for: .normal)
-             cell.titleLabel.textColor = .red
-             cell.titleLabel.attributedText = strikeThrough(isStruck: true, title: titleLabel ?? "")
+            cell.titleLabel.textColor = .red
+            cell.titleLabel.attributedText = strikeThrough(isStruck: true, title: titleLabel ?? "")
         }
         return cell
     }
@@ -137,7 +178,7 @@ extension ToDoListViewController: UITableViewDelegate, UITableViewDataSource {
 extension ToDoListViewController:  MyCellDelegate {
     func onClickCell(index: Int) {
         print("\(index + 1 ) clicked")
-        let hedef = self.items![index]
+        let hedef = self.goals![index]
         if hedef.isCompleted == true {
          hedef.isCompleted = false
         }else {
@@ -150,5 +191,26 @@ extension ToDoListViewController:  MyCellDelegate {
             print("update error")
         }
         self.tableView.reloadData()
+    }
+}
+
+
+extension Date {
+    
+    //Calculates to days between 2 given dates.
+    
+    func daysBetween(date: Date) -> Int {
+        return Date.daysBetween(start: self, end: date)
+    }
+    
+    static func daysBetween(start: Date, end: Date) -> Int {
+        let calendar = Calendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: start)
+        let date2 = calendar.startOfDay(for: end)
+        
+        let a = calendar.dateComponents([.day], from: date1, to: date2)
+        return a.value(for: .day)!
     }
 }
