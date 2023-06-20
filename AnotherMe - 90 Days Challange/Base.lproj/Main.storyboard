@@ -222,7 +222,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="E-Mail Adress" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K47-mS-Dj2">
-                                <rect key="frame" x="24" y="452.33333333333331" width="345" height="41.333333333333371"/>
+                                <rect key="frame" x="24" y="452.33333333333331" width="345" height="41.333333333333314"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
