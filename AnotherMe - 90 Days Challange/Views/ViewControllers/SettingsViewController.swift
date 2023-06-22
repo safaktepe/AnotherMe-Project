@@ -208,21 +208,32 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         return settingsRowsNames.count
     }
 
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell = settingsTableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsTableViewCell
+//        cell.settingsLabel.text = settingsRowsNames[indexPath.row]
+//        if indexPath.row == 3 {
+//            cell.settingsLabel.textColor = .red
+//        }
+//        return cell
+//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "cell"
         
-        //MARK: REFACTOR HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // !!!!!!!!!!!!!!!!!!
-        // !!!!!!!!!!!!!!!!!!
-        // !!!!!!!!!!!!!!!!!!
-
-        let cell = settingsTableView.dequeueReusableCell(withIdentifier: "cell") as! SettingsTableViewCell
+        guard let cell = settingsTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SettingsTableViewCell else {
+            fatalError("Unable to dequeue SettingsTableViewCell")
+        }
+        
         cell.settingsLabel.text = settingsRowsNames[indexPath.row]
+        
         if indexPath.row == 3 {
             cell.settingsLabel.textColor = .red
         }
+        
         return cell
     }
-    
+
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }

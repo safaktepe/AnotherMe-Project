@@ -122,12 +122,14 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         nextButton.translatesAutoresizingMaskIntoConstraints     = false
-        
+
+
         backgroundView.backgroundColor = .white
         nextButton.setTitle("Next", for: .normal)
         nextButton.backgroundColor = .blue
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
-        
+        nextButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
+
         bgViewTopConstraint     = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.7)
         bgViewStretchConstraint = backgroundView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.35)
 
@@ -204,7 +206,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
 
         
         //Animation View
-        animationView                = .init(name: "77000-man-graph")
+        animationView                = .init(name: "leadership")
         animationView.frame          = backgroundView.frame
         animationView.contentMode    = .scaleToFill
         animationView.loopMode       = .loop
@@ -260,6 +262,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
           let label = UILabel()
           label.text = "\(index) - \(goalsText[index - 1])"
           label.numberOfLines = 0
+            label.font = UIFont.boldSystemFont(ofSize: 18.0)
           label.backgroundColor = .white
           label.adjustsFontSizeToFitWidth = true
           label.minimumScaleFactor = 0.5

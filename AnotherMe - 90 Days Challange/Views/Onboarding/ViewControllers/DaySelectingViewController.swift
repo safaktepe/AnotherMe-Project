@@ -176,7 +176,6 @@ class DaySelectingViewController: UIViewController {
     
     
     @objc func startButtonClicked(_ sender: Any) {
-        //Refactor below code.
         setGoals()
         
         // MARK: - Take current time
