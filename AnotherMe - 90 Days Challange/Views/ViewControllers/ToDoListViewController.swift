@@ -15,7 +15,6 @@ class ToDoListViewController: UIViewController {
     let checkMarkRed     = UIImage(systemName: "circle.fill")
     let checkMarkEmpty   = UIImage(systemName: "circle")
 
-    let dailyGoals  = ["Do this", "Do that", "Go run", "Bla bla", "Drink Water" , "Visualize for 5 min"]
     let context     = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var goals       : [Goal]?
     var times       : [Time]?

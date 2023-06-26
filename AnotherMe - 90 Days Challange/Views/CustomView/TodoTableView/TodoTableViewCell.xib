@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,20 +35,11 @@
                             <action selector="checkMarkButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lAJ-7v-qH3"/>
                         </connections>
                     </button>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ryt-Za-eOB">
-                        <rect key="frame" x="81.666666666666671" y="33.666666666666664" width="130.33333333333331" height="18"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="ryt-Za-eOB">
+                        <rect key="frame" x="81.666666666666629" y="33.666666666666664" width="0.0" height="0.0"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink 3L Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-Dn-4f2">
-                                <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="18"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="Gg2-D5-Kh2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFh-Ju-K2k">
-                                <rect key="frame" x="0.0" y="18" width="82" height="14"/>
+                                <rect key="frame" x="0.0" y="0.0" width="82" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="UKE-nX-n8M"/>
                                 </constraints>
@@ -62,18 +53,28 @@
                         <rect key="frame" x="56" y="82" width="259" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drink 3L Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bk9-Dn-4f2">
+                        <rect key="frame" x="73.666666666666657" y="24" width="289.33333333333337" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="8kh-BE-eDr" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.698113" id="BIi-PB-7ZA"/>
                     <constraint firstItem="8kh-BE-eDr" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.0117647" id="BbK-FC-PEU"/>
-                    <constraint firstItem="ryt-Za-eOB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PSS-6H-vsA"/>
+                    <constraint firstItem="ix1-Be-pGq" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.112309" id="Gqh-NB-mEt"/>
                     <constraint firstItem="ix1-Be-pGq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="RhR-T1-pVp"/>
                     <constraint firstItem="8kh-BE-eDr" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="U4Q-r9-q7n"/>
                     <constraint firstItem="ix1-Be-pGq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Wtb-Lg-swo"/>
-                    <constraint firstItem="ryt-Za-eOB" firstAttribute="leading" secondItem="ix1-Be-pGq" secondAttribute="trailing" constant="16" id="jhS-wO-SSb"/>
+                    <constraint firstItem="8kh-BE-eDr" firstAttribute="top" secondItem="Bk9-Dn-4f2" secondAttribute="bottom" constant="22" id="eHR-aF-zfp"/>
+                    <constraint firstItem="Bk9-Dn-4f2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="fpV-GX-KKA"/>
                     <constraint firstAttribute="bottom" secondItem="8kh-BE-eDr" secondAttribute="bottom" constant="2" id="kmL-nb-7Lc"/>
+                    <constraint firstItem="ix1-Be-pGq" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.623529" id="oRT-Uw-atM"/>
+                    <constraint firstItem="Bk9-Dn-4f2" firstAttribute="leading" secondItem="ix1-Be-pGq" secondAttribute="trailing" constant="8" id="seR-mQ-Z5c"/>
                     <constraint firstAttribute="bottom" secondItem="ix1-Be-pGq" secondAttribute="bottom" constant="16" id="z6J-rW-pMx"/>
+                    <constraint firstAttribute="trailing" secondItem="Bk9-Dn-4f2" secondAttribute="trailing" constant="8" id="zCz-Jc-GAw"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

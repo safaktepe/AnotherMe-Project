@@ -43,41 +43,37 @@ class DaySelectingViewController: UIViewController {
 
         //MARK: - Objects
         let goalNumber1 = Goal(context: self.context)
-        goalNumber1.title = "Goal number one"
+        goalNumber1.title = "Read 20 pages of book"
         goalNumber1.id = 0
         goalNumber1.isCompleted = false
         
         let goalNumber2 = Goal(context: self.context)
-        goalNumber2.title = "Goal number two"
+        goalNumber2.title = "Visualize of future self"
         goalNumber2.id = 1
         goalNumber2.isCompleted = false
 
         
         let goalNumber3 = Goal(context: self.context)
-        goalNumber3.title = "Goal number three"
+        goalNumber3.title = "Drink 1 gallon (3L) water"
         goalNumber3.id = 2
         goalNumber3.isCompleted = false
         
         
         let goalNumber4 = Goal(context: self.context)
-        goalNumber4.title = "Goal number four"
+        goalNumber4.title = "30 min outside running"
         goalNumber4.id = 3
         goalNumber4.isCompleted = false
         
         let goalNumber5 = Goal(context: self.context)
-        goalNumber5.title = "Goal number five"
+        goalNumber5.title = "Lift some weights for 30 minutes"
         goalNumber5.id = 4
         goalNumber5.isCompleted = false
         
         let goalNumber6 = Goal(context: self.context)
-        goalNumber6.title = "Goal number six"
+        goalNumber6.title = "Follow a diet"
         goalNumber6.id = 5
         goalNumber6.isCompleted = false
         
-        let goalNumber7 = Goal(context: self.context)
-        goalNumber7.title = "Goal number seven"
-        goalNumber7.id = 6
-        goalNumber7.isCompleted = false
         
         //MARK: - Save new objects.
         do {

@@ -11,6 +11,9 @@ fileprivate let cellId    = "cellId"
 fileprivate let headerId  = "headerId"
 fileprivate let padding   : CGFloat = 16
 
+fileprivate let titles  : [ArticleTitlesLocalizable] = [.articleTitle1, .articleTitle2, .articleTitle3, .articleTitle4, .articleTitle5, .articleTitle6]
+fileprivate let articles: [ArticlesLocalizable]      = [.article1, .article2, .article3, .article4, .article5, .article6]
+
 class ArticleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     override func viewDidLoad() {
@@ -59,7 +62,8 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     
     // MARK: - CollectinoView
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return articles.count
+//        return 8
     }
     
     var headerView: HeaderCollectionView?
@@ -78,8 +82,8 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as! ArticleCollectionViewCell
-        cell.titleLabel.text       = "Explore the importance of visulazation"
-        cell.descriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
+        cell.titleLabel.text       =  titles[indexPath.row].localized()
+        cell.descriptionLabel.text = articles[indexPath.row].localized()
         cell.layoutIfNeeded()
         return cell
     }
