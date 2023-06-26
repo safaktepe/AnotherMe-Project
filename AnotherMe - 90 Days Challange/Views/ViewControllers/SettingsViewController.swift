@@ -165,7 +165,7 @@ class SettingsViewController: UIViewController {
 
         
         let goalNumber3 = Goal(context: self.context)
-        goalNumber3.title = "Drink 1 gallon (3L) water"
+        goalNumber3.title = "Drink 1 gallon (3L) of water"
         goalNumber3.id = 2
         goalNumber3.isCompleted = false
         

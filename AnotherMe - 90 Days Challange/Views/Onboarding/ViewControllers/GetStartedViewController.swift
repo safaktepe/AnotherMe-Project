@@ -50,7 +50,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var userName                : String = ""
     var userAge                 : String = ""
 
-    let goalsText          = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet"]
+    let goalsText          = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet"]
 
     
     let isThisViewHidden = [

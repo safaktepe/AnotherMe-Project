@@ -89,9 +89,10 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "ArticleDetailViewController") as? ArticleDetailViewController
-        self.navigationController?.pushViewController(detailVC!, animated: true)
-
+        let controller = ArticleDetailViewController.instantiate()
+        controller.articleTitle = titles[indexPath.row].localized()
+        controller.articleDescr = articles[indexPath.row].localized()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
