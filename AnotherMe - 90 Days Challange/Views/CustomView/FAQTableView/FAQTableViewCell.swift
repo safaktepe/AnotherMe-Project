@@ -9,6 +9,9 @@ import UIKit
 
 class FAQTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var faqIcon: UIImageView!
+    @IBOutlet weak var faqDescription: UILabel!
+    @IBOutlet weak var faqTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,7 +21,8 @@ class FAQTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
+            
     }
     
 }

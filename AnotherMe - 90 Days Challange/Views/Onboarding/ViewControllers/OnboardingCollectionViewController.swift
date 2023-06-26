@@ -28,7 +28,6 @@ class OnboardingCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         collectionView.delegate    = self
         collectionView.dataSource  = self
         setSlideArray()
@@ -55,11 +54,11 @@ class OnboardingCollectionViewController: UIViewController {
     }
     
     fileprivate func setSlideArray() {
-        slides = [OnboardingSlide(title: "Eat Healthy", description: "Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır", image: UIImage(named: "article")!),
+        slides = [OnboardingSlide(title: "Transform your life", description: "Push limits, redefine mindset, and become your best self in just 75 days.", image: UIImage(named: "run")!),
         
-        OnboardingSlide(title: "Drink Water", description: "Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır", image: UIImage(named: "article")!),
+        OnboardingSlide(title: "Unleash Your Inner Potential", description: "Unlock talents, develop habits, and overcome obstacles to achieve greatness.", image: UIImage(named: "juststart")!),
                   
-        OnboardingSlide(title: "Go Run", description: "Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır", image: UIImage(named: "article")!)
+        OnboardingSlide(title: "Elevate Your Life to New Heights", description: "Experience a transformative journey, elevating fitness, well-being, growth, and success to new heights.", image: UIImage(named: "win")!)
         ]
     }
 }

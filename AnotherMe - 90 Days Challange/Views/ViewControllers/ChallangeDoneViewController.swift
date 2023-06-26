@@ -52,12 +52,15 @@ class ChallangeDoneViewController: UIViewController {
         backButton.layer.cornerRadius = 20
         backButton.setTitle("Close", for: .normal)
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
+        backButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
+
         
         restartButton.layer.cornerRadius = 20
         restartButton.setTitle("Restart Challange", for: .normal)
         restartButton.backgroundColor = .systemBlue
         restartButton.addTarget(self, action: #selector(restartButtonClicked), for: .touchUpInside)
-        
+        restartButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
+
         view.addSubview(animationView)
         view.addSubview(titleLabel)
         view.addSubview(backButton)
@@ -102,10 +105,10 @@ class ChallangeDoneViewController: UIViewController {
     }
     
     @objc func backButtonClicked(_ sender: Any) {
-        print("back button clicked")
+        self.dismiss(animated: true)
     }
     
     @objc func restartButtonClicked(_ sender: Any) {
-        print("restart button clicked")
+        performSegue(withIdentifier: "toNewChallange", sender: nil)
     }
 }

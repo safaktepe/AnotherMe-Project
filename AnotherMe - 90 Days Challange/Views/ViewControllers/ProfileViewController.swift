@@ -155,6 +155,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @objc func editButtonClicked() {
         let imagePickerController           = UIImagePickerController()
+        imagePickerController.sourceType    = .photoLibrary
         imagePickerController.delegate      = self
         imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
