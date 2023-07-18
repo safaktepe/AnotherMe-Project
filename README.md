@@ -49,7 +49,7 @@ Countdown </a>
 </h3>
 
 <div align="center">
-<img src="https://github.com/safaktepe/AnotherMe-Project/assets/37841888/7f0991fa-3740-408d-b77d-b40b2950449e" >
+<img src="https://github.com/safaktepe/AnotherMe-Project/assets/37841888/7f0991fa-3740-408d-b77d-b40b2950449e width="400" >
 </div>
 
   
