@@ -48,9 +48,9 @@ Tasks </a>
 Countdown </a>
 </h3>
 
-<p align="center">
+<div align="center">
   <img src="https://github.com/safaktepe/AnotherMe-Project/assets/37841888/7f0991fa-3740-408d-b77d-b40b2950449e" width="300/>
-</p>
+</div>
 
   
 <h3 align="center">
