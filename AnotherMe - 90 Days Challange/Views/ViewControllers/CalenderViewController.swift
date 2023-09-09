@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Photos
 
 class CalenderViewController: UIViewController {
 
@@ -74,20 +75,24 @@ class CalenderViewController: UIViewController {
    
    
     
-    @IBAction func shareButtonClicked(_ sender: Any) {
+    fileprivate func saveScreenshotToLibrary() {
         if isShared == false {
             isShared = true
-            setShareButtonViewChanges()
+//            setShareButtonViewChanges()
             guard let thisImage  = getScreenshot() else { return }
             UIImageWriteToSavedPhotosAlbum(thisImage, nil, nil, nil)
-            setShareButtonViewChanges()
+//            setShareButtonViewChanges()
             isShared = false
             shareButton.isHidden = false
             showAlert()
         } else {
             isShared = false
-            setShareButtonViewChanges()
+//            setShareButtonViewChanges()
         }
+    }
+    
+    @IBAction func shareButtonClicked(_ sender: Any) {
+        requestPhotoLibraryPermission()
     }
     
     func setShareButtonViewChanges () {
@@ -113,6 +118,34 @@ class CalenderViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(userValuesCoreData), name: name, object: nil)
     }
     
+    func requestPhotoLibraryPermission() {
+        PHPhotoLibrary.requestAuthorization { status in
+            DispatchQueue.main.async {
+                switch status {
+                case .authorized:
+                    // Permission granted, hide UI elements
+                    self.setShareButtonViewChanges()
+                    // Request a screenshot capture
+                    self.saveScreenshotToLibrary()
+                    self.setShareButtonViewChanges()
+                    self.shareButton.isHidden = false
+
+                case .denied, .restricted:
+                    // Permission denied or restricted, show an alert to inform the user
+                    self.showPermissionDeniedAlert()
+                case .notDetermined:
+                    // Permission not determined, the user hasn't made a choice yet
+                    // You can choose to show a message or take some other action
+                    break
+                @unknown default:
+                    break
+                }
+            }
+        }
+    }
+
+
+
     
     fileprivate func setUI() {
         
@@ -148,6 +181,17 @@ class CalenderViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    fileprivate func showPermissionDeniedAlert() {
+        let alert = UIAlertController(title: "Failed!", message: "You must give us permission the save your process into your photo library. You can change permission status from your phone's settings.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+            print("Ok")
+        }))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
 
     
     fileprivate func hiddenViewsForScreenShot() {
