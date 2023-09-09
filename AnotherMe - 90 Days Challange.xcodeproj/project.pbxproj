@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		62101D07298AA17200C7DA4D /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62101D06298AA17200C7DA4D /* ArticleDetailViewController.swift */; };
+		621290A22A5C5FA300B480B0 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621290A12A5C5FA300B480B0 /* StoreKit.framework */; };
 		6214392A2988E4130098EBFF /* HeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621439282988E4130098EBFF /* HeaderCollectionView.swift */; };
 		62155897293F6322005F7F68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62155896293F6322005F7F68 /* AppDelegate.swift */; };
 		62155899293F6322005F7F68 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62155898293F6322005F7F68 /* SceneDelegate.swift */; };
@@ -24,7 +25,6 @@
 		62322211294114260071506A /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6232220F294114260071506A /* TodoTableViewCell.xib */; };
 		62381D8F2989976C008231DE /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62381D8D2989976C008231DE /* ArticleCollectionViewCell.swift */; };
 		62381D902989976C008231DE /* ArticleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62381D8E2989976C008231DE /* ArticleCollectionViewCell.xib */; };
-		6248597F294DDDEA0023E89E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6248597E294DDDEA0023E89E /* FirebaseAnalytics */; };
 		6263E7F62A3347EE00EC6217 /* done.json in Resources */ = {isa = PBXBuildFile; fileRef = 6263E7F52A3347EE00EC6217 /* done.json */; };
 		62663EB12A46153900E36E06 /* ArticleTitlesLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62663EB02A46153900E36E06 /* ArticleTitlesLocalizable.strings */; };
 		62663EB32A46162A00E36E06 /* ArticleTitlesLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62663EB22A46162A00E36E06 /* ArticleTitlesLocalizable.swift */; };
@@ -68,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		62101D06298AA17200C7DA4D /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
+		621290A12A5C5FA300B480B0 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		621439282988E4130098EBFF /* HeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionView.swift; sourceTree = "<group>"; };
 		62155893293F6322005F7F68 /* AnotherMe - 90 Days Challange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnotherMe - 90 Days Challange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62155896293F6322005F7F68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,19 +132,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6248597F294DDDEA0023E89E /* FirebaseAnalytics in Frameworks */,
 				626F04892996487C00F8C160 /* Lottie in Frameworks */,
+				621290A22A5C5FA300B480B0 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		621290A02A5C5FA300B480B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				621290A12A5C5FA300B480B0 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6215588A293F6322005F7F68 = {
 			isa = PBXGroup;
 			children = (
 				62155895293F6322005F7F68 /* AnotherMe - 90 Days Challange */,
 				62155894293F6322005F7F68 /* Products */,
+				621290A02A5C5FA300B480B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -371,7 +381,6 @@
 			);
 			name = "AnotherMe - 90 Days Challange";
 			packageProductDependencies = (
-				6248597E294DDDEA0023E89E /* FirebaseAnalytics */,
 				626F04882996487C00F8C160 /* Lottie */,
 			);
 			productName = "AnotherMe - 90 Days Challange";
@@ -403,7 +412,6 @@
 			);
 			mainGroup = 6215588A293F6322005F7F68;
 			packageReferences = (
-				6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				626F04872996487C00F8C160 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 			);
 			productRefGroup = 62155894293F6322005F7F68 /* Products */;
@@ -638,14 +646,17 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "safaktepemert.AnotherMe---90-Days-Challange";
+				PRODUCT_BUNDLE_IDENTIFIER = safaktepemert.toughchallange.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -670,14 +681,17 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "safaktepemert.AnotherMe---90-Days-Challange";
+				PRODUCT_BUNDLE_IDENTIFIER = safaktepemert.toughchallange.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -712,14 +726,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
 		626F04872996487C00F8C160 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
@@ -731,11 +737,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6248597E294DDDEA0023E89E /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6248597D294DDDEA0023E89E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		626F04882996487C00F8C160 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 626F04872996487C00F8C160 /* XCRemoteSwiftPackageReference "lottie-spm" */;
