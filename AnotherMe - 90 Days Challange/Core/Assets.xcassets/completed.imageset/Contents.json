@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "dene.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "completed.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

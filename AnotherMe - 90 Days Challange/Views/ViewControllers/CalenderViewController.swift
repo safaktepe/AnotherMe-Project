@@ -10,17 +10,19 @@ import CoreData
 
 class CalenderViewController: UIViewController {
 
+    var completedImageView   = UIImageView()
+    var logoLabelH1          = UILabel()
+    var logoLabelH2          = UILabel()
+    var totalSquaeres        = [String]()
+    let context              = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let name                 = Notification.Name(rawValue: userInfoUpdateNotificationKey)
+    var times                : [Time]?
+    var isShared             : Bool = false
+    var names                : [User]?
+    var timeDifference       : Int = 0
     
-    var totalSquaeres   = [String]()
-    let context         = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let name            = Notification.Name(rawValue: userInfoUpdateNotificationKey)
-    var times           : [Time]?
-    var isShared        : Bool = false
-    var names           : [User]?
-    var timeDifference  : Int = 0
-    
+    @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var cons             : NSLayoutConstraint!
-    @IBOutlet weak var shareButton      : UIButton!
     @IBOutlet weak var labelsStackView  : UIStackView!
     @IBOutlet weak var titleLabel       : UILabel!
     @IBOutlet weak var faqButton        : UIButton!
@@ -78,6 +80,10 @@ class CalenderViewController: UIViewController {
             setShareButtonViewChanges()
             guard let thisImage  = getScreenshot() else { return }
             UIImageWriteToSavedPhotosAlbum(thisImage, nil, nil, nil)
+            setShareButtonViewChanges()
+            isShared = false
+            shareButton.isHidden = false
+            showAlert()
         } else {
             isShared = false
             setShareButtonViewChanges()
@@ -85,14 +91,20 @@ class CalenderViewController: UIViewController {
     }
     
     func setShareButtonViewChanges () {
-        profilePhoto.isHidden     = !profilePhoto.isHidden
-        labelsStackView.isHidden  = !labelsStackView.isHidden
-        faqButton.isHidden        = !faqButton.isHidden
-        titleLabel.isHidden       = !titleLabel.isHidden
-        let scaleImage  = profilePhoto.frame.size
-        let imageHeight = scaleImage.height
-        let holdCons : NSLayoutConstraint = cons
-        cons.constant = (imageHeight + holdCons.constant) * (-1)
+        profilePhoto.isHidden       = !profilePhoto.isHidden
+        labelsStackView.isHidden    = !labelsStackView.isHidden
+        faqButton.isHidden          = !faqButton.isHidden
+        titleLabel.isHidden         = !titleLabel.isHidden
+        completedImageView.isHidden = !completedImageView.isHidden
+        shareButton.isHidden        = !shareButton.isHidden
+        logoLabelH1.isHidden        = !logoLabelH1.isHidden
+        logoLabelH2.isHidden        = !logoLabelH2.isHidden
+        
+        let scaleImage      = profilePhoto.frame.size
+        let imageHeight     = scaleImage.height
+        let labelHeight     = (imageHeight * 2) + 8
+        let holdCons        : NSLayoutConstraint = cons
+        cons.constant       = (imageHeight + holdCons.constant - labelHeight) * (-1)
     }
     
    
@@ -103,10 +115,9 @@ class CalenderViewController: UIViewController {
     
     
     fileprivate func setUI() {
+        
+        hiddenViewsForScreenShot()
         timeDifference = calculateDif() + 1
-        
-       
-        
         userValuesCoreData()
 
         for i in 1...75 {
@@ -127,6 +138,68 @@ class CalenderViewController: UIViewController {
         profilePhoto.addGestureRecognizer(tapGestureRecognizer)
     }
     
+    
+    fileprivate func showAlert() {
+        let alert = UIAlertController(title: "Saved!", message: "Saved in photo library. Don't forget to share.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
+            print("Ok")
+        }))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    
+    fileprivate func hiddenViewsForScreenShot() {
+        completedImageView.image = UIImage(named: "completed")
+        view.addSubview(completedImageView)
+        completedImageView.isHidden = true
+        completedImageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            completedImageView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: -24),
+            completedImageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.62),
+            completedImageView.heightAnchor.constraint(equalTo: completedImageView.widthAnchor, multiplier: 0.6),
+            completedImageView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+        ])
+        
+        logoLabelH1.text = "75 TOUGH"
+        logoLabelH1.font = UIFont(name: "Futura-CondensedExtraBold", size: 50)
+        logoLabelH1.textColor = .systemRed
+        logoLabelH1.textAlignment = .center
+        logoLabelH1.adjustsFontSizeToFitWidth = true
+        logoLabelH1.numberOfLines = 1
+        logoLabelH1.isHidden = true
+        
+        view.addSubview(logoLabelH1)
+        logoLabelH1.translatesAutoresizingMaskIntoConstraints  = false
+
+        logoLabelH2.text = "The Challange"
+        logoLabelH2.font = UIFont(name: "Futura-MediumItalic", size: 20)
+        logoLabelH2.textColor = .white
+        logoLabelH2.textAlignment = .center
+        logoLabelH2.adjustsFontSizeToFitWidth = true
+        logoLabelH2.numberOfLines = 1
+        logoLabelH2.isHidden = true
+
+        view.addSubview(logoLabelH2)
+        logoLabelH2.translatesAutoresizingMaskIntoConstraints  = false
+        
+        NSLayoutConstraint.activate([
+            logoLabelH1.topAnchor.constraint(equalTo: titleLabel.topAnchor),
+            logoLabelH1.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
+            logoLabelH1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            logoLabelH2.topAnchor.constraint(equalTo: logoLabelH1.bottomAnchor, constant: 4),
+            logoLabelH2.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.75),
+            logoLabelH2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+        ])
+
+        
+    }
+    
+
     
     @objc func profilePhotoTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
