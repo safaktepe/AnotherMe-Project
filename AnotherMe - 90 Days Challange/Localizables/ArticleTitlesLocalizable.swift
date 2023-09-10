@@ -15,6 +15,7 @@ enum ArticleTitlesLocalizable: String {
     case articleTitle4 = "articleTitle4"
     case articleTitle5 = "articleTitle5"
     case articleTitle6 = "articleTitle6"
+    case articleTitle7 = "articleTitle7"
     
     func localized() -> String { rawValue.localized() }
 }

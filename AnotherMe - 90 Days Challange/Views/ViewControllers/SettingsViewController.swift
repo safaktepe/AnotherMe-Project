@@ -185,7 +185,12 @@ class SettingsViewController: UIViewController {
         goalNumber6.id = 5
         goalNumber6.isCompleted = false
         
-        
+        let goalNumber7 = Goal(context: self.context)
+        goalNumber7.title = "Share your process"
+        goalNumber7.id = 6
+        goalNumber7.isCompleted = false
+
+
         //MARK: - Save new objects.
         do {
             try self.context.save()

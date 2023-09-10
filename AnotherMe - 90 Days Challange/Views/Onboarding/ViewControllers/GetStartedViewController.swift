@@ -50,7 +50,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var userName                : String = ""
     var userAge                 : String = ""
 
-    let goalsText          = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet"]
+    let goalsText          = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet", "Share your process", "Share your process"]
 
     
     let isThisViewHidden = [
@@ -198,7 +198,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         
         // Description Label
         descriptionLabel.numberOfLines  = 0
-        descriptionLabel.text           = "We will work together to make you the best version of yourself?"
+        descriptionLabel.text           = "We will work together to make you the best version of yourself."
         descriptionLabel.textAlignment  = .center
         descriptionLabel.font           = UIFont.systemFont(ofSize: 20, weight: .semibold)
         descriptionLabel.adjustsFontSizeToFitWidth = true
@@ -258,7 +258,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         stackView.distribution = .fillEqually
         stackView.spacing = 10
 
-        for index in 1...6 {
+        for index in 1...goalsText.count - 1 {
           let label = UILabel()
           label.text = "\(index) - \(goalsText[index - 1])"
           label.numberOfLines = 0
@@ -278,7 +278,6 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
             stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
             stackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.6)
         ])
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -429,7 +428,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         var       textFieldInputName = textField.text
         guard let textFieldInputName = textFieldInputName else { return }
         
-        titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the 6 rules that you must follow!", "From which day do you want to start?"]
+        titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the \(goalsText.count - 1) rules that you must follow!", "From which day do you want to start?"]
 
         let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField,         hidden: !currentPageInfo["textField"]!)
