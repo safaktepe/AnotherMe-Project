@@ -58,7 +58,7 @@ class OnboardingCollectionViewController: UIViewController {
         
         OnboardingSlide(title: "Unleash Your Inner Potential", description: "Unlock talents, develop habits, and overcome obstacles to achieve greatness.", image: UIImage(named: "juststart")!),
                   
-        OnboardingSlide(title: "Elevate Your Life to New Heights", description: "Experience a transformative journey, elevating fitness, well-being, growth, and success to new heights.", image: UIImage(named: "win")!)
+        OnboardingSlide(title: "Start to best mental toughness challenge. Win the war with yourself!", description: "Experience a transformative journey, elevating fitness, well-being, growth, and success to new heights.", image: UIImage(named: "win")!)
         ]
     }
 }

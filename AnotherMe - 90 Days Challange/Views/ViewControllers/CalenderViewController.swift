@@ -183,7 +183,7 @@ class CalenderViewController: UIViewController {
     }
     
     fileprivate func showPermissionDeniedAlert() {
-        let alert = UIAlertController(title: "Failed!", message: "You must give us permission the save your process into your photo library. You can change permission status from your phone's settings.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Failed!", message: "Permission denied, to change it: \n ->Settings\n ->75 Tough\n ->Change permission", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
             print("Ok")
         }))

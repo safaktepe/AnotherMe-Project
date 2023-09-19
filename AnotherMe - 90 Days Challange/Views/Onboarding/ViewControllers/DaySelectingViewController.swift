@@ -29,7 +29,7 @@ class DaySelectingViewController: UIViewController {
     
     fileprivate func setGoals() {
         //MARK: - Delete
-        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
+        let deleteFetch   = NSFetchRequest<NSFetchRequestResult>(entityName: "Goal")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
         do
         {
@@ -74,6 +74,10 @@ class DaySelectingViewController: UIViewController {
         goalNumber6.id = 5
         goalNumber6.isCompleted = false
         
+        let goalNumber7 = Goal(context: self.context)
+        goalNumber7.title = "Share your process"
+        goalNumber7.id = 6
+        goalNumber7.isCompleted = false
         
         //MARK: - Save new objects.
         do {
@@ -84,8 +88,6 @@ class DaySelectingViewController: UIViewController {
         }
     }
 
-    
-    
     
     
     fileprivate func setViews() {

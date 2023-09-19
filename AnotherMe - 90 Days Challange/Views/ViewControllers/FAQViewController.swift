@@ -11,8 +11,10 @@ class FAQViewController: UIViewController {
 
     @IBOutlet weak var faqTableView: UITableView!
     
-    let goalsText = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet"]
-    let goalsDecriptions = ["Immerse yourself in knowledge, expand your horizons, and stimulate your imagination.", "Envision your incredible potential and ignite motivation for self-improvement and growth.", "Hydrate, boost energy, improve focus, support digestion, and enhance overall well-being.", "Experience the exhilaration of a refreshing run, boost endurance, and improve mood.", "Strengthen your body, build muscle, improve physique, and enhance overall health.", "Nourish your body, manage weight, support health, and thrive with a balanced eating plan."]
+    let goalsText = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet", "Share your process on your social media"]
+    
+    
+    let goalsDecriptions = ["Immerse yourself in knowledge, expand your horizons, and stimulate your imagination.", "Envision your incredible potential and ignite motivation for self-improvement and growth.", "Hydrate, boost energy, improve focus, support digestion, and enhance overall well-being.", "Experience the exhilaration of a refreshing run, boost endurance, and improve mood.", "Strengthen your body, build muscle, improve physique, and enhance overall health.", "Nourish your body, manage weight, support health, and thrive with a balanced eating plan.", "Post your daily achievements for more pressure and motivation to keep pushing forward"]
     
     
     override func viewDidLoad() {

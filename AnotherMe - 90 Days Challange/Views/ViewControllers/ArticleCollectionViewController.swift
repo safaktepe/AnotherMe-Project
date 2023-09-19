@@ -11,8 +11,8 @@ fileprivate let cellId    = "cellId"
 fileprivate let headerId  = "headerId"
 fileprivate let padding   : CGFloat = 16
 
-fileprivate let titles  : [ArticleTitlesLocalizable] = [.articleTitle1, .articleTitle2, .articleTitle3, .articleTitle4, .articleTitle5, .articleTitle6]
-fileprivate let articles: [ArticlesLocalizable]      = [.article1, .article2, .article3, .article4, .article5, .article6]
+fileprivate let titles  : [ArticleTitlesLocalizable] = [.articleTitle1, .articleTitle2, .articleTitle3, .articleTitle4, .articleTitle5, .articleTitle6, .articleTitle7]
+fileprivate let articles: [ArticlesLocalizable]      = [.article1, .article2, .article3, .article4, .article5, .article6, .article7]
 
 class ArticleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 

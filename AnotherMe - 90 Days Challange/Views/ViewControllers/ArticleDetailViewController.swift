@@ -11,7 +11,7 @@ class ArticleDetailViewController: UIViewController {
     
     @IBOutlet weak var gradientContainerView: UIView!
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView        : UIImageView!
     @IBOutlet weak var descriptionLabel : UILabel!
     @IBOutlet weak var titleLabel       : UILabel!
     
@@ -33,6 +33,7 @@ class ArticleDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
     }
+    
     fileprivate func setGradientLayer() {
         // Transparent to black gradient for imageView's bottom.
         let gradientLayer = CAGradientLayer()
