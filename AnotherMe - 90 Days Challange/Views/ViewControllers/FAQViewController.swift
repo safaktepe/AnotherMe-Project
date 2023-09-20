@@ -11,10 +11,10 @@ class FAQViewController: UIViewController {
 
     @IBOutlet weak var faqTableView: UITableView!
     
-    let goalsText = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet", "Share your process on your social media"]
+    let goalsText          = ["goal1" , "goal2", "goal3", "goal4", "goal5", "goal6", "goal7"]
+ 
     
-    
-    let goalsDecriptions = ["Immerse yourself in knowledge, expand your horizons, and stimulate your imagination.", "Envision your incredible potential and ignite motivation for self-improvement and growth.", "Hydrate, boost energy, improve focus, support digestion, and enhance overall well-being.", "Experience the exhilaration of a refreshing run, boost endurance, and improve mood.", "Strengthen your body, build muscle, improve physique, and enhance overall health.", "Nourish your body, manage weight, support health, and thrive with a balanced eating plan.", "Post your daily achievements for more pressure and motivation to keep pushing forward"]
+    let goalsDecriptions   = ["goal1Descr", "goal2Descr","goal3Descr", "goal4Descr", "goal5Descr", "goal6Descr", "goal7Descr",  ]
     
     
     override func viewDidLoad() {
@@ -38,8 +38,8 @@ extension FAQViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = faqTableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? FAQTableViewCell else {
             fatalError("Unable to dequeue FAQTableViewCell")
         }
-        cell.faqTitle.text       = goalsText[indexPath.row]
-        cell.faqDescription.text = goalsDecriptions[indexPath.row]
+        cell.faqTitle.text       = goalsText[indexPath.row].localize()
+        cell.faqDescription.text = goalsDecriptions[indexPath.row].localize()
         return cell
     }
     

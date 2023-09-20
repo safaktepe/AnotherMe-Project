@@ -50,7 +50,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     var userName                : String = ""
     var userAge                 : String = ""
 
-    let goalsText          = ["Read 20 pages of book" , "Visualize of future self", "Drink 1 gallon (3L) of water", "30 min outside running", "Lift some weights for 30 minutes", "Follow a diet", "Share your process", "Share your process"]
+    let goalsText          = ["goal1" , "goal2", "goal3", "goal4", "goal5", "goal6", "goal7"]
 
     
     let isThisViewHidden = [
@@ -125,7 +125,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
 
 
         backgroundView.backgroundColor = .white
-        nextButton.setTitle("Next", for: .normal)
+        nextButton.setTitle("next".localize(), for: .normal)
         nextButton.backgroundColor = .blue
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
         nextButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
@@ -151,7 +151,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         
         // Label
         titleLabel.numberOfLines = 0
-        titleLabel.text = "What is your name?"
+        titleLabel.text = "whatname".localized()
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
         titleLabel.adjustsFontSizeToFitWidth = true
@@ -159,11 +159,11 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
 
         
         // Textfield
-        textField.placeholder = "Name"
+        textField.placeholder = "name".localized()
         textField.backgroundColor = .systemGray6
         textField.layer.cornerRadius = 10
         let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
-        let placeholder = NSMutableAttributedString(string: "Name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let placeholder = NSMutableAttributedString(string: "name".localize(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         let placeholderBounds = placeholder.boundingRect(with: CGSize(width: textField.frame.width, height: textField.frame.height), options: .usesLineFragmentOrigin, context: nil)
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.delegate = self
@@ -198,7 +198,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         
         // Description Label
         descriptionLabel.numberOfLines  = 0
-        descriptionLabel.text           = "We will work together to make you the best version of yourself."
+        descriptionLabel.text           = "onboard1".localized()
         descriptionLabel.textAlignment  = .center
         descriptionLabel.font           = UIFont.systemFont(ofSize: 20, weight: .semibold)
         descriptionLabel.adjustsFontSizeToFitWidth = true
@@ -258,11 +258,11 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         stackView.distribution = .fillEqually
         stackView.spacing = 10
 
-        for index in 1...goalsText.count - 1 {
+        for index in 1...goalsText.count  {
           let label = UILabel()
-          label.text = "\(index) - \(goalsText[index - 1])"
+          label.text = "\(index)" + " - " + "\(goalsText[index - 1])".localized()
           label.numberOfLines = 0
-            label.font = UIFont.boldSystemFont(ofSize: 18.0)
+          label.font = UIFont.boldSystemFont(ofSize: 18.0)
           label.backgroundColor = .white
           label.adjustsFontSizeToFitWidth = true
           label.minimumScaleFactor = 0.5
@@ -519,4 +519,16 @@ extension GetStartedViewController {
                fadeOutBackgroundColor(fadeOut: true)
            }
        }
+}
+
+
+
+extension String {
+    func localizedString() -> String {
+        return NSLocalizedString(self,
+                                 tableName: "Localizable",
+                                 bundle: .main,
+                                 value: self,
+                                 comment: self)
+    }
 }

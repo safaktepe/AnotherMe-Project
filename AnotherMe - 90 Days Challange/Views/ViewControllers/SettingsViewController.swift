@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView  : UITableView!
     var profileViewController             : ProfileViewController?
 
-    let settingsRowsNames = ["Account", "Restart Challange"]
+    let settingsRowsNames = ["account", "restart"]
     let segueNames        = ["toAccountPage", "toFeedBack"]
     
     deinit {
@@ -125,12 +125,12 @@ class SettingsViewController: UIViewController {
     }
         
     fileprivate func showAlert() {
-        let alert = UIAlertController(title: "WARNING!", message: "If you restart challenge, your progress will be permanently deleted and it cannot be recovered!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dissmiss", style: .cancel, handler: { action in
-            print("Cancel")
+        let alert = UIAlertController(title: "warning".localize(), message: "warningmsg".localize(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dissmiss".localize(), style: .cancel, handler: { action in
+            print("cancel".localize())
         }))
-        alert.addAction(UIAlertAction(title: "Restart", style: .destructive, handler: { action in
-            print("Restart")
+        alert.addAction(UIAlertAction(title: "restartWord".localize(), style: .destructive, handler: { action in
+            print("restart".localize())
             
             self.restartChallange()
             self.performSegue(withIdentifier: "toRestartChallange", sender: nil)
@@ -216,7 +216,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("Unable to dequeue SettingsTableViewCell")
         }
         
-        cell.settingsLabel.text = settingsRowsNames[indexPath.row]
+        cell.settingsLabel.text = settingsRowsNames[indexPath.row].localize()
         
         if indexPath.row == 3 {
             cell.settingsLabel.textColor = .red

@@ -1,0 +1,48 @@
+/* 
+  Localizable.strings
+  AnotherMe - 90 Days Challange
+
+  Created by Mert Şafaktepe on 20.09.2023.
+  
+*/
+
+"rule1"          = "Lisez 20 pages d'un livre";
+"welcome"        = "Bienvenue,";
+"day"            = "JOUR";
+"goal1"          = "Lisez 20 pages d'un livre";
+"goal2"          = "Visualisez votre futur moi";
+"goal3"          = "Buvez 1 gallon (3L) d'eau";
+"goal4"          = "30 minutes de course en extérieur";
+"goal5"          = "Soulevez des poids pendant 30 minutes";
+"goal6"          = "Suivez un régime";
+"goal7"          = "Partagez votre processus";
+"fromday"        = "À partir de quel jour souhaitez-vous commencer?";
+
+//Get started
+
+"whatname"                = "Quel est ton nom?";
+"hi"                      = "Salut, ";
+"name"                    = "Nom";
+"onboard1"                = "We will work together to make you the best version of yourself";
+"next"                    = "Suivant";
+"account"                 = "Compte";
+"restart"       = "Redémarrer le Défi";
+"entername"     = "Entrez votre nom";
+"save"          = "Enregistrer";
+"editprofile"   = "Modifier le Profil";
+"warning"       = "AVERTISSEMENT!";
+"warningmsg"    = "Si vous redémarrez le défi, votre progression sera définitivement supprimée et ne pourra pas être récupérée!";
+"cancel"        = "Annuler";
+"dissmiss"      = "Ignorer";
+"restartWord"   = "Redémarrer";
+"savedMsg"      = "Toutes les modifications sont enregistrées!";
+"saved"         = "Enregistré!";
+"goal1Descr"    = "Plongez-vous dans la connaissance, élargissez vos horizons et stimulez votre imagination.";
+"goal2Descr"    = "Envisagez votre incroyable potentiel et suscitez la motivation pour l'amélioration de soi et la croissance";
+"goal3Descr"    = "Hydratez-vous, stimulez l'énergie, améliorez la concentration, favorisez la digestion et améliorez votre bien-être général.";
+"goal4Descr"    = "Vivez l'excitation d'une course rafraîchissante, renforcez l'endurance et améliorez l'humeur.";
+"goal5Descr"    = "Renforcez votre corps, développez vos muscles, améliorez votre silhouette et favorisez votre santé globale";
+"goal6Descr"    = "Nourrissez votre corps, gérez votre poids, favorisez votre santé et prospérez grâce à un plan alimentaire équilibré.";
+"goal7Descr"    = "Publiez vos réalisations quotidiennes pour plus de pression et de motivation pour continuer à avancer.";
+
+"readmore"      = "En savoir plus sur le fait de s'améliorer de 1 % chaque jour";

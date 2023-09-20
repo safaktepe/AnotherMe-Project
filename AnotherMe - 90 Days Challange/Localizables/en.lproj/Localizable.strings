@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  AnotherMe - 90 Days Challange
+
+  Created by Mert Şafaktepe on 20.09.2023.
+  
+*/
+
+
+"rule1"          = "Lisez 20 pages d'un livre";
+"welcome"        = "Welcome,";
+"day"            = "Day";
+"goal1"          = "Read 20 pages of book";
+"goal2"          = "Visualize of future self";
+"goal3"          = "Drink 1 gallon (3L) of water";
+"goal4"          = "30 min outside running";
+"goal5"          = "Lift some weights for 30 minutes";
+"goal6"          = "Follow a diet";
+"goal7"          = "Share your process";
+"fromday"        = "From which day do you want to start?";
+
+//Get started
+
+"whatname"       = "What is your name?";
+"hi"             = "Hi, ";
+"name"           = "Name";
+"onboard1"       = "We will work together to make you the best version of yourself";
+"next"           = "Next";
+"account"                 = "Account";
+"restart"       = "Restart Challange";
+"entername"     = "Enter Your Name";
+"save"          = "Save";
+"editprofile"   = "Edit Profile";
+"warning"       = "WARNING!";
+"warningmsg"    = "If you restart challenge, your progress will be permanently deleted and it cannot be recovered!";
+"cancel"        = "Cancel";
+"dissmiss"      = "Dismiss";
+"restartWord"   = "Restart";
+"savedMsg"      = "All changes are saved.";
+"saved"         = "Saved!";
+"goal1Descr"    = "Immerse yourself in knowledge, expand your horizons, and stimulate your imagination.";
+"goal2Descr"    = "Envision your incredible potential and ignite motivation for self-improvement and growth.";
+"goal3Descr"    = "Hydrate, boost energy, improve focus, support digestion, and enhance overall well-being.";
+"goal4Descr"    = "Experience the exhilaration of a refreshing run, boost endurance, and improve mood.";
+"goal5Descr"    = "Strengthen your body, build muscle, improve physique, and enhance overall health.";
+"goal6Descr"    = "Nourish your body, manage weight, support health, and thrive with a balanced eating plan.";
+"goal7Descr"    = "Post your daily achievements for more pressure and motivation to keep pushing forward";
+
+"readmore"      = "Read more about being better 1% each day";

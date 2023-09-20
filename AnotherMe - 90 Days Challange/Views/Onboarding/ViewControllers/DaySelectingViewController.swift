@@ -43,39 +43,39 @@ class DaySelectingViewController: UIViewController {
 
         //MARK: - Objects
         let goalNumber1 = Goal(context: self.context)
-        goalNumber1.title = "Read 20 pages of book"
+        goalNumber1.title = "goal1".localized()
         goalNumber1.id = 0
         goalNumber1.isCompleted = false
         
         let goalNumber2 = Goal(context: self.context)
-        goalNumber2.title = "Visualize of future self"
+        goalNumber2.title = "goal2".localized()
         goalNumber2.id = 1
         goalNumber2.isCompleted = false
 
         
         let goalNumber3 = Goal(context: self.context)
-        goalNumber3.title = "Drink 1 gallon (3L) of water"
+        goalNumber3.title = "goal3".localized()
         goalNumber3.id = 2
         goalNumber3.isCompleted = false
         
         
         let goalNumber4 = Goal(context: self.context)
-        goalNumber4.title = "30 min outside running"
+        goalNumber4.title = "goal4".localized()
         goalNumber4.id = 3
         goalNumber4.isCompleted = false
         
         let goalNumber5 = Goal(context: self.context)
-        goalNumber5.title = "Lift some weights for 30 minutes"
+        goalNumber5.title = "goal5".localized()
         goalNumber5.id = 4
         goalNumber5.isCompleted = false
         
         let goalNumber6 = Goal(context: self.context)
-        goalNumber6.title = "Follow a diet"
+        goalNumber6.title = "goal6".localized()
         goalNumber6.id = 5
         goalNumber6.isCompleted = false
         
         let goalNumber7 = Goal(context: self.context)
-        goalNumber7.title = "Share your process"
+        goalNumber7.title = "goal7".localized()
         goalNumber7.id = 6
         goalNumber7.isCompleted = false
         
@@ -106,14 +106,14 @@ class DaySelectingViewController: UIViewController {
         startButton.backgroundColor = .systemBlue
         startButton.layer.cornerRadius = 20
         startButton.isEnabled = true
-        startButton.setTitle("Next", for: .normal)
+        startButton.setTitle("next".localize(), for: .normal)
         startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
         startButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
 
         //Title Label.
         backgroundView.addSubview(titleLabel)
         titleLabel.numberOfLines = 0
-        titleLabel.text = "From which day do you want to start?"
+        titleLabel.text = "fromday".localized()
         titleLabel.textColor = .black
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
@@ -126,7 +126,7 @@ class DaySelectingViewController: UIViewController {
         dayNumberLabel.font    = UIFont.systemFont(ofSize: 40, weight: .semibold)
         dayLabelStackView.addArrangedSubview(dayNumberLabel)
         
-        dayLabel.text = "day"
+        dayLabel.text = "day".localized()
         dayLabel.textColor = .black
         dayLabel.font.withSize(20)
         dayLabelStackView.addArrangedSubview(dayLabel)
@@ -228,4 +228,14 @@ extension DaySelectingViewController: UIPickerViewDelegate, UIPickerViewDataSour
         dayLabel.text = dayCounter == 1 ? "day" : "days"
     }
     
+}
+
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(self,
+                                 tableName: "Localizable",
+                                 bundle: .main,
+                                 value: self,
+                                 comment: self)
+    }
 }
