@@ -6,7 +6,7 @@
 "8B5-PW-qhy.configuration.title" = "Next";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8B5-PW-qhy"; */
-"8B5-PW-qhy.normalTitle" = "Button";
+"8B5-PW-qhy.normalTitle" = "Suivant";
 
 /* Class = "UILabel"; text = "This is the description layer of my brand new onboarding scene."; ObjectID = "AHl-PQ-aeF"; */
 "AHl-PQ-aeF.text" = "This is the description layer of my brand new onboarding scene.";

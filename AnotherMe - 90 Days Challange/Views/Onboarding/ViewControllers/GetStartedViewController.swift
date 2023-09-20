@@ -198,7 +198,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         
         // Description Label
         descriptionLabel.numberOfLines  = 0
-        descriptionLabel.text           = "onboard1".localized()
+        descriptionLabel.text           = "getStarted1".localized()
         descriptionLabel.textAlignment  = .center
         descriptionLabel.font           = UIFont.systemFont(ofSize: 20, weight: .semibold)
         descriptionLabel.adjustsFontSizeToFitWidth = true
@@ -428,7 +428,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         var       textFieldInputName = textField.text
         guard let textFieldInputName = textFieldInputName else { return }
         
-        titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "What is your age?", "Here are the \(goalsText.count - 1) rules that you must follow!", "From which day do you want to start?"]
+        titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "age".localize(), "hereare7".localize(), "fromday".localize()]
 
         let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField,         hidden: !currentPageInfo["textField"]!)

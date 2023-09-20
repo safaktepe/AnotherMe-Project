@@ -9,6 +9,51 @@
 "rule1"          = "Lisez 20 pages d'un livre";
 "welcome"        = "Bienvenue,";
 "day"            = "JOUR";
+
+//Get started
+"fromday"        = "À partir de quel jour souhaitez-vous commencer?";
+"whatname"       = "Quel est ton nom?";
+"hi"             = "Salut, ";
+"name"           = "Nom";
+"getStarted1"    = "Nous travaillerons ensemble pour faire de vous la meilleure version de vous-même.";
+"next"           = "Suivant";
+"age"            = "Quel est votre âge?";
+"hereare7"       = "Voici les 7 règles que vous devez suivre!";
+
+
+// Profile.
+"account"       = "Compte";
+"restart"       = "Redémarrer le Défi";
+"entername"     = "Entrez votre nom";
+"save"          = "Enregistrer";
+"restartWord"   = "Redémarrer";
+"savedMsg"      = "Toutes les modifications sont enregistrées!";
+"saved"         = "Enregistré!";
+
+
+// Settings.
+"editprofile"   = "Modifier le Profil";
+"warning"       = "AVERTISSEMENT!";
+"warningmsg"    = "Si vous redémarrez le défi, votre progression sera définitivement supprimée et ne pourra pas être récupérée!";
+"cancel"        = "Annuler";
+"dissmiss"      = "Ignorer";
+
+
+// Onboarding.
+"getstarted"     = "Commencer";
+"onboard1"       = "Transformez votre vie.";
+"onboard1Desc"   = "Repoussez les limites, redéfinissez votre état d'esprit et devenez la meilleure version de vous-même en seulement 75 jours.";
+"onboard2"       = "Libérez votre potentiel intérieur.";
+"onboard2Desc"   = "Débloquez vos talents, développez des habitudes et surmontez les obstacles pour atteindre la grandeur.";
+"onboard3"       = "Commencez le défi de la meilleure résistance mentale. Remportez la bataille avec vous-même!";
+"onboard3Desc"   = "Vivez un voyage transformateur, élevant la forme physique, le bien-être, la croissance et la réussite vers de nouveaux sommets.";
+
+
+// Article - Reading page.
+"readmore"       = "En savoir plus sur le fait de s'améliorer de 1 % chaque jour";
+
+
+// Goals.
 "goal1"          = "Lisez 20 pages d'un livre";
 "goal2"          = "Visualisez votre futur moi";
 "goal3"          = "Buvez 1 gallon (3L) d'eau";
@@ -16,33 +61,11 @@
 "goal5"          = "Soulevez des poids pendant 30 minutes";
 "goal6"          = "Suivez un régime";
 "goal7"          = "Partagez votre processus";
-"fromday"        = "À partir de quel jour souhaitez-vous commencer?";
 
-//Get started
-
-"whatname"                = "Quel est ton nom?";
-"hi"                      = "Salut, ";
-"name"                    = "Nom";
-"onboard1"                = "We will work together to make you the best version of yourself";
-"next"                    = "Suivant";
-"account"                 = "Compte";
-"restart"       = "Redémarrer le Défi";
-"entername"     = "Entrez votre nom";
-"save"          = "Enregistrer";
-"editprofile"   = "Modifier le Profil";
-"warning"       = "AVERTISSEMENT!";
-"warningmsg"    = "Si vous redémarrez le défi, votre progression sera définitivement supprimée et ne pourra pas être récupérée!";
-"cancel"        = "Annuler";
-"dissmiss"      = "Ignorer";
-"restartWord"   = "Redémarrer";
-"savedMsg"      = "Toutes les modifications sont enregistrées!";
-"saved"         = "Enregistré!";
-"goal1Descr"    = "Plongez-vous dans la connaissance, élargissez vos horizons et stimulez votre imagination.";
-"goal2Descr"    = "Envisagez votre incroyable potentiel et suscitez la motivation pour l'amélioration de soi et la croissance";
-"goal3Descr"    = "Hydratez-vous, stimulez l'énergie, améliorez la concentration, favorisez la digestion et améliorez votre bien-être général.";
-"goal4Descr"    = "Vivez l'excitation d'une course rafraîchissante, renforcez l'endurance et améliorez l'humeur.";
-"goal5Descr"    = "Renforcez votre corps, développez vos muscles, améliorez votre silhouette et favorisez votre santé globale";
-"goal6Descr"    = "Nourrissez votre corps, gérez votre poids, favorisez votre santé et prospérez grâce à un plan alimentaire équilibré.";
-"goal7Descr"    = "Publiez vos réalisations quotidiennes pour plus de pression et de motivation pour continuer à avancer.";
-
-"readmore"      = "En savoir plus sur le fait de s'améliorer de 1 % chaque jour";
+"goal1Descr"     = "Plongez-vous dans la connaissance, élargissez vos horizons et stimulez votre imagination.";
+"goal2Descr"     = "Envisagez votre incroyable potentiel et suscitez la motivation pour l'amélioration de soi et la croissance";
+"goal3Descr"     = "Hydratez-vous, stimulez l'énergie, améliorez la concentration, favorisez la digestion et améliorez votre bien-être général.";
+"goal4Descr"     = "Vivez l'excitation d'une course rafraîchissante, renforcez l'endurance et améliorez l'humeur.";
+"goal5Descr"     = "Renforcez votre corps, développez vos muscles, améliorez votre silhouette et favorisez votre santé globale";
+"goal6Descr"     = "Nourrissez votre corps, gérez votre poids, favorisez votre santé et prospérez grâce à un plan alimentaire équilibré.";
+"goal7Descr"     = "Publiez vos réalisations quotidiennes pour plus de pression et de motivation pour continuer à avancer.";

@@ -18,10 +18,10 @@ class OnboardingCollectionViewController: UIViewController {
     var currentPage = 0 {
         didSet {
             if currentPage == slides.count - 1 {
-                nextButton.setTitle("Get Started", for: .normal)
+                nextButton.setTitle("getstarted".localize(), for: .normal)
                 // Go to next page.
             } else {
-                nextButton.setTitle("Next", for: .normal)
+                nextButton.setTitle("next".localize(), for: .normal)
             }
         }
     }
@@ -54,11 +54,11 @@ class OnboardingCollectionViewController: UIViewController {
     }
     
     fileprivate func setSlideArray() {
-        slides = [OnboardingSlide(title: "Transform your life", description: "Push limits, redefine mindset, and become your best self in just 75 days.", image: UIImage(named: "run")!),
+        slides = [OnboardingSlide(title: "onboard1".localize(), description: "onboard1Desc".localize(), image: UIImage(named: "run")!),
         
-        OnboardingSlide(title: "Unleash Your Inner Potential", description: "Unlock talents, develop habits, and overcome obstacles to achieve greatness.", image: UIImage(named: "juststart")!),
+                  OnboardingSlide(title: "onboard2".localize(), description: "onboard2Desc".localize(), image: UIImage(named: "juststart")!),
                   
-        OnboardingSlide(title: "Start to best mental toughness challenge. Win the war with yourself!", description: "Experience a transformative journey, elevating fitness, well-being, growth, and success to new heights.", image: UIImage(named: "win")!)
+                  OnboardingSlide(title: "onboard3".localize(), description: "onboard1Desc".localize(), image: UIImage(named: "win")!)
         ]
     }
 }
