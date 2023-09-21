@@ -8,17 +8,20 @@
 
 "rule1"          = "Lisez 20 pages d'un livre";
 "welcome"        = "Bienvenue,";
-"day"            = "JOUR";
+"next"           = "Suivant";
+"name"           = "Nom";
+"age"            = "Quel est votre âge?";
+
 
 //Get started
+"getStarted1"    = "Nous travaillerons ensemble pour faire de vous la meilleure version de vous-même.";
 "fromday"        = "À partir de quel jour souhaitez-vous commencer?";
 "whatname"       = "Quel est ton nom?";
 "hi"             = "Salut, ";
-"name"           = "Nom";
-"getStarted1"    = "Nous travaillerons ensemble pour faire de vous la meilleure version de vous-même.";
-"next"           = "Suivant";
-"age"            = "Quel est votre âge?";
 "hereare7"       = "Voici les 7 règles que vous devez suivre!";
+"preferAge"      = "Préfère ne pas répondre";
+"day"            = "JOUR";
+"days"           = "JOURS";
 
 
 // Profile.
@@ -69,3 +72,18 @@
 "goal5Descr"     = "Renforcez votre corps, développez vos muscles, améliorez votre silhouette et favorisez votre santé globale";
 "goal6Descr"     = "Nourrissez votre corps, gérez votre poids, favorisez votre santé et prospérez grâce à un plan alimentaire équilibré.";
 "goal7Descr"     = "Publiez vos réalisations quotidiennes pour plus de pression et de motivation pour continuer à avancer.";
+
+
+// Calendar
+
+"savedPhoto"     = "Enregistré dans la bibliothèque de photos. N'oubliez pas de partager.";
+"permDenied"     = "Permission refusée pour le modifier: \n ->Paramètres\n ->75 Tough\n ->Changer l'autorisation";
+"failed"         = "Échec!";
+
+
+// Ending.
+
+"close"         = "Terminer";
+"lastMsg"       = "Vous avez réussi le défi avec succès!";
+"congr"         = "Félicitations!!";
+

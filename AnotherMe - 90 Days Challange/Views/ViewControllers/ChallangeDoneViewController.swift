@@ -35,7 +35,7 @@ class ChallangeDoneViewController: UIViewController {
         
         //Title Label
         titleLabel.numberOfLines = 1
-        titleLabel.text = "Congratulations!"
+        titleLabel.text = "congr".localize()
         titleLabel.textColor = .systemRed
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 40, weight: .heavy)
@@ -43,20 +43,20 @@ class ChallangeDoneViewController: UIViewController {
         
         //Description Label
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.text = "You succesfully finished the challange!"
+        descriptionLabel.text = "lastMsg".localize()
         descriptionLabel.textAlignment = .center
         descriptionLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         descriptionLabel.adjustsFontSizeToFitWidth = true
         
         // Buttons
         backButton.layer.cornerRadius = 20
-        backButton.setTitle("Close", for: .normal)
+        backButton.setTitle("close".localize(), for: .normal)
         backButton.addTarget(self, action: #selector(backButtonClicked), for: .touchUpInside)
         backButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)
 
         
         restartButton.layer.cornerRadius = 20
-        restartButton.setTitle("Restart Challange", for: .normal)
+        restartButton.setTitle("restart".localize(), for: .normal)
         restartButton.backgroundColor = .systemBlue
         restartButton.addTarget(self, action: #selector(restartButtonClicked), for: .touchUpInside)
         restartButton.setTitleColor(UIColor.init(white: 1, alpha: 0.3), for: .highlighted)

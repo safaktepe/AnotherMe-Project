@@ -356,7 +356,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
     }
     
     fileprivate func setVariable() {
-        ages = ["15-24", "25-34" , "35-44", "45-54", "55+", "Prefer not to say"]
+        ages = ["15-24", "25-34" , "35-44", "45-54", "55+", "preferAge".localize()]
     }
     
     fileprivate func setButtonUI(myButton: UIButton, isEnable: Bool) {
@@ -428,7 +428,10 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         var       textFieldInputName = textField.text
         guard let textFieldInputName = textFieldInputName else { return }
         
-        titleTexts = ["What is your name?", "Hi \(textFieldInputName),", "age".localize(), "hereare7".localize(), "fromday".localize()]
+        let hiLocalized = "hi".localized()
+        let hiPlusName = "\(hiLocalized) \(textFieldInputName)."
+        
+        titleTexts = ["What is your name?", hiPlusName, "age".localize(), "hereare7".localize(), "fromday".localize()]
 
         let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField,         hidden: !currentPageInfo["textField"]!)

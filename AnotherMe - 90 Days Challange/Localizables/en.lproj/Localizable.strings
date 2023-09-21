@@ -9,7 +9,6 @@
 
 "rule1"          = "Lisez 20 pages d'un livre";
 "welcome"        = "Welcome,";
-"day"            = "Day";
 
 
 "name"           = "Name";
@@ -22,6 +21,10 @@
 "whatname"       = "What is your name?";
 "hi"             = "Hi, ";
 "hereare7"       = "Here are the 7 rules that you must follow!";
+"preferAge"      = "Prefer not to say";
+"days"           = "days";
+"day"            = "Day";
+
 
 // Profiles.
 "account"        = "Account";
@@ -73,4 +76,15 @@
 "goal7Descr"     = "Post your daily achievements for more pressure and motivation to keep pushing forward";
 
 
+// Calendar
 
+"savedPhoto"     = "Saved in photo library. Don't forget to share.";
+"permDenied"     = "Permission denied, to change it: \n ->Settings\n ->75 Tough\n ->Change permission";
+"failed"         = "Failed";
+
+
+// Ending.
+
+"close"         = "Close";
+"lastMsg"       = "You succesfully finished the challange!";
+"congr"         = "Congratulations!";

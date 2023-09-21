@@ -225,7 +225,7 @@ extension DaySelectingViewController: UIPickerViewDelegate, UIPickerViewDataSour
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         dayCounter = row + 1
         dayNumberLabel.text = "\(dayCounter)."
-        dayLabel.text = dayCounter == 1 ? "day" : "days"
+        dayLabel.text = dayCounter == 1 ? "day".localize() : "days".localize()
     }
     
 }

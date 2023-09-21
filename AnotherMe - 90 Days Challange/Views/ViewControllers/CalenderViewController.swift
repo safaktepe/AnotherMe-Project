@@ -173,7 +173,7 @@ class CalenderViewController: UIViewController {
     
     
     fileprivate func showAlert() {
-        let alert = UIAlertController(title: "Saved!", message: "Saved in photo library. Don't forget to share.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "saved".localize(), message: "savedPhoto".localize(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
             print("Ok")
         }))
@@ -183,7 +183,7 @@ class CalenderViewController: UIViewController {
     }
     
     fileprivate func showPermissionDeniedAlert() {
-        let alert = UIAlertController(title: "Failed!", message: "Permission denied, to change it: \n ->Settings\n ->75 Tough\n ->Change permission", preferredStyle: .alert)
+        let alert = UIAlertController(title: "failed".localize(), message: "permDenied".localize(), preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
             print("Ok")
         }))
