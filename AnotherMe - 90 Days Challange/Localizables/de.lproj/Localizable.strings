@@ -1,0 +1,197 @@
+/* 
+  Localizable.strings
+  AnotherMe - 90 Days Challange
+
+  Created by Mert Şafaktepe on 20.09.2023.
+  
+*/
+
+"name"           = "Name";
+"next"           = "Weiter";
+
+
+//Get started
+"getStarted1"    = "Wir werden gemeinsam daran arbeiten, dich zur besten Version deiner selbst zu machen.";
+"fromday"        = "Ab welchem Tag möchtest du beginnen?";
+"whatname"       = "Wie ist dein Name?";
+"hi"             = "Hallo, ";
+"hereare7"       = "Hier sind die 7 Regeln, die du befolgen musst!";
+"preferAge"      = "Ich möchte lieber nicht angeben.";
+"days"           = "TAGE";
+"day"            = "TAG";
+
+
+// Profiles.
+"account"        = "Konto";
+"restart"        = "Herausforderung neu starten";
+"entername"      = "Gib deinen Namen ein";
+"save"           = "Speichern";
+"restartWord"    = "Neu starten";
+"savedMsg"       = "Alle Änderungen wurden gespeichert!";
+"saved"          = "Gespeichert!";
+
+
+// Settings.
+"editprofile"    = "Profil bearbeiten";
+"warning"        = "WARNUNG!";
+"warningmsg"     = "Wenn du die Herausforderung neu startest, werden deine Fortschritte dauerhaft gelöscht und können nicht wiederhergestellt werden!";
+"cancel"         = "Abbrechen";
+"dissmiss"       = "Neglect";
+
+
+// Onboarding.
+"getstarted"     = "Los geht's";
+"onboard1"       = "Transformiere dein Leben.";
+"onboard1Desc"   = "Stoße an Grenzen, definiere deine Denkweise neu und werde in nur 75 Tagen zur besten Version von dir selbst.";
+"onboard2"       = "Entfessele dein inneres Potenzial.";
+"onboard2Desc"   = "Entdecke Talente, entwickle Gewohnheiten und überwinde Hindernisse, um Großes zu erreichen.";
+"onboard3"       = "Beginnen Sie die beste mentale Stärke Herausforderung. Gewinnen Sie den Kampf mit sich selbst!";
+"onboard3Desc"   = "Erlebe eine transformative Reise, die Fitness, Wohlbefinden, Wachstum und Erfolg auf neue Höhen hebt.";
+
+
+// Article - Reading page.
+"readmore"       = "Mehr über das Verbessern um 1 % pro Tag lesen";
+
+
+// Goals.
+"goal1"          = "Lese 20 Seiten eines Buches";
+"goal2"          = "Stelle dir dein zukünftiges Selbst vor";
+"goal3"          = "Trinke 1 Gallone (3 Liter) Wasser";
+"goal4"          = "30 Minuten draußen joggen";
+"goal5"          = "Hebe einige Gewichte für 30 Minuten";
+"goal6"          = "Befolge eine Diät";
+"goal7"          = "Teilen Sie Ihren Prozess";
+
+"goal1Descr"     = "Vertiefe dich in Wissen, erweitere deinen Horizont und belebe deine Vorstellungskraft.";
+"goal2Descr"     = "Stelle dir dein unglaubliches Potenzial vor und entfache die Motivation zur Selbstverbesserung und zum Wachstum.";
+"goal3Descr"     = "Hydriere dich, steigere deine Energie, verbessere deine Konzentration, unterstütze die Verdauung und steigere dein allgemeines Wohlbefinden.";
+"goal4Descr"     = "Erlebe die Begeisterung eines erfrischenden Laufs, steigere deine Ausdauer und verbessere deine Stimmung.";
+"goal5Descr"     = "Stärke deinen Körper, baue Muskeln auf, verbessere deine Figur und fördere dein allgemeines Wohlbefinden.";
+"goal6Descr"     = "Pflege deinen Körper, manage dein Gewicht, unterstütze deine Gesundheit und blühe mit einem ausgewogenen Ernährungsplan auf.";
+"goal7Descr"     = "Teilen Sie Ihre täglichen Erfolge, um mehr Druck und Motivation zu haben, um weiter voranzukommen.";
+
+
+// Calendar
+
+"savedPhoto"     = "In der Fotobibliothek gespeichert. Vergessen Sie nicht, es zu teilen.";
+"permDenied"     = "Berechtigung verweigert. Um es zu ändern, gehen Sie zu Ihren Einstellungen.";
+"failed"         = "Gescheitert";
+
+
+// Ending.
+
+"close"         = "Schließen";
+"lastMsg"       = "Sie haben die Herausforderung erfolgreich abgeschlossen!";
+"congr"         = "Herzlichen Glückwunsch!";
+
+
+// MARK: - Article 1
+"article1" = "Die Wasserversorgung ist entscheidend für unseren Körper, und es ist wichtig sicherzustellen, dass wir durch den täglichen Konsum von mindestens 3 Litern Wasser ausreichend hydriert bleiben. In diesem Artikel werden wir erkunden, warum die Aufrechterhaltung einer angemessenen Wasserzufuhr für unser allgemeines Wohlbefinden von entscheidender Bedeutung ist.
+
+Erstens trägt Wasser dazu bei, das Gleichgewicht der Körperflüssigkeiten aufrechtzuerhalten. Unser Körper besteht zu etwa 60% aus Wasser, und es spielt eine Schlüsselrolle bei wichtigen Funktionen wie Verdauung, Aufnahme, Zirkulation und Temperaturregulierung. Durch ausreichenden Wasserkonsum füllen wir die Flüssigkeiten auf, die wir im Laufe des Tages verlieren, und ermöglichen unserem Körper, optimal zu funktionieren. Eine ausreichende Hydratation ist auch für gesunde Haut unerlässlich. Wenn wir dehydriert sind, kann unsere Haut trocken, schuppig und anfälliger für Falten werden. Ausreichendes Trinken versorgt unsere Hautzellen mit Feuchtigkeit und führt zu einem lebendigeren und jugendlicheren Erscheinungsbild.
+
+Darüber hinaus kann eine ausreichende Hydratation bei der Gewichtsregulierung helfen. Manchmal verwechseln wir Durst mit Hunger, was zu unnötigem Snacken und Überessen führen kann. Durch regelmäßiges Trinken von Wasser können wir diese Verwirrung verhindern und unsere Ziele für Gewichtsabnahme oder -erhaltung unterstützen. Ausreichendes Trinken unterstützt auch unser Verdauungssystem. Es hilft bei der Zerkleinerung von Nahrung, erleichtert die ordnungsgemäße Verdauung und die Aufnahme von Nährstoffen. Darüber hinaus verhindert es Verstopfung, indem es den Stuhl erweicht und regelmäßige Darmentleerungen fördert.
+
+Außerdem verbessert eine ausreichende Hydratation die kognitive Funktion. Dehydration kann sich negativ auf Konzentration, Wachsamkeit und die allgemeine geistige Leistungsfähigkeit auswirken. Durch ausreichenden Wasserkonsum unterstützen wir die optimale Gehirnfunktion und steigern die Konzentration und Produktivität.
+
+Schließlich ist Wasser entscheidend für die Gesundheit der Nieren. Es hilft, Abfallprodukte und Toxine über den Urin auszuspülen. Ausreichende Wasseraufnahme reduziert das Risiko von Nierensteinen und Harnwegsinfektionen und erhält die ordnungsgemäße Nierenfunktion.
+
+Zusammenfassend ist das tägliche Trinken von 3 Litern Wasser für unser allgemeines Wohlbefinden von entscheidender Bedeutung. Von der Unterstützung körperlicher Funktionen und der Erhaltung gesunder Haut bis zur Förderung der Verdauung, der Unterstützung bei der Gewichtsregulierung, der Verbesserung der kognitiven Funktion und der Erhaltung der Nierengesundheit ist Wasser wirklich unverzichtbar. Lassen Sie uns zur Gewohnheit machen, ausreichend hydriert zu bleiben, und die zahlreichen Vorteile genießen, die es für unseren Körper und Geist bietet.";
+
+
+// MARK: - Article 2
+"article2" = "Reading 20 pages of a book every day can have a profound impact on your life. Beyond the simple joy of immersing yourself in a captivating story, there are several benefits to this daily reading habit.
+
+Firstly, reading enhances your knowledge and expands your horizons. Each day, as you delve into new pages, you acquire information about different subjects, cultures, and perspectives. This broadens your understanding of the world, making you more knowledgeable and well-rounded.
+
+Secondly, regular reading improves your vocabulary and language skills. By encountering new words and sentence structures, you become more adept at expressing yourself effectively. This expanded vocabulary can boost your confidence in various communication scenarios, such as writing emails or engaging in conversations.
+
+Furthermore, reading stimulates your imagination and creativity. Through vivid descriptions and engaging narratives, books transport you to different worlds and allow you to visualize scenes and characters. This mental exercise nurtures creativity and encourages you to think beyond the confines of your daily routine.
+
+Additionally, reading can be a source of relaxation and stress relief. Immersing yourself in a book can transport you away from the pressures of daily life, providing a much-needed escape. It allows you to unwind, recharge, and find solace in the pages of a story.
+
+Lastly, reading regularly has been linked to improved cognitive function and memory retention. Engaging with a book requires focus, concentration, and mental stimulation, which can help keep your brain sharp and agile.
+
+In conclusion, dedicating just 20 minutes each day to read 20 pages can bring about a multitude of benefits. It expands your knowledge, improves your language skills, boosts creativity, provides relaxation, and enhances cognitive abilities. So, grab a book and embark on this transformative journey through the power of reading.";
+
+// MARK: - Article 3
+
+"article3" = "Maintaining a healthy diet is essential for overall well-being, and clean eating has emerged as a popular approach to achieving optimal health. Clean eating focuses on consuming whole, unprocessed foods while minimizing or eliminating processed and artificial ingredients. This article explores the significance of clean eating and why it should be embraced for a healthier lifestyle.
+
+Clean eating emphasizes the consumption of natural, nutrient-dense foods that promote vitality and support various bodily functions. By prioritizing fresh fruits and vegetables, lean proteins, whole grains, and healthy fats, clean eating ensures that our bodies receive essential vitamins, minerals, and antioxidants necessary for optimal health. Whole foods provide a balanced combination of macronutrients, including carbohydrates, proteins, and fats, which sustain energy levels and help maintain a healthy weight.
+
+Avoiding processed and refined foods is a key principle of clean eating. These products often contain excessive amounts of added sugars, unhealthy trans fats, and high levels of sodium, which can contribute to numerous health issues such as obesity, diabetes, and cardiovascular problems. Clean eating encourages the avoidance of artificial additives, preservatives, and chemical-laden ingredients that may have adverse effects on our well-being.
+
+In addition to physical health benefits, clean eating can positively impact mental clarity and emotional well-being. Nourishing our bodies with clean, wholesome foods supports brain function, enhances mood stability, and may even reduce the risk of mental health disorders.
+
+Adopting a clean eating approach is an investment in our long-term health and well-being. By choosing whole, unprocessed foods and avoiding artificial additives, we provide our bodies with the nourishment they need to function optimally. Clean eating not only promotes physical vitality but also supports mental clarity and emotional balance, leading to a happier, healthier life.";
+
+// MARK: - Article 4
+
+"article4" = "In a world dominated by sedentary lifestyles and indoor activities, there is something incredibly invigorating about running or walking outside. Engaging in physical activity amidst nature offers numerous benefits for our physical and mental well-being. This article explores the advantages of embracing outdoor running or walking and why it should be incorporated into our fitness routines.
+
+Running or walking outdoors provides a refreshing change of scenery compared to the monotony of indoor gyms or treadmills. The diverse terrain, natural landscapes, and fresh air create an immersive experience that invigorates the senses and adds excitement to our workouts. The ever-changing outdoor environment presents new challenges, engages different muscles, and enhances coordination and balance.
+
+One of the most significant benefits of outdoor exercise is exposure to natural sunlight, which is a rich source of vitamin D. Sunlight helps regulate mood, supports bone health, and boosts the immune system. Additionally, spending time outside allows us to reconnect with nature, promoting feelings of relaxation, reduced stress, and improved mental clarity.
+
+Outdoor running or walking also offers a sense of freedom and exploration. Whether it's a local park, a scenic trail, or a vibrant city street, the outdoor environment provides a variety of routes and destinations to discover. This element of exploration can motivate us to be consistent with our exercise routines and make physical activity an enjoyable part of our daily lives.
+
+By stepping outside and embracing the outdoors for running or walking, we unlock a wealth of benefits for our overall well-being. From physical advantages like improved cardiovascular health and increased vitamin D levels to mental benefits such as reduced stress and enhanced mood, outdoor exercise rejuvenates our body and mind. So, lace up your shoes, breathe in the fresh air, and embark on an outdoor fitness journey that will elevate your health and vitality.";
+
+// MARK: - Article 5
+
+"article5" = "In the realm of physical fitness, weightlifting stands out as a powerful tool for transforming our bodies and enhancing our overall health. Beyond the pursuit of bulging muscles, lifting weights offers a myriad of benefits that extend to both our physical and mental well-being. This article highlights the importance of incorporating regular weightlifting into our fitness routines.
+
+Regular weightlifting provides a range of advantages that go beyond mere aesthetics. Building muscle strength and increasing bone density are two key benefits of weightlifting. It helps improve joint stability, posture, and overall functional fitness, making everyday activities easier and reducing the risk of injury.
+
+Lifting weights also plays a crucial role in boosting metabolism and promoting healthy weight management. Muscle is metabolically active, meaning it burns more calories even at rest. By incorporating weightlifting into our routine, we can increase our lean muscle mass and elevate our resting metabolic rate, making weight control more manageable.
+
+Additionally, weightlifting has a significant impact on our mental well-being. It releases endorphins, often referred to as 'feel-good' hormones, which enhance mood, reduce stress, and alleviate symptoms of anxiety and depression. Engaging in regular weightlifting sessions can boost self-confidence, improve body image, and foster a positive mindset.
+
+Moreover, weightlifting contributes to the prevention of chronic diseases such as osteoporosis, arthritis, and cardiovascular conditions. It strengthens bones, increases joint flexibility, and improves heart health by reducing blood pressure and lowering cholesterol levels.
+
+
+Regular weightlifting transcends the pursuit of a chiseled physique, offering holistic benefits for our physical and mental well-being. From building strength and enhancing bone density to promoting weight management and fostering a positive mindset, lifting weights is a powerful practice that empowers us to unleash our inner strength and lead healthier lives.";
+
+
+// MARK: - Article 6
+
+"article6" = "Our dreams and aspirations have the ability to shape our lives and drive us towards success. By harnessing the power of visualization, we can paint a vivid picture of our future self and the life we desire. This article delves into the importance of visualizing our dreams and explains how it can propel us towards achieving our goals.
+
+
+Visualizing our dreams involves creating detailed mental images of our desired future. By vividly imagining ourselves living our dreams, we activate the power of our subconscious mind. This process helps align our thoughts, beliefs, and actions with our goals, ultimately increasing our motivation and focus.
+
+When we visualize our future self, we establish a clear direction and purpose. By defining what we want to achieve, we create a roadmap to guide our actions and decision-making. Visualization enhances our clarity, enabling us to set specific, measurable, achievable, relevant, and time-bound (SMART) goals.
+
+Moreover, visualization cultivates a positive mindset. When we consistently visualize success and visualize ourselves overcoming obstacles, we train our minds to believe in our capabilities. This positive mindset fuels self-confidence, resilience, and a belief that we can achieve the vision we have set for ourselves.
+
+Visualizing our dreams also acts as a powerful source of motivation. When we can see, feel, and experience our desired future through visualization, it ignites a burning desire within us. This motivation propels us to take consistent action towards our goals and fuels our perseverance during challenging times.
+
+
+Harnessing the power of visualization allows us to tap into our deepest aspirations and create a roadmap towards our dreams. By vividly envisioning our future self, we cultivate clarity, motivation, and a positive mindset. Visualizing our dreams is a potent tool that empowers us to take decisive action and transform our aspirations into reality.";
+
+
+
+//MARK: - Article 7
+
+"article7" = "Do you ever feel like you need an extra push to achieve your goals? Well, here's a simple yet effective way to boost your motivation: share your journey on social media!
+
+When you share your process on platforms like Facebook, Instagram, or Twitter, it adds an extra layer of motivation and accountability to your journey. How does it work? Let's break it down.
+
+Imagine you're trying to get fit or learn a new skill. Every day, you make progress, no matter how small. Now, instead of keeping it all to yourself, why not post your daily achievements? By doing this, you put a little pressure on yourself to keep going and make even more progress.
+
+When your friends and followers see what you're up to, they'll cheer you on. It feels great to receive encouragement and support from your online community. Plus, when you share your journey, you become an inspiration to others who are on a similar path.
+
+Another benefit is that you get to document your journey. It's like creating a digital diary of your progress. Looking back at how far you've come can be incredibly motivating. Plus, you can connect with people who share your interests and goals, forming a supportive community.
+
+So, if you want that extra push to keep moving forward, share your journey on social media. It's a simple yet powerful way to stay motivated, accountable, and inspire others along the way. Give it a try and watch your progress soar!";
+
+//MARK: - Article Titles
+
+"articleTitle1" = "Why you should drink 1 gallon (3L) of water everyday?";
+"articleTitle2" = "Benefits of reading book everyday";
+"articleTitle3" = "The Power of Clean Eating: Fueling Your Health and Well-being";
+"articleTitle4" = "The Benefits of Running or Walking Outside";
+"articleTitle5" = "The Strength Within: The Importance of Regular Weightlifting";
+"articleTitle6" = "Visualizing Our Dreams: The Power of Envisioning Our Future Self";
+"articleTitle7" = "The Power of Sharing on Social Media";

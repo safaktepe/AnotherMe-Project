@@ -89,6 +89,8 @@
 		62381D8D2989976C008231DE /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		62381D8E2989976C008231DE /* ArticleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCollectionViewCell.xib; sourceTree = "<group>"; };
 		6263E7F52A3347EE00EC6217 /* done.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = done.json; sourceTree = "<group>"; };
+		6264C2612ABE46380094D674 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		6264C2622ABE46380094D674 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		62663EB02A46153900E36E06 /* ArticleTitlesLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ArticleTitlesLocalizable.strings; sourceTree = "<group>"; };
 		62663EB22A46162A00E36E06 /* ArticleTitlesLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTitlesLocalizable.swift; sourceTree = "<group>"; };
 		62663EB42A4616A500E36E06 /* String+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 				en,
 				Base,
 				fr,
+				de,
 			);
 			mainGroup = 6215588A293F6322005F7F68;
 			packageReferences = (
@@ -511,6 +514,7 @@
 			children = (
 				6215589D293F6322005F7F68 /* Base */,
 				62E76AD02ABA51D00091528B /* fr */,
+				6264C2612ABE46380094D674 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -528,6 +532,7 @@
 			children = (
 				62E76AD42ABA51E30091528B /* en */,
 				62E76AD62ABA51E60091528B /* fr */,
+				6264C2622ABE46380094D674 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
