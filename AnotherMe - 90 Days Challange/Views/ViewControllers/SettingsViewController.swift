@@ -154,39 +154,39 @@ class SettingsViewController: UIViewController {
 
         //MARK: - Objects
         let goalNumber1 = Goal(context: self.context)
-        goalNumber1.title = "Read 20 pages of book"
+        goalNumber1.title = "goal1".localize()
         goalNumber1.id = 0
         goalNumber1.isCompleted = false
         
         let goalNumber2 = Goal(context: self.context)
-        goalNumber2.title = "Visualize of future self"
+        goalNumber2.title = "goal2".localize()
         goalNumber2.id = 1
         goalNumber2.isCompleted = false
 
         
         let goalNumber3 = Goal(context: self.context)
-        goalNumber3.title = "Drink 1 gallon (3L) of water"
+        goalNumber3.title = "goal3".localize()
         goalNumber3.id = 2
         goalNumber3.isCompleted = false
         
         
         let goalNumber4 = Goal(context: self.context)
-        goalNumber4.title = "30 min outside running"
+        goalNumber4.title = "goal4".localize()
         goalNumber4.id = 3
         goalNumber4.isCompleted = false
         
         let goalNumber5 = Goal(context: self.context)
-        goalNumber5.title = "Lift some weights for 30 minutes"
+        goalNumber5.title = "goal5".localize()
         goalNumber5.id = 4
         goalNumber5.isCompleted = false
         
         let goalNumber6 = Goal(context: self.context)
-        goalNumber6.title = "Follow a diet"
+        goalNumber6.title = "goal6".localize()
         goalNumber6.id = 5
         goalNumber6.isCompleted = false
         
         let goalNumber7 = Goal(context: self.context)
-        goalNumber7.title = "Share your process"
+        goalNumber7.title = "goal7".localize()
         goalNumber7.id = 6
         goalNumber7.isCompleted = false
 

@@ -431,7 +431,7 @@ class GetStartedViewController: UIViewController, UITextFieldDelegate {
         let hiLocalized = "hi".localized()
         let hiPlusName = "\(hiLocalized) \(textFieldInputName)."
         
-        titleTexts = ["What is your name?", hiPlusName, "age".localize(), "hereare7".localize(), "fromday".localize()]
+        titleTexts = ["whatname".localize(), hiPlusName, "age".localize(), "hereare7".localize(), "fromday".localize()]
 
         let currentPageInfo = isThisViewHidden[currentPage]
         hideOrShowAnimation(myView: textField,         hidden: !currentPageInfo["textField"]!)
@@ -525,13 +525,3 @@ extension GetStartedViewController {
 }
 
 
-
-extension String {
-    func localizedString() -> String {
-        return NSLocalizedString(self,
-                                 tableName: "Localizable",
-                                 bundle: .main,
-                                 value: self,
-                                 comment: self)
-    }
-}

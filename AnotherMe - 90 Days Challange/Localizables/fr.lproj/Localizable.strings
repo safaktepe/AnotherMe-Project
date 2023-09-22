@@ -76,7 +76,7 @@
 
 // Calendar
 
-"savedPhoto"     = "Enregistré dans la bibliothèque de photos. N'oubliez pas de partager.";
+"savedPhoto"     = "Enregistré dans la bibliothèque de photos. N'oubliez pas de partager!";
 "permDenied"     = "Permission refusée pour le modifier: \n ->Paramètres\n ->75 Tough\n ->Changer l'autorisation";
 "failed"         = "Échec!";
 
@@ -87,3 +87,109 @@
 "lastMsg"       = "Vous avez réussi le défi avec succès!";
 "congr"         = "Félicitations!!";
 
+// MARK: - Article 1
+"article1" = "L'eau est cruciale pour notre organisme, et il est important de veiller à rester correctement hydraté en buvant au moins 3 litres d'eau chaque jour. Dans cet article, nous explorerons pourquoi maintenir une hydratation adéquate est essentiel pour notre bien-être général.
+
+Tout d'abord, l'eau contribue à maintenir l'équilibre des fluides corporels. Notre organisme est constitué d'environ 60 % d'eau, et elle joue un rôle clé dans des fonctions importantes telles que la digestion, l'absorption, la circulation et la régulation de la température. En buvant suffisamment d'eau, nous réapprovisionnons les fluides que nous perdons tout au long de la journée, permettant ainsi à notre organisme de fonctionner de manière optimale. Une hydratation adéquate est également essentielle pour une peau en bonne santé. Lorsque nous sommes déshydratés, notre peau peut devenir sèche, squameuse et plus sujette aux rides. Boire suffisamment d'eau hydrate nos cellules cutanées, ce qui se traduit par une apparence plus éclatante et juvénile.
+
+De plus, rester hydraté peut contribuer à la gestion du poids. Parfois, nous confondons la soif avec la faim, ce qui entraîne grignotages et suralimentation inutiles. En buvant régulièrement de l'eau, nous pouvons contribuer à éviter cette confusion, ce qui soutient nos objectifs de perte de poids ou de maintien du poids. Boire suffisamment d'eau bénéficie également à notre système digestif. Elle contribue à la décomposition des aliments, facilitant une digestion adéquate et l'absorption des nutriments. De plus, elle prévient la constipation en adoucissant les selles et en favorisant des mouvements intestinaux réguliers.
+
+De plus, rester hydraté améliore la fonction cognitive. La déshydratation peut avoir un impact négatif sur la concentration, la vigilance et les performances mentales globales. En consommant une quantité suffisante d'eau, nous soutenons une fonction cérébrale optimale, ce qui se traduit par une concentration accrue et une plus grande productivité.
+
+Enfin, l'eau est cruciale pour la santé des reins. Elle aide à éliminer les déchets et les toxines par l'urine. Une hydratation suffisante réduit le risque de calculs rénaux et d'infections des voies urinaires, préservant ainsi la fonction rénale correcte. En conclusion, boire 3 litres d'eau par jour est essentiel pour notre bien-être général. De la prise en charge des fonctions corporelles et du maintien d'une peau en bonne santé à la facilitation de la digestion, la promotion de la gestion du poids, l'amélioration de la fonction cognitive et la préservation de la santé des reins, l'eau est véritablement vitale. Faisons-en une habitude de rester correctement hydratés et de profiter des nombreux avantages qu'elle procure à notre corps et à notre esprit.";
+
+
+// MARK: - Article 2
+"article2" = "Lire 20 pages d'un livre chaque jour peut avoir un impact profond sur votre vie. Au-delà de la simple joie de vous plonger dans une histoire captivante, il y a plusieurs avantages à cette habitude de lecture quotidienne.
+
+Tout d'abord, la lecture enrichit vos connaissances et élargit vos horizons. Chaque jour, en vous plongeant dans de nouvelles pages, vous acquérez des informations sur différents sujets, cultures et perspectives. Cela élargit votre compréhension du monde, vous rendant plus instruit et plus ouvert d'esprit.
+
+Deuxièmement, la lecture régulière améliore votre vocabulaire et vos compétences linguistiques. En rencontrant de nouveaux mots et structures de phrases, vous devenez plus habile à vous exprimer efficacement. Ce vocabulaire élargi peut renforcer votre confiance dans diverses situations de communication, telles que la rédaction d'e-mails ou les conversations.
+
+De plus, la lecture stimule votre imagination et votre créativité. À travers des descriptions vivantes et des récits captivants, les livres vous transportent dans des mondes différents et vous permettent de visualiser des scènes et des personnages. Cet exercice mental nourrit la créativité et vous encourage à penser au-delà des limites de votre routine quotidienne.
+
+De plus, la lecture peut être une source de détente et de soulagement du stress. Vous plonger dans un livre peut vous transporter loin des pressions de la vie quotidienne, offrant une évasion bien nécessaire. Cela vous permet de vous détendre, de vous ressourcer et de trouver du réconfort dans les pages d'une histoire.
+
+Enfin, la lecture régulière a été associée à une amélioration de la fonction cognitive et de la rétention de la mémoire. S'engager avec un livre nécessite de la concentration et de la stimulation mentale, ce qui peut contribuer à maintenir votre cerveau vif et agile.
+
+En conclusion, consacrer seulement 20 minutes chaque jour pour lire 20 pages peut apporter de nombreux avantages. Cela enrichit vos connaissances, améliore vos compétences linguistiques, stimule la créativité, procure de la détente et renforce les capacités cognitives. Alors, saisissez un livre et embarquez dans ce voyage transformateur à travers le pouvoir de la lecture.";
+
+// MARK: - Article 3
+
+"article3" = "Maintenir une alimentation saine est essentiel pour le bien-être général, et manger sainement est devenue une approche populaire pour atteindre une santé optimale. Le concept de manger sainement se concentre sur la consommation d'aliments entiers et non transformés tout en minimisant ou en éliminant les ingrédients transformés et artificiels. Cet article explore l'importance de l'alimentation saine et pourquoi elle devrait être adoptée pour un mode de vie plus sain.
+
+Manger sainement met l'accent sur la consommation d'aliments naturels et riches en nutriments qui favorisent la vitalité et soutiennent diverses fonctions corporelles. En privilégiant les fruits et légumes frais, les protéines maigres, les céréales complètes et les graisses saines, manger sainement garantit que notre corps reçoive les vitamines essentielles, les minéraux et les antioxydants nécessaires pour une santé optimale. Les aliments entiers fournissent un équilibre de macronutriments, y compris les glucides, les protéines et les graisses, qui maintiennent les niveaux d'énergie et aident à maintenir un poids santé.
+
+Éviter les aliments transformés et raffinés est un principe clé de l'alimentation saine. Ces produits contiennent souvent des quantités excessives de sucres ajoutés, de graisses trans non saines et de niveaux élevés de sodium, ce qui peut contribuer à de nombreux problèmes de santé tels que l'obésité, le diabète et les problèmes cardiovasculaires. L'alimentation saine encourage à éviter les additifs artificiels, les conservateurs et les ingrédients chargés de produits chimiques qui peuvent avoir des effets néfastes sur notre bien-être.
+
+En plus des bienfaits pour la santé physique, manger sainement peut avoir un impact positif sur la clarté mentale et le bien-être émotionnel. Nourrir notre corps avec des aliments propres et sains soutient la fonction cérébrale, améliore la stabilité de l'humeur et peut même réduire le risque de troubles de la santé mentale.
+
+Adopter une approche alimentaire saine est un investissement dans notre santé et notre bien-être à long terme. En choisissant des aliments entiers et non transformés et en évitant les additifs artificiels, nous offrons à notre corps la nourriture dont il a besoin pour fonctionner de manière optimale. Manger sainement favorise non seulement la vitalité physique, mais soutient également la clarté mentale et l'équilibre émotionnel, ce qui mène à une vie plus heureuse et plus saine.";
+
+// MARK: - Article 4
+
+"article4" = "Dans un monde dominé par des modes de vie sédentaires et des activités en intérieur, il y a quelque chose d'incroyablement revigorant à courir ou à marcher à l'extérieur. Pratiquer une activité physique en pleine nature offre de nombreux avantages pour notre bien-être physique et mental. Cet article explore les avantages de l'adoption de la course à pied ou de la marche en plein air et pourquoi elle devrait être intégrée à nos routines de remise en forme.
+
+Courir ou marcher en plein air offre un changement de paysage rafraîchissant par rapport à la monotonie des salles de sport intérieures ou des tapis de course. Les terrains variés, les paysages naturels et l'air frais créent une expérience immersive qui stimule les sens et ajoute de l'excitation à nos séances d'entraînement. L'environnement extérieur en constante évolution présente de nouveaux défis, sollicite différents muscles et améliore la coordination et l'équilibre.
+
+L'un des avantages les plus importants de l'exercice en plein air est l'exposition à la lumière naturelle du soleil, qui est une source riche de vitamine D. La lumière du soleil contribue à réguler l'humeur, soutient la santé osseuse et renforce le système immunitaire. De plus, passer du temps à l'extérieur nous permet de renouer avec la nature, favorisant ainsi la détente, la réduction du stress et l'amélioration de la clarté mentale.
+
+Courir ou marcher en plein air offre également un sentiment de liberté et d'exploration. Que ce soit dans un parc local, sur un sentier pittoresque ou dans une rue animée de la ville, l'environnement extérieur offre une variété de trajets et de destinations à découvrir. Cet aspect de l'exploration peut nous motiver à être réguliers dans nos routines d'exercice et à faire de l'activité physique une partie agréable de notre vie quotidienne.
+
+En sortant et en embrassant le plein air pour courir ou marcher, nous débloquons une multitude d'avantages pour notre bien-être global. Des avantages physiques tels qu'une meilleure santé cardiovasculaire et des niveaux accrus de vitamine D aux bienfaits mentaux tels que la réduction du stress et l'amélioration de l'humeur, l'exercice en plein air revitalise notre corps et notre esprit. Alors, enfilez vos chaussures, respirez l'air frais et lancez-vous dans un voyage de remise en forme en plein air qui rehaussera votre santé et votre vitalité.";
+
+// MARK: - Article 5
+
+"article5" = "Dans le domaine de la remise en forme physique, la musculation se démarque comme un outil puissant pour transformer nos corps et améliorer notre santé globale. Au-delà de la quête de muscles saillants, la musculation offre une myriade d'avantages qui s'étendent à la fois à notre bien-être physique et mental. Cet article met en lumière l'importance d'incorporer la musculation régulière dans nos routines de remise en forme.
+
+La musculation régulière offre toute une gamme d'avantages qui vont au-delà de l'esthétique. Renforcer la force musculaire et augmenter la densité osseuse sont deux avantages clés de la musculation. Elle contribue à améliorer la stabilité articulaire, la posture et la condition physique globale, facilitant les activités quotidiennes et réduisant le risque de blessures.
+
+La musculation joue également un rôle crucial dans la stimulation du métabolisme et la promotion d'une gestion saine du poids. Les muscles sont métaboliquement actifs, ce qui signifie qu'ils brûlent plus de calories même au repos. En incorporant la musculation dans notre routine, nous pouvons augmenter notre masse musculaire maigre et élever notre taux métabolique au repos, rendant le contrôle du poids plus gérable.
+
+De plus, la musculation a un impact significatif sur notre bien-être mental. Elle libère des endorphines, souvent appelées « hormones du bien-être », qui améliorent l'humeur, réduisent le stress et soulagent les symptômes de l'anxiété et de la dépression. Participer régulièrement à des séances de musculation peut renforcer la confiance en soi, améliorer l'image corporelle et favoriser une mentalité positive.
+
+De plus, la musculation contribue à la prévention de maladies chroniques telles que l'ostéoporose, l'arthrite et les affections cardiovasculaires. Elle renforce les os, augmente la flexibilité articulaire et améliore la santé cardiaque en réduisant la pression artérielle et en abaissant les taux de cholestérol.
+
+La musculation régulière transcende la recherche d'une silhouette sculptée, offrant des avantages holistiques pour notre bien-être physique et mental. De la construction de la force et de l'amélioration de la densité osseuse à la promotion de la gestion du poids et à la promotion d'une mentalité positive, la musculation est une pratique puissante qui nous permet de libérer notre force intérieure et de mener une vie plus saine";
+
+
+// MARK: - Article 6
+
+"article6" = "Nos rêves et nos aspirations ont le pouvoir de façonner nos vies et de nous conduire vers le succès. En utilisant le pouvoir de la visualisation, nous pouvons peindre une image vivante de notre futur soi et de la vie que nous désirons. Cet article explore l'importance de la visualisation de nos rêves et explique comment elle peut nous propulser vers la réalisation de nos objectifs.
+
+Visualiser nos rêves consiste à créer des images mentales détaillées de notre futur désiré. En imaginant vivement que nous vivons nos rêves, nous activons le pouvoir de notre esprit subconscient. Ce processus aide à aligner nos pensées, nos croyances et nos actions avec nos objectifs, augmentant ainsi notre motivation et notre concentration.
+
+Lorsque nous visualisons notre futur soi, nous établissons une direction claire et un but. En définissant ce que nous voulons accomplir, nous créons une feuille de route pour guider nos actions et nos prises de décision. La visualisation renforce notre clarté, nous permettant de définir des objectifs spécifiques, mesurables, réalisables, pertinents et temporels (SMART).
+
+De plus, la visualisation cultive une mentalité positive. Lorsque nous visualisons régulièrement le succès et que nous nous imaginons surmonter les obstacles, nous entraînons notre esprit à croire en nos capacités. Cette mentalité positive nourrit la confiance en soi, la résilience et la croyance que nous pouvons réaliser la vision que nous avons définie pour nous-mêmes.
+
+La visualisation de nos rêves agit également comme une source puissante de motivation. Lorsque nous pouvons voir, ressentir et vivre notre futur désiré grâce à la visualisation, cela allume un désir ardent en nous. Cette motivation nous pousse à prendre des actions cohérentes envers nos objectifs et alimente notre persévérance en période de difficultés.
+
+Exploiter le pouvoir de la visualisation nous permet de puiser dans nos aspirations les plus profondes et de créer une feuille de route vers nos rêves. En imaginant vivement notre futur soi, nous cultivons la clarté, la motivation et une mentalité positive. La visualisation de nos rêves est un outil puissant qui nous donne le pouvoir de prendre des décisions et de transformer nos aspirations en réalité.";
+
+
+
+//MARK: - Article 7
+
+"article7" = "Avez-vous parfois l'impression d'avoir besoin d'un coup de pouce supplémentaire pour atteindre vos objectifs ? Eh bien, voici une manière simple mais efficace d'augmenter votre motivation : partagez votre parcours sur les réseaux sociaux !
+
+Lorsque vous partagez votre processus sur des plateformes telles que Facebook, Instagram ou Twitter, cela ajoute une couche supplémentaire de motivation et de responsabilité à votre parcours. Comment ça fonctionne ? Explorons cela ensemble.
+
+Imaginez que vous essayiez de vous mettre en forme ou d'apprendre une nouvelle compétence. Chaque jour, vous progressez, même si c'est de manière minime. Au lieu de garder tout cela pour vous, pourquoi ne pas publier vos réalisations quotidiennes ? En faisant cela, vous vous mettez un peu de pression pour continuer et faire encore plus de progrès.
+
+Quand vos amis et abonnés voient ce que vous faites, ils vous encouragent. Recevoir des encouragements et du soutien de votre communauté en ligne est formidable. De plus, lorsque vous partagez votre parcours, vous devenez une source d'inspiration pour d'autres personnes qui suivent un chemin similaire.
+
+Un autre avantage est que vous pouvez documenter votre parcours. C'est un peu comme créer un journal numérique de vos progrès. Regarder en arrière et voir à quel point vous avez progressé peut être incroyablement motivant. De plus, vous pouvez entrer en contact avec des personnes partageant vos centres d'intérêt et vos objectifs, créant ainsi une communauté de soutien.
+
+Donc, si vous voulez ce petit coup de pouce supplémentaire pour continuer d'avancer, partagez votre parcours sur les réseaux sociaux. C'est une manière simple mais puissante de rester motivé, responsable et d'inspirer d'autres personnes en cours de route. Essayez-le et observez vos progrès décoller!";
+
+
+//MARK: - Article Titles
+
+"articleTitle1" = "Pourquoi devriez-vous boire 1 gallon (3 litres) d'eau chaque jour?";
+"articleTitle2" = "Les bienfaits de la lecture d'un livre chaque jour";
+"articleTitle3" = "Le Pouvoir de l'Alimentation Saine : Nourrir Votre Santé et Votre Bien-être";
+"articleTitle4" = "Les Bienfaits de la Course à Pied ou de la Marche en Plein Air";
+"articleTitle5" = "La Force Intérieure : L'Importance de la Musculation Régulière";
+"articleTitle6" = "Visualiser Nos Rêves : Le Pouvoir d'Envisager Notre Futur Soi";
+"articleTitle7" = "Le Pouvoir du Partage";
