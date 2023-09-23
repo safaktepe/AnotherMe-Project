@@ -24,6 +24,8 @@
 "preferAge"      = "Prefer not to say";
 "days"           = "days";
 "day"            = "Day";
+"age"            = "How old are you?";
+
 
 
 // Profiles.

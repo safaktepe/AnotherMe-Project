@@ -19,6 +19,7 @@
 "preferAge"      = "Ich möchte lieber nicht angeben.";
 "days"           = "TAGE";
 "day"            = "TAG";
+"age"            = "Wie alt bist du?";
 
 
 // Profiles.
@@ -100,98 +101,95 @@ Zusammenfassend ist das tägliche Trinken von 3 Litern Wasser für unser allgeme
 
 
 // MARK: - Article 2
-"article2" = "Reading 20 pages of a book every day can have a profound impact on your life. Beyond the simple joy of immersing yourself in a captivating story, there are several benefits to this daily reading habit.
+"article2" = "Das Lesen von 20 Seiten eines Buchs jeden Tag kann einen tiefgreifenden Einfluss auf Ihr Leben haben. Über die einfache Freude, sich in eine fesselnde Geschichte zu vertiefen, hinaus gibt es mehrere Vorteile dieser täglichen Lesegewohnheit.
 
-Firstly, reading enhances your knowledge and expands your horizons. Each day, as you delve into new pages, you acquire information about different subjects, cultures, and perspectives. This broadens your understanding of the world, making you more knowledgeable and well-rounded.
+Erstens erweitert das Lesen Ihren Horizont und bereichert Ihr Wissen. Jeden Tag, wenn Sie in neue Seiten eintauchen, sammeln Sie Informationen zu verschiedenen Themen, Kulturen und Perspektiven. Dies erweitert Ihr Verständnis von der Welt und macht Sie sachkundiger und vielseitiger.
 
-Secondly, regular reading improves your vocabulary and language skills. By encountering new words and sentence structures, you become more adept at expressing yourself effectively. This expanded vocabulary can boost your confidence in various communication scenarios, such as writing emails or engaging in conversations.
+Zweitens verbessert regelmäßiges Lesen Ihren Wortschatz und Ihre Sprachkenntnisse. Durch das Begegnen neuer Wörter und Satzstrukturen sind Sie besser in der Lage, sich effektiv auszudrücken. Dieser erweiterte Wortschatz kann Ihr Selbstvertrauen in verschiedenen Kommunikationssituationen stärken, wie z.B. beim Schreiben von E-Mails oder in Gesprächen.
 
-Furthermore, reading stimulates your imagination and creativity. Through vivid descriptions and engaging narratives, books transport you to different worlds and allow you to visualize scenes and characters. This mental exercise nurtures creativity and encourages you to think beyond the confines of your daily routine.
+Darüber hinaus regt das Lesen Ihre Vorstellungskraft und Kreativität an. Durch lebhafte Beschreibungen und fesselnde Erzählungen transportieren Bücher Sie in verschiedene Welten und ermöglichen es Ihnen, Szenen und Charaktere zu visualisieren. Diese mentale Übung fördert die Kreativität und ermutigt Sie, über die Grenzen Ihrer täglichen Routine hinauszudenken.
 
-Additionally, reading can be a source of relaxation and stress relief. Immersing yourself in a book can transport you away from the pressures of daily life, providing a much-needed escape. It allows you to unwind, recharge, and find solace in the pages of a story.
+Außerdem kann das Lesen eine Quelle der Entspannung und Stressbewältigung sein. Sich in ein Buch zu vertiefen, kann Sie von den Belastungen des Alltags wegtransportieren und eine dringend benötigte Flucht bieten. Es ermöglicht Ihnen, abzuschalten, sich zu erholen und Trost in den Seiten einer Geschichte zu finden.
 
-Lastly, reading regularly has been linked to improved cognitive function and memory retention. Engaging with a book requires focus, concentration, and mental stimulation, which can help keep your brain sharp and agile.
+Schließlich wurde nachgewiesen, dass regelmäßiges Lesen die kognitive Funktion und das Gedächtnis verbessert. Die Beschäftigung mit einem Buch erfordert Konzentration, Aufmerksamkeit und geistige Stimulation, was dazu beitragen kann, Ihr Gehirn scharf und wendig zu halten.
 
-In conclusion, dedicating just 20 minutes each day to read 20 pages can bring about a multitude of benefits. It expands your knowledge, improves your language skills, boosts creativity, provides relaxation, and enhances cognitive abilities. So, grab a book and embark on this transformative journey through the power of reading.";
+Zusammenfassend lässt sich sagen, dass die Widmung von nur 20 Minuten pro Tag zum Lesen von 20 Seiten viele Vorteile mit sich bringen kann. Es erweitert Ihr Wissen, verbessert Ihre Sprachkenntnisse, fördert die Kreativität, bietet Entspannung und verbessert kognitive Fähigkeiten. Also schnappen Sie sich ein Buch und machen Sie sich auf diese transformative Reise durch die Kraft des Lesens.";
 
 // MARK: - Article 3
 
-"article3" = "Maintaining a healthy diet is essential for overall well-being, and clean eating has emerged as a popular approach to achieving optimal health. Clean eating focuses on consuming whole, unprocessed foods while minimizing or eliminating processed and artificial ingredients. This article explores the significance of clean eating and why it should be embraced for a healthier lifestyle.
+"article3" = "Die Aufrechterhaltung einer gesunden Ernährung ist für das allgemeine Wohlbefinden von entscheidender Bedeutung, und Clean Eating hat sich als beliebter Ansatz zur Erreichung optimaler Gesundheit etabliert. Clean Eating konzentriert sich darauf, ganze, unverarbeitete Lebensmittel zu konsumieren und den Konsum von verarbeiteten und künstlichen Zutaten zu minimieren oder zu eliminieren. Dieser Artikel erkundet die Bedeutung von Clean Eating und warum es für einen gesünderen Lebensstil angenommen werden sollte.
 
-Clean eating emphasizes the consumption of natural, nutrient-dense foods that promote vitality and support various bodily functions. By prioritizing fresh fruits and vegetables, lean proteins, whole grains, and healthy fats, clean eating ensures that our bodies receive essential vitamins, minerals, and antioxidants necessary for optimal health. Whole foods provide a balanced combination of macronutrients, including carbohydrates, proteins, and fats, which sustain energy levels and help maintain a healthy weight.
+Clean Eating betont den Verzehr natürlicher, nährstoffreicher Lebensmittel, die die Vitalität fördern und verschiedene Körperfunktionen unterstützen. Durch die Priorisierung von frischem Obst und Gemüse, magerem Eiweiß, Vollkornprodukten und gesunden Fetten stellt Clean Eating sicher, dass unser Körper die für optimale Gesundheit notwendigen essentiellen Vitamine, Mineralien und Antioxidantien erhält. Ganze Lebensmittel bieten eine ausgewogene Kombination von Makronährstoffen, einschließlich Kohlenhydraten, Proteinen und Fetten, die den Energiehaushalt aufrechterhalten und ein gesundes Gewicht unterstützen.
 
-Avoiding processed and refined foods is a key principle of clean eating. These products often contain excessive amounts of added sugars, unhealthy trans fats, and high levels of sodium, which can contribute to numerous health issues such as obesity, diabetes, and cardiovascular problems. Clean eating encourages the avoidance of artificial additives, preservatives, and chemical-laden ingredients that may have adverse effects on our well-being.
+Die Vermeidung von verarbeiteten und raffinierten Lebensmitteln ist ein Schlüsselprinzip des Clean Eating. Diese Produkte enthalten oft übermäßige Mengen an zugesetztem Zucker, ungesunden Transfetten und hohen Natriumgehalten, die zu zahlreichen Gesundheitsproblemen wie Fettleibigkeit,  Diabetes und Herz-Kreislauf-Erkrankungen beitragen können. Clean Eating ermutigt dazu, künstliche Zusatzstoffe, Konservierungsstoffe und chemikalienbeladene Inhaltsstoffe zu vermeiden, die sich nachteilig auf unser Wohlbefinden auswirken können.
 
-In addition to physical health benefits, clean eating can positively impact mental clarity and emotional well-being. Nourishing our bodies with clean, wholesome foods supports brain function, enhances mood stability, and may even reduce the risk of mental health disorders.
+Neben den Vorteilen für die körperliche Gesundheit kann Clean Eating sich auch positiv auf die geistige Klarheit und das emotionale Wohlbefinden auswirken. Die Versorgung unseres Körpers mit sauberen, gesunden Lebensmitteln unterstützt die Gehirnfunktion, verbessert die Stimmungsstabilität und kann sogar das Risiko von psychischen Erkrankungen reduzieren.
 
-Adopting a clean eating approach is an investment in our long-term health and well-being. By choosing whole, unprocessed foods and avoiding artificial additives, we provide our bodies with the nourishment they need to function optimally. Clean eating not only promotes physical vitality but also supports mental clarity and emotional balance, leading to a happier, healthier life.";
+Die Annahme eines Clean Eating-Ansatzes ist eine Investition in unsere langfristige Gesundheit und unser Wohlbefinden. Indem wir ganze, unverarbeitete Lebensmittel wählen und künstliche Zusatzstoffe vermeiden, versorgen wir unseren Körper mit der Nahrung, die er benötigt, um optimal zu funktionieren. Clean Eating fördert nicht nur die körperliche Vitalität, sondern unterstützt auch die geistige Klarheit und emotionale Ausgeglichenheit, was zu einem glücklicheren und gesünderen Leben führt.";
 
 // MARK: - Article 4
 
-"article4" = "In a world dominated by sedentary lifestyles and indoor activities, there is something incredibly invigorating about running or walking outside. Engaging in physical activity amidst nature offers numerous benefits for our physical and mental well-being. This article explores the advantages of embracing outdoor running or walking and why it should be incorporated into our fitness routines.
+"article4" = "In einer Welt, die von einem sesshaften Lebensstil und Indoor-Aktivitäten dominiert wird, ist etwas unglaublich belebend am Laufen oder Gehen im Freien. Sich in körperlicher Aktivität inmitten der Natur zu engagieren, bietet zahlreiche Vorteile für unser körperliches und geistiges Wohlbefinden. Dieser Artikel erkundet die Vorteile des Umarmens von Outdoor-Lauf- oder Gehaktivitäten und warum sie in unsere Fitnessroutinen integriert werden sollten.
 
-Running or walking outdoors provides a refreshing change of scenery compared to the monotony of indoor gyms or treadmills. The diverse terrain, natural landscapes, and fresh air create an immersive experience that invigorates the senses and adds excitement to our workouts. The ever-changing outdoor environment presents new challenges, engages different muscles, and enhances coordination and balance.
+Laufen oder Gehen im Freien bietet eine erfrischende Veränderung der Umgebung im Vergleich zur Monotonie von Indoor-Fitnessstudios oder Laufbändern. Die vielfältige Landschaft, natürliche Umgebung und frische Luft schaffen ein intensives Erlebnis, das die Sinne belebt und Spannung in unser Training bringt. Die ständig wechselnde Umgebung im Freien bietet neue Herausforderungen, aktiviert verschiedene Muskeln und verbessert die Koordination und das Gleichgewicht.
 
-One of the most significant benefits of outdoor exercise is exposure to natural sunlight, which is a rich source of vitamin D. Sunlight helps regulate mood, supports bone health, and boosts the immune system. Additionally, spending time outside allows us to reconnect with nature, promoting feelings of relaxation, reduced stress, and improved mental clarity.
+Einer der bedeutendsten Vorteile körperlicher Aktivitäten im Freien ist die Exposition gegenüber natürlichem Sonnenlicht, das eine reiche Quelle für Vitamin D ist. Sonnenlicht hilft bei der Stimmungsregulierung, unterstützt die Knochengesundheit und stärkt das Immunsystem. Außerdem ermöglicht uns die Zeit im Freien, wieder Kontakt zur Natur aufzunehmen und fördert ein Gefühl der Entspannung, Stressreduzierung und verbesserte geistige Klarheit.
 
-Outdoor running or walking also offers a sense of freedom and exploration. Whether it's a local park, a scenic trail, or a vibrant city street, the outdoor environment provides a variety of routes and destinations to discover. This element of exploration can motivate us to be consistent with our exercise routines and make physical activity an enjoyable part of our daily lives.
+Laufen oder Gehen im Freien bietet auch ein Gefühl von Freiheit und Entdeckung. Egal, ob es sich um einen örtlichen Park, einen malerischen Wanderweg oder eine lebhafte Stadtstraße handelt, die Außenumgebung  bietet eine Vielzahl von Strecken und Zielen zu entdecken. Dieses Element der Erkundung kann uns motivieren, konsequent bei unseren Trainingsroutinen zu bleiben und körperliche Aktivität zu einem angenehmen Teil unseres täglichen Lebens zu machen.
 
-By stepping outside and embracing the outdoors for running or walking, we unlock a wealth of benefits for our overall well-being. From physical advantages like improved cardiovascular health and increased vitamin D levels to mental benefits such as reduced stress and enhanced mood, outdoor exercise rejuvenates our body and mind. So, lace up your shoes, breathe in the fresh air, and embark on an outdoor fitness journey that will elevate your health and vitality.";
+Indem wir nach draußen gehen und die Natur beim Laufen oder Gehen erleben, entsperren wir einen Schatz an Vorteilen für unser allgemeines Wohlbefinden. Von physischen Vorteilen wie verbesserte Herz-Kreislauf-Gesundheit und erhöhte Vitamin-D-Spiegel bis hin zu mentalen Vorteilen wie reduziertem Stress und gesteigerter Stimmung belebt Outdoor-Sport unseren Körper und Geist. Also, schnüren Sie Ihre Schuhe, atmen Sie die frische Luft ein und starten Sie eine Fitnessreise im Freien, die Ihre Gesundheit und Vitalität steigern wird.";
 
 // MARK: - Article 5
 
-"article5" = "In the realm of physical fitness, weightlifting stands out as a powerful tool for transforming our bodies and enhancing our overall health. Beyond the pursuit of bulging muscles, lifting weights offers a myriad of benefits that extend to both our physical and mental well-being. This article highlights the importance of incorporating regular weightlifting into our fitness routines.
+"article5" = "Im Bereich der körperlichen Fitness sticht das Gewichtheben als ein mächtiges Werkzeug hervor, um unsere Körper zu transformieren und unsere Gesundheit insgesamt zu verbessern. Jenseits des Streben nach muskulösen Körpern bietet das Gewichtheben eine Vielzahl von Vorteilen, die sich auf unsere körperliche und mentale Gesundheit erstrecken. Dieser Artikel hebt die Bedeutung des regelmäßigen Gewichthebens in unseren Fitnessroutinen hervor.
 
-Regular weightlifting provides a range of advantages that go beyond mere aesthetics. Building muscle strength and increasing bone density are two key benefits of weightlifting. It helps improve joint stability, posture, and overall functional fitness, making everyday activities easier and reducing the risk of injury.
+Regelmäßiges Gewichtheben bietet eine Reihe von Vorteilen, die über die bloße Ästhetik hinausgehen. Der Aufbau von Muskelkraft und die Steigerung der Knochendichte sind zwei wichtige Vorteile des Gewichthebens. Es hilft, die Gelenkstabilität, die Haltung und die allgemeine funktionelle Fitness zu verbessern, was den Alltag erleichtert und das Verletzungsrisiko reduziert.
 
-Lifting weights also plays a crucial role in boosting metabolism and promoting healthy weight management. Muscle is metabolically active, meaning it burns more calories even at rest. By incorporating weightlifting into our routine, we can increase our lean muscle mass and elevate our resting metabolic rate, making weight control more manageable.
+Das Heben von Gewichten spielt auch eine entscheidende Rolle bei der Steigerung des Stoffwechsels und der Förderung eines gesunden Gewichtsmanagements. Muskelgewebe ist metabolisch aktiv, was bedeutet, dass es selbst im Ruhezustand mehr Kalorien verbrennt. Durch die Integration des Gewichthebens in unsere Routine können wir unsere fettfreie Muskelmasse erhöhen und unseren Ruhe-Stoffwechsel erhöhen, was die Gewichtskontrolle erleichtert.
 
-Additionally, weightlifting has a significant impact on our mental well-being. It releases endorphins, often referred to as 'feel-good' hormones, which enhance mood, reduce stress, and alleviate symptoms of anxiety and depression. Engaging in regular weightlifting sessions can boost self-confidence, improve body image, and foster a positive mindset.
+Darüber hinaus hat das Gewichtheben einen erheblichen Einfluss auf unser mentales Wohlbefinden. Es setzt Endorphine frei, die oft als 'Wohlfühlhormone' bezeichnet werden und die Stimmung verbessern, Stress reduzieren und Symptome von Angst und Depression lindern. Regelmäßige Gewichthebungsübungen können das Selbstvertrauen steigern, das Körperbild verbessern und eine positive Denkweise fördern.
 
-Moreover, weightlifting contributes to the prevention of chronic diseases such as osteoporosis, arthritis, and cardiovascular conditions. It strengthens bones, increases joint flexibility, and improves heart health by reducing blood pressure and lowering cholesterol levels.
+Darüber hinaus trägt das Gewichtheben zur Vorbeugung chronischer Krankheiten wie Osteoporose, Arthritis und Herz-Kreislauf-Erkrankungen bei. Es stärkt die Knochen, erhöht die Gelenkflexibilität und verbessert die Herzgesundheit, indem es den Blutdruck senkt und den Cholesterinspiegel senkt.
 
-
-Regular weightlifting transcends the pursuit of a chiseled physique, offering holistic benefits for our physical and mental well-being. From building strength and enhancing bone density to promoting weight management and fostering a positive mindset, lifting weights is a powerful practice that empowers us to unleash our inner strength and lead healthier lives.";
+Regelmäßiges Gewichtheben geht über das Streben nach einem muskulösen Körper hinaus und bietet ganzheitliche Vorteile für unsere körperliche und mentale Gesundheit. Vom Aufbau von Kraft und Erhöhung der Knochendichte bis zur Förderung des Gewichtsmanagements und zur Förderung einer positiven Denkweise ist das Heben von Gewichten eine kraftvolle Praxis, die uns befähigt, unsere innere Stärke zu entfesseln und gesünder zu leben.";
 
 
 // MARK: - Article 6
 
-"article6" = "Our dreams and aspirations have the ability to shape our lives and drive us towards success. By harnessing the power of visualization, we can paint a vivid picture of our future self and the life we desire. This article delves into the importance of visualizing our dreams and explains how it can propel us towards achieving our goals.
+"article6" = "Unsere Träume und Ambitionen haben die Fähigkeit, unser Leben zu gestalten und uns zum Erfolg zu treiben. Indem wir die Kraft der Visualisierung nutzen, können wir ein lebendiges Bild von unserem zukünftigen Selbst und dem gewünschten Leben malen. Dieser Artikel vertieft die Bedeutung der Visualisierung unserer Träume und erklärt, wie sie uns dazu bringen kann, unsere Ziele zu erreichen.
 
+Die Visualisierung unserer Träume beinhaltet das Erstellen von detaillierten mentalen Bildern unserer gewünschten Zukunft. Indem wir uns lebhaft vorstellen, wie wir unsere Träume leben, aktivieren wir die Kraft unseres Unterbewusstseins. Dieser Prozess hilft, unsere Gedanken, Überzeugungen und Handlungen mit unseren Zielen in Einklang zu bringen und letztendlich unsere Motivation und Konzentration zu steigern.
 
-Visualizing our dreams involves creating detailed mental images of our desired future. By vividly imagining ourselves living our dreams, we activate the power of our subconscious mind. This process helps align our thoughts, beliefs, and actions with our goals, ultimately increasing our motivation and focus.
+Wenn wir unser zukünftiges Selbst visualisieren, schaffen wir eine klare Richtung und einen klaren Zweck. Indem wir definieren, was wir erreichen wollen, erstellen wir einen Fahrplan, der unsere Handlungen und Entscheidungen leitet. Die Visualisierung verbessert unsere Klarheit und ermöglicht es uns, spezifische, messbare, erreichbare, relevante und zeitgebundene (SMART) Ziele zu setzen.
 
-When we visualize our future self, we establish a clear direction and purpose. By defining what we want to achieve, we create a roadmap to guide our actions and decision-making. Visualization enhances our clarity, enabling us to set specific, measurable, achievable, relevant, and time-bound (SMART) goals.
+Darüber hinaus fördert die Visualisierung eine positive Denkweise. Wenn wir konsequent Erfolg visualisieren und uns vorstellen, wie wir Hindernisse überwinden, trainieren wir unseren Geist, an unsere Fähigkeiten zu glauben. Diese positive Denkweise stärkt das Selbstvertrauen, die Widerstandsfähigkeit und den Glauben daran, dass wir die Vision, die wir für uns selbst gesetzt haben, erreichen können.
 
-Moreover, visualization cultivates a positive mindset. When we consistently visualize success and visualize ourselves overcoming obstacles, we train our minds to believe in our capabilities. This positive mindset fuels self-confidence, resilience, and a belief that we can achieve the vision we have set for ourselves.
+Die Visualisierung unserer Träume dient auch als leistungsstarke Quelle der Motivation. Wenn wir unsere gewünschte Zukunft durch Visualisierung sehen, fühlen und erleben können, entfacht dies ein brennendes Verlangen in uns. Diese Motivation treibt uns dazu an, konsequente Maßnahmen für unsere Ziele zu ergreifen und unsere Ausdauer während herausfordernder Zeiten zu stärken.
 
-Visualizing our dreams also acts as a powerful source of motivation. When we can see, feel, and experience our desired future through visualization, it ignites a burning desire within us. This motivation propels us to take consistent action towards our goals and fuels our perseverance during challenging times.
-
-
-Harnessing the power of visualization allows us to tap into our deepest aspirations and create a roadmap towards our dreams. By vividly envisioning our future self, we cultivate clarity, motivation, and a positive mindset. Visualizing our dreams is a potent tool that empowers us to take decisive action and transform our aspirations into reality.";
+Die Nutzung der Kraft der Visualisierung ermöglicht es uns, in unsere tiefsten Sehnsüchte einzutauchen und einen Fahrplan zu unseren Träumen zu erstellen. Indem wir unser zukünftiges Selbst lebhaft vorstellen, kultivieren wir Klarheit, Motivation und eine positive Denkweise. Die Visualisierung unserer Träume ist ein wirksames Werkzeug, das uns befähigt, entschlossene Maßnahmen zu ergreifen und unsere Ambitionen in die Realität umzusetzen.";
 
 
 
 //MARK: - Article 7
 
-"article7" = "Do you ever feel like you need an extra push to achieve your goals? Well, here's a simple yet effective way to boost your motivation: share your journey on social media!
+"article7" = "Verspürst du manchmal den Wunsch, einen zusätzlichen Ansporn zu haben, um deine Ziele zu erreichen? Nun, hier ist eine einfache, aber effektive Möglichkeit, deine Motivation zu steigern: Teile deine Reise in den sozialen Medien!
 
-When you share your process on platforms like Facebook, Instagram, or Twitter, it adds an extra layer of motivation and accountability to your journey. How does it work? Let's break it down.
+Wenn du deinen Prozess auf Plattformen wie Facebook, Instagram oder Twitter teilst, fügt dies deiner Reise eine zusätzliche Ebene der Motivation und Verantwortlichkeit hinzu. Wie funktioniert das? Lass es uns erklären.
 
-Imagine you're trying to get fit or learn a new skill. Every day, you make progress, no matter how small. Now, instead of keeping it all to yourself, why not post your daily achievements? By doing this, you put a little pressure on yourself to keep going and make even more progress.
+Stell dir vor, du versuchst, fit zu werden oder eine neue Fähigkeit zu erlernen. Jeden Tag machst du Fortschritte, egal wie klein sie sein mögen. Statt sie alle für dich zu behalten, warum postest du nicht deine täglichen Erfolge? Dadurch setzt du dich selbst ein wenig unter Druck, weiterzumachen und noch mehr Fortschritte zu erzielen.
 
-When your friends and followers see what you're up to, they'll cheer you on. It feels great to receive encouragement and support from your online community. Plus, when you share your journey, you become an inspiration to others who are on a similar path.
+Wenn deine Freunde und Follower sehen, was du tust, werden sie dich anfeuern. Es fühlt sich großartig an, Ermutigung und Unterstützung von deiner Online-Community zu erhalten. Außerdem wirst du, wenn du deine Reise teilst, zu einer Inspirationsquelle für andere, die einen ähnlichen Weg einschlagen.
 
-Another benefit is that you get to document your journey. It's like creating a digital diary of your progress. Looking back at how far you've come can be incredibly motivating. Plus, you can connect with people who share your interests and goals, forming a supportive community.
+Ein weiterer Vorteil besteht darin, dass du deine Reise dokumentieren kannst. Es ist, als würdest du ein digitales Tagebuch deines Fortschritts erstellen. Auf die zurückzublicken, wie weit du gekommen bist, kann unglaublich motivierend sein. Außerdem kannst du dich mit Menschen vernetzen, die deine Interessen und Ziele teilen, und so eine unterstützende Gemeinschaft bilden.
 
-So, if you want that extra push to keep moving forward, share your journey on social media. It's a simple yet powerful way to stay motivated, accountable, and inspire others along the way. Give it a try and watch your progress soar!";
+Also, wenn du diesen zusätzlichen Schub benötigst, um weiter voranzukommen, teile deine Reise in den sozialen Medien. Es ist eine einfache, aber leistungsstarke Möglichkeit, motiviert zu bleiben, Verantwortung zu übernehmen und andere auf dem Weg zu inspirieren. Probiere es aus und beobachte, wie dein Fortschritt in die Höhe schnellt!";
 
 //MARK: - Article Titles
 
-"articleTitle1" = "Why you should drink 1 gallon (3L) of water everyday?";
-"articleTitle2" = "Benefits of reading book everyday";
-"articleTitle3" = "The Power of Clean Eating: Fueling Your Health and Well-being";
-"articleTitle4" = "The Benefits of Running or Walking Outside";
-"articleTitle5" = "The Strength Within: The Importance of Regular Weightlifting";
-"articleTitle6" = "Visualizing Our Dreams: The Power of Envisioning Our Future Self";
-"articleTitle7" = "The Power of Sharing on Social Media";
+"articleTitle1" = "Warum du jeden Tag 1 Gallone (3 Liter) Wasser trinken solltest?";
+"articleTitle2" = "Die Vorteile des täglichen Lesens von Büchern";
+"articleTitle3" = "Die Kraft von Clean Eating: Ihre Gesundheit und Ihr Wohlbefinden unterstützen";
+"articleTitle4" = "Die Vorteile des Laufens oder Gehens im Freien";
+"articleTitle5" = "Die Stärke von innen: Die Bedeutung des regelmäßigen Gewichthebens";
+"articleTitle6" = "Die Visualisierung unserer Träume: Die Kraft, sich unsere zukünftige Selbst vorzustellen.";
+"articleTitle7" = "Die Kraft des Teilens in den sozialen Medien";
