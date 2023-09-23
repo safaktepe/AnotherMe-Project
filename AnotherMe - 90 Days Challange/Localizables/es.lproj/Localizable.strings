@@ -11,71 +11,71 @@
 "welcome"        = "Welcome,";
 
 
-"name"           = "Name";
-"next"           = "Next";
+"name"           = "Nombre";
+"next"           = "Siguiente";
 
 
 //Get started
-"getStarted1"    = "We will work together to make you the best version of yourself";
-"fromday"        = "From which day do you want to start?";
-"whatname"       = "What is your name?";
-"hi"             = "Hi, ";
-"hereare7"       = "Here are the 7 rules that you must follow!";
-"preferAge"      = "Prefer not to say";
-"days"           = "days";
-"day"            = "Day";
-"age"            = "How old are you?";
+"getStarted1"    = "Trabajaremos juntos para hacerte la mejor versión de ti mismo/a.";
+"fromday"        = "¿A partir de qué día quieres comenzar?";
+"whatname"       = "¿Cuál es tu nombre?";
+"hi"             = "Hola, ";
+"hereare7"       = "iAquí están las 7 reglas que debes seguir!";
+"preferAge"      = "Prefiero no decirlo";
+"days"           = "DÍAS";
+"day"            = "DÍA";
+"age"            = "¿Cuántos años tiene?";
 
 
 
 // Profiles.
-"account"        = "Account";
-"restart"        = "Restart Challange";
-"entername"      = "Enter Your Name";
-"save"           = "Save";
-"restartWord"    = "Restart";
-"savedMsg"       = "All changes are saved.";
-"saved"          = "Saved!";
+"account"        = "Cuenta";
+"restart"        = "Reiniciar el Desafío";
+"entername"      = "Ingresa Tu Nombre";
+"save"           = "Guardar";
+"restartWord"    = "Reiniciar";
+"savedMsg"       = "Todas las modificaciones se han guardado.";
+"saved"          = "Salvado!";
 
 
 // Settings.
-"editprofile"    = "Edit Profile";
-"warning"        = "WARNING!";
-"warningmsg"     = "If you restart challenge, your progress will be permanently deleted and it cannot be recovered!";
-"cancel"         = "Cancel";
-"dissmiss"       = "Dismiss";
+"editprofile"    = "Editar Perfil";
+"warning"        = "ADVERTENCIA!";
+"warningmsg"     = "Si reinicias el desafío, tu progreso se eliminará de forma permanente y no se podrá recuperar.";
+"cancel"         = "Cancelar";
+"dissmiss"       = "Descartar";
 
 
 // Onboarding.
-"getstarted"     = "Get Started";
-"onboard1"       = "Transform your life.";
-"onboard1Desc"   = "Push limits, redefine mindset, and become your best self in just 75 days.";
-"onboard2"       = "Unleash Your Inner Potential.";
-"onboard2Desc"   = "Unlock talents, develop habits, and overcome obstacles to achieve greatness.";
-"onboard3"       = "Start to best mental toughness challenge. Win the war with yourself!";
-"onboard3Desc"   = "Experience a transformative journey, elevating fitness, well-being, growth, and success to new heights.";
+"getstarted"     = "Empezar";
+"onboard1"       = "Transforma tu vida.";
+"onboard1Desc"   = "Supera tus límites, redefine tu mentalidad y conviértete en tu mejor versión en tan solo 75 días.";
+"onboard2"       = "Libera tu potencial interior.";
+"onboard2Desc"   = "Desbloquea talentos, desarrolla hábitos y supera obstáculos para alcanzar la grandeza.";
+"onboard3"       = "Comienza el desafío de la mejor fortaleza mental. ¡Gana la batalla contigo mismo!";
+"onboard3Desc"   = "Experimenta un viaje transformador, elevando la condición física, el bienestar, el crecimiento y el éxito a nuevas alturas.";
 
 
 // Article - Reading page.
-"readmore"       = "Read more about being better 1% each day";
+"readmore"       = "Lee más sobre cómo ser un 1% mejor cada día";
 
 
 // Goals.
-"goal1"          = "Read 20 pages of book";
-"goal2"          = "Visualize of future self";
-"goal3"          = "Drink 1 gallon (3L) of water";
-"goal4"          = "30 min outside running";
-"goal5"          = "Lift some weights for 30 minutes";
-"goal6"          = "Follow a diet";
-"goal7"          = "Share your process";
+"goal1"          = "Lee 20 páginas de un libro ";
+"goal2"          = "Visualiza tu futuro yo";
+"goal3"          = "Bebe 1 galón (3 litros) de agua";
+"goal4"          = "Correr al aire libre durante 30 minutos";
+"goal5"          = "Levanta pesas durante 30 minutos";
+"goal6"          = "Sigue una dieta";
+"goal7"          = "Comparte tu proceso";
 
-"goal1Descr"     = "Immerse yourself in knowledge, expand your horizons, and stimulate your imagination.";
-"goal2Descr"     = "Envision your incredible potential and ignite motivation for self-improvement and growth.";
-"goal3Descr"     = "Hydrate, boost energy, improve focus, support digestion, and enhance overall well-being.";
-"goal4Descr"     = "Experience the exhilaration of a refreshing run, boost endurance, and improve mood.";
-"goal5Descr"     = "Strengthen your body, build muscle, improve physique, and enhance overall health.";
-"goal6Descr"     = "Nourish your body, manage weight, support health, and thrive with a balanced eating plan.";
-"goal7Descr"     = "Post your daily achievements for more pressure and motivation to keep pushing forward";
+"goal1Descr"     = "Sumérgete en el conocimiento, amplía tus horizontes y estimula tu imaginación.";
+"goal2Descr"     = "Imagina tu increíble potencial y enciende la motivación para la auto-superación y el crecimiento.";
+"goal3Descr"     = "Hidrátate, aumenta la energía, mejora la concentración, apoya la digestión y mejora el bienestar general.";
+"goal4Descr"     = "Experimenta la emoción de una carrera refrescante, aumenta la resistencia y mejora el estado de ánimo.";
+"goal5Descr"     = "Fortalece tu cuerpo, desarrolla músculo, mejora tu físico y aumenta tu salud general. ";
+"goal6Descr"     = "Nutre tu cuerpo, gestiona tu peso, apoya tu salud y prospera con un plan de alimentación equilibrado.";
+"goal7Descr"     = "Publica tus logros diarios para obtener más presión y motivación para seguir adelante.";
 
 
 // Calendar
