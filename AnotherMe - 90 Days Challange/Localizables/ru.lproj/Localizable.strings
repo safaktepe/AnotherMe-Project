@@ -1,0 +1,198 @@
+/* 
+  Localizable.strings
+  AnotherMe - 90 Days Challange
+
+  Created by Mert Şafaktepe on 20.09.2023.
+  
+*/
+
+
+"welcome"        = "Добро пожаловать,";
+
+
+"name"           = "Имя";
+"next"           = "Далее";
+
+
+//Get started
+"getStarted1"    = "Мы будем работать вместе, чтобы сделать вас лучшей версией себя.";
+"fromday"        = "С какого дня вы хотите начать?";
+"whatname"       = "Как вас зовут?";
+"hi"             = "Привет, ";
+"hereare7"       = "Вот 7 правил, которые вы должны соблюдать!";
+"preferAge"      = "Предпочитаю не отвечать.";
+"days"           = "ДНИ";
+"day"            = "ДЕНЬ";
+"age"            = "Сколько вам лет?";
+
+
+
+// Profiles.
+"account"        = "Аккаунт";
+"restart"        = "Перезапуск вызова";
+"entername"      = "Введите ваше имя";
+"save"           = "Сохранить";
+"restartWord"    = "Начать заново";
+"savedMsg"       = "Все изменения сохранены.";
+"saved"          = "Сохранено!";
+
+
+// Settings.
+"editprofile"    = "Редактировать профиль";
+"warning"        = "ПРЕДУПРЕЖДЕНИЕ!";
+"warningmsg"     = "Если вы начнете вызов заново, ваш прогресс будет безвозвратно удален, и его нельзя будет восстановить!";
+"cancel"         = "Отменить";
+"dissmiss"       = "Отмена";
+
+
+// Onboarding.
+"getstarted"     = "Начать";
+"onboard1"       = "Преобразуйте свою жизнь.";
+"onboard1Desc"   = "Преодолейте пределы, переопределите свое мышление и станьте лучшей версией себя всего за 75 дней.";
+"onboard2"       = "Раскройте свой внутренний потенциал.";
+"onboard2Desc"   = "Разблокируйте таланты, развивайте привычки и преодолевайте препятствия, чтобы достичь величия.";
+"onboard3"       = "Начните лучший вызов на устойчивость ума. Победите войну с самим собой!";
+"onboard3Desc"   = "Почувствуйте трансформационное путешествие, поднимая фитнес, благополучие, рост и успех на новые высоты.";
+
+
+// Article - Reading page.
+"readmore"       = "Узнать больше о том, как стать лучше на 1% каждый день";
+
+
+// Goals.
+"goal1"          = "Прочитать 20 страниц книги";
+"goal2"          = "Визуализация будущего себя";
+"goal3"          = "Пить 1 галлон (3 литра) воды";
+"goal4"          = "30 минут бега на улице";
+"goal5"          = "Поднимать веса 30 минут";
+"goal6"          = "Следовать диете";
+"goal7"          = "Делитесь своим процессом";
+
+"goal1Descr"     = "Погрузитесь в знания, расширьте горизонты и разбудите ваше воображение.";
+"goal2Descr"     = "Визуализируйте свой невероятный потенциал и зажгите мотивацию для самосовершенствования и роста.";
+"goal3Descr"     = "Гидратируйтесь, повышайте энергию, улучшайте концентрацию, поддерживайте пищеварение и улучшайте общее благополучие.";
+"goal4Descr"     = "Почувствуйте эйфорию освежающего бега, увеличьте выносливость и улучшите настроение.";
+"goal5Descr"     = "Укрепляйте свое тело, наращивайте мышцы, улучшайте физическую форму и укрепляйте общее здоровье.";
+"goal6Descr"     = "Питайте свое тело, контролируйте вес, поддерживайте здоровье и процветайте сбалансированным планом питания.";
+"goal7Descr"     = "Публикуйте ваши ежедневные достижения для большего давления и мотивации двигаться вперед";
+
+
+// Calendar
+
+"savedPhoto"     = "Сохранено в фотоархиве. Не забудьте поделиться.";
+"permDenied"     = "Доступ запрещен, чтобы изменить это, перейдите в настройки";
+"failed"         = "Неудача";
+
+
+// Ending.
+
+"close"         = "Закрыть";
+"lastMsg"       = "Вы успешно завершили задание!";
+"congr"         = "Поздравляем!";
+
+
+// MARK: - Article 1
+"article1" = "Вода играет ключевую роль для нашего организма, и важно обеспечить правильное увлажнение, путем ежедневного употребления не менее 3 литров воды. В этой статье мы рассмотрим, почему поддержание достаточного уровня воды в организме имеет важное значение для нашего общего благополучия.
+
+Во-первых, вода помогает поддерживать баланс жидкостей в организме. Наше тело состоит примерно на 60% из воды, и она играет ключевую роль в таких важных функциях, как пищеварение, усвоение, кровообращение и регуляция температуры. Употребляя достаточно воды, мы восполняем жидкость, которую мы теряем в течение дня, что позволяет нашему организму функционировать наилучшим образом.  Правильное увлажнение также необходимо для здоровья кожи. Когда мы находимся в состоянии обезвоживания, наша кожа может стать сухой, шелушиться и более подвержена морщинам. Употребление достаточного количества воды обеспечивает увлажнение клеток кожи, что придает ей более яркий и молодой вид.
+
+Кроме того, поддержание уровня увлажнения может помочь в управлении весом. Иногда мы путаем жажду с голодом, что может привести к избыточным перекусам и перееданию. Регулярное употребление воды может помочь предотвратить эту путаницу, поддерживая наши цели по снижению веса или его поддержанию. Употребление достаточного количества воды также благотворно влияет на пищеварительную систему. Она помогает расщепить пищу, облегчая правильное пищеварение и усвоение питательных веществ. Кроме того, вода предотвращает запоры, размягчая кал и способствуя регулярным кишечным движениям.
+
+Более того, поддержание уровня увлажнения повышает когнитивные функции. Обезвоживание может негативно сказаться на концентрации, бодрости и общей умственной производительности. Путем потребления достаточного количества воды, мы поддерживаем оптимальную функцию мозга, что приводит к увеличению концентрации и продуктивности.
+
+Наконец, вода имеет ключевое значение для здоровья почек. Она помогает вымывать из организма продукты распада и токсины через мочу. Достаточное потребление воды снижает риск образования камней в почках и инфекций мочевыводящих путей, поддерживая нормальное функционирование почек.  В заключение, употребление 3 литров воды в день является важным для нашего общего благополучия. От поддержания бодрствующих функций организма и ухода за здоровой кожей до поддержания пищеварения, поощрения управления весом, улуч.";
+
+// MARK: - Article 2
+"article2" = "Чтение 20 страниц книги каждый день может оказать глубокое влияние на вашу жизнь. Помимо простого удовольствия от погружения в увлекательный рассказ, есть несколько преимуществ этой ежедневной привычки чтения.
+
+Во-первых, чтение обогащает вашу культуру и расширяет горизонты. Каждый день, погружаясь в новые страницы, вы получаете информацию о различных темах, культурах и точках зрения. Это расширяет ваше понимание мира, делая вас более образованными и разносторонними.
+
+Во-вторых, регулярное чтение улучшает ваш словарный запас и языковые навыки. Сталкиваясь с новыми словами и структурами предложений, вы становитесь более способными выражать себя эффективно. Расширенный словарный запас может повысить вашу уверенность в различных ситуациях общения, таких как написание электронных писем или участие в разговорах.
+
+Более того, чтение стимулирует ваше воображение и креативность. Через яркие описания и увлекательные повествования книги переносят вас в разные миры и позволяют вам визуализировать сцены и персонажей. Это упражнение для ума способствует развитию креативности и мотивирует вас думать за пределами повседневной рутины.
+
+Кроме того, чтение может быть источником релаксации и снятия стресса. Погружение в книгу может перенести вас из-под давления повседневной жизни, предоставив необходимый отдых. Это позволяет расслабиться, восстановиться и найти утешение на страницах рассказа.
+
+В заключение, посвящение всего 20 минут в день чтению 20 страниц может принести множество пользы. Это расширяет вашу эрудицию, улучшает языковые навыки, стимулирует креативность, предоставляет релаксацию и улучшает когнитивные способности. Так что возьмите книгу и отправьтесь в это трансформационное путешествие силой чтения.";
+
+// MARK: - Article 3
+
+"article3" = "Maintaining a healthy diet is essential for overall well-being, and clean eating has emerged as a popular approach to achieving optimal health. Clean eating focuses on consuming whole, unprocessed foods while minimizing or eliminating processed and artificial ingredients. This article explores the significance of clean eating and why it should be embraced for a healthier lifestyle.
+
+Clean eating emphasizes the consumption of natural, nutrient-dense foods that promote vitality and support various bodily functions. By prioritizing fresh fruits and vegetables, lean proteins, whole grains, and healthy fats, clean eating ensures that our bodies receive essential vitamins, minerals, and antioxidants necessary for optimal health. Whole foods provide a balanced combination of macronutrients, including carbohydrates, proteins, and fats, which sustain energy levels and help maintain a healthy weight.
+
+Avoiding processed and refined foods is a key principle of clean eating. These products often contain excessive amounts of added sugars, unhealthy trans fats, and high levels of sodium, which can contribute to numerous health issues such as obesity, diabetes, and cardiovascular problems. Clean eating encourages the avoidance of artificial additives, preservatives, and chemical-laden ingredients that may have adverse effects on our well-being.
+
+In addition to physical health benefits, clean eating can positively impact mental clarity and emotional well-being. Nourishing our bodies with clean, wholesome foods supports brain function, enhances mood stability, and may even reduce the risk of mental health disorders.
+
+Adopting a clean eating approach is an investment in our long-term health and well-being. By choosing whole, unprocessed foods and avoiding artificial additives, we provide our bodies with the nourishment they need to function optimally. Clean eating not only promotes physical vitality but also supports mental clarity and emotional balance, leading to a happier, healthier life.";
+
+// MARK: - Article 4
+
+"article4" = "In a world dominated by sedentary lifestyles and indoor activities, there is something incredibly invigorating about running or walking outside. Engaging in physical activity amidst nature offers numerous benefits for our physical and mental well-being. This article explores the advantages of embracing outdoor running or walking and why it should be incorporated into our fitness routines.
+
+Running or walking outdoors provides a refreshing change of scenery compared to the monotony of indoor gyms or treadmills. The diverse terrain, natural landscapes, and fresh air create an immersive experience that invigorates the senses and adds excitement to our workouts. The ever-changing outdoor environment presents new challenges, engages different muscles, and enhances coordination and balance.
+
+One of the most significant benefits of outdoor exercise is exposure to natural sunlight, which is a rich source of vitamin D. Sunlight helps regulate mood, supports bone health, and boosts the immune system. Additionally, spending time outside allows us to reconnect with nature, promoting feelings of relaxation, reduced stress, and improved mental clarity.
+
+Outdoor running or walking also offers a sense of freedom and exploration. Whether it's a local park, a scenic trail, or a vibrant city street, the outdoor environment provides a variety of routes and destinations to discover. This element of exploration can motivate us to be consistent with our exercise routines and make physical activity an enjoyable part of our daily lives.
+
+By stepping outside and embracing the outdoors for running or walking, we unlock a wealth of benefits for our overall well-being. From physical advantages like improved cardiovascular health and increased vitamin D levels to mental benefits such as reduced stress and enhanced mood, outdoor exercise rejuvenates our body and mind. So, lace up your shoes, breathe in the fresh air, and embark on an outdoor fitness journey that will elevate your health and vitality.";
+
+// MARK: - Article 5
+
+"article5" = "In the realm of physical fitness, weightlifting stands out as a powerful tool for transforming our bodies and enhancing our overall health. Beyond the pursuit of bulging muscles, lifting weights offers a myriad of benefits that extend to both our physical and mental well-being. This article highlights the importance of incorporating regular weightlifting into our fitness routines.
+
+Regular weightlifting provides a range of advantages that go beyond mere aesthetics. Building muscle strength and increasing bone density are two key benefits of weightlifting. It helps improve joint stability, posture, and overall functional fitness, making everyday activities easier and reducing the risk of injury.
+
+Lifting weights also plays a crucial role in boosting metabolism and promoting healthy weight management. Muscle is metabolically active, meaning it burns more calories even at rest. By incorporating weightlifting into our routine, we can increase our lean muscle mass and elevate our resting metabolic rate, making weight control more manageable.
+
+Additionally, weightlifting has a significant impact on our mental well-being. It releases endorphins, often referred to as 'feel-good' hormones, which enhance mood, reduce stress, and alleviate symptoms of anxiety and depression. Engaging in regular weightlifting sessions can boost self-confidence, improve body image, and foster a positive mindset.
+
+Moreover, weightlifting contributes to the prevention of chronic diseases such as osteoporosis, arthritis, and cardiovascular conditions. It strengthens bones, increases joint flexibility, and improves heart health by reducing blood pressure and lowering cholesterol levels.
+
+
+Regular weightlifting transcends the pursuit of a chiseled physique, offering holistic benefits for our physical and mental well-being. From building strength and enhancing bone density to promoting weight management and fostering a positive mindset, lifting weights is a powerful practice that empowers us to unleash our inner strength and lead healthier lives.";
+
+
+// MARK: - Article 6
+
+"article6" = "Our dreams and aspirations have the ability to shape our lives and drive us towards success. By harnessing the power of visualization, we can paint a vivid picture of our future self and the life we desire. This article delves into the importance of visualizing our dreams and explains how it can propel us towards achieving our goals.
+
+
+Visualizing our dreams involves creating detailed mental images of our desired future. By vividly imagining ourselves living our dreams, we activate the power of our subconscious mind. This process helps align our thoughts, beliefs, and actions with our goals, ultimately increasing our motivation and focus.
+
+When we visualize our future self, we establish a clear direction and purpose. By defining what we want to achieve, we create a roadmap to guide our actions and decision-making. Visualization enhances our clarity, enabling us to set specific, measurable, achievable, relevant, and time-bound (SMART) goals.
+
+Moreover, visualization cultivates a positive mindset. When we consistently visualize success and visualize ourselves overcoming obstacles, we train our minds to believe in our capabilities. This positive mindset fuels self-confidence, resilience, and a belief that we can achieve the vision we have set for ourselves.
+
+Visualizing our dreams also acts as a powerful source of motivation. When we can see, feel, and experience our desired future through visualization, it ignites a burning desire within us. This motivation propels us to take consistent action towards our goals and fuels our perseverance during challenging times.
+
+
+Harnessing the power of visualization allows us to tap into our deepest aspirations and create a roadmap towards our dreams. By vividly envisioning our future self, we cultivate clarity, motivation, and a positive mindset. Visualizing our dreams is a potent tool that empowers us to take decisive action and transform our aspirations into reality.";
+
+
+
+//MARK: - Article 7
+
+"article7" = "Do you ever feel like you need an extra push to achieve your goals? Well, here's a simple yet effective way to boost your motivation: share your journey on social media!
+
+When you share your process on platforms like Facebook, Instagram, or Twitter, it adds an extra layer of motivation and accountability to your journey. How does it work? Let's break it down.
+
+Imagine you're trying to get fit or learn a new skill. Every day, you make progress, no matter how small. Now, instead of keeping it all to yourself, why not post your daily achievements? By doing this, you put a little pressure on yourself to keep going and make even more progress.
+
+When your friends and followers see what you're up to, they'll cheer you on. It feels great to receive encouragement and support from your online community. Plus, when you share your journey, you become an inspiration to others who are on a similar path.
+
+Another benefit is that you get to document your journey. It's like creating a digital diary of your progress. Looking back at how far you've come can be incredibly motivating. Plus, you can connect with people who share your interests and goals, forming a supportive community.
+
+So, if you want that extra push to keep moving forward, share your journey on social media. It's a simple yet powerful way to stay motivated, accountable, and inspire others along the way. Give it a try and watch your progress soar!";
+
+//MARK: - Article Titles
+
+"articleTitle1" = "Why you should drink 1 gallon (3L) of water everyday?";
+"articleTitle2" = "Benefits of reading book everyday";
+"articleTitle3" = "The Power of Clean Eating: Fueling Your Health and Well-being";
+"articleTitle4" = "The Benefits of Running or Walking Outside";
+"articleTitle5" = "The Strength Within: The Importance of Regular Weightlifting";
+"articleTitle6" = "Visualizing Our Dreams: The Power of Envisioning Our Future Self";
+"articleTitle7" = "The Power of Sharing on Social Media";
