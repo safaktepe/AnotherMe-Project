@@ -1,0 +1,200 @@
+/* 
+  Localizable.strings
+  AnotherMe - 90 Days Challange
+
+  Created by Mert Şafaktepe on 20.09.2023.
+  
+*/
+
+
+"rule1"          = "Lisez 20 pages d'un livre";
+"welcome"        = "Welcome,";
+
+
+"name"           = "Nombre";
+"next"           = "Siguiente";
+
+
+//Get started
+"getStarted1"    = "Trabajaremos juntos para hacerte la mejor versión de ti mismo/a.";
+"fromday"        = "¿A partir de qué día quieres comenzar?";
+"whatname"       = "¿Cuál es tu nombre?";
+"hi"             = "Hola, ";
+"hereare7"       = "iAquí están las 7 reglas que debes seguir!";
+"preferAge"      = "Prefiero no decirlo";
+"days"           = "DÍAS";
+"day"            = "DÍA";
+"age"            = "¿Cuántos años tiene?";
+
+
+
+// Profiles.
+"account"        = "Cuenta";
+"restart"        = "Reiniciar el Desafío";
+"entername"      = "Ingresa Tu Nombre";
+"save"           = "Guardar";
+"restartWord"    = "Reiniciar";
+"savedMsg"       = "Todas las modificaciones se han guardado.";
+"saved"          = "Salvado!";
+
+
+// Settings.
+"editprofile"    = "Editar Perfil";
+"warning"        = "ADVERTENCIA!";
+"warningmsg"     = "Si reinicias el desafío, tu progreso se eliminará de forma permanente y no se podrá recuperar.";
+"cancel"         = "Cancelar";
+"dissmiss"       = "Descartar";
+
+
+// Onboarding.
+"getstarted"     = "Empezar";
+"onboard1"       = "Transforma tu vida.";
+"onboard1Desc"   = "Supera tus límites, redefine tu mentalidad y conviértete en tu mejor versión en tan solo 75 días.";
+"onboard2"       = "Libera tu potencial interior.";
+"onboard2Desc"   = "Desbloquea talentos, desarrolla hábitos y supera obstáculos para alcanzar la grandeza.";
+"onboard3"       = "Comienza el desafío de la mejor fortaleza mental. ¡Gana la batalla contigo mismo!";
+"onboard3Desc"   = "Experimenta un viaje transformador, elevando la condición física, el bienestar, el crecimiento y el éxito a nuevas alturas.";
+
+
+// Article - Reading page.
+"readmore"       = "Lee más sobre cómo ser un 1% mejor cada día";
+
+
+// Goals.
+"goal1"          = "Lee 20 páginas de un libro ";
+"goal2"          = "Visualiza tu futuro yo";
+"goal3"          = "Bebe 1 galón (3 litros) de agua";
+"goal4"          = "Correr al aire libre durante 30 minutos";
+"goal5"          = "Levanta pesas durante 30 minutos";
+"goal6"          = "Sigue una dieta";
+"goal7"          = "Comparte tu proceso";
+
+"goal1Descr"     = "Sumérgete en el conocimiento, amplía tus horizontes y estimula tu imaginación.";
+"goal2Descr"     = "Imagina tu increíble potencial y enciende la motivación para la auto-superación y el crecimiento.";
+"goal3Descr"     = "Hidrátate, aumenta la energía, mejora la concentración, apoya la digestión y mejora el bienestar general.";
+"goal4Descr"     = "Experimenta la emoción de una carrera refrescante, aumenta la resistencia y mejora el estado de ánimo.";
+"goal5Descr"     = "Fortalece tu cuerpo, desarrolla músculo, mejora tu físico y aumenta tu salud general. ";
+"goal6Descr"     = "Nutre tu cuerpo, gestiona tu peso, apoya tu salud y prospera con un plan de alimentación equilibrado.";
+"goal7Descr"     = "Publica tus logros diarios para obtener más presión y motivación para seguir adelante.";
+
+
+// Calendar
+
+"savedPhoto"     = "Guardado en la biblioteca de fotos. No olvides compartir.";
+"permDenied"     = "Permiso denegado, para cambiarlo ve a tus ajustes.";
+"failed"         = "Fracasado!";
+
+
+// Ending.
+
+"close"         = "Cerrar";
+"lastMsg"       = "Has completado con éxito el desafío!";
+"congr"         = "Felicitaciones!";
+
+
+// MARK: - Article 1
+"article1" = "El agua es crucial para nuestros cuerpos, y es importante asegurarse de mantenernos adecuadamente hidratados bebiendo al menos 3 litros de agua al día. En este artículo, exploraremos por qué mantener una ingesta adecuada de agua es vital para nuestro bienestar general.
+
+En primer lugar, el agua ayuda a mantener el equilibrio de los fluidos corporales. Nuestros cuerpos están compuestos en un 60% de agua aproximadamente, y desempeña un papel clave en funciones importantes como la digestión, la absorción, la circulación y la regulación de la temperatura. Al beber suficiente agua, reponemos los líquidos que perdemos a lo largo del día, lo que permite que nuestros cuerpos funcionen de manera óptima. La hidratación adecuada también es esencial para la piel saludable. Cuando estamos deshidratados, nuestra piel puede volverse seca, escamosa y más propensa a las arrugas. Beber suficiente agua proporciona hidratación a las células de nuestra piel, lo que resulta en una apariencia más vibrante y juvenil.
+
+Además, mantenerse hidratado puede ayudar en el control del peso. A veces, confundimos la sed con el hambre, lo que lleva a picar y a comer en exceso innecesariamente. Al beber agua regularmente, podemos prevenir esta confusión, lo que respalda nuestros objetivos de pérdida o mantenimiento de peso. Beber suficiente agua también beneficia a nuestro sistema digestivo. Ayuda a descomponer los alimentos, facilitando la digestión adecuada y la absorción de nutrientes. Además, previene el estreñimiento al ablandar las heces y promover movimientos intestinales regulares.
+
+Además, mantenerse hidratado mejora la función cognitiva. La deshidratación puede afectar negativamente la concentración, la alerta y el rendimiento mental en general. Al consumir suficiente agua, respaldamos la función cerebral óptima, lo que resulta en un mayor enfoque y productividad.
+
+Por último, el agua es crucial para la salud renal. Ayuda a eliminar los productos de desecho y las toxinas a través de la orina. La ingesta suficiente de agua reduce el riesgo de cálculos renales e infecciones del tracto urinario, lo que mantiene la función renal adecuada. En conclusión, beber 3 litros de agua al día es esencial para nuestro bienestar general. Desde respaldar las funciones corporales y mantener una piel saludable hasta facilitar la digestión, promover el control del peso, mejorar la función cognitiva y preservar la salud renal, el agua es verdaderamente vital. Hagamos de la hidratación adecuada un hábito y disfrutemos de los numerosos beneficios que brinda a nuestros cuerpos y mentes.";
+
+// MARK: - Article 2
+"article2" = "La lectura de 20 páginas de un libro todos los días puede tener un profundo impacto en tu vida. Más allá de la simple alegría de sumergirte en una historia cautivadora, existen varios beneficios en este hábito diario de lectura.
+
+En primer lugar, la lectura mejora tu conocimiento y amplía tus horizontes. Cada día, mientras te sumerges en nuevas páginas, adquieres información sobre diferentes temas, culturas y perspectivas. Esto amplía tu comprensión del mundo, haciéndote más conocedor y versátil. En segundo lugar, la lectura regular mejora tu vocabulario y habilidades lingüísticas. Al encontrar nuevas palabras y estructuras de oraciones, te vuelves más competente para expresarte de manera efectiva. Este vocabulario ampliado puede aumentar tu confianza en diversas situaciones de comunicación, como escribir correos electrónicos o participar en conversaciones.
+
+Además, la lectura estimula tu imaginación y creatividad. A través de descripciones vívidas y narrativas atractivas, los libros te transportan a diferentes mundos y te permiten visualizar escenas y personajes. Este ejercicio mental fomenta la creatividad y te anima a pensar más allá de los límites de tu rutina diaria.
+
+Además, la lectura puede ser una fuente de relajación y alivio del estrés. Sumergirse en un libro puede alejarte de las presiones de la vida diaria, proporcionando un escape muy necesario. Te permite relajarte, recargarte y encontrar consuelo en las páginas de una historia.
+
+Por último, se ha vinculado la lectura regular con una mejora en la función cognitiva y la retención de la memoria. Participar en la lectura requiere enfoque, concentración y estimulación mental, lo que puede ayudar a mantener tu cerebro ágil y alerta.
+
+En conclusión, dedicar tan solo 20 minutos cada día para leer 20 páginas puede traer consigo una multitud de beneficios. Amplía tu conocimiento, mejora tus habilidades lingüísticas, estimula la creatividad, proporciona relajación y mejora las habilidades cognitivas. Así que toma un libro y embarcate en este viaje transformador a través del poder de la lectura.";
+
+// MARK: - Article 3
+
+"article3" = "Mantener una dieta saludable es esencial para el bienestar general, y la alimentación limpia ha surgido como un enfoque popular para lograr una salud óptima. La alimentación limpia se centra en consumir alimentos integrales y no procesados, al tiempo que se minimizan o eliminan los ingredientes procesados y artificiales. Este artículo explora la importancia de la alimentación limpia y por qué debería ser abrazada para llevar un estilo de vida más saludable.
+
+La alimentación limpia enfatiza el consumo de alimentos naturales y ricos en nutrientes que promueven la vitalidad y respaldan diversas funciones corporales. Al priorizar frutas y verduras frescas, proteínas magras, granos enteros y grasas saludables, la alimentación limpia garantiza que nuestros cuerpos reciban las vitaminas, minerales y antioxidantes esenciales necesarios para una salud óptima. Los alimentos integrales proporcionan una combinación equilibrada de macronutrientes, que incluyen carbohidratos, proteínas y grasas, que mantienen los niveles de energía y ayudan a mantener un peso saludable.
+
+Evitar los alimentos procesados y refinados es un principio clave de la alimentación limpia. Estos productos a menudo contienen cantidades excesivas de azúcares añadidos, grasas trans no saludables y altos niveles de sodio, que pueden contribuir a numerosos problemas de salud, como la obesidad, la diabetes y los problemas cardiovasculares. La alimentación limpia fomenta evitar los aditivos artificiales, conservantes e ingredientes cargados de productos químicos que pueden tener efectos adversos en nuestro bienestar. Además de los beneficios para la salud física, la alimentación limpia puede tener un impacto positivo en la claridad mental y el bienestar emocional.
+
+Alimentar nuestros cuerpos con alimentos limpios y saludables respalda la función cerebral, mejora la estabilidad del estado de ánimo y puede incluso reducir el riesgo de trastornos de salud mental. Adoptar un enfoque de alimentación limpia es una inversión en nuestra salud y bienestar a largo plazo. Al elegir alimentos integrales y no procesados y evitar los aditivos artificiales, brindamos a nuestros cuerpos la nutrición que necesitan para funcionar de manera óptima. La alimentación limpia no solo promueve la vitalidad física, sino que también respalda la claridad mental y el equilibrio emocional, lo que conduce a una vida más feliz y saludable.";
+
+// MARK: - Article 4
+
+"article4" = "En un mundo dominado por estilos de vida sedentarios y actividades en interiores, hay algo increíblemente revitalizante en correr o caminar al aire libre. Participar en actividad física en medio de la naturaleza ofrece numerosos beneficios para nuestra salud física y mental. Este artículo explora las ventajas de adoptar la carrera o caminata al aire libre y por qué debería incorporarse a nuestras rutinas de ejercicios.
+
+Correr o caminar al aire libre ofrece un refrescante cambio de escenario en comparación con la monotonía de los gimnasios interiores o las cintas de correr. El variado terreno, los paisajes naturales y el aire fresco crean una experiencia inmersiva que revitaliza los sentidos y agrega emoción a nuestros entrenamientos. El entorno exterior en constante cambio presenta nuevos desafíos, involucra diferentes grupos musculares y mejora la coordinación y el equilibrio.
+
+Uno de los beneficios más significativos del ejercicio al aire libre es la exposición a la luz solar natural, que es una rica fuente de vitamina D. La luz solar ayuda a regular el estado de ánimo, apoya la salud ósea y fortalece el sistema inmunológico. Además, pasar tiempo al aire libre nos permite reconectar con la naturaleza, fomentando sentimientos de relajación, reducción del estrés y mejora de la claridad mental.
+
+Correr o caminar al aire libre también ofrece una sensación de libertad y exploración. Ya sea en un parque local, un sendero panorámico o una animada calle de la ciudad, el entorno exterior proporciona una variedad de rutas y destinos por descubrir. Este elemento de exploración puede motivarnos a ser constantes en nuestras rutinas de ejercicio y convertir la actividad física en una parte placentera de nuestra vida diaria.
+
+Al dar el paso y abrazar la vida al aire libre para correr o caminar, desbloqueamos una gran cantidad de beneficios para nuestro bienestar general. Desde ventajas físicas como una mejor salud cardiovascular y niveles elevados de vitamina D, hasta beneficios mentales como la reducción del estrés y el mejoramiento del estado de ánimo, el ejercicio al aire libre rejuvenece nuestro cuerpo y mente. Entonces, átate los zapatos, respira el aire fresco y emprende un viaje de acondicionamiento físico al aire libre que elevará tu salud y vitalidad.";
+
+// MARK: - Article 5
+
+"article5" = "En el ámbito de la aptitud física, el levantamiento de pesas se destaca como una herramienta poderosa para transformar nuestros cuerpos y mejorar nuestra salud en general. Más allá de la búsqueda de músculos abultados, el levantamiento de pesas ofrece una serie de beneficios que se extienden tanto a nuestra salud física como mental. Este artículo destaca la importancia de incorporar el levantamiento de pesas regular en nuestras rutinas de ejercicios.
+
+El levantamiento de pesas regular proporciona una variedad de ventajas que van más allá de la estética. Construir fuerza muscular e incrementar la densidad ósea son dos beneficios clave del levantamiento de pesas. Ayuda a mejorar la estabilidad articular, la postura y la aptitud funcional en general, facilitando las actividades diarias y reduciendo el riesgo de lesiones.
+
+Levantar pesas también desempeña un papel crucial en el impulso del metabolismo y la promoción de una gestión de peso saludable. El músculo es metabólicamente activo, lo que significa que quema más calorías incluso en reposo. Al incorporar el levantamiento de pesas en nuestra rutina, podemos aumentar nuestra masa muscular magra y elevar nuestra tasa metabólica en reposo, lo que facilita el control del peso.
+
+Además, el levantamiento de pesas tiene un impacto significativo en nuestro bienestar mental. Libera endorfinas, a menudo llamadas 'hormonas de la felicidad', que mejoran el estado de ánimo, reducen el estrés y alivian los síntomas de ansiedad y depresión. Participar en sesiones regulares de levantamiento de pesas puede aumentar la confianza en uno mismo, mejorar la imagen corporal y fomentar una mentalidad positiva.
+
+Además, el levantamiento de pesas contribuye a la prevención de enfermedades crónicas como la osteoporosis, la artritis y afecciones cardiovasculares. Fortalece los huesos, aumenta la flexibilidad articular y mejora la salud cardíaca al reducir la presión arterial y los niveles de colesterol.
+
+El levantamiento de pesas regular va más allá de la búsqueda de una apariencia física esculpida y ofrece beneficios holísticos para nuestra salud física y mental. Desde desarrollar fuerza y aumentar la densidad ósea hasta promover la gestión del peso y fomentar una mentalidad positiva, el levantamiento de pesas es una práctica poderosa que nos empodera para liberar nuestra fuerza interior y llevar vidas más saludables.";
+
+
+// MARK: - Article 6
+
+"article6" = "Nuestros sueños y aspiraciones tienen la capacidad de dar forma a nuestras vidas y llevarnos hacia el éxito. Al aprovechar el poder de la visualización, podemos pintar una imagen vívida de nuestro futuro deseado y la vida que anhelamos. Este artículo profundiza en la importancia de visualizar nuestros sueños y explica cómo puede impulsarnos hacia el logro de nuestros objetivos.
+
+La visualización de nuestros sueños implica crear imágenes mentales detalladas de nuestro futuro deseado. Al imaginar vívidamente que vivimos nuestros sueños, activamos el poder de nuestra mente subconsciente. Este proceso ayuda a alinear nuestros pensamientos, creencias y acciones con nuestros objetivos, aumentando así nuestra motivación y enfoque.
+
+Cuando visualizamos a nuestro futuro yo, establecemos una dirección y un propósito claros. Al definir lo que queremos lograr, creamos una hoja de ruta para guiar nuestras acciones y decisiones. La visualización mejora nuestra claridad, lo que nos permite establecer objetivos específicos, medibles, alcanzables, relevantes y con límites de tiempo (SMART).
+
+Además, la visualización cultiva una mentalidad positiva. Cuando visualizamos constantemente el éxito y nos imaginamos superando obstáculos, entrenamos a nuestras mentes para creer en nuestras capacidades. Esta mentalidad positiva alimenta la confianza en uno mismo, la resiliencia y la creencia de que podemos lograr la visión que hemos establecido para nosotros mismos.
+
+La visualización de nuestros sueños también actúa como una poderosa fuente de motivación. Cuando podemos ver, sentir y experimentar nuestro futuro deseado a través de la visualización, encendemos un deseo ardiente dentro de nosotros. Esta motivación nos impulsa a tomar medidas consistentes hacia nuestros objetivos y alimenta nuestra perseverancia durante los momentos desafiantes.
+
+Aprovechar el poder de la visualización nos permite acceder a nuestras aspiraciones más profundas y crear un camino hacia nuestros sueños. Al imaginar vívidamente a nuestro futuro yo, cultivamos la claridad, la motivación y una mentalidad positiva. La visualización de nuestros sueños es una herramienta potente que nos capacita para tomar medidas decisivas y transformar nuestras aspiraciones en realidad.";
+
+
+
+//MARK: - Article 7
+
+"article7" = "¿Alguna vez sientes que necesitas un impulso adicional para alcanzar tus metas? Bueno, aquí tienes una forma simple pero efectiva de aumentar tu motivación: ¡comparte tu viaje en las redes sociales!
+
+Cuando compartes tu proceso en plataformas como Facebook, Instagram o Twitter, añades una capa extra de motivación y responsabilidad a tu viaje. ¿Cómo funciona? Vamos a analizarlo.
+
+Imagina que estás tratando de ponerte en forma o aprender una nueva habilidad. Todos los días haces progresos, sin importar lo pequeños que sean. Ahora, en lugar de guardártelo todo para ti, ¿por qué no publicar tus logros diarios? Al hacerlo, te pones un poco de presión para seguir adelante y hacer aún más progresos.
+
+Cuando tus amigos y seguidores ven lo que estás haciendo, te animarán. Se siente genial recibir aliento y apoyo de tu comunidad en línea. Además, cuando compartes tu viaje, te conviertes en una inspiración para otros que están en un camino similar.
+
+Otro beneficio es que puedes documentar tu viaje. Es como crear un diario digital de tus progresos. Mirar hacia atrás y ver lo lejos que has llegado puede ser increíblemente motivador. Además, puedes conectarte con personas que comparten tus intereses y objetivos, formando una comunidad de apoyo.
+
+Así que, si quieres ese impulso adicional para seguir avanzando, comparte tu viaje en las redes sociales. Es una forma simple pero poderosa de mantener la motivación, la responsabilidad e inspirar a otros en el camino. ¡Pruébalo y observa cómo tus progresos despegan!";
+
+
+
+
+//MARK: - Article Titles
+
+"articleTitle1" = "¿Por qué deberías beber 1 galón (3 litros) de agua todos los días?";
+"articleTitle2" = "Beneficios de leer un libro todos los días";
+"articleTitle3" = "El Poder de la Alimentación Saludable: Nutriendo tu Salud y Bienestar";
+"articleTitle4" = "Los Beneficios de Correr o Caminar al Aire Libre";
+"articleTitle5" = "La Fuerza Interior: La Importancia del Levantamiento de Pesas Regular";
+"articleTitle6" = "Visualizar Nuestros Sueños: El Poder de Imaginar a Nuestro Futuro Yo";
+"articleTitle7" = "El Poder de Compartir en las Redes Sociales";
+
+
+

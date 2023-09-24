@@ -21,4 +21,12 @@ extension String {
         return NSLocalizedString(self,tableName: fileName, bundle: Bundle.main, value: String(), comment: String() )
         
     }
+    
+    func localize() -> String {
+            return NSLocalizedString(self,
+                                     tableName: "Localizable",
+                                     bundle: .main,
+                                     value: self,
+                                     comment: self)
+        }
 }

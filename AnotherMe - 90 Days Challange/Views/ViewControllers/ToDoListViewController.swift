@@ -48,9 +48,14 @@ class ToDoListViewController: UIViewController {
     
     fileprivate func updateTimeLabel() {
         if calculateDif() > 75 {
-            dayTitleLabel.text = "DAY 75"
+            let localizedHi: () -> String = { "day".localize() }
+            let localizedGreeting: () -> String = { "\(localizedHi()) 75" }
+            dayTitleLabel.text = localizedGreeting()
         } else {
-            dayTitleLabel.text = "DAY \(calculateDif() + 1)"
+            let localizedHi: () -> String = { "day".localize() }
+            let localizedGreeting: () -> String = { [self] in "\(localizedHi()) \(calculateDif() + 1) " }
+
+            dayTitleLabel.text = localizedGreeting()
         }
     }
     
@@ -60,9 +65,14 @@ class ToDoListViewController: UIViewController {
         tableView.register(UINib(nibName: "TodoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         if calculateDif() > 75 {
-            dayTitleLabel.text = "DAY 75"
+            let localizedHi: () -> String = { "day".localize() }
+            let localizedGreeting: () -> String = { "\(localizedHi()) 75" }
+            dayTitleLabel.text = localizedGreeting()
         } else {
-            dayTitleLabel.text = "DAY \(calculateDif() + 1)"
+            let localizedHi: () -> String = { "day".localize() }
+            let localizedGreeting: () -> String = { [self] in "\(localizedHi()) \(calculateDif() + 1) " }
+
+            dayTitleLabel.text = localizedGreeting()
         }
     }
     
@@ -214,3 +224,5 @@ extension Date {
         return a.value(for: .day)!
     }
 }
+
+

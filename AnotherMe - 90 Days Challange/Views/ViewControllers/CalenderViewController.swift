@@ -40,6 +40,7 @@ class CalenderViewController: UIViewController {
         createNotificationObserver()
         setUI()
     }
+  
     
     override func viewWillAppear(_ animated: Bool) {
          checkLastSavedDate()
@@ -75,7 +76,7 @@ class CalenderViewController: UIViewController {
    
    
     
-    fileprivate func saveScreenshotToLibrary() {
+     @objc fileprivate func saveScreenshotToLibrary() {
         if isShared == false {
             isShared = true
 //            setShareButtonViewChanges()
@@ -173,7 +174,9 @@ class CalenderViewController: UIViewController {
     
     
     fileprivate func showAlert() {
-        let alert = UIAlertController(title: "Saved!", message: "Saved in photo library. Don't forget to share.", preferredStyle: .alert)
+        var savedLocalizated   = "saved".localize()
+        var savedMsgLocalized = "savedPhoto".localized()
+        let alert = UIAlertController(title: savedLocalizated, message: savedMsgLocalized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
             print("Ok")
         }))
@@ -183,7 +186,10 @@ class CalenderViewController: UIViewController {
     }
     
     fileprivate func showPermissionDeniedAlert() {
-        let alert = UIAlertController(title: "Failed!", message: "Permission denied, to change it: \n ->Settings\n ->75 Tough\n ->Change permission", preferredStyle: .alert)
+        
+        var failedLocalizated   = "failed".localize()
+        var permDeniedLocalized = "permDenied".localized()
+        let alert = UIAlertController(title: failedLocalizated, message: permDeniedLocalized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { action in
             print("Ok")
         }))

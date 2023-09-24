@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView  : UITableView!
     var profileViewController             : ProfileViewController?
 
-    let settingsRowsNames = ["Account", "Restart Challange"]
+    let settingsRowsNames = ["account", "restart"]
     let segueNames        = ["toAccountPage", "toFeedBack"]
     
     deinit {
@@ -125,12 +125,12 @@ class SettingsViewController: UIViewController {
     }
         
     fileprivate func showAlert() {
-        let alert = UIAlertController(title: "WARNING!", message: "If you restart challenge, your progress will be permanently deleted and it cannot be recovered!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dissmiss", style: .cancel, handler: { action in
-            print("Cancel")
+        let alert = UIAlertController(title: "warning".localize(), message: "warningmsg".localize(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dissmiss".localize(), style: .cancel, handler: { action in
+            print("cancel".localize())
         }))
-        alert.addAction(UIAlertAction(title: "Restart", style: .destructive, handler: { action in
-            print("Restart")
+        alert.addAction(UIAlertAction(title: "restartWord".localize(), style: .destructive, handler: { action in
+            print("restart".localize())
             
             self.restartChallange()
             self.performSegue(withIdentifier: "toRestartChallange", sender: nil)
@@ -154,39 +154,39 @@ class SettingsViewController: UIViewController {
 
         //MARK: - Objects
         let goalNumber1 = Goal(context: self.context)
-        goalNumber1.title = "Read 20 pages of book"
+        goalNumber1.title = "goal1".localize()
         goalNumber1.id = 0
         goalNumber1.isCompleted = false
         
         let goalNumber2 = Goal(context: self.context)
-        goalNumber2.title = "Visualize of future self"
+        goalNumber2.title = "goal2".localize()
         goalNumber2.id = 1
         goalNumber2.isCompleted = false
 
         
         let goalNumber3 = Goal(context: self.context)
-        goalNumber3.title = "Drink 1 gallon (3L) of water"
+        goalNumber3.title = "goal3".localize()
         goalNumber3.id = 2
         goalNumber3.isCompleted = false
         
         
         let goalNumber4 = Goal(context: self.context)
-        goalNumber4.title = "30 min outside running"
+        goalNumber4.title = "goal4".localize()
         goalNumber4.id = 3
         goalNumber4.isCompleted = false
         
         let goalNumber5 = Goal(context: self.context)
-        goalNumber5.title = "Lift some weights for 30 minutes"
+        goalNumber5.title = "goal5".localize()
         goalNumber5.id = 4
         goalNumber5.isCompleted = false
         
         let goalNumber6 = Goal(context: self.context)
-        goalNumber6.title = "Follow a diet"
+        goalNumber6.title = "goal6".localize()
         goalNumber6.id = 5
         goalNumber6.isCompleted = false
         
         let goalNumber7 = Goal(context: self.context)
-        goalNumber7.title = "Share your process"
+        goalNumber7.title = "goal7".localize()
         goalNumber7.id = 6
         goalNumber7.isCompleted = false
 
@@ -216,7 +216,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("Unable to dequeue SettingsTableViewCell")
         }
         
-        cell.settingsLabel.text = settingsRowsNames[indexPath.row]
+        cell.settingsLabel.text = settingsRowsNames[indexPath.row].localize()
         
         if indexPath.row == 3 {
             cell.settingsLabel.textColor = .red

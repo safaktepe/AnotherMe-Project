@@ -11,8 +11,17 @@ fileprivate let cellId    = "cellId"
 fileprivate let headerId  = "headerId"
 fileprivate let padding   : CGFloat = 16
 
-fileprivate let titles  : [ArticleTitlesLocalizable] = [.articleTitle1, .articleTitle2, .articleTitle3, .articleTitle4, .articleTitle5, .articleTitle6, .articleTitle7]
-fileprivate let articles: [ArticlesLocalizable]      = [.article1, .article2, .article3, .article4, .article5, .article6, .article7]
+//fileprivate let titles  : [ArticleTitlesLocalizable] = ["articleTitle1".localize(), .articleTitle2, .articleTitle3, .articleTitle4, .articleTitle5, .articleTitle6, .articleTitle7]
+
+
+fileprivate let titles  = ["articleTitle1".localize(), "articleTitle2".localize(), "articleTitle3".localize(), "articleTitle4".localize(), "articleTitle5".localize(), "articleTitle6".localize(), "articleTitle7".localize()]
+
+//fileprivate let articles    = [.article1, .article2, .article3, .article4, .article5, .article6, .article7]
+
+
+fileprivate let articles    = ["article1".localize(), "article2".localize(), "article3".localize(), "article4".localize(), "article5".localize(), "article6".localize(), "article7".localize()]
+
+
 
 class ArticleCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
@@ -82,16 +91,16 @@ class ArticleCollectionViewController: UICollectionViewController, UICollectionV
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArticleCollectionViewCell", for: indexPath) as! ArticleCollectionViewCell
-        cell.titleLabel.text       =  titles[indexPath.row].localized()
-        cell.descriptionLabel.text = articles[indexPath.row].localized()
+        cell.titleLabel.text       =  titles[indexPath.row].localize()
+        cell.descriptionLabel.text = articles[indexPath.row].localize()
         cell.layoutIfNeeded()
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = ArticleDetailViewController.instantiate()
-        controller.articleTitle = titles[indexPath.row].localized()
-        controller.articleDescr = articles[indexPath.row].localized()
+        controller.articleTitle = titles[indexPath.row].localize()
+        controller.articleDescr = articles[indexPath.row].localize()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

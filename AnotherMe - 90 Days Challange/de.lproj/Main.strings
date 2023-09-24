@@ -1,0 +1,78 @@
+
+/* Class = "UILabel"; text = "DAY 1"; ObjectID = "7I6-8E-d6J"; */
+"7I6-8E-d6J.text" = "TAG 1";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "8B5-PW-qhy"; */
+"8B5-PW-qhy.configuration.title" = "Weiter";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8B5-PW-qhy"; */
+"8B5-PW-qhy.normalTitle" = "Weiter";
+
+/* Class = "UILabel"; text = "This is the description layer of my brand new onboarding scene."; ObjectID = "AHl-PQ-aeF"; */
+"AHl-PQ-aeF.text" = "This is the description layer of my brand new onboarding scene.";
+
+/* Class = "UILabel"; text = "75 Tough"; ObjectID = "BMU-PK-TE8"; */
+"BMU-PK-TE8.text" = "75 Tough";
+
+/* Class = "UILabel"; text = "E-Mail:"; ObjectID = "EEd-vy-xdd"; */
+"EEd-vy-xdd.text" = "E-Mail:";
+
+/* Class = "UIButton"; configuration.title = "Submit"; ObjectID = "HuB-6l-f8l"; */
+"HuB-6l-f8l.configuration.title" = "Absenden";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HuB-6l-f8l"; */
+"HuB-6l-f8l.normalTitle" = "Weiter";
+
+/* Class = "UITabBarItem"; title = "Preferences"; ObjectID = "IDj-aV-bgV"; */
+"IDj-aV-bgV.title" = "Einstellungen";
+
+/* Class = "UILabel"; text = "Welcome,"; ObjectID = "IPk-hG-3nN"; */
+"IPk-hG-3nN.text" = "Welcome,";
+
+/* Class = "UIButton"; normalTitle = "Create Instagram Story!"; ObjectID = "Jwh-5J-iiy"; */
+"Jwh-5J-iiy.normalTitle" = "Instagram Story erstellen!";
+
+/* Class = "UITextField"; placeholder = "E-Mail Adress"; ObjectID = "K47-mS-Dj2"; */
+"K47-mS-Dj2.placeholder" = "E-Mail Adress";
+
+/* Class = "UILabel"; text = "1"; ObjectID = "LXy-6j-BrD"; */
+"LXy-6j-BrD.text" = "1";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "Ldn-2f-XEw"; */
+"Ldn-2f-XEw.title" = "Konto";
+
+/* Class = "UITabBarItem"; title = "Read"; ObjectID = "P7I-Te-ILV"; */
+"P7I-Te-ILV.title" = "Lesen";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"; ObjectID = "UHt-8o-BqL"; */
+"UHt-8o-BqL.text" = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum";
+
+/* Class = "UILabel"; text = "What is Lorem Ipsum Ipsd?"; ObjectID = "VHA-Yz-NE7"; */
+"VHA-Yz-NE7.text" = "What is Lorem Ipsum Ipsd?";
+
+/* Class = "UILabel"; text = "This is title"; ObjectID = "ZTe-cd-6K7"; */
+"ZTe-cd-6K7.text" = "This is title";
+
+/* Class = "UILabel"; text = "Message:"; ObjectID = "aXF-dU-Uc8"; */
+"aXF-dU-Uc8.text" = "Message:";
+
+/* Class = "UITabBarItem"; title = "Calender"; ObjectID = "e3T-aT-0w2"; */
+"e3T-aT-0w2.title" = "Kalender";
+
+/* Class = "UITextField"; placeholder = "Leave a message"; ObjectID = "eSW-bg-7nd"; */
+"eSW-bg-7nd.placeholder" = "Leave a message";
+
+/* Class = "UILabel"; text = "Please leave a message describing your problem. As a small team, we care about your opinion so please feel free to leave any kind of feedback. We will try our best to respond support tickets in 24 hours! "; ObjectID = "f6X-sH-AVD"; */
+"f6X-sH-AVD.text" = "Please leave a message describing your problem. As a small team, we care about your opinion so please feel free to leave any kind of feedback. We will try our best to respond support tickets in 24 hours! ";
+
+/* Class = "UILabel"; text = "Mert."; ObjectID = "ilV-Iq-70e"; */
+"ilV-Iq-70e.text" = "Mert.";
+
+/* Class = "UINavigationItem"; title = "Support & Feedback"; ObjectID = "jgl-Vt-Knp"; */
+"jgl-Vt-Knp.title" = "Unterstützung und Feedback";
+
+/* Class = "UITabBarItem"; title = "To do"; ObjectID = "k8q-I4-AZP"; */
+"k8q-I4-AZP.title" = "Aufgaben";
+
+/* Class = "UILabel"; text = "RULES!"; ObjectID = "t06-01-VAx"; */
+"t06-01-VAx.text" = "REGELN!!";

@@ -181,7 +181,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         nav?.barStyle            = UIBarStyle.default
         nav?.tintColor           = UIColor.black
         nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        title = "Edit Profile"
+        title = "editprofile".localize()
         
         //Profile image button.
         pickImageButton.layer.cornerRadius  = myImageViewCornerRadius
@@ -206,11 +206,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         //Name Label
         nameLabel.textColor     = .black
         nameLabel.textAlignment = .center
-        nameLabel.text          = "Name"
+        nameLabel.text          = "name".localize()
         view.addSubview(nameLabel)
         
         //First name textfield.
-        nameTextField.placeholder        = "Enter Your Name"
+        nameTextField.placeholder        = "entername".localize()
         nameTextField.borderStyle        = UITextField.BorderStyle.roundedRect
         nameTextField.autocorrectionType = UITextAutocorrectionType.no
         nameTextField.keyboardType       = UIKeyboardType.default
@@ -222,7 +222,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
         //Save button
         saveButton.backgroundColor = .systemGreen
-        saveButton.setTitle("Save", for: .normal)
+        saveButton.setTitle("save".localize(), for: .normal)
         saveButton.layer.cornerRadius = 10
         saveButton.setTitleColor(.white, for: .normal)
         saveButton.titleLabel?.font = .systemFont(ofSize: 19)
@@ -299,7 +299,7 @@ extension ProfileViewController : UITextViewDelegate {
 extension ProfileViewController {
 
      func showAlert() {
-         let alert = UIAlertController(title: "Saved!", message: "All changes are saved.", preferredStyle: .alert)
+         let alert = UIAlertController(title: "saved".localize(), message: "savedMsg".localize(), preferredStyle: .alert)
          alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             print("OK")
              self.saveButton.isUserInteractionEnabled = false

@@ -74,7 +74,7 @@ class HeaderCollectionView: UICollectionReusableView {
         
         
         let heavyLabel = UILabel()
-        heavyLabel.text = "Read more about being better 1% each day"
+        heavyLabel.text = "readmore".localize()
         heavyLabel.font = .systemFont(ofSize: 24, weight: .heavy)
         heavyLabel.textColor = .white
         heavyLabel.numberOfLines = 2
