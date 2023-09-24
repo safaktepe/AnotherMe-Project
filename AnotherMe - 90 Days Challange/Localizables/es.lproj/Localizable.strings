@@ -80,122 +80,121 @@
 
 // Calendar
 
-"savedPhoto"     = "Saved in photo library. Don't forget to share.";
-"permDenied"     = "Permission denied, to change it: \n ->Settings\n ->75 Tough\n ->Change permission";
-"failed"         = "Failed";
+"savedPhoto"     = "Guardado en la biblioteca de fotos. No olvides compartir.";
+"permDenied"     = "Permiso denegado, para cambiarlo ve a tus ajustes.";
+"failed"         = "Fracasado!";
 
 
 // Ending.
 
-"close"         = "Close";
-"lastMsg"       = "You succesfully finished the challange!";
-"congr"         = "Congratulations!";
+"close"         = "Cerrar";
+"lastMsg"       = "Has completado con éxito el desafío!";
+"congr"         = "Felicitaciones!";
 
 
 // MARK: - Article 1
-"article1" = "Water is crucial for our bodies, and it's important to ensure we stay properly hydrated by drinking at least 3 liters of water every day. In this article, we'll explore why maintaining adequate water intake is vital for our overall well-being.
+"article1" = "El agua es crucial para nuestros cuerpos, y es importante asegurarse de mantenernos adecuadamente hidratados bebiendo al menos 3 litros de agua al día. En este artículo, exploraremos por qué mantener una ingesta adecuada de agua es vital para nuestro bienestar general.
 
-Firstly, water helps maintain the balance of bodily fluids. Our bodies are made up of around 60% water, and it plays a key role in important functions like digestion, absorption, circulation, and temperature regulation. By drinking enough water, we replenish the fluids we lose throughout the day, enabling our bodies to function optimally. Proper hydration is also essential for healthy skin. When we're dehydrated, our skin can become dry, flaky, and more prone to wrinkles. Drinking enough water provides hydration to our skin cells, resulting in a more vibrant and youthful appearance.
+En primer lugar, el agua ayuda a mantener el equilibrio de los fluidos corporales. Nuestros cuerpos están compuestos en un 60% de agua aproximadamente, y desempeña un papel clave en funciones importantes como la digestión, la absorción, la circulación y la regulación de la temperatura. Al beber suficiente agua, reponemos los líquidos que perdemos a lo largo del día, lo que permite que nuestros cuerpos funcionen de manera óptima. La hidratación adecuada también es esencial para la piel saludable. Cuando estamos deshidratados, nuestra piel puede volverse seca, escamosa y más propensa a las arrugas. Beber suficiente agua proporciona hidratación a las células de nuestra piel, lo que resulta en una apariencia más vibrante y juvenil.
 
-Furthermore, staying hydrated can aid in weight management. Sometimes, we confuse thirst with hunger, leading to unnecessary snacking and overeating. By regularly drinking water, we can help prevent this confusion, supporting our weight loss or maintenance goals. Drinking enough water also benefits our digestive system. It helps break down food, facilitating proper digestion and nutrient absorption. Additionally, it prevents constipation by softening the stool and promoting regular bowel movements.
+Además, mantenerse hidratado puede ayudar en el control del peso. A veces, confundimos la sed con el hambre, lo que lleva a picar y a comer en exceso innecesariamente. Al beber agua regularmente, podemos prevenir esta confusión, lo que respalda nuestros objetivos de pérdida o mantenimiento de peso. Beber suficiente agua también beneficia a nuestro sistema digestivo. Ayuda a descomponer los alimentos, facilitando la digestión adecuada y la absorción de nutrientes. Además, previene el estreñimiento al ablandar las heces y promover movimientos intestinales regulares.
 
-Moreover, staying hydrated enhances cognitive function. Dehydration can negatively impact concentration, alertness, and overall mental performance. By consuming adequate water, we support optimal brain function, resulting in increased focus and productivity.
+Además, mantenerse hidratado mejora la función cognitiva. La deshidratación puede afectar negativamente la concentración, la alerta y el rendimiento mental en general. Al consumir suficiente agua, respaldamos la función cerebral óptima, lo que resulta en un mayor enfoque y productividad.
 
-Lastly, water is crucial for kidney health. It aids in flushing out waste products and toxins through urine. Sufficient water intake reduces the risk of kidney stones and urinary tract infections, maintaining proper kidney function. In conclusion, drinking 3 liters of water daily is essential for our overall well-being. From supporting bodily functions and maintaining healthy skin to aiding digestion, promoting weight management, enhancing cognitive function, and preserving kidney health, water is truly vital. Let's make it a habit to stay properly hydrated and enjoy the numerous benefits it provides to our bodies and minds.";
+Por último, el agua es crucial para la salud renal. Ayuda a eliminar los productos de desecho y las toxinas a través de la orina. La ingesta suficiente de agua reduce el riesgo de cálculos renales e infecciones del tracto urinario, lo que mantiene la función renal adecuada. En conclusión, beber 3 litros de agua al día es esencial para nuestro bienestar general. Desde respaldar las funciones corporales y mantener una piel saludable hasta facilitar la digestión, promover el control del peso, mejorar la función cognitiva y preservar la salud renal, el agua es verdaderamente vital. Hagamos de la hidratación adecuada un hábito y disfrutemos de los numerosos beneficios que brinda a nuestros cuerpos y mentes.";
 
 // MARK: - Article 2
-"article2" = "Reading 20 pages of a book every day can have a profound impact on your life. Beyond the simple joy of immersing yourself in a captivating story, there are several benefits to this daily reading habit.
+"article2" = "La lectura de 20 páginas de un libro todos los días puede tener un profundo impacto en tu vida. Más allá de la simple alegría de sumergirte en una historia cautivadora, existen varios beneficios en este hábito diario de lectura.
 
-Firstly, reading enhances your knowledge and expands your horizons. Each day, as you delve into new pages, you acquire information about different subjects, cultures, and perspectives. This broadens your understanding of the world, making you more knowledgeable and well-rounded.
+En primer lugar, la lectura mejora tu conocimiento y amplía tus horizontes. Cada día, mientras te sumerges en nuevas páginas, adquieres información sobre diferentes temas, culturas y perspectivas. Esto amplía tu comprensión del mundo, haciéndote más conocedor y versátil. En segundo lugar, la lectura regular mejora tu vocabulario y habilidades lingüísticas. Al encontrar nuevas palabras y estructuras de oraciones, te vuelves más competente para expresarte de manera efectiva. Este vocabulario ampliado puede aumentar tu confianza en diversas situaciones de comunicación, como escribir correos electrónicos o participar en conversaciones.
 
-Secondly, regular reading improves your vocabulary and language skills. By encountering new words and sentence structures, you become more adept at expressing yourself effectively. This expanded vocabulary can boost your confidence in various communication scenarios, such as writing emails or engaging in conversations.
+Además, la lectura estimula tu imaginación y creatividad. A través de descripciones vívidas y narrativas atractivas, los libros te transportan a diferentes mundos y te permiten visualizar escenas y personajes. Este ejercicio mental fomenta la creatividad y te anima a pensar más allá de los límites de tu rutina diaria.
 
-Furthermore, reading stimulates your imagination and creativity. Through vivid descriptions and engaging narratives, books transport you to different worlds and allow you to visualize scenes and characters. This mental exercise nurtures creativity and encourages you to think beyond the confines of your daily routine.
+Además, la lectura puede ser una fuente de relajación y alivio del estrés. Sumergirse en un libro puede alejarte de las presiones de la vida diaria, proporcionando un escape muy necesario. Te permite relajarte, recargarte y encontrar consuelo en las páginas de una historia.
 
-Additionally, reading can be a source of relaxation and stress relief. Immersing yourself in a book can transport you away from the pressures of daily life, providing a much-needed escape. It allows you to unwind, recharge, and find solace in the pages of a story.
+Por último, se ha vinculado la lectura regular con una mejora en la función cognitiva y la retención de la memoria. Participar en la lectura requiere enfoque, concentración y estimulación mental, lo que puede ayudar a mantener tu cerebro ágil y alerta.
 
-Lastly, reading regularly has been linked to improved cognitive function and memory retention. Engaging with a book requires focus, concentration, and mental stimulation, which can help keep your brain sharp and agile.
-
-In conclusion, dedicating just 20 minutes each day to read 20 pages can bring about a multitude of benefits. It expands your knowledge, improves your language skills, boosts creativity, provides relaxation, and enhances cognitive abilities. So, grab a book and embark on this transformative journey through the power of reading.";
+En conclusión, dedicar tan solo 20 minutos cada día para leer 20 páginas puede traer consigo una multitud de beneficios. Amplía tu conocimiento, mejora tus habilidades lingüísticas, estimula la creatividad, proporciona relajación y mejora las habilidades cognitivas. Así que toma un libro y embarcate en este viaje transformador a través del poder de la lectura.";
 
 // MARK: - Article 3
 
-"article3" = "Поддержание здоровой диеты является неотъемлемой частью общего благополучия, и здоровое питание стало популярным подходом к достижению оптимального здоровья. Здоровое питание акцентирует внимание на употреблении натуральных, богатых питательными веществами продуктов, минимизируя или исключая обработанные и искусственные ингредиенты. Эта статья исследует важность здорового питания и почему его следует выбрать для более здорового образа жизни.
+"article3" = "Mantener una dieta saludable es esencial para el bienestar general, y la alimentación limpia ha surgido como un enfoque popular para lograr una salud óptima. La alimentación limpia se centra en consumir alimentos integrales y no procesados, al tiempo que se minimizan o eliminan los ingredientes procesados y artificiales. Este artículo explora la importancia de la alimentación limpia y por qué debería ser abrazada para llevar un estilo de vida más saludable.
 
-Здоровое питание подчеркивает потребление натуральных продуктов, богатых питательными веществами, которые способствуют жизненным силам и поддерживают различные функции организма. Приоритетом являются свежие фрукты и овощи, нежирные белки, цельные зерна и полезные жиры, что обеспечивает организм необходимыми витаминами, минералами и антиоксидантами, необходимыми для оптимального здоровья. Натуральные продукты предоставляют сбалансированное сочетание макроэлементов, включая углеводы, белки и жиры, которые поддерживают уровень энергии и помогают поддерживать здоровую массу тела.
+La alimentación limpia enfatiza el consumo de alimentos naturales y ricos en nutrientes que promueven la vitalidad y respaldan diversas funciones corporales. Al priorizar frutas y verduras frescas, proteínas magras, granos enteros y grasas saludables, la alimentación limpia garantiza que nuestros cuerpos reciban las vitaminas, minerales y antioxidantes esenciales necesarios para una salud óptima. Los alimentos integrales proporcionan una combinación equilibrada de macronutrientes, que incluyen carbohidratos, proteínas y grasas, que mantienen los niveles de energía y ayudan a mantener un peso saludable.
 
-Избегание обработанных и рафинированных продуктов является ключевым принципом здорового питания. Эти продукты часто содержат избыточное количество добавленного сахара, вредных трансжиров и высокий уровень натрия, что может способствовать множеству заболеваний, таких как ожирение, диабет и сердечно-сосудистые заболевания. Здоровое питание настоятельно рекомендует избегать искусственных добавок, консервантов и химически насыщенных ингредиентов, которые могут оказать негативное воздействие на наше благополучие.
+Evitar los alimentos procesados y refinados es un principio clave de la alimentación limpia. Estos productos a menudo contienen cantidades excesivas de azúcares añadidos, grasas trans no saludables y altos niveles de sodio, que pueden contribuir a numerosos problemas de salud, como la obesidad, la diabetes y los problemas cardiovasculares. La alimentación limpia fomenta evitar los aditivos artificiales, conservantes e ingredientes cargados de productos químicos que pueden tener efectos adversos en nuestro bienestar. Además de los beneficios para la salud física, la alimentación limpia puede tener un impacto positivo en la claridad mental y el bienestar emocional.
 
- Помимо физических преимуществ для здоровья, здоровое питание может положительно влиять на ясность ума и эмоциональное благополучие. Питание нашего организма чистой и полезной пищей поддерживает работу мозга, повышает стабильность настроения и, возможно, снижает риск расстройств психического здоровья.
-
-Выбор здорового питания - это инвестиция в долгосрочное здоровье и благополучие. Путем выбора натуральных, необработанных продуктов и избегая искусственных добавок, мы обеспечиваем организм необходимым питанием для его оптимальной работы. Здоровое питание способствует не только физической жизнеспособности, но и поддерживает ясность ума и эмоциональное равновесие, что приводит к более счастливой и здоровой жизни.";
+Alimentar nuestros cuerpos con alimentos limpios y saludables respalda la función cerebral, mejora la estabilidad del estado de ánimo y puede incluso reducir el riesgo de trastornos de salud mental. Adoptar un enfoque de alimentación limpia es una inversión en nuestra salud y bienestar a largo plazo. Al elegir alimentos integrales y no procesados y evitar los aditivos artificiales, brindamos a nuestros cuerpos la nutrición que necesitan para funcionar de manera óptima. La alimentación limpia no solo promueve la vitalidad física, sino que también respalda la claridad mental y el equilibrio emocional, lo que conduce a una vida más feliz y saludable.";
 
 // MARK: - Article 4
 
-"article4" = "In a world dominated by sedentary lifestyles and indoor activities, there is something incredibly invigorating about running or walking outside. Engaging in physical activity amidst nature offers numerous benefits for our physical and mental well-being. This article explores the advantages of embracing outdoor running or walking and why it should be incorporated into our fitness routines.
+"article4" = "En un mundo dominado por estilos de vida sedentarios y actividades en interiores, hay algo increíblemente revitalizante en correr o caminar al aire libre. Participar en actividad física en medio de la naturaleza ofrece numerosos beneficios para nuestra salud física y mental. Este artículo explora las ventajas de adoptar la carrera o caminata al aire libre y por qué debería incorporarse a nuestras rutinas de ejercicios.
 
-Running or walking outdoors provides a refreshing change of scenery compared to the monotony of indoor gyms or treadmills. The diverse terrain, natural landscapes, and fresh air create an immersive experience that invigorates the senses and adds excitement to our workouts. The ever-changing outdoor environment presents new challenges, engages different muscles, and enhances coordination and balance.
+Correr o caminar al aire libre ofrece un refrescante cambio de escenario en comparación con la monotonía de los gimnasios interiores o las cintas de correr. El variado terreno, los paisajes naturales y el aire fresco crean una experiencia inmersiva que revitaliza los sentidos y agrega emoción a nuestros entrenamientos. El entorno exterior en constante cambio presenta nuevos desafíos, involucra diferentes grupos musculares y mejora la coordinación y el equilibrio.
 
-One of the most significant benefits of outdoor exercise is exposure to natural sunlight, which is a rich source of vitamin D. Sunlight helps regulate mood, supports bone health, and boosts the immune system. Additionally, spending time outside allows us to reconnect with nature, promoting feelings of relaxation, reduced stress, and improved mental clarity.
+Uno de los beneficios más significativos del ejercicio al aire libre es la exposición a la luz solar natural, que es una rica fuente de vitamina D. La luz solar ayuda a regular el estado de ánimo, apoya la salud ósea y fortalece el sistema inmunológico. Además, pasar tiempo al aire libre nos permite reconectar con la naturaleza, fomentando sentimientos de relajación, reducción del estrés y mejora de la claridad mental.
 
-Outdoor running or walking also offers a sense of freedom and exploration. Whether it's a local park, a scenic trail, or a vibrant city street, the outdoor environment provides a variety of routes and destinations to discover. This element of exploration can motivate us to be consistent with our exercise routines and make physical activity an enjoyable part of our daily lives.
+Correr o caminar al aire libre también ofrece una sensación de libertad y exploración. Ya sea en un parque local, un sendero panorámico o una animada calle de la ciudad, el entorno exterior proporciona una variedad de rutas y destinos por descubrir. Este elemento de exploración puede motivarnos a ser constantes en nuestras rutinas de ejercicio y convertir la actividad física en una parte placentera de nuestra vida diaria.
 
-By stepping outside and embracing the outdoors for running or walking, we unlock a wealth of benefits for our overall well-being. From physical advantages like improved cardiovascular health and increased vitamin D levels to mental benefits such as reduced stress and enhanced mood, outdoor exercise rejuvenates our body and mind. So, lace up your shoes, breathe in the fresh air, and embark on an outdoor fitness journey that will elevate your health and vitality.";
+Al dar el paso y abrazar la vida al aire libre para correr o caminar, desbloqueamos una gran cantidad de beneficios para nuestro bienestar general. Desde ventajas físicas como una mejor salud cardiovascular y niveles elevados de vitamina D, hasta beneficios mentales como la reducción del estrés y el mejoramiento del estado de ánimo, el ejercicio al aire libre rejuvenece nuestro cuerpo y mente. Entonces, átate los zapatos, respira el aire fresco y emprende un viaje de acondicionamiento físico al aire libre que elevará tu salud y vitalidad.";
 
 // MARK: - Article 5
 
-"article5" = "In the realm of physical fitness, weightlifting stands out as a powerful tool for transforming our bodies and enhancing our overall health. Beyond the pursuit of bulging muscles, lifting weights offers a myriad of benefits that extend to both our physical and mental well-being. This article highlights the importance of incorporating regular weightlifting into our fitness routines.
+"article5" = "En el ámbito de la aptitud física, el levantamiento de pesas se destaca como una herramienta poderosa para transformar nuestros cuerpos y mejorar nuestra salud en general. Más allá de la búsqueda de músculos abultados, el levantamiento de pesas ofrece una serie de beneficios que se extienden tanto a nuestra salud física como mental. Este artículo destaca la importancia de incorporar el levantamiento de pesas regular en nuestras rutinas de ejercicios.
 
-Regular weightlifting provides a range of advantages that go beyond mere aesthetics. Building muscle strength and increasing bone density are two key benefits of weightlifting. It helps improve joint stability, posture, and overall functional fitness, making everyday activities easier and reducing the risk of injury.
+El levantamiento de pesas regular proporciona una variedad de ventajas que van más allá de la estética. Construir fuerza muscular e incrementar la densidad ósea son dos beneficios clave del levantamiento de pesas. Ayuda a mejorar la estabilidad articular, la postura y la aptitud funcional en general, facilitando las actividades diarias y reduciendo el riesgo de lesiones.
 
-Lifting weights also plays a crucial role in boosting metabolism and promoting healthy weight management. Muscle is metabolically active, meaning it burns more calories even at rest. By incorporating weightlifting into our routine, we can increase our lean muscle mass and elevate our resting metabolic rate, making weight control more manageable.
+Levantar pesas también desempeña un papel crucial en el impulso del metabolismo y la promoción de una gestión de peso saludable. El músculo es metabólicamente activo, lo que significa que quema más calorías incluso en reposo. Al incorporar el levantamiento de pesas en nuestra rutina, podemos aumentar nuestra masa muscular magra y elevar nuestra tasa metabólica en reposo, lo que facilita el control del peso.
 
-Additionally, weightlifting has a significant impact on our mental well-being. It releases endorphins, often referred to as 'feel-good' hormones, which enhance mood, reduce stress, and alleviate symptoms of anxiety and depression. Engaging in regular weightlifting sessions can boost self-confidence, improve body image, and foster a positive mindset.
+Además, el levantamiento de pesas tiene un impacto significativo en nuestro bienestar mental. Libera endorfinas, a menudo llamadas 'hormonas de la felicidad', que mejoran el estado de ánimo, reducen el estrés y alivian los síntomas de ansiedad y depresión. Participar en sesiones regulares de levantamiento de pesas puede aumentar la confianza en uno mismo, mejorar la imagen corporal y fomentar una mentalidad positiva.
 
-Moreover, weightlifting contributes to the prevention of chronic diseases such as osteoporosis, arthritis, and cardiovascular conditions. It strengthens bones, increases joint flexibility, and improves heart health by reducing blood pressure and lowering cholesterol levels.
+Además, el levantamiento de pesas contribuye a la prevención de enfermedades crónicas como la osteoporosis, la artritis y afecciones cardiovasculares. Fortalece los huesos, aumenta la flexibilidad articular y mejora la salud cardíaca al reducir la presión arterial y los niveles de colesterol.
 
-
-Regular weightlifting transcends the pursuit of a chiseled physique, offering holistic benefits for our physical and mental well-being. From building strength and enhancing bone density to promoting weight management and fostering a positive mindset, lifting weights is a powerful practice that empowers us to unleash our inner strength and lead healthier lives.";
+El levantamiento de pesas regular va más allá de la búsqueda de una apariencia física esculpida y ofrece beneficios holísticos para nuestra salud física y mental. Desde desarrollar fuerza y aumentar la densidad ósea hasta promover la gestión del peso y fomentar una mentalidad positiva, el levantamiento de pesas es una práctica poderosa que nos empodera para liberar nuestra fuerza interior y llevar vidas más saludables.";
 
 
 // MARK: - Article 6
 
-"article6" = "Our dreams and aspirations have the ability to shape our lives and drive us towards success. By harnessing the power of visualization, we can paint a vivid picture of our future self and the life we desire. This article delves into the importance of visualizing our dreams and explains how it can propel us towards achieving our goals.
+"article6" = "Nuestros sueños y aspiraciones tienen la capacidad de dar forma a nuestras vidas y llevarnos hacia el éxito. Al aprovechar el poder de la visualización, podemos pintar una imagen vívida de nuestro futuro deseado y la vida que anhelamos. Este artículo profundiza en la importancia de visualizar nuestros sueños y explica cómo puede impulsarnos hacia el logro de nuestros objetivos.
 
+La visualización de nuestros sueños implica crear imágenes mentales detalladas de nuestro futuro deseado. Al imaginar vívidamente que vivimos nuestros sueños, activamos el poder de nuestra mente subconsciente. Este proceso ayuda a alinear nuestros pensamientos, creencias y acciones con nuestros objetivos, aumentando así nuestra motivación y enfoque.
 
-Visualizing our dreams involves creating detailed mental images of our desired future. By vividly imagining ourselves living our dreams, we activate the power of our subconscious mind. This process helps align our thoughts, beliefs, and actions with our goals, ultimately increasing our motivation and focus.
+Cuando visualizamos a nuestro futuro yo, establecemos una dirección y un propósito claros. Al definir lo que queremos lograr, creamos una hoja de ruta para guiar nuestras acciones y decisiones. La visualización mejora nuestra claridad, lo que nos permite establecer objetivos específicos, medibles, alcanzables, relevantes y con límites de tiempo (SMART).
 
-When we visualize our future self, we establish a clear direction and purpose. By defining what we want to achieve, we create a roadmap to guide our actions and decision-making. Visualization enhances our clarity, enabling us to set specific, measurable, achievable, relevant, and time-bound (SMART) goals.
+Además, la visualización cultiva una mentalidad positiva. Cuando visualizamos constantemente el éxito y nos imaginamos superando obstáculos, entrenamos a nuestras mentes para creer en nuestras capacidades. Esta mentalidad positiva alimenta la confianza en uno mismo, la resiliencia y la creencia de que podemos lograr la visión que hemos establecido para nosotros mismos.
 
-Moreover, visualization cultivates a positive mindset. When we consistently visualize success and visualize ourselves overcoming obstacles, we train our minds to believe in our capabilities. This positive mindset fuels self-confidence, resilience, and a belief that we can achieve the vision we have set for ourselves.
+La visualización de nuestros sueños también actúa como una poderosa fuente de motivación. Cuando podemos ver, sentir y experimentar nuestro futuro deseado a través de la visualización, encendemos un deseo ardiente dentro de nosotros. Esta motivación nos impulsa a tomar medidas consistentes hacia nuestros objetivos y alimenta nuestra perseverancia durante los momentos desafiantes.
 
-Visualizing our dreams also acts as a powerful source of motivation. When we can see, feel, and experience our desired future through visualization, it ignites a burning desire within us. This motivation propels us to take consistent action towards our goals and fuels our perseverance during challenging times.
-
-
-Harnessing the power of visualization allows us to tap into our deepest aspirations and create a roadmap towards our dreams. By vividly envisioning our future self, we cultivate clarity, motivation, and a positive mindset. Visualizing our dreams is a potent tool that empowers us to take decisive action and transform our aspirations into reality.";
+Aprovechar el poder de la visualización nos permite acceder a nuestras aspiraciones más profundas y crear un camino hacia nuestros sueños. Al imaginar vívidamente a nuestro futuro yo, cultivamos la claridad, la motivación y una mentalidad positiva. La visualización de nuestros sueños es una herramienta potente que nos capacita para tomar medidas decisivas y transformar nuestras aspiraciones en realidad.";
 
 
 
 //MARK: - Article 7
 
-"article7" = "Do you ever feel like you need an extra push to achieve your goals? Well, here's a simple yet effective way to boost your motivation: share your journey on social media!
+"article7" = "¿Alguna vez sientes que necesitas un impulso adicional para alcanzar tus metas? Bueno, aquí tienes una forma simple pero efectiva de aumentar tu motivación: ¡comparte tu viaje en las redes sociales!
 
-When you share your process on platforms like Facebook, Instagram, or Twitter, it adds an extra layer of motivation and accountability to your journey. How does it work? Let's break it down.
+Cuando compartes tu proceso en plataformas como Facebook, Instagram o Twitter, añades una capa extra de motivación y responsabilidad a tu viaje. ¿Cómo funciona? Vamos a analizarlo.
 
-Imagine you're trying to get fit or learn a new skill. Every day, you make progress, no matter how small. Now, instead of keeping it all to yourself, why not post your daily achievements? By doing this, you put a little pressure on yourself to keep going and make even more progress.
+Imagina que estás tratando de ponerte en forma o aprender una nueva habilidad. Todos los días haces progresos, sin importar lo pequeños que sean. Ahora, en lugar de guardártelo todo para ti, ¿por qué no publicar tus logros diarios? Al hacerlo, te pones un poco de presión para seguir adelante y hacer aún más progresos.
 
-When your friends and followers see what you're up to, they'll cheer you on. It feels great to receive encouragement and support from your online community. Plus, when you share your journey, you become an inspiration to others who are on a similar path.
+Cuando tus amigos y seguidores ven lo que estás haciendo, te animarán. Se siente genial recibir aliento y apoyo de tu comunidad en línea. Además, cuando compartes tu viaje, te conviertes en una inspiración para otros que están en un camino similar.
 
-Another benefit is that you get to document your journey. It's like creating a digital diary of your progress. Looking back at how far you've come can be incredibly motivating. Plus, you can connect with people who share your interests and goals, forming a supportive community.
+Otro beneficio es que puedes documentar tu viaje. Es como crear un diario digital de tus progresos. Mirar hacia atrás y ver lo lejos que has llegado puede ser increíblemente motivador. Además, puedes conectarte con personas que comparten tus intereses y objetivos, formando una comunidad de apoyo.
 
-So, if you want that extra push to keep moving forward, share your journey on social media. It's a simple yet powerful way to stay motivated, accountable, and inspire others along the way. Give it a try and watch your progress soar!";
+Así que, si quieres ese impulso adicional para seguir avanzando, comparte tu viaje en las redes sociales. Es una forma simple pero poderosa de mantener la motivación, la responsabilidad e inspirar a otros en el camino. ¡Pruébalo y observa cómo tus progresos despegan!";
+
+
+
 
 //MARK: - Article Titles
 
-"articleTitle1" = "Why you should drink 1 gallon (3L) of water everyday?";
-"articleTitle2" = "Benefits of reading book everyday";
-"articleTitle3" = "The Power of Clean Eating: Fueling Your Health and Well-being";
-"articleTitle4" = "The Benefits of Running or Walking Outside";
-"articleTitle5" = "The Strength Within: The Importance of Regular Weightlifting";
-"articleTitle6" = "Visualizing Our Dreams: The Power of Envisioning Our Future Self";
-"articleTitle7" = "The Power of Sharing on Social Media";
+"articleTitle1" = "¿Por qué deberías beber 1 galón (3 litros) de agua todos los días?";
+"articleTitle2" = "Beneficios de leer un libro todos los días";
+"articleTitle3" = "El Poder de la Alimentación Saludable: Nutriendo tu Salud y Bienestar";
+"articleTitle4" = "Los Beneficios de Correr o Caminar al Aire Libre";
+"articleTitle5" = "La Fuerza Interior: La Importancia del Levantamiento de Pesas Regular";
+"articleTitle6" = "Visualizar Nuestros Sueños: El Poder de Imaginar a Nuestro Futuro Yo";
+"articleTitle7" = "El Poder de Compartir en las Redes Sociales";
+
+
+

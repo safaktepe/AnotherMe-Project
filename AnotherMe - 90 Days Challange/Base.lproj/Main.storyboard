@@ -700,11 +700,11 @@
             </objects>
             <point key="canvasLocation" x="-1451" y="686"/>
         </scene>
-        <!--Calender-->
+        <!--Calendar-->
         <scene sceneID="3pK-YD-lLR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TIl-xM-pm1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calender" image="calendar" catalog="system" id="e3T-aT-0w2"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="e3T-aT-0w2"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rim-AJ-G0L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>

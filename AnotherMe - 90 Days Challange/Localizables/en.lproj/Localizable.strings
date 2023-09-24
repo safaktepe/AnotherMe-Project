@@ -120,15 +120,15 @@ In conclusion, dedicating just 20 minutes each day to read 20 pages can bring ab
 
 // MARK: - Article 3
 
-"article3" = "Поддержание здоровой диеты является неотъемлемой частью общего благополучия, и здоровое питание стало популярным подходом к достижению оптимального здоровья. Здоровое питание акцентирует внимание на употреблении натуральных, богатых питательными веществами продуктов, минимизируя или исключая обработанные и искусственные ингредиенты. Эта статья исследует важность здорового питания и почему его следует выбрать для более здорового образа жизни.
+"article3" = "Maintaining a healthy diet is essential for overall well-being, and clean eating has emerged as a popular approach to achieving optimal health. Clean eating focuses on consuming whole, unprocessed foods while minimizing or eliminating processed and artificial ingredients. This article explores the significance of clean eating and why it should be embraced for a healthier lifestyle.
 
-Здоровое питание подчеркивает потребление натуральных продуктов, богатых питательными веществами, которые способствуют жизненным силам и поддерживают различные функции организма. Приоритетом являются свежие фрукты и овощи, нежирные белки, цельные зерна и полезные жиры, что обеспечивает организм необходимыми витаминами, минералами и антиоксидантами, необходимыми для оптимального здоровья. Натуральные продукты предоставляют сбалансированное сочетание макроэлементов, включая углеводы, белки и жиры, которые поддерживают уровень энергии и помогают поддерживать здоровую массу тела.
+Clean eating emphasizes the consumption of natural, nutrient-dense foods that promote vitality and support various bodily functions. By prioritizing fresh fruits and vegetables, lean proteins, whole grains, and healthy fats, clean eating ensures that our bodies receive essential vitamins, minerals, and antioxidants necessary for optimal health. Whole foods provide a balanced combination of macronutrients, including carbohydrates, proteins, and fats, which sustain energy levels and help maintain a healthy weight.
 
-Избегание обработанных и рафинированных продуктов является ключевым принципом здорового питания. Эти продукты часто содержат избыточное количество добавленного сахара, вредных трансжиров и высокий уровень натрия, что может способствовать множеству заболеваний, таких как ожирение, диабет и сердечно-сосудистые заболевания. Здоровое питание настоятельно рекомендует избегать искусственных добавок, консервантов и химически насыщенных ингредиентов, которые могут оказать негативное воздействие на наше благополучие.
+ Avoiding processed and refined foods is a key principle of clean eating. These products often contain excessive amounts of added sugars, unhealthy trans fats, and high levels of sodium, which can contribute to numerous health issues such as obesity, diabetes, and cardiovascular problems. Clean eating encourages the avoidance of artificial additives, preservatives, and chemical-laden ingredients that may have adverse effects on our well-being.  In addition to physical health benefits, clean eating can positively impact mental clarity and emotional well-being.
 
- Помимо физических преимуществ для здоровья, здоровое питание может положительно влиять на ясность ума и эмоциональное благополучие. Питание нашего организма чистой и полезной пищей поддерживает работу мозга, повышает стабильность настроения и, возможно, снижает риск расстройств психического здоровья.
+ Nourishing our bodies with clean, wholesome foods supports brain function, enhances mood stability, and may even reduce the risk of mental health disorders.
 
-Выбор здорового питания - это инвестиция в долгосрочное здоровье и благополучие. Путем выбора натуральных, необработанных продуктов и избегая искусственных добавок, мы обеспечиваем организм необходимым питанием для его оптимальной работы. Здоровое питание способствует не только физической жизнеспособности, но и поддерживает ясность ума и эмоциональное равновесие, что приводит к более счастливой и здоровой жизни.";
+Adopting a clean eating approach is an investment in our long-term health and well-being. By choosing whole, unprocessed foods and avoiding artificial additives, we provide our bodies with the nourishment they need to function optimally. Clean eating not only promotes physical vitality but also supports mental clarity and emotional balance, leading to a happier, healthier life.";
 
 // MARK: - Article 4
 
@@ -190,8 +190,8 @@ Another benefit is that you get to document your journey. It's like creating a d
 
 So, if you want that extra push to keep moving forward, share your journey on social media. It's a simple yet powerful way to stay motivated, accountable, and inspire others along the way. Give it a try and watch your progress soar!";
 
-//MARK: - Article Titles
 
+//MARK: - Article Titles
 "articleTitle1" = "Why you should drink 1 gallon (3L) of water everyday?";
 "articleTitle2" = "Benefits of reading book everyday";
 "articleTitle3" = "The Power of Clean Eating: Fueling Your Health and Well-being";
